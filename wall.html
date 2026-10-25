@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="googlebot" content="noindex,nofollow">
+<meta name="bingbot" content="noindex,nofollow">
+<meta name="slurp" content="noindex,nofollow">
+<meta name="yandex" content="noindex,nofollow">
+<title>b.333.eco: Log in and Sign — the wall</title>
+<meta name="theme-color" content="#0f52ba">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --bg:#fcfbfe; --surface:#f4f1fb; --surface-2:#ebe7f5;
+    --line:rgba(20,16,30,0.12); --line-strong:rgba(20,16,30,0.28);
+    --ink:#16141c; --ink-dim:#5b5766; --ink-faint:#8b8796;
+    --accent:#0f52ba; --accent-soft:#0b3f8f; --accent-ink:#fff;
+    --accent-wash:rgba(16,100,48,.10); --accent-edge:rgba(16,100,48,.25);
+    --font-display:"Newsreader",Georgia,serif;
+    --font-text:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+    --font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --bg:#0a0a0f; --surface:#17171d; --surface-2:#1f1f27;
+    --line:rgba(255,255,255,0.08); --line-strong:rgba(255,255,255,0.18);
+    --ink:#f5f5f7; --ink-dim:#9b9ba5; --ink-faint:#6b6b76;
+    --accent:#7fa6e6; --accent-soft:#b7cdf2; --accent-ink:#0a0a0f;
+    --accent-wash:rgba(63,165,100,.14); --accent-edge:rgba(63,165,100,.32);
+  }}
+  *{box-sizing:border-box}
+  [hidden]{display:none!important}
+  html,body{margin:0;height:100%;overflow:hidden;background:var(--surface-2);
+       color:var(--ink);font-family:var(--font-text)}
+  header{position:fixed;inset:0 0 auto 0;z-index:5;display:flex;align-items:center;gap:14px;
+       flex-wrap:wrap;padding:10px 14px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .home{font-family:var(--font-display);font-size:1.05rem;font-weight:600;color:inherit;text-decoration:none}
+  .tabs{display:flex;gap:6px;flex-wrap:wrap}
+  .tab{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;
+       border:1px solid var(--line-strong);background:transparent;color:var(--ink-dim);
+       border-radius:999px;padding:6px 12px;cursor:pointer;min-height:32px}
+  .tab[aria-pressed="true"]{background:var(--accent-wash);border-color:var(--accent-edge);color:var(--accent-soft)}
+  .tab .n{opacity:.55;margin-left:3px}
+  .zoom{margin-left:auto;display:flex;gap:6px;align-items:center}
+  .zoom button{width:36px;height:36px;border-radius:10px;border:1px solid var(--line-strong);
+       background:transparent;color:var(--ink);font-size:1rem;cursor:pointer}
+  .zoom .fit{width:auto;padding:0 13px;font-family:var(--font-mono);font-size:.72rem}
+  #stage{position:fixed;inset:0;top:0;overflow:hidden;cursor:grab;touch-action:none}
+  #stage.drag{cursor:grabbing}
+  #world{position:absolute;left:0;top:0;transform-origin:0 0;will-change:transform}
+  /* NO overflow:hidden here — it clips the caption, which sits above the frame.
+     The iframe does its own corner clipping instead. */
+  .frame{position:absolute;display:block;text-decoration:none;color:inherit;
+       background:var(--bg);border:1px solid var(--line);border-radius:10px;
+       box-shadow:0 8px 28px rgba(20,16,30,.10)}
+  .frame .cap{position:absolute;left:0;top:-26px;font-family:var(--font-mono);font-size:12px;
+       letter-spacing:.03em;color:var(--ink-dim);white-space:nowrap}
+  .frame iframe{border:0;display:block;pointer-events:none;background:var(--bg);border-radius:9px}
+  .note{position:absolute;background:#fdf3c7;color:#3b3320;border-radius:8px;padding:12px 14px;
+       font-size:13px;line-height:1.5;box-shadow:0 6px 18px rgba(20,16,30,.14);white-space:pre-wrap}
+  .hint{position:fixed;left:14px;bottom:12px;z-index:5;font-family:var(--font-mono);font-size:.66rem;
+       letter-spacing:.04em;text-transform:uppercase;color:var(--ink-faint);
+       background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+</style>
+<script src="./analytics.js?v=8773cb35"></script>
+</head>
+<body>
+<header>
+  <a class="home" href="./">&#8592; Log in and Sign</a>
+  <div class="tabs"><button class="tab" data-page="login">Log in with HeartBank® <span class="n">13</span></button><button class="tab" data-page="sign">Sign with HeartBank® <span class="n">13</span></button></div>
+  <div class="zoom">
+    <button class="fit" id="fit">Fit</button>
+    <button id="out" aria-label="Zoom out">&#8722;</button>
+    <button id="in" aria-label="Zoom in">+</button>
+  </div>
+</header>
+<div id="stage"><div id="world"><div class="page" data-page="login" hidden><a class="frame" href="L1.html?v=add9d185" target="_blank" style="left:0px;top:0px;width:390px;height:844px"><span class="cap">L1 · Log in, English</span><iframe data-src="L1.html?v=add9d185" width="390" height="844" loading="lazy" title="L1 · Log in, English" scrolling="no"></iframe></a><a class="frame" href="L2.html?v=4f1986ad" target="_blank" style="left:470px;top:0px;width:390px;height:844px"><span class="cap">L2 · Make a passkey, English</span><iframe data-src="L2.html?v=4f1986ad" width="390" height="844" loading="lazy" title="L2 · Make a passkey, English" scrolling="no"></iframe></a><a class="frame" href="L3.html?v=8e8df79c" target="_blank" style="left:940px;top:0px;width:390px;height:844px"><span class="cap">L3 · Under 18, English</span><iframe data-src="L3.html?v=8e8df79c" width="390" height="844" loading="lazy" title="L3 · Under 18, English" scrolling="no"></iframe></a><a class="frame" href="L4.html?v=62e6193d" target="_blank" style="left:1410px;top:0px;width:390px;height:844px"><span class="cap">L4 · What a site may know, English</span><iframe data-src="L4.html?v=62e6193d" width="390" height="844" loading="lazy" title="L4 · What a site may know, English" scrolling="no"></iframe></a><a class="frame" href="L5.html?v=f5c29c40" target="_blank" style="left:1880px;top:0px;width:390px;height:844px"><span class="cap">L5 · Logged in: add a second passkey, English</span><iframe data-src="L5.html?v=f5c29c40" width="390" height="844" loading="lazy" title="L5 · Logged in: add a second passkey, English" scrolling="no"></iframe></a><a class="frame" href="L6.html?v=a6896693" target="_blank" style="left:2350px;top:0px;width:390px;height:859px"><span class="cap">L6 · Your account, English</span><iframe data-src="L6.html?v=a6896693" width="390" height="859" loading="lazy" title="L6 · Your account, English" scrolling="no"></iframe></a><a class="frame" href="L1Km.html?v=d49645f2" target="_blank" style="left:0px;top:1019px;width:390px;height:871px"><span class="cap">L1 · Log in, Khmer</span><iframe data-src="L1Km.html?v=d49645f2" width="390" height="871" loading="lazy" title="L1 · Log in, Khmer" scrolling="no"></iframe></a><a class="frame" href="L2Km.html?v=df2673f7" target="_blank" style="left:470px;top:1019px;width:390px;height:869px"><span class="cap">L2 · Make a passkey, Khmer</span><iframe data-src="L2Km.html?v=df2673f7" width="390" height="869" loading="lazy" title="L2 · Make a passkey, Khmer" scrolling="no"></iframe></a><a class="frame" href="L3Km.html?v=bada9660" target="_blank" style="left:940px;top:1019px;width:390px;height:869px"><span class="cap">L3 · Under 18, Khmer</span><iframe data-src="L3Km.html?v=bada9660" width="390" height="869" loading="lazy" title="L3 · Under 18, Khmer" scrolling="no"></iframe></a><a class="frame" href="L4Km.html?v=d28dab64" target="_blank" style="left:1410px;top:1019px;width:390px;height:885px"><span class="cap">L4 · What a site may know, Khmer</span><iframe data-src="L4Km.html?v=d28dab64" width="390" height="885" loading="lazy" title="L4 · What a site may know, Khmer" scrolling="no"></iframe></a><a class="frame" href="L5Km.html?v=9034f26c" target="_blank" style="left:1880px;top:1019px;width:390px;height:869px"><span class="cap">L5 · Logged in: add a second passkey, Khmer</span><iframe data-src="L5Km.html?v=9034f26c" width="390" height="869" loading="lazy" title="L5 · Logged in: add a second passkey, Khmer" scrolling="no"></iframe></a><a class="frame" href="L6Km.html?v=62b3b4c3" target="_blank" style="left:2350px;top:1019px;width:390px;height:956px"><span class="cap">L6 · Your account, Khmer</span><iframe data-src="L6Km.html?v=62b3b4c3" width="390" height="956" loading="lazy" title="L6 · Your account, Khmer" scrolling="no"></iframe></a><a class="frame" href="L1Dark.html?v=cd8cb54e" target="_blank" style="left:0px;top:2135px;width:390px;height:844px"><span class="cap">L1 · dark pass, English</span><iframe data-src="L1Dark.html?v=cd8cb54e" width="390" height="844" loading="lazy" title="L1 · dark pass, English" scrolling="no"></iframe></a></div><div class="page" data-page="sign" hidden><a class="frame" href="S1.html?v=5134a270" target="_blank" style="left:0px;top:0px;width:390px;height:844px"><span class="cap">S1 · Sign a file, English</span><iframe data-src="S1.html?v=5134a270" width="390" height="844" loading="lazy" title="S1 · Sign a file, English" scrolling="no"></iframe></a><a class="frame" href="S2.html?v=ee94fb33" target="_blank" style="left:470px;top:0px;width:390px;height:844px"><span class="cap">S2 · Signed, English</span><iframe data-src="S2.html?v=ee94fb33" width="390" height="844" loading="lazy" title="S2 · Signed, English" scrolling="no"></iframe></a><a class="frame" href="S3.html?v=a5bb294a" target="_blank" style="left:940px;top:0px;width:390px;height:844px"><span class="cap">S3 · Withdraw a record, English</span><iframe data-src="S3.html?v=a5bb294a" width="390" height="844" loading="lazy" title="S3 · Withdraw a record, English" scrolling="no"></iframe></a><a class="frame" href="S4.html?v=be713c59" target="_blank" style="left:1410px;top:0px;width:390px;height:844px"><span class="cap">S4 · A device lost or stolen, English</span><iframe data-src="S4.html?v=be713c59" width="390" height="844" loading="lazy" title="S4 · A device lost or stolen, English" scrolling="no"></iframe></a><a class="frame" href="S5.html?v=c2dd4beb" target="_blank" style="left:1880px;top:0px;width:390px;height:844px"><span class="cap">S5 · Bring your works back, English</span><iframe data-src="S5.html?v=c2dd4beb" width="390" height="844" loading="lazy" title="S5 · Bring your works back, English" scrolling="no"></iframe></a><a class="frame" href="S6.html?v=99f24782" target="_blank" style="left:2350px;top:0px;width:390px;height:844px"><span class="cap">S6 · Dispute a record, English</span><iframe data-src="S6.html?v=99f24782" width="390" height="844" loading="lazy" title="S6 · Dispute a record, English" scrolling="no"></iframe></a><a class="frame" href="S1Km.html?v=b6b19891" target="_blank" style="left:0px;top:1019px;width:390px;height:923px"><span class="cap">S1 · Sign a file, Khmer</span><iframe data-src="S1Km.html?v=b6b19891" width="390" height="923" loading="lazy" title="S1 · Sign a file, Khmer" scrolling="no"></iframe></a><a class="frame" href="S2Km.html?v=7e3ff401" target="_blank" style="left:470px;top:1019px;width:390px;height:869px"><span class="cap">S2 · Signed, Khmer</span><iframe data-src="S2Km.html?v=7e3ff401" width="390" height="869" loading="lazy" title="S2 · Signed, Khmer" scrolling="no"></iframe></a><a class="frame" href="S3Km.html?v=c5c3ddc4" target="_blank" style="left:940px;top:1019px;width:390px;height:869px"><span class="cap">S3 · Withdraw a record, Khmer</span><iframe data-src="S3Km.html?v=c5c3ddc4" width="390" height="869" loading="lazy" title="S3 · Withdraw a record, Khmer" scrolling="no"></iframe></a><a class="frame" href="S4Km.html?v=ff1630bb" target="_blank" style="left:1410px;top:1019px;width:390px;height:869px"><span class="cap">S4 · A device lost or stolen, Khmer</span><iframe data-src="S4Km.html?v=ff1630bb" width="390" height="869" loading="lazy" title="S4 · A device lost or stolen, Khmer" scrolling="no"></iframe></a><a class="frame" href="S5Km.html?v=342722d1" target="_blank" style="left:1880px;top:1019px;width:390px;height:869px"><span class="cap">S5 · Bring your works back, Khmer</span><iframe data-src="S5Km.html?v=342722d1" width="390" height="869" loading="lazy" title="S5 · Bring your works back, Khmer" scrolling="no"></iframe></a><a class="frame" href="S6Km.html?v=aaf682a4" target="_blank" style="left:2350px;top:1019px;width:390px;height:869px"><span class="cap">S6 · Dispute a record, Khmer</span><iframe data-src="S6Km.html?v=aaf682a4" width="390" height="869" loading="lazy" title="S6 · Dispute a record, Khmer" scrolling="no"></iframe></a><a class="frame" href="S1Dark.html?v=345ca422" target="_blank" style="left:0px;top:2135px;width:390px;height:844px"><span class="cap">S1 · dark pass, English</span><iframe data-src="S1Dark.html?v=345ca422" width="390" height="844" loading="lazy" title="S1 · dark pass, English" scrolling="no"></iframe></a></div></div></div>
+<p class="hint">Drag to pan &#183; scroll or pinch to zoom &#183; tap a screen to open it</p>
+<script>
+(function(){
+  var stage=document.getElementById('stage'), world=document.getElementById('world');
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  var s=1, tx=0, ty=0, active=null;
+  function apply(){ world.style.transform='translate('+tx+'px,'+ty+'px) scale('+s+')'; }
+  function head(){ return document.querySelector('header').offsetHeight; }
+  function boxOf(page){
+    var els=[].slice.call(page.children), b={x1:1e9,y1:1e9,x2:-1e9,y2:-1e9};
+    els.forEach(function(el){
+      var x=parseFloat(el.style.left)||0, y=parseFloat(el.style.top)||0;
+      var w=parseFloat(el.style.width)||240, h=parseFloat(el.style.height)||el.offsetHeight||120;
+      b.x1=Math.min(b.x1,x); b.y1=Math.min(b.y1,y-30); b.x2=Math.max(b.x2,x+w); b.y2=Math.max(b.y2,y+h);
+    });
+    return b;
+  }
+  function fit(){
+    if(!active) return;
+    var b=boxOf(active), pad=48, top=head();
+    var vw=window.innerWidth-pad*2, vh=window.innerHeight-top-pad*2;
+    s=Math.min(vw/Math.max(1,b.x2-b.x1), vh/Math.max(1,b.y2-b.y1), 1);
+    tx=pad-b.x1*s + Math.max(0,(vw-(b.x2-b.x1)*s))/2;
+    ty=top+pad-b.y1*s;
+    apply();
+  }
+  function show(id){
+    [].slice.call(document.querySelectorAll('.page')).forEach(function(p){
+      var on=p.getAttribute('data-page')===id; p.hidden=!on; if(on) active=p;
+    });
+    tabs.forEach(function(t){ t.setAttribute('aria-pressed', String(t.getAttribute('data-page')===id)); });
+    // load this page's frames once it is shown
+    [].slice.call(active.querySelectorAll('iframe[data-src]')).forEach(function(f){
+      f.src=f.getAttribute('data-src'); f.removeAttribute('data-src');
+    });
+    fit();
+  }
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ show(t.getAttribute('data-page')); }); });
+  document.getElementById('fit').addEventListener('click', fit);
+  function zoomAt(f, cx, cy){
+    var ns=Math.min(3, Math.max(0.06, s*f));
+    tx=cx-(cx-tx)*(ns/s); ty=cy-(cy-ty)*(ns/s); s=ns; apply();
+  }
+  document.getElementById('in').addEventListener('click', function(){ zoomAt(1.25, innerWidth/2, innerHeight/2); });
+  document.getElementById('out').addEventListener('click', function(){ zoomAt(0.8, innerWidth/2, innerHeight/2); });
+  stage.addEventListener('wheel', function(e){
+    e.preventDefault();
+    if(e.ctrlKey||e.metaKey) zoomAt(Math.pow(0.995,e.deltaY), e.clientX, e.clientY);
+    else { tx-=e.deltaX; ty-=e.deltaY; apply(); }
+  }, {passive:false});
+  var pts={}, last=null, moved=false;
+  stage.addEventListener('pointerdown', function(e){
+    pts[e.pointerId]={x:e.clientX,y:e.clientY}; moved=false;
+    stage.setPointerCapture(e.pointerId); stage.classList.add('drag');
+  });
+  stage.addEventListener('pointermove', function(e){
+    if(!pts[e.pointerId]) return;
+    var ids=Object.keys(pts);
+    var prev=pts[e.pointerId]; pts[e.pointerId]={x:e.clientX,y:e.clientY};
+    if(ids.length===1){
+      tx+=e.clientX-prev.x; ty+=e.clientY-prev.y;
+      if(Math.abs(e.clientX-prev.x)+Math.abs(e.clientY-prev.y)>2) moved=true;
+      apply();
+    } else if(ids.length===2){
+      var a=pts[ids[0]], b=pts[ids[1]];
+      var dist=Math.hypot(a.x-b.x,a.y-b.y);
+      if(last) zoomAt(dist/last, (a.x+b.x)/2, (a.y+b.y)/2);
+      last=dist; moved=true;
+    }
+  });
+  function up(e){ delete pts[e.pointerId]; if(!Object.keys(pts).length){ last=null; stage.classList.remove('drag'); } }
+  stage.addEventListener('pointerup', up); stage.addEventListener('pointercancel', up);
+  // a pan must not count as a tap on a frame
+  stage.addEventListener('click', function(e){ if(moved){ e.preventDefault(); e.stopPropagation(); } }, true);
+  window.addEventListener('resize', fit);
+  show(tabs[0].getAttribute('data-page'));
+})();
+</script>
+</body>
+</html>
