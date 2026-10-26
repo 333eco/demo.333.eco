@@ -718,6 +718,9 @@ PUBLIC = {"O1", "O2", "O3", "O10"}  # public portal pages: a share button in the
 def page(sid, render, lang, dark=False):
     t = T[lang]
     body = render(t).replace("℠", '<span class="sm">℠</span>')
+    # Each screen's footer names its OWN origin (SPEC §0): Log in → login.333.eco · Sign → B.333.eco · portal → origin.333.eco
+    host = "login.333.eco" if sid.startswith("L") else ("origin.333.eco" if sid.startswith("O") else "B.333.eco")
+    foot = t["foot"].replace("B.333.eco", host, 1)
     assert not re.search(r"\bsign[\s-]?in\b", body, re.I), "%s: 'sign in' is barred (Default 10)" % sid
     assert "notar" not in body.lower(), "%s: 'notary' is barred in public copy" % sid
     themes = "".join('<span%s>%s</span>' % (' class="on"' if i == (2 if dark else 0) else "", x) for i, x in enumerate(t["theme"]))
@@ -729,7 +732,7 @@ def page(sid, render, lang, dark=False):
 <meta name="viewport" content="width=%d">
 <meta name="googlebot" content="noindex,nofollow"><meta name="bingbot" content="noindex,nofollow">
 <meta name="slurp" content="noindex,nofollow"><meta name="yandex" content="noindex,nofollow">
-<title>B.333.eco · %s</title>
+<title>333.eco drawings · %s</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>[hidden]{display:none!important}</style>
 <link rel="stylesheet" href="board.css?v=@CSSV@">
@@ -744,7 +747,7 @@ def page(sid, render, lang, dark=False):
 </html>
 """ % ("km" if lang == "km" else "en", "km" if lang == "km" else "en", " dark" if dark else "", W, sid,
        '<div class="band">%s</div>' % t["band"] if t["band"] else "", mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid.startswith("O") else ""),
-       langs, ('<span class="sharebtn" aria-label="%s">%s</span>' % (t["o_share"], SHARE)) if sid in PUBLIC else "", body, t["foot"], themes))
+       langs, ('<span class="sharebtn" aria-label="%s">%s</span>' % (t["o_share"], SHARE)) if sid in PUBLIC else "", body, foot, themes))
 
 
 def main():
