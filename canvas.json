@@ -7,6 +7,10 @@
   {
    "id": "sign",
    "name": "Sign with HeartBank®"
+  },
+  {
+   "id": "origin",
+   "name": "origin.333.eco"
   }
  ],
  "artboards": [
@@ -26,7 +30,7 @@
    "w": 390,
    "h": 871,
    "x": 0,
-   "y": 1051
+   "y": 1088
   },
   {
    "file": "L2.html",
@@ -44,7 +48,7 @@
    "w": 390,
    "h": 869,
    "x": 470,
-   "y": 1051
+   "y": 1088
   },
   {
    "file": "L3.html",
@@ -62,7 +66,7 @@
    "w": 390,
    "h": 869,
    "x": 940,
-   "y": 1051
+   "y": 1088
   },
   {
    "file": "L4.html",
@@ -80,7 +84,7 @@
    "w": 390,
    "h": 885,
    "x": 1410,
-   "y": 1051
+   "y": 1088
   },
   {
    "file": "L5.html",
@@ -98,7 +102,7 @@
    "w": 390,
    "h": 869,
    "x": 1880,
-   "y": 1051
+   "y": 1088
   },
   {
    "file": "L6.html",
@@ -116,7 +120,7 @@
    "w": 390,
    "h": 956,
    "x": 2350,
-   "y": 1051
+   "y": 1088
   },
   {
    "file": "S1.html",
@@ -134,7 +138,7 @@
    "w": 390,
    "h": 923,
    "x": 0,
-   "y": 1051
+   "y": 1088
   },
   {
    "file": "S2.html",
@@ -152,14 +156,14 @@
    "w": 390,
    "h": 892,
    "x": 470,
-   "y": 1051
+   "y": 1088
   },
   {
    "file": "S7.html",
    "page": "sign",
    "title": "S7 · What this record shows (sheet), English",
    "w": 390,
-   "h": 891,
+   "h": 912,
    "x": 940,
    "y": 0
   },
@@ -168,9 +172,9 @@
    "page": "sign",
    "title": "S7 · What this record shows (sheet), Khmer",
    "w": 390,
-   "h": 1008,
+   "h": 1032,
    "x": 940,
-   "y": 1051
+   "y": 1088
   },
   {
    "file": "S3.html",
@@ -188,7 +192,7 @@
    "w": 390,
    "h": 869,
    "x": 1410,
-   "y": 1051
+   "y": 1088
   },
   {
    "file": "S4.html",
@@ -206,7 +210,7 @@
    "w": 390,
    "h": 869,
    "x": 1880,
-   "y": 1051
+   "y": 1088
   },
   {
    "file": "S5.html",
@@ -224,7 +228,7 @@
    "w": 390,
    "h": 869,
    "x": 2350,
-   "y": 1051
+   "y": 1088
   },
   {
    "file": "S6.html",
@@ -242,7 +246,151 @@
    "w": 390,
    "h": 869,
    "x": 2820,
-   "y": 1051
+   "y": 1088
+  },
+  {
+   "file": "O1.html",
+   "page": "origin",
+   "title": "O1 · Check a file (B-Trace), English",
+   "w": 390,
+   "h": 928,
+   "x": 0,
+   "y": 0
+  },
+  {
+   "file": "O1Km.html",
+   "page": "origin",
+   "title": "O1 · Check a file (B-Trace), Khmer",
+   "w": 390,
+   "h": 1053,
+   "x": 0,
+   "y": 1088
+  },
+  {
+   "file": "O2.html",
+   "page": "origin",
+   "title": "O2 · Sign your own file, English",
+   "w": 390,
+   "h": 901,
+   "x": 470,
+   "y": 0
+  },
+  {
+   "file": "O2Km.html",
+   "page": "origin",
+   "title": "O2 · Sign your own file, Khmer",
+   "w": 390,
+   "h": 1034,
+   "x": 470,
+   "y": 1088
+  },
+  {
+   "file": "O3.html",
+   "page": "origin",
+   "title": "O3 · Pricing, English",
+   "w": 390,
+   "h": 844,
+   "x": 940,
+   "y": 0
+  },
+  {
+   "file": "O3Km.html",
+   "page": "origin",
+   "title": "O3 · Pricing, Khmer",
+   "w": 390,
+   "h": 972,
+   "x": 940,
+   "y": 1088
+  },
+  {
+   "file": "O4.html",
+   "page": "origin",
+   "title": "O4 · Dashboard: overview, English",
+   "w": 390,
+   "h": 844,
+   "x": 1410,
+   "y": 0
+  },
+  {
+   "file": "O4Km.html",
+   "page": "origin",
+   "title": "O4 · Dashboard: overview, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 1410,
+   "y": 1088
+  },
+  {
+   "file": "O5.html",
+   "page": "origin",
+   "title": "O5 · Dashboard: API keys, English",
+   "w": 390,
+   "h": 844,
+   "x": 1880,
+   "y": 0
+  },
+  {
+   "file": "O5Km.html",
+   "page": "origin",
+   "title": "O5 · Dashboard: API keys, Khmer",
+   "w": 390,
+   "h": 922,
+   "x": 1880,
+   "y": 1088
+  },
+  {
+   "file": "O6.html",
+   "page": "origin",
+   "title": "O6 · Dashboard: prepay credits, English",
+   "w": 390,
+   "h": 844,
+   "x": 2350,
+   "y": 0
+  },
+  {
+   "file": "O6Km.html",
+   "page": "origin",
+   "title": "O6 · Dashboard: prepay credits, Khmer",
+   "w": 390,
+   "h": 906,
+   "x": 2350,
+   "y": 1088
+  },
+  {
+   "file": "O7.html",
+   "page": "origin",
+   "title": "O7 · Dashboard: packages, English",
+   "w": 390,
+   "h": 850,
+   "x": 2820,
+   "y": 0
+  },
+  {
+   "file": "O7Km.html",
+   "page": "origin",
+   "title": "O7 · Dashboard: packages, Khmer",
+   "w": 390,
+   "h": 949,
+   "x": 2820,
+   "y": 1088
+  },
+  {
+   "file": "O8.html",
+   "page": "origin",
+   "title": "O8 · Dashboard: team, English",
+   "w": 390,
+   "h": 844,
+   "x": 3290,
+   "y": 0
+  },
+  {
+   "file": "O8Km.html",
+   "page": "origin",
+   "title": "O8 · Dashboard: team, Khmer",
+   "w": 390,
+   "h": 886,
+   "x": 3290,
+   "y": 1088
   },
   {
    "file": "L1Dark.html",
@@ -251,7 +399,7 @@
    "w": 390,
    "h": 844,
    "x": 0,
-   "y": 2219
+   "y": 2301
   },
   {
    "file": "S1Dark.html",
@@ -260,7 +408,7 @@
    "w": 390,
    "h": 844,
    "x": 0,
-   "y": 2219
+   "y": 2301
   }
  ],
  "annotations": [],

@@ -7,7 +7,8 @@ A board's frame on the wall is max(844, its content), so a longer Khmer screen i
 import glob, io, json, os, re, subprocess
 HERE = os.path.dirname(os.path.abspath(__file__))
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-boards = sorted(f for f in glob.glob(os.path.join(HERE, "*.html")) if re.match(r"^[LS]\d", os.path.basename(f)))
+# The board list comes from canvas.json, never a filename pattern: a pattern silently skipped every new prefix once.
+boards = [os.path.join(HERE, b["file"]) for b in json.load(io.open(os.path.join(HERE, "canvas.json"), encoding="utf-8"))["artboards"]]
 probe = "<!doctype html><meta charset=utf-8><body>" + "".join(
     '<iframe src="%s" style="width:390px;height:400px;border:0" data-f="%s"></iframe>' % (os.path.basename(f), os.path.basename(f)) for f in boards
 ) + """<pre id=out></pre><script>

@@ -102,6 +102,18 @@ h1{font-size:26px;line-height:1.2;margin:14px 0 6px;letter-spacing:-.015em}
 .dots i{flex:none;width:6px;height:6px;border-radius:50%;background:var(--ink-faint);margin:9px 6px 0}
 .pill{flex:none;font-size:12px;border:1px solid var(--line-strong);border-radius:999px;padding:3px 10px;color:var(--ink-dim)}
 .pill.on{border-color:var(--accent);color:var(--accent);font-weight:600}
+.hr{display:flex;align-items:center;gap:8px}
+.prod{font-size:12px;font-weight:600;color:var(--accent);border:1px solid var(--edge);border-radius:999px;padding:2px 8px;vertical-align:3px;margin-left:4px}
+.sharebtn{display:grid;place-items:center;width:32px;height:32px;border:1px solid var(--line-strong);border-radius:50%;color:var(--ink)}
+.lim{font-size:12.5px;color:var(--ink-faint);margin-top:4px}
+.radio{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:14px;border-top:1px solid var(--line)}
+.radio:first-of-type{border-top:0}
+.radio i{flex:none;width:18px;height:18px;border-radius:50%;border:2px solid var(--line-strong)}
+.radio.on i{border:6px solid var(--accent)}
+.tabs{display:flex;gap:4px;overflow:hidden;border-bottom:1px solid var(--line);margin:8px -20px 0;padding:0 20px}
+.tabs span{font-size:13px;padding:8px 8px;color:var(--ink-dim);white-space:nowrap}
+.tabs span.on{color:var(--ink);font-weight:600;box-shadow:inset 0 -2px 0 var(--accent)}
+.big{font-size:30px;font-weight:600;letter-spacing:-.02em;margin:2px 0 4px}
 footer{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);
   padding-top:14px;margin-top:20px;color:var(--ink-faint);font-size:11.5px}
 """
@@ -126,6 +138,22 @@ def heart(cx, cy, k=1.0, fill="var(--accent)"):
     return ('<path transform="translate(%s %s) scale(%s) translate(-12.7237 -11.2776)" d="%s" fill="%s"/>'
             % (cx, cy, round(k * .8, 3), EMBLEM, fill))
 
+
+def person(cx, cy, top, skin, hair, piece, s=1.0):
+    """A DRAWN figure (art, never a real or identifiable person): ground circle, shoulders, head, hair, one piece."""
+    g = ['<g transform="translate(%s %s) scale(%s)">' % (cx, cy, s),
+         '<circle cx="0" cy="0" r="34" fill="var(--surface-2)" stroke="var(--line)" stroke-width="1.5"/>',
+         '<path d="M-23 30 C-23 10 -13 4 0 4 C13 4 23 10 23 30 A34 34 0 0 1 -23 30 Z" fill="%s"/>' % top,
+         '<circle cx="0" cy="-8" r="13" fill="%s"/>' % skin]
+    if piece == "bun":
+        g += ['<path d="M-13 -9 C-13 -24 13 -24 13 -9 C8 -16 -8 -16 -13 -9 Z" fill="%s"/>' % hair, '<circle cx="0" cy="-26" r="6" fill="%s"/>' % hair]
+    elif piece == "cap":
+        g += ['<path d="M-14 -10 C-14 -26 14 -26 14 -10 Z" fill="%s"/>' % top, '<path d="M2 -12 h18 v4 h-18 Z" fill="%s"/>' % top]
+    else:  # pigtails
+        g += ['<path d="M-13 -8 C-13 -23 13 -23 13 -8 C8 -15 -8 -15 -13 -8 Z" fill="%s"/>' % hair,
+              '<circle cx="-16" cy="-6" r="5" fill="%s"/>' % hair, '<circle cx="16" cy="-6" r="5" fill="%s"/>' % hair]
+    g.append('</g>')
+    return "".join(g)
 
 # ── spot drawings (flat, from the tokens; one per info card) ──────────────────────────────────────────────────────
 def spot(kind):
@@ -170,6 +198,8 @@ def sunflower(px=72):
     return "".join(r)
 
 
+SHARE = ('<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" '
+         'stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>')
 KEY = ('<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="12" r="5" fill="none" '
        'stroke="currentColor" stroke-width="2.4"/><path d="M13 12h9M19 12v4M16 12v3" stroke="currentColor" '
        'stroke-width="2.4" stroke-linecap="round"/></svg>')
@@ -226,7 +256,7 @@ T = {
   "s7_h": "What this record shows", "s7_has": "This record carries",
   "s7_has_i": ("A passkey on an approved phone or computer, unlocked by its owner at the moment of signing",
                "The file's fingerprint, which matches only this picture",
-               "The time, anchored to Bitcoin every day",
+               "The time, stamped by independent timestamp authorities and anchored to Bitcoin",
                "Co-signatures from independent witnesses, so the log can't be quietly changed"),
   "s7_not": "What a record can't show", "s7_not_i": ("Who imagined the work", "That this person holds only one account"),
   "s7_today": "What HeartBank® can prove today",
@@ -296,7 +326,7 @@ T = {
   "s7_h": "អ្វីដែលកំណត់ត្រានេះបង្ហាញ", "s7_has": "កំណត់ត្រានេះមាន",
   "s7_has_i": ("passkey នៅលើទូរសព្ទ ឬកុំព្យូទ័រដែលបានអនុម័ត ដែលម្ចាស់បានបើកនៅពេលចុះហត្ថលេខា",
                "ស្នាមម្រាមដៃឌីជីថលរបស់ឯកសារ ដែលត្រូវគ្នាតែនឹងរូបភាពនេះប៉ុណ្ណោះ",
-               "ពេលវេលា ដែលបានភ្ជាប់ទៅ Bitcoin រៀងរាល់ថ្ងៃ",
+               "ពេលវេលា ដែលបានបោះត្រាដោយអាជ្ញាធរបោះត្រាពេលវេលាឯករាជ្យ ហើយភ្ជាប់ទៅ Bitcoin",
                "ហត្ថលេខារួមពីសាក្សីឯករាជ្យ ដើម្បីកុំឱ្យបញ្ជីអាចត្រូវបានប្ដូរដោយស្ងាត់ៗ"),
   "s7_not": "អ្វីដែលកំណត់ត្រាមិនអាចបង្ហាញ", "s7_not_i": ("អ្នកណាជាអ្នកគិតស្នាដៃនេះ", "ថាមនុស្សនេះមានគណនីតែមួយប៉ុណ្ណោះ"),
   "s7_today": "អ្វីដែល HeartBank® អាចបង្ហាញភស្តុតាងបាននៅថ្ងៃនេះ",
@@ -320,6 +350,121 @@ T = {
   "s6_btn": "ចុះហត្ថលេខាលើសេចក្ដីថ្លែងរបស់ខ្ញុំ",
  },
 }
+
+# ── the third-party editor drawn in the Sign screens. ⚠️ A REAL business (Kim's): it stays only with her yes;
+#    otherwise set a made-up name here and every board follows. ─────────────────────────────────────────────
+EDITOR = "dpixxi"
+for _lang in T:
+    for _k, _v in list(T[_lang].items()):
+        if isinstance(_v, str):
+            T[_lang][_k] = _v.replace("dpixxi", EDITOR)
+
+O = {
+ "en": {
+  "o_prod": "B-Origin℠", "o_share": "Share",
+  "o1_h": "Check a file", "o1_lede": "See what a picture carries about where it came from. Free, and we keep nothing.",
+  "o1_drop": "sunflower.png · checked just now",
+  "o1_has": "What this file carries",
+  "o1_rec": "A B-Origin record", "o1_recv": "Signed with a HeartBank® passkey · 25 Oct 2026 · Digital creation · CC BY 4.0",
+  "o1_recl": "A record shows who signed it, not who imagined it.",
+  "o1_c2pa": "Content credentials (C2PA)", "o1_c2pav": "Signed inside the file by HeartBank®: the same record.",
+  "o1_c2pal": "It says what the signer declared.",
+  "o1_iptc": "The file's own label", "o1_iptcv": "Digital creation", "o1_iptcl": "Anyone can write this field.",
+  "o1_more": "What this record shows ›",
+  "o1_btn": "Check another file", "o1_no": "Sign your own file",
+  "o1_fine": "Files are read in a sealed sandbox and deleted at once.",
+  "o2_h": "Sign your own file", "o2_lede": "Put your name to a picture you made. Free, always.",
+  "o2_how": "How was it made?",
+  "o2_opts": ("Digital creation", "Digital capture sampled from real life", "Human-edited media", "Edited using Generative AI",
+              "Composite including generative AI elements", "Created using Generative AI"),
+  "o2_says": "Your record will say: the signer says \u201cDigital creation\u201d.",
+  "o2_rh": "Share it under", "o2_btn": "Sign with HeartBank®",
+  "o2_fine": "Your file never leaves this device. Only its fingerprint is sent.",
+  "o3_h": "Pricing", "o3_lede": "Free for people. Pay as you go for businesses that call the API.",
+  "o3_free": "Free, forever", "o3_free_i": ("Checking a file at origin.333.eco", "Signing your own file",
+              "The verify package: records and signatures, checked offline", "Looking up any record"),
+  "o3_paid": "Pay as you go", "o3_paid_i": (("B-Trace check by API", "[price to be set] per file"),
+              ("Signed records from your app", "[price to be set] per record")),
+  "o3_cred": "Prepay credits, from $5. They never expire, and unused credits are refunded on request.",
+  "o3_never": "No one ever pays to be proven human.", "o3_btn": "Log in with HeartBank® to start",
+  "o_dash": "dpixxi", "o_nav": ("Overview", "Keys", "Credits", "Packages", "Team"),
+  "o4_h": "Overview", "o4_cred": "Credits", "o4_credv": "$18.40", "o4_credl": "Auto-reload is off.",
+  "o4_use": "This month", "o4_use_i": (("Signed records from your app", "1,204"), ("B-Trace checks", "312")),
+  "o4_fine": "Your users' names never reach this page. Each person has an ID that only your app can use.",
+  "o5_h": "API keys", "o5_new": "Your new key", "o5_key": "b333_live_7Qe…  ●●●●●●●●●●●●  …x2Lk",
+  "o5_once": "Copy it now. We keep only a fingerprint of it, so we can't show it again.", "o5_copy": "Copy key",
+  "o5_list": "Keys", "o5_k": (("Editor export", "Can: sign records · Last used today"), ("Gallery check", "Can: B-Trace, verify · Last used 23 Oct")),
+  "o5_revoke": "Revoke", "o5_btn": "Create a key",
+  "o6_h": "Prepay credits", "o6_lede": "Credits pay for B-Trace checks and signed records from your app.",
+  "o6_amt": ("$5", "$20", "$100", "Other"), "o6_ah": "Amount",
+  "o6_never": "Credits never expire. You can get unused credits back at any time.",
+  "o6_auto": "Auto-reload", "o6_autos": "Off. If you turn it on, you also set a monthly most it can add.",
+  "o6_zero": "When credits reach zero, paid calls stop with a clear error. Nothing is charged on credit.",
+  "o6_btn": "Prepay $20",
+  "o7_h": "Packages", "o7_lede": "Two packages on npm, each published with a verified build record.",
+  "o7_v": ("@333eco/origin-verify", "Free forever", "npm install @333eco/origin-verify",
+           "Reads a file or a hash and returns what it carries. Checks records and signatures offline."),
+  "o7_a": ("@333eco/origin-attest", "Uses credits", "npm install @333eco/origin-attest",
+           "Hashes the file, opens Sign with HeartBank®, and returns the record. Can add content credentials."),
+  "o7_docs": "Read the docs ›",
+  "o8_h": "Team", "o8_lede": "People who can manage this account. Each logs in with their own HeartBank® passkey.",
+  "o8_m": (("You", "Owner"), ("@sora", "Developer: keys and packages"), ("@nita", "Billing: credits only")),
+  "o8_inv": "Invite by @handle", "o8_invv": "@", "o8_btn": "Send invite",
+ },
+ "km": {
+  "o_prod": "B-Origin℠", "o_share": "ចែករំលែក",
+  "o1_h": "ពិនិត្យឯកសារ", "o1_lede": "មើលថារូបភាពមួយមានព័ត៌មានអ្វីខ្លះអំពីប្រភពរបស់វា។ ឥតគិតថ្លៃ ហើយយើងមិនរក្សាទុកអ្វីទេ។",
+  "o1_drop": "sunflower.png · ទើបពិនិត្យរួច",
+  "o1_has": "អ្វីដែលឯកសារនេះមាន",
+  "o1_rec": "កំណត់ត្រា B-Origin", "o1_recv": "ចុះហត្ថលេខាដោយ passkey HeartBank® · ២៥ តុលា ២០២៦ · ការបង្កើតឌីជីថល · CC BY 4.0",
+  "o1_recl": "កំណត់ត្រាបង្ហាញថាអ្នកណាបានចុះហត្ថលេខា មិនមែនអ្នកណាជាអ្នកគិតវាឡើងទេ។",
+  "o1_c2pa": "ព័ត៌មានប្រភពខ្លឹមសារ (C2PA)", "o1_c2pav": "ចុះហត្ថលេខាក្នុងឯកសារដោយ HeartBank®៖ ជាកំណត់ត្រាដដែល។",
+  "o1_c2pal": "វានិយាយតាមអ្វីដែលអ្នកចុះហត្ថលេខាបានប្រកាស។",
+  "o1_iptc": "ស្លាកផ្ទាល់របស់ឯកសារ", "o1_iptcv": "ការបង្កើតឌីជីថល", "o1_iptcl": "អ្នកណាក៏អាចសរសេរក្នុងវាលនេះបាន។",
+  "o1_more": "អ្វីដែលកំណត់ត្រានេះបង្ហាញ ›",
+  "o1_btn": "ពិនិត្យឯកសារផ្សេងទៀត", "o1_no": "ចុះហត្ថលេខាលើឯកសាររបស់អ្នក",
+  "o1_fine": "ឯកសារត្រូវបានអានក្នុងកន្លែងបិទជិត ហើយលុបចោលភ្លាមៗ។",
+  "o2_h": "ចុះហត្ថលេខាលើឯកសាររបស់អ្នក", "o2_lede": "ដាក់ឈ្មោះរបស់អ្នកលើរូបភាពដែលអ្នកបានបង្កើត។ ឥតគិតថ្លៃ ជានិច្ច។",
+  "o2_how": "តើវាត្រូវបានបង្កើតដោយរបៀបណា?",
+  "o2_opts": ("ការបង្កើតឌីជីថល", "ថតពីជីវិតពិតដោយឌីជីថល", "ប្រព័ន្ធផ្សព្វផ្សាយដែលមនុស្សកែសម្រួល", "កែសម្រួលដោយប្រើ AI បង្កើតខ្លឹមសារ",
+              "ការផ្សំដែលមានធាតុពី AI បង្កើតខ្លឹមសារ", "បង្កើតដោយប្រើ AI បង្កើតខ្លឹមសារ"),
+  "o2_says": "កំណត់ត្រារបស់អ្នកនឹងសរសេរថា៖ អ្នកចុះហត្ថលេខានិយាយថា «ការបង្កើតឌីជីថល»។",
+  "o2_rh": "ចែករំលែកក្រោម", "o2_btn": "ចុះហត្ថលេខាជាមួយ HeartBank®",
+  "o2_fine": "ឯកសាររបស់អ្នកមិនដែលចេញពីឧបករណ៍នេះទេ។ មានតែស្នាមម្រាមដៃឌីជីថលរបស់វាប៉ុណ្ណោះដែលត្រូវបានផ្ញើ។",
+  "o3_h": "តម្លៃ", "o3_lede": "ឥតគិតថ្លៃសម្រាប់មនុស្ស។ បង់តាមការប្រើប្រាស់សម្រាប់អាជីវកម្មដែលហៅ API។",
+  "o3_free": "ឥតគិតថ្លៃ ជារៀងរហូត", "o3_free_i": ("ការពិនិត្យឯកសារនៅ origin.333.eco", "ការចុះហត្ថលេខាលើឯកសាររបស់អ្នក",
+              "កញ្ចប់ verify៖ ពិនិត្យកំណត់ត្រា និងហត្ថលេខា ដោយគ្មានអ៊ីនធឺណិត", "ការស្វែងរកកំណត់ត្រាណាមួយ"),
+  "o3_paid": "បង់តាមការប្រើប្រាស់", "o3_paid_i": (("ការពិនិត្យ B-Trace តាម API", "[តម្លៃនឹងកំណត់] ក្នុងមួយឯកសារ"),
+              ("កំណត់ត្រាដែលបានចុះហត្ថលេខាពីកម្មវិធីរបស់អ្នក", "[តម្លៃនឹងកំណត់] ក្នុងមួយកំណត់ត្រា")),
+  "o3_cred": "បង់ទុកជាមុនជាក្រេឌីត ចាប់ពី $5។ ក្រេឌីតមិនផុតកំណត់ទេ ហើយក្រេឌីតដែលមិនបានប្រើនឹងសងវិញនៅពេលអ្នកស្នើ។",
+  "o3_never": "គ្មាននរណាម្នាក់ត្រូវបង់ប្រាក់ដើម្បីបង្ហាញថាខ្លួនជាមនុស្សឡើយ។", "o3_btn": "ចូលជាមួយ HeartBank® ដើម្បីចាប់ផ្ដើម",
+  "o_dash": "dpixxi", "o_nav": ("ទិដ្ឋភាពទូទៅ", "កូនសោ", "ក្រេឌីត", "កញ្ចប់", "ក្រុម"),
+  "o4_h": "ទិដ្ឋភាពទូទៅ", "o4_cred": "ក្រេឌីត", "o4_credv": "$18.40", "o4_credl": "ការបញ្ចូលស្វ័យប្រវត្តិ ត្រូវបានបិទ។",
+  "o4_use": "ខែនេះ", "o4_use_i": (("កំណត់ត្រាដែលបានចុះហត្ថលេខាពីកម្មវិធីរបស់អ្នក", "1,204"), ("ការពិនិត្យ B-Trace", "312")),
+  "o4_fine": "ឈ្មោះអ្នកប្រើរបស់អ្នកមិនដែលមកដល់ទំព័រនេះទេ។ មនុស្សម្នាក់ៗមានលេខសម្គាល់ដែលមានតែកម្មវិធីរបស់អ្នកប៉ុណ្ណោះអាចប្រើ។",
+  "o5_h": "កូនសោ API", "o5_new": "កូនសោថ្មីរបស់អ្នក", "o5_key": "b333_live_7Qe…  ●●●●●●●●●●●●  …x2Lk",
+  "o5_once": "ចម្លងវាឥឡូវនេះ។ យើងរក្សាទុកតែស្នាមម្រាមដៃរបស់វា ដូច្នេះយើងមិនអាចបង្ហាញវាម្ដងទៀតបានទេ។", "o5_copy": "ចម្លងកូនសោ",
+  "o5_list": "កូនសោ", "o5_k": (("ការនាំចេញពីកម្មវិធីកែ", "អាច៖ ចុះហត្ថលេខាកំណត់ត្រា · ប្រើចុងក្រោយថ្ងៃនេះ"), ("ការពិនិត្យវិចិត្រសាល", "អាច៖ B-Trace, verify · ប្រើចុងក្រោយ ២៣ តុលា")),
+  "o5_revoke": "ដកសិទ្ធិ", "o5_btn": "បង្កើតកូនសោ",
+  "o6_h": "បង់ក្រេឌីតទុកជាមុន", "o6_lede": "ក្រេឌីតបង់សម្រាប់ការពិនិត្យ B-Trace និងកំណត់ត្រាដែលបានចុះហត្ថលេខាពីកម្មវិធីរបស់អ្នក។",
+  "o6_amt": ("$5", "$20", "$100", "ផ្សេងទៀត"), "o6_ah": "ចំនួន",
+  "o6_never": "ក្រេឌីតមិនផុតកំណត់ទេ។ អ្នកអាចយកក្រេឌីតដែលមិនបានប្រើមកវិញបានគ្រប់ពេល។",
+  "o6_auto": "ការបញ្ចូលស្វ័យប្រវត្តិ", "o6_autos": "បិទ។ ប្រសិនបើអ្នកបើកវា អ្នកក៏កំណត់ចំនួនអតិបរមាក្នុងមួយខែដែលវាអាចបញ្ចូលផងដែរ។",
+  "o6_zero": "នៅពេលក្រេឌីតអស់ ការហៅដែលត្រូវបង់ប្រាក់នឹងឈប់ ដោយមានសារច្បាស់លាស់។ គ្មានអ្វីត្រូវបានគិតជាឥណទានទេ។",
+  "o6_btn": "បង់ទុកជាមុន $20",
+  "o7_h": "កញ្ចប់", "o7_lede": "កញ្ចប់ពីរនៅលើ npm ដែលនីមួយៗបោះពុម្ពជាមួយកំណត់ត្រាការសាងសង់ដែលបានផ្ទៀងផ្ទាត់។",
+  "o7_v": ("@333eco/origin-verify", "ឥតគិតថ្លៃ ជារៀងរហូត", "npm install @333eco/origin-verify",
+           "អានឯកសារ ឬស្នាមម្រាមដៃ ហើយប្រាប់ពីអ្វីដែលវាមាន។ ពិនិត្យកំណត់ត្រា និងហត្ថលេខា ដោយគ្មានអ៊ីនធឺណិត។"),
+  "o7_a": ("@333eco/origin-attest", "ប្រើក្រេឌីត", "npm install @333eco/origin-attest",
+           "គណនាស្នាមម្រាមដៃរបស់ឯកសារ បើក Sign with HeartBank® ហើយប្រគល់កំណត់ត្រាមកវិញ។ អាចបន្ថែមព័ត៌មានប្រភពខ្លឹមសារបាន។"),
+  "o7_docs": "អានឯកសារណែនាំ ›",
+  "o8_h": "ក្រុម", "o8_lede": "មនុស្សដែលអាចគ្រប់គ្រងគណនីនេះ។ ម្នាក់ៗចូលដោយ passkey HeartBank® ផ្ទាល់ខ្លួន។",
+  "o8_m": (("អ្នក", "ម្ចាស់"), ("@sora", "អ្នកអភិវឌ្ឍន៍៖ កូនសោ និងកញ្ចប់"), ("@nita", "វិក្កយបត្រ៖ ក្រេឌីតប៉ុណ្ណោះ")),
+  "o8_inv": "អញ្ជើញតាម @handle", "o8_invv": "@", "o8_btn": "ផ្ញើការអញ្ជើញ",
+ },
+}
+for _lang in O:
+    T[_lang].update(O[_lang])
 
 # ── screens ──────────────────────────────────────────────────────────────────────────────────────────────────────
 def frm(t, site, mono):
@@ -361,7 +506,7 @@ def L6(t):
             + sec(t["l6_wk"], [t["l6_wk1"]]) + sec(t["l6_q"], [t["l6_q1"]]))
 def S1(t):
     chips = "".join('<span class="chip%s">%s</span>' % (" on" if i == 1 else "", c) for i, c in enumerate(t["s1_r"]))
-    return (frm(t, t["s_from"], "dp") + "<h1>%s</h1><p class='lede'>%s</p>" % (t["s1_h"], t["s1_lede"])
+    return (frm(t, t["s_from"], EDITOR[:2]) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["s1_h"], t["s1_lede"])
             + '<div class="card"><div class="thumb">%s<dl class="kv"><dt>%s</dt><dd class="mono">sunflower.png</dd>'
               '<dt>%s</dt><dd><b>%s</b></dd><dt>%s</dt><dd>%s</dd></dl></div><p class="fine">%s</p></div>'
               % (sunflower(), t["s1_kvf"], t["s1_kvm"], t["s1_kvmv"], t["s1_kvt"], t["s1_kvtv"], t["s1_hint"])
@@ -400,6 +545,76 @@ def S7(t):
             + '<div class="card"><h2>%s</h2>%s<p class="fine">%s</p></div>' % (t["s7_today"], today, t["s7_fine"])
             + btns(t["s7_btn"]).replace('class="btn"', 'class="btn ghost"') + '</div>')
 
+def _rec_row(t, title, val, limit, more=None):
+    return ('<div class="row" style="display:block"><div class="t"><b>%s</b></div><div class="s">%s</div>'
+            '<div class="lim">%s</div>%s</div>' % (title, val, limit, '<p class="more">%s</p>' % more if more else ""))
+def O1(t):
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (t["o1_h"], t["o1_lede"])
+            + '<div class="card"><div class="thumb">%s<div><div class="t"><b>%s</b></div></div></div></div>' % (sunflower(56), t["o1_drop"])
+            + '<h2 class="sh">%s</h2>' % t["o1_has"]
+            + '<div class="card">%s%s%s</div>' % (_rec_row(t, t["o1_rec"], t["o1_recv"], t["o1_recl"], t["o1_more"]),
+                                                 _rec_row(t, t["o1_c2pa"], t["o1_c2pav"], t["o1_c2pal"]),
+                                                 _rec_row(t, t["o1_iptc"], t["o1_iptcv"], t["o1_iptcl"]))
+            + '<div class="grow"></div>' + btns(t["o1_btn"], t["o1_no"]) + '<p class="fine">%s</p>' % t["o1_fine"])
+def O2(t):
+    opts = "".join('<div class="radio%s"><i></i>%s</div>' % (" on" if i == 0 else "", o) for i, o in enumerate(t["o2_opts"]))
+    chips = "".join('<span class="chip%s">%s</span>' % (" on" if i == 1 else "", c) for i, c in enumerate(t["s1_r"]))
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (t["o2_h"], t["o2_lede"])
+            + '<div class="card"><div class="thumb">%s<div class="mono">sunflower.png</div></div></div>' % sunflower(48)
+            + '<div class="card"><h2>%s</h2>%s<p class="fine">%s</p></div>' % (t["o2_how"], opts, t["o2_says"])
+            + '<div class="card"><h2>%s</h2><div class="chips">%s</div></div>' % (t["o2_rh"], chips)
+            + '<div class="grow"></div>' + btns(t["o2_btn"], key=True) + '<p class="fine">%s</p>' % t["o2_fine"])
+def O3(t):
+    ok = '<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="var(--accent)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    free = "".join('<li>%s<span>%s</span></li>' % (ok, x) for x in t["o3_free_i"])
+    paid = "".join('<div class="row"><div class="t">%s</div><span class="s">%s</span></div>' % (a, b) for a, b in t["o3_paid_i"])
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (t["o3_h"], t["o3_lede"])
+            + '<div class="card"><h2>%s</h2><ul class="ticks">%s</ul></div>' % (t["o3_free"], free)
+            + '<div class="card"><h2>%s</h2>%s<p class="fine">%s</p></div>' % (t["o3_paid"], paid, t["o3_cred"])
+            + '<div class="note">%s</div>' % t["o3_never"]
+            + '<div class="grow"></div>' + btns(t["o3_btn"], key=True))
+def _nav(t, on):
+    return '<div class="tabs">%s</div>' % "".join('<span%s>%s</span>' % (' class="on"' if i == on else "", x) for i, x in enumerate(t["o_nav"]))
+def _acct(t):
+    return '<div class="from"><span class="site"><i>%s</i>%s</span></div>' % (EDITOR[:2], t["o_dash"])
+def O4(t):
+    use = "".join('<div class="row"><div class="t">%s</div><b>%s</b></div>' % (a, b) for a, b in t["o4_use_i"])
+    return (_acct(t) + _nav(t, 0) + "<h1>%s</h1>" % t["o4_h"]
+            + '<div class="card"><h2>%s</h2><div class="big">%s</div><p>%s</p></div>' % (t["o4_cred"], t["o4_credv"], t["o4_credl"])
+            + '<div class="card"><h2>%s</h2>%s</div>' % (t["o4_use"], use)
+            + '<div class="note">%s</div>' % t["o4_fine"])
+def O5(t):
+    keys = "".join('<div class="row"><div><div class="t">%s</div><div class="s">%s</div></div><span class="s">%s</span></div>'
+                   % (a, b, t["o5_revoke"]) for a, b in t["o5_k"])
+    return (_acct(t) + _nav(t, 1) + "<h1>%s</h1>" % t["o5_h"]
+            + '<div class="card" style="border-color:var(--accent)"><h2>%s</h2><div class="field mono">%s</div><p class="fine">%s</p>%s</div>'
+              % (t["o5_new"], t["o5_key"], t["o5_once"], '<button class="btn">%s</button>' % t["o5_copy"])
+            + '<div class="card"><h2>%s</h2>%s</div>' % (t["o5_list"], keys)
+            + '<div class="grow"></div>' + btns(t["o5_btn"]).replace('class="btn"', 'class="btn ghost"'))
+def O6(t):
+    amt = "".join('<span class="chip%s">%s</span>' % (" on" if i == 1 else "", a) for i, a in enumerate(t["o6_amt"]))
+    return (_acct(t) + _nav(t, 2) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["o6_h"], t["o6_lede"])
+            + '<div class="card"><h2>%s</h2><div class="chips">%s</div><p class="fine">%s</p></div>' % (t["o6_ah"], amt, t["o6_never"])
+            + '<div class="card"><div class="row"><div><div class="t">%s</div><div class="s">%s</div></div><span class="tog"></span></div></div>'
+              % (t["o6_auto"], t["o6_autos"])
+            + '<div class="note">%s</div>' % t["o6_zero"]
+            + '<div class="grow"></div>' + btns(t["o6_btn"]))
+def O7(t):
+    def pk(x):
+        return ('<div class="card"><div class="row" style="border:0;padding-top:0"><b class="mono">%s</b><span class="pill on">%s</span></div>'
+                '<div class="field mono">%s</div><p style="margin-top:10px">%s</p></div>' % x)
+    return (_acct(t) + _nav(t, 3) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["o7_h"], t["o7_lede"])
+            + pk(t["o7_v"]) + pk(t["o7_a"]) + '<p class="more">%s</p>' % t["o7_docs"])
+def O8(t):
+    ppl = [person(0, 0, "var(--accent)", "#c99a6e", "#2a1d17", "bun", .55), person(0, 0, "#4f7a62", "#b98a63", "#2a1d17", "cap", .55),
+           person(0, 0, "#c0603f", "#e0b48a", "#2a1d17", "pigtails", .55)]
+    rows = "".join('<div class="row"><div class="thumb"><svg width="40" height="40" viewBox="-20 -20 40 40" aria-hidden="true">%s</svg>'
+                   '<div><div class="t">%s</div><div class="s">%s</div></div></div></div>' % (ppl[i], a, b) for i, (a, b) in enumerate(t["o8_m"]))
+    return (_acct(t) + _nav(t, 4) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["o8_h"], t["o8_lede"])
+            + '<div class="card">%s</div>' % rows
+            + '<div class="card"><h2>%s</h2><div class="field mono">%s</div></div>' % (t["o8_inv"], t["o8_invv"])
+            + '<div class="grow"></div>' + btns(t["o8_btn"]))
+
 SCREENS = [  # (id, page, title, render)
     ("L1", "login", "Log in", L1), ("L2", "login", "Make a passkey", L2), ("L3", "login", "Under 18", L3),
     ("L4", "login", "What a site may know", L4), ("L5", "login", "Logged in: add a second passkey", L5),
@@ -407,7 +622,11 @@ SCREENS = [  # (id, page, title, render)
     ("S1", "sign", "Sign a file", S1), ("S2", "sign", "Signed", S2), ("S7", "sign", "What this record shows (sheet)", S7), ("S3", "sign", "Withdraw a record", S3),
     ("S4", "sign", "A device lost or stolen", S4), ("S5", "sign", "Bring your works back", S5),
     ("S6", "sign", "Dispute a record", S6),
+    ("O1", "origin", "Check a file (B-Trace)", O1), ("O2", "origin", "Sign your own file", O2), ("O3", "origin", "Pricing", O3),
+    ("O4", "origin", "Dashboard: overview", O4), ("O5", "origin", "Dashboard: API keys", O5),
+    ("O6", "origin", "Dashboard: prepay credits", O6), ("O7", "origin", "Dashboard: packages", O7), ("O8", "origin", "Dashboard: team", O8),
 ]
+PUBLIC = {"O1", "O2", "O3"}  # public portal pages: a share button in the header (Default 8); auth pages get none
 
 
 def page(sid, render, lang, dark=False):
@@ -431,14 +650,15 @@ def page(sid, render, lang, dark=False):
 </head>
 <body>
 %s<div class="app">
-<header>%s<span class="seg">%s</span></header>
+<header>%s<span class="hr"><span class="seg">%s</span>%s</span></header>
 %s
 <footer><span>%s</span><span class="seg">%s</span></footer>
 </div>
 </body>
 </html>
 """ % ("km" if lang == "km" else "en", "km" if lang == "km" else "en", " dark" if dark else "", W, sid,
-       '<div class="band">%s</div>' % t["band"] if t["band"] else "", mark(), langs, body, t["foot"], themes))
+       '<div class="band">%s</div>' % t["band"] if t["band"] else "", mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid.startswith("O") else ""),
+       langs, ('<span class="sharebtn" aria-label="%s">%s</span>' % (t["o_share"], SHARE)) if sid in PUBLIC else "", body, t["foot"], themes))
 
 
 def main():
@@ -451,8 +671,8 @@ def main():
     def hh(f): return max(H, int(hts.get(f, H)))
     tall_en = max([H] + [int(v) for k, v in hts.items() if not k.endswith("Km.html")])
     tall_km = max([H] + [int(v) for k, v in hts.items() if k.endswith("Km.html")])
-    boards, col = [], {"login": 0, "sign": 0}
-    pages = [{"id": "login", "name": "Log in with HeartBank®"}, {"id": "sign", "name": "Sign with HeartBank®"}]
+    boards, col = [], {"login": 0, "sign": 0, "origin": 0}
+    pages = [{"id": "login", "name": "Log in with HeartBank®"}, {"id": "sign", "name": "Sign with HeartBank®"}, {"id": "origin", "name": "origin.333.eco"}]
     rowy = {"en": 0, "km": tall_en + 160}
     for sid, pg, title, render in SCREENS:
         for lang in ("en", "km"):
