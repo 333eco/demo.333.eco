@@ -65,7 +65,7 @@ small{display:block;margin-top:2rem;color:var(--dim)}</style>
 <main>
 <div class="top"><button type="button" class="share" id="share" aria-label="Share this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>Share</button></div>
 <h1>Log in and Sign with HeartBank&#174;: drawings</h1>
-<p>The estate's identity layer: <b>Log in</b> at login.333.eco proves who you are; <b>Sign</b> at B.333.eco puts your name to one file. Then <b>origin.333.eco</b>: check a file, sign your own, pricing, and the dashboard for businesses. English and Khmer, with a dark pass. Prices are placeholders.</p>
+<p>The estate's identity layer: <b>Log in</b> at login.333.eco proves who you are; <b>Sign</b> at B.333.eco puts your name to one file. Then <b>origin.333.eco</b>: check a file, sign your own, pricing, and the dashboard for businesses. And <b>explorer.333.eco</b>: the public logs, checkpoint by checkpoint. English and Khmer, with a dark pass. Prices are placeholders.</p>
 <a class="start" href="wall.html"><b>Start here</b><br>Every screen on one wall. Drag to pan, pinch to zoom, tap a screen to open it.</a>
 <ul>%s</ul>
 <small>These are drawings. They charge nobody, and nothing here is live. The Khmer is our own placeholder until a native reader approves it. Hidden from search by named crawler; shareable by link. This site counts visits without cookies.</small>

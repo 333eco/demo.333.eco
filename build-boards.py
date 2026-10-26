@@ -116,6 +116,12 @@ h1{font-size:26px;line-height:1.2;margin:14px 0 6px;letter-spacing:-.015em}
 .big{font-size:30px;font-weight:600;letter-spacing:-.02em;margin:2px 0 4px}
 .code{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:12.5px/1.55 var(--font-mono);white-space:pre;overflow:hidden;margin:0 0 12px}
 .sm{font-size:.55em;vertical-align:.6em;line-height:0;margin-left:.04em}
+.chain{position:relative;margin:4px 0 8px}
+.chain::before{content:"";position:absolute;left:13px;top:14px;bottom:14px;width:2px;background:var(--line-strong)}
+.blk{position:relative;display:flex;gap:12px;padding:8px 0}
+.cube{flex:none;width:28px;height:28px;border-radius:7px;background:var(--accent);box-shadow:inset 0 0 0 3px color-mix(in oklab,var(--accent) 55%,#fff);margin-top:2px}
+.bt{flex:1;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:10px 12px}
+.bt .chips .pill{font-size:11px;padding:2px 8px}
 footer{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);
   padding-top:14px;margin-top:20px;color:var(--ink-faint);font-size:11.5px}
 """
@@ -372,6 +378,30 @@ for _lang in T:
 O = {
  "en": {
   "o_prod": "B-Origin℠", "o_share": "Share",
+  "e_prod": "Explorer", "e_tabs": ("Origin", "Ledger"), "e_foot": "explorer.333.eco · read-only · every check runs in your browser",
+  "e_search": "Record ID, file fingerprint, or drop a file",
+  "e1_h": "B-Origin records", "e1_lede": "Every hour the log seals a checkpoint, stamps it three ways, and has outside witnesses sign it. Anyone can check any of it.",
+  "e_cp": "Checkpoint", "e_recs": "records", "e_tsa": "3 timestamps", "e_wit": "4 witnesses", "e_btc": "Bitcoin", "e_pend": "Bitcoin: pending",
+  "e1_rows": (("#18,204", "26 Oct, 2:00 pm", "61,903", False), ("#18,203", "26 Oct, 1:00 pm", "61,877", False),
+              ("#18,190", "25 Oct, 11:00 pm", "61,511", True), ("#18,189", "25 Oct, 10:00 pm", "61,480", True)),
+  "e1_how": "How to check this yourself ›",
+  "e2_h": "Checkpoint #18,190", "e2_lede": "25 Oct 2026, 11:00 pm · 61,511 records",
+  "e2_kv": (("Root", "9f3a 77c1 e0d4 … 2b6a"), ("Previous", "#18,189 · 41c7 … 0e19"), ("Consistent with previous", "✓ checked in your browser")),
+  "e2_anch": "Anchors",
+  "e2_a": (("Timestamp authority 1", "EU-qualified · 11:00:04 pm"), ("Timestamp authority 2", "11:00:05 pm"), ("Timestamp authority 3", "11:00:05 pm"),
+           ("Witnesses", "4 of 4 co-signed"), ("Bitcoin", "Block 972,416 · 1:38 am, 26 Oct")),
+  "e2_c1h": "Check it yourself", "e2_c1p": "Download the checkpoint and its proofs, then run the free verify package or any OpenTimestamps and RFC 3161 tool. None of it needs us.",
+  "e3_h": "Record 7f3a 91c2 … c21e", "e3_lede": "In checkpoint #18,204",
+  "e3_kv": (("Signed with", "a HeartBank® passkey"), ("When", "26 Oct 2026, 1:47 pm"), ("How it was made", "Digital creation"),
+            ("Shared under", "CC BY 4.0"), ("File fingerprint", "c8e1 04ab … 9d37")),
+  "e3_proof": "Inclusion proof", "e3_proofp": "12 hashes lead from this record to the checkpoint's root.", "e3_ok": "✓ Checked in your browser",
+  "e3_c1h": "What a record can't show", "e3_c1p": "Who imagined the work. A record shows only who signed it, and when.",
+  "e4_h": "Search", "e4_drop": "sunflower.png · fingerprinted on this device",
+  "e4_res": "1 record matches this file", "e4_row": ("Record 7f3a … c21e", "Signed 26 Oct 2026 · Digital creation"),
+  "e4_fine": "The file was never uploaded. Only its fingerprint was compared.",
+  "e5_h": "Gratitude ledger", "e5_lede": "Thanks are private. This page shows only the proofs that the ledger is whole and has never been rewritten.",
+  "e5_rows": (("#4,410", "26 Oct, 2:00 pm"), ("#4,409", "26 Oct, 1:00 pm"), ("#4,396", "25 Oct, 11:00 pm")),
+  "e5_c1h": "What is never shown here", "e5_c1p": "Who thanked whom, what was given, or how much. Each entry is sealed before it is counted; only its sealed fingerprint enters the tree.",
   "l7_link": "Other ways to log in",
   "l7_h": "Other ways to log in", "l7_lede": "For phones that can't hold a passkey.",
   "l7_e": "Email me a code", "l7_ev": "you@example.com", "l7_s": "Text me a code", "l7_sv": "+855 ·· ··· ···",
@@ -446,6 +476,30 @@ O = {
  },
  "km": {
   "o_prod": "B-Origin℠", "o_share": "ចែករំលែក",
+  "e_prod": "កម្មវិធីរុករក", "e_tabs": ("Origin", "បញ្ជី"), "e_foot": "explorer.333.eco · អានបានតែប៉ុណ្ណោះ · ការពិនិត្យទាំងអស់ដំណើរការក្នុងកម្មវិធីរុករករបស់អ្នក",
+  "e_search": "លេខកំណត់ត្រា ស្នាមម្រាមដៃឯកសារ ឬទម្លាក់ឯកសារ",
+  "e1_h": "កំណត់ត្រា B-Origin", "e1_lede": "រៀងរាល់ម៉ោង បញ្ជីបិទត្រាចំណុចត្រួតពិនិត្យមួយ បោះត្រាពេលវេលាវាតាមបីវិធី ហើយឱ្យសាក្សីខាងក្រៅចុះហត្ថលេខា។ អ្នកណាក៏អាចពិនិត្យវាបាន។",
+  "e_cp": "ចំណុចត្រួតពិនិត្យ", "e_recs": "កំណត់ត្រា", "e_tsa": "ត្រាពេលវេលា ៣", "e_wit": "សាក្សី ៤", "e_btc": "Bitcoin", "e_pend": "Bitcoin៖ កំពុងរង់ចាំ",
+  "e1_rows": (("#18,204", "២៦ តុលា ម៉ោង ២:០០ រសៀល", "61,903", False), ("#18,203", "២៦ តុលា ម៉ោង ១:០០ រសៀល", "61,877", False),
+              ("#18,190", "២៥ តុលា ម៉ោង ១១:០០ យប់", "61,511", True), ("#18,189", "២៥ តុលា ម៉ោង ១០:០០ យប់", "61,480", True)),
+  "e1_how": "របៀបពិនិត្យដោយខ្លួនឯង ›",
+  "e2_h": "ចំណុចត្រួតពិនិត្យ #18,190", "e2_lede": "២៥ តុលា ២០២៦ ម៉ោង ១១:០០ យប់ · កំណត់ត្រា 61,511",
+  "e2_kv": (("ឫស", "9f3a 77c1 e0d4 … 2b6a"), ("មុន", "#18,189 · 41c7 … 0e19"), ("ស្របនឹងមុន", "✓ បានពិនិត្យក្នុងកម្មវិធីរុករករបស់អ្នក")),
+  "e2_anch": "ការភ្ជាប់",
+  "e2_a": (("អាជ្ញាធរបោះត្រាពេលវេលា ១", "មានគុណវុឌ្ឍិ EU · ១១:០០:០៤ យប់"), ("អាជ្ញាធរបោះត្រាពេលវេលា ២", "១១:០០:០៥ យប់"), ("អាជ្ញាធរបោះត្រាពេលវេលា ៣", "១១:០០:០៥ យប់"),
+           ("សាក្សី", "បានចុះហត្ថលេខារួម ៤ ក្នុងចំណោម ៤"), ("Bitcoin", "ប្លុក 972,416 · ១:៣៨ ព្រឹក ២៦ តុលា")),
+  "e2_c1h": "ពិនិត្យដោយខ្លួនឯង", "e2_c1p": "ទាញយកចំណុចត្រួតពិនិត្យ និងភស្តុតាងរបស់វា រួចដំណើរការកញ្ចប់ verify ឥតគិតថ្លៃ ឬឧបករណ៍ OpenTimestamps និង RFC 3161 ណាមួយ។ គ្មានអ្វីត្រូវការយើងទេ។",
+  "e3_h": "កំណត់ត្រា 7f3a 91c2 … c21e", "e3_lede": "ក្នុងចំណុចត្រួតពិនិត្យ #18,204",
+  "e3_kv": (("ចុះហត្ថលេខាដោយ", "passkey HeartBank®"), ("ពេលណា", "២៦ តុលា ២០២៦ ម៉ោង ១:៤៧ រសៀល"), ("របៀបដែលវាត្រូវបានបង្កើត", "ការបង្កើតឌីជីថល"),
+            ("ចែករំលែកក្រោម", "CC BY 4.0"), ("ស្នាមម្រាមដៃឯកសារ", "c8e1 04ab … 9d37")),
+  "e3_proof": "ភស្តុតាងនៃការបញ្ចូល", "e3_proofp": "ស្នាមម្រាមដៃ ១២ នាំពីកំណត់ត្រានេះទៅឫសរបស់ចំណុចត្រួតពិនិត្យ។", "e3_ok": "✓ បានពិនិត្យក្នុងកម្មវិធីរុករករបស់អ្នក",
+  "e3_c1h": "អ្វីដែលកំណត់ត្រាមិនអាចបង្ហាញ", "e3_c1p": "អ្នកណាជាអ្នកគិតស្នាដៃនេះ។ កំណត់ត្រាបង្ហាញតែអ្នកណាបានចុះហត្ថលេខា និងពេលណាប៉ុណ្ណោះ។",
+  "e4_h": "ស្វែងរក", "e4_drop": "sunflower.png · គណនាស្នាមម្រាមដៃនៅលើឧបករណ៍នេះ",
+  "e4_res": "មានកំណត់ត្រា ១ ត្រូវគ្នានឹងឯកសារនេះ", "e4_row": ("កំណត់ត្រា 7f3a … c21e", "ចុះហត្ថលេខា ២៦ តុលា ២០២៦ · ការបង្កើតឌីជីថល"),
+  "e4_fine": "ឯកសារមិនដែលត្រូវបានផ្ទុកឡើងទេ។ មានតែស្នាមម្រាមដៃរបស់វាប៉ុណ្ណោះដែលត្រូវបានប្រៀបធៀប។",
+  "e5_h": "បញ្ជីការដឹងគុណ", "e5_lede": "ការអរគុណគឺជាឯកជន។ ទំព័រនេះបង្ហាញតែភស្តុតាងថាបញ្ជីនៅពេញលេញ ហើយមិនដែលត្រូវបានសរសេរឡើងវិញ។",
+  "e5_rows": (("#4,410", "២៦ តុលា ម៉ោង ២:០០ រសៀល"), ("#4,409", "២៦ តុលា ម៉ោង ១:០០ រសៀល"), ("#4,396", "២៥ តុលា ម៉ោង ១១:០០ យប់")),
+  "e5_c1h": "អ្វីដែលមិនដែលបង្ហាញនៅទីនេះ", "e5_c1p": "អ្នកណាអរគុណអ្នកណា អ្វីដែលបានផ្ដល់ ឬចំនួនប៉ុន្មាន។ ធាតុនីមួយៗត្រូវបានបិទត្រាមុនពេលរាប់ មានតែស្នាមម្រាមដៃដែលបានបិទត្រាប៉ុណ្ណោះចូលក្នុងដើមឈើ។",
   "l7_link": "វិធីផ្សេងទៀតដើម្បីចូល",
   "l7_h": "វិធីផ្សេងទៀតដើម្បីចូល", "l7_lede": "សម្រាប់ទូរសព្ទដែលមិនអាចរក្សា passkey បាន។",
   "l7_e": "ផ្ញើលេខកូដមកអ៊ីមែលខ្ញុំ", "l7_ev": "you@example.com", "l7_s": "ផ្ញើលេខកូដជាសារមកខ្ញុំ", "l7_sv": "+855 ·· ··· ···",
@@ -699,6 +753,46 @@ def O10(t):
             + '<pre class="code">%s</pre>' % _h.escape(t["o10_code"])
             + card(t["o10_c1h"], t["o10_c1p"]) + card(t["o10_c2h"], t["o10_c2p"]))
 
+def _etabs(t, on):
+    return '<div class="tabs">%s</div>' % "".join('<span%s>%s</span>' % (' class="on"' if i == on else "", x) for i, x in enumerate(t["e_tabs"]))
+def _esearch(t):
+    return '<div class="field" style="display:flex;gap:8px;align-items:center;color:var(--ink-dim)">%s%s</div>' % (
+        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>', t["e_search"])
+def _badge(txt, on=True):
+    return '<span class="pill%s">%s</span>' % (" on" if on else "", txt)
+def _block(num, when, extra, done, t):
+    return ('<div class="blk"><div class="cube"></div><div class="bt"><div class="t"><b class="mono">%s</b> · %s</div>'
+            '<div class="s">%s</div><div class="chips" style="margin-top:6px">%s%s%s</div></div></div>'
+            % (num, when, extra, _badge("✓ " + t["e_tsa"]), _badge("✓ " + t["e_wit"]), _badge("⛓ " + t["e_btc"]) if done else _badge(t["e_pend"], False)))
+def E1(t):
+    rows = "".join(_block(a, b, "%s %s" % (c, t["e_recs"]), d, t) for a, b, c, d in t["e1_rows"])
+    return (_etabs(t, 0) + _esearch(t) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["e1_h"], t["e1_lede"])
+            + '<div class="chain">%s</div>' % rows + '<p class="more">%s</p>' % t["e1_how"])
+def E2(t):
+    kv = "".join("<dt>%s</dt><dd%s>%s</dd>" % (a, ' class="mono"' if i < 2 else "", b) for i, (a, b) in enumerate(t["e2_kv"]))
+    an = "".join('<div class="row"><div class="t">%s</div><span class="s">✓ %s</span></div>' % (a, b) for a, b in t["e2_a"])
+    return (_etabs(t, 0) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["e2_h"], t["e2_lede"])
+            + '<div class="card"><dl class="kv" style="margin:0">%s</dl></div>' % kv
+            + '<div class="card"><h2>%s</h2>%s</div>' % (t["e2_anch"], an) + card(t["e2_c1h"], t["e2_c1p"], "log"))
+def E3(t):
+    kv = "".join("<dt>%s</dt><dd%s>%s</dd>" % (a, ' class="mono"' if i == 4 else "", b) for i, (a, b) in enumerate(t["e3_kv"]))
+    path = '<svg width="100%%" height="46" viewBox="0 0 320 46" aria-hidden="true">%s</svg>' % "".join(
+        '<rect x="%d" y="16" width="18" height="14" rx="3" fill="%s" stroke="var(--line-strong)"/>' % (6 + i * 26, "var(--accent)" if i in (0, 11) else "var(--surface-2)") for i in range(12))
+    return (_etabs(t, 0) + "<h1 class='mono' style='font-size:20px'>%s</h1><p class='lede'>%s</p>" % (t["e3_h"], t["e3_lede"])
+            + '<div class="card"><dl class="kv" style="margin:0">%s</dl></div>' % kv
+            + '<div class="card"><h2>%s</h2><p>%s</p>%s<p class="more" style="color:var(--ink)">%s</p></div>' % (t["e3_proof"], t["e3_proofp"], path, t["e3_ok"])
+            + card(t["e3_c1h"], t["e3_c1p"]))
+def E4(t):
+    a, b = t["e4_row"]
+    return (_etabs(t, 0) + "<h1>%s</h1>" % t["e4_h"] + _esearch(t)
+            + '<div class="card" style="margin-top:12px"><div class="thumb">%s<div class="t"><b>%s</b></div></div></div>' % (sunflower(48), t["e4_drop"])
+            + '<h2 class="sh">%s</h2><div class="card"><div class="row" style="border:0;padding:0"><div><div class="t mono">%s</div><div class="s">%s</div></div><span class="s">›</span></div></div>' % (t["e4_res"], a, b)
+            + '<p class="fine">%s</p>' % t["e4_fine"])
+def E5(t):
+    rows = "".join(_block(a, b, "", i == 2, t) for i, (a, b) in enumerate(t["e5_rows"]))
+    return (_etabs(t, 1) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["e5_h"], t["e5_lede"])
+            + '<div class="chain">%s</div>' % rows + card(t["e5_c1h"], t["e5_c1p"], "log"))
+
 SCREENS = [  # (id, page, title, render)
     ("L1", "login", "Log in", L1), ("L2", "login", "Make a passkey", L2), ("L3", "login", "Under 18", L3),
     ("L4", "login", "What a site may know", L4), ("L5", "login", "Logged in: add a second passkey", L5),
@@ -711,16 +805,19 @@ SCREENS = [  # (id, page, title, render)
     ("O4", "origin", "Dashboard: overview", O4), ("O5", "origin", "Dashboard: API keys", O5),
     ("O6", "origin", "Dashboard: prepay credits", O6), ("O7", "origin", "Dashboard: packages", O7), ("O8", "origin", "Dashboard: team", O8),
     ("O9", "origin", "Dashboard: notifications", O9), ("O10", "origin", "Docs: B-Trace and B-Signal", O10),
+    ("E1", "explorer", "Origin: the checkpoint chain", E1), ("E2", "explorer", "A checkpoint and its anchors", E2),
+    ("E3", "explorer", "A record and its proof", E3), ("E4", "explorer", "Search by a dropped file", E4),
+    ("E5", "explorer", "Ledger: proofs only", E5),
 ]
-PUBLIC = {"O1", "O2", "O3", "O10"}  # public portal pages: a share button in the header (Default 8); auth pages get none
+PUBLIC = {"O1", "O2", "O3", "O10", "E1", "E2", "E3", "E4", "E5"}  # public portal pages: a share button in the header (Default 8); auth pages get none
 
 
 def page(sid, render, lang, dark=False):
     t = T[lang]
     body = render(t).replace("℠", '<span class="sm">℠</span>')
     # Each screen's footer names its OWN origin (SPEC §0): Log in → login.333.eco · Sign → B.333.eco · portal → origin.333.eco
-    host = "login.333.eco" if sid.startswith("L") else ("origin.333.eco" if sid.startswith("O") else "B.333.eco")
-    foot = t["foot"].replace("B.333.eco", host, 1)
+    host = {"L": "login.333.eco", "O": "origin.333.eco", "E": "explorer.333.eco"}.get(sid[0], "B.333.eco")
+    foot = t["e_foot"] if sid.startswith("E") else t["foot"].replace("B.333.eco", host, 1)
     assert not re.search(r"\bsign[\s-]?in\b", body, re.I), "%s: 'sign in' is barred (Default 10)" % sid
     assert "notar" not in body.lower(), "%s: 'notary' is barred in public copy" % sid
     themes = "".join('<span%s>%s</span>' % (' class="on"' if i == (2 if dark else 0) else "", x) for i, x in enumerate(t["theme"]))
@@ -746,7 +843,7 @@ def page(sid, render, lang, dark=False):
 </body>
 </html>
 """ % ("km" if lang == "km" else "en", "km" if lang == "km" else "en", " dark" if dark else "", W, sid,
-       '<div class="band">%s</div>' % t["band"] if t["band"] else "", mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid.startswith("O") else ""),
+       '<div class="band">%s</div>' % t["band"] if t["band"] else "", mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid.startswith("O") else (' <span class="prod">%s</span>' % t["e_prod"] if sid.startswith("E") else "")),
        langs, ('<span class="sharebtn" aria-label="%s">%s</span>' % (t["o_share"], SHARE)) if sid in PUBLIC else "", body, foot, themes))
 
 
@@ -760,8 +857,8 @@ def main():
     def hh(f): return max(H, int(hts.get(f, H)))
     tall_en = max([H] + [int(v) for k, v in hts.items() if not k.endswith("Km.html")])
     tall_km = max([H] + [int(v) for k, v in hts.items() if k.endswith("Km.html")])
-    boards, col = [], {"login": 0, "sign": 0, "origin": 0}
-    pages = [{"id": "login", "name": "Log in with HeartBank®"}, {"id": "sign", "name": "Sign with HeartBank®"}, {"id": "origin", "name": "origin.333.eco"}]
+    boards, col = [], {"login": 0, "sign": 0, "origin": 0, "explorer": 0}
+    pages = [{"id": "login", "name": "Log in with HeartBank®"}, {"id": "sign", "name": "Sign with HeartBank®"}, {"id": "origin", "name": "origin.333.eco"}, {"id": "explorer", "name": "explorer.333.eco"}]
     rowy = {"en": 0, "km": tall_en + 160}
     for sid, pg, title, render in SCREENS:
         for lang in ("en", "km"):
@@ -770,7 +867,7 @@ def main():
             boards.append({"file": f, "page": pg, "title": "%s · %s, %s" % (sid, title, "English" if lang == "en" else "Khmer"),
                            "w": W, "h": hh(f), "x": col[pg] * (W + 80), "y": rowy[lang]})
         col[pg] += 1
-    for sid, pg in (("L1", "login"), ("S1", "sign")):  # one dark pass per surface (Default 6)
+    for sid, pg in (("L1", "login"), ("S1", "sign"), ("E1", "explorer")):  # one dark pass per surface (Default 6)
         f = "%sDark.html" % sid
         render = dict((s[0], s[3]) for s in SCREENS)[sid]
         io.open(os.path.join(HERE, f), "w", encoding="utf-8").write(page(sid, render, "en", dark=True).replace("@CSSV@", cssv))
