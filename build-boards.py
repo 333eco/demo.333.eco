@@ -354,6 +354,14 @@ T = {
 # ── the third-party editor drawn in the Sign screens. ⚠️ A REAL business (Kim's): it stays only with her yes;
 #    otherwise set a made-up name here and every board follows. ─────────────────────────────────────────────
 EDITOR = "dpixxi"
+# The app asking a person to LOG IN in the drawings (founder 2026-10-25: "change 'Asked by' 333.eco to Pixel Wild for fun").
+# ⚠️ Also a real app (Cheng's): kept by the founder's call; its owner's yes is owed before the link goes beyond the founder.
+APP, APP_MONO = "Pixel Wild", "PW"
+_APP_KEYS = ("l1_h", "l1_c2p", "l3_btn", "l4_h", "l4_c1p", "l5_lede", "l6_st1", "l6_q1")
+for _lang in T:
+    for _k in _APP_KEYS:
+        _v = T[_lang][_k]
+        T[_lang][_k] = tuple(x.replace("333.eco", APP) for x in _v) if isinstance(_v, tuple) else _v.replace("333.eco", APP)
 for _lang in T:
     for _k, _v in list(T[_lang].items()):
         if isinstance(_v, str):
@@ -402,11 +410,11 @@ O = {
   "o6_zero": "When credits reach zero, paid calls stop with a clear error. Nothing is charged on credit.",
   "o6_btn": "Prepay $20",
   "o7_h": "Packages", "o7_lede": "Two packages on npm, each published with a verified build record.",
-  "o7_v": ("@333eco/origin-verify", "Free forever", "npm install @333eco/origin-verify",
-           "Reads a file or a hash and returns what it carries. Checks records and signatures offline."),
+  "o7_v": ("@333eco/origin-verify", "Records: free", "npm install @333eco/origin-verify",
+           "Reads a file or a hash and returns what it carries. Checking records and signatures is free and works offline. B-Trace checks, including B-Signal℠ (a number from 0 to 1 for the AI markers found), use credits."),
   "o7_a": ("@333eco/origin-attest", "Uses credits", "npm install @333eco/origin-attest",
            "Hashes the file, opens Sign with HeartBank®, and returns the record. Can add content credentials."),
-  "o7_docs": "Read the docs ›",
+  "o7_docs": "Read the docs: verify, attest, B-Trace and B-Signal℠ ›",
   "o8_h": "Team", "o8_lede": "People who can manage this account. Each logs in with their own HeartBank® passkey.",
   "o8_m": (("You", "Owner"), ("@sora", "Developer: keys and packages"), ("@nita", "Billing: credits only")),
   "o8_inv": "Invite by @handle", "o8_invv": "@", "o8_btn": "Send invite",
@@ -453,11 +461,11 @@ O = {
   "o6_zero": "នៅពេលក្រេឌីតអស់ ការហៅដែលត្រូវបង់ប្រាក់នឹងឈប់ ដោយមានសារច្បាស់លាស់។ គ្មានអ្វីត្រូវបានគិតជាឥណទានទេ។",
   "o6_btn": "បង់ទុកជាមុន $20",
   "o7_h": "កញ្ចប់", "o7_lede": "កញ្ចប់ពីរនៅលើ npm ដែលនីមួយៗបោះពុម្ពជាមួយកំណត់ត្រាការសាងសង់ដែលបានផ្ទៀងផ្ទាត់។",
-  "o7_v": ("@333eco/origin-verify", "ឥតគិតថ្លៃ ជារៀងរហូត", "npm install @333eco/origin-verify",
-           "អានឯកសារ ឬស្នាមម្រាមដៃ ហើយប្រាប់ពីអ្វីដែលវាមាន។ ពិនិត្យកំណត់ត្រា និងហត្ថលេខា ដោយគ្មានអ៊ីនធឺណិត។"),
+  "o7_v": ("@333eco/origin-verify", "កំណត់ត្រា៖ ឥតគិតថ្លៃ", "npm install @333eco/origin-verify",
+           "អានឯកសារ ឬស្នាមម្រាមដៃ ហើយប្រាប់ពីអ្វីដែលវាមាន។ ការពិនិត្យកំណត់ត្រា និងហត្ថលេខា ឥតគិតថ្លៃ និងដំណើរការដោយគ្មានអ៊ីនធឺណិត។ ការពិនិត្យ B-Trace រួមទាំង B-Signal℠ (លេខពី 0 ដល់ 1 សម្រាប់សញ្ញា AI ដែលរកឃើញ) ប្រើក្រេឌីត។"),
   "o7_a": ("@333eco/origin-attest", "ប្រើក្រេឌីត", "npm install @333eco/origin-attest",
            "គណនាស្នាមម្រាមដៃរបស់ឯកសារ បើក Sign with HeartBank® ហើយប្រគល់កំណត់ត្រាមកវិញ។ អាចបន្ថែមព័ត៌មានប្រភពខ្លឹមសារបាន។"),
-  "o7_docs": "អានឯកសារណែនាំ ›",
+  "o7_docs": "អានឯកសារណែនាំ៖ verify, attest, B-Trace និង B-Signal℠ ›",
   "o8_h": "ក្រុម", "o8_lede": "មនុស្សដែលអាចគ្រប់គ្រងគណនីនេះ។ ម្នាក់ៗចូលដោយ passkey HeartBank® ផ្ទាល់ខ្លួន។",
   "o8_m": (("អ្នក", "ម្ចាស់"), ("@sora", "អ្នកអភិវឌ្ឍន៍៖ កូនសោ និងកញ្ចប់"), ("@nita", "វិក្កយបត្រ៖ ក្រេឌីតប៉ុណ្ណោះ")),
   "o8_inv": "អញ្ជើញតាម @handle", "o8_invv": "@", "o8_btn": "ផ្ញើការអញ្ជើញ",
@@ -480,16 +488,16 @@ def btns(a, b=None, key=False):
     return s + ('<button class="btn ghost">%s</button>' % b if b else "")
 
 
-def L1(t): return (frm(t, "333.eco", "333") + "<h1>%s</h1><p class='lede'>%s</p>" % (t["l1_h"], t["l1_lede"])
+def L1(t): return (frm(t, APP, APP_MONO) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["l1_h"], t["l1_lede"])
                    + card(t["l1_c1h"], t["l1_c1p"], "key") + card(t["l1_c2h"], t["l1_c2p"], "split")
                    + '<div class="grow"></div>' + btns(t["l1_btn"], t["l1_new"], key=True))
-def L2(t): return (frm(t, "333.eco", "333") + "<h1>%s</h1><p class='lede'>%s</p>" % (t["l2_h"], t["l2_lede"])
+def L2(t): return (frm(t, APP, APP_MONO) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["l2_h"], t["l2_lede"])
                    + card(t["l2_c1h"], t["l2_c1p"], "key")
                    + '<div class="check"><b>✓</b><span>%s</span></div>' % t["l2_age"]
                    + '<div class="grow"></div>' + btns(t["l2_btn"], key=True))
-def L3(t): return (frm(t, "333.eco", "333") + "<h1>%s</h1><p class='lede'>%s</p>" % (t["l3_h"], t["l3_lede"])
+def L3(t): return (frm(t, APP, APP_MONO) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["l3_h"], t["l3_lede"])
                    + card(t["l3_c1h"], t["l3_c1p"]) + '<div class="grow"></div>' + btns(t["l3_btn"]))
-def L4(t): return (frm(t, "333.eco", "333") + "<h1>%s</h1><p class='lede'>%s</p>" % (t["l4_h"], t["l4_lede"])
+def L4(t): return (frm(t, APP, APP_MONO) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["l4_h"], t["l4_lede"])
                    + '<div class="card"><div class="row"><div><div class="t">%s</div><div class="s">%s</div></div><span class="tog on"></span></div>'
                      '<div class="row"><div><div class="t">%s</div><div class="s">%s</div></div><span class="tog"></span></div></div>'
                      % (t["l4_r1t"], t["l4_r1s"], t["l4_r2t"], t["l4_r2s"])
