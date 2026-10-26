@@ -34,7 +34,7 @@
    "w": 390,
    "h": 907,
    "x": 0,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "L2.html",
@@ -52,7 +52,7 @@
    "w": 390,
    "h": 869,
    "x": 470,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "L3.html",
@@ -70,7 +70,7 @@
    "w": 390,
    "h": 869,
    "x": 940,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "L4.html",
@@ -88,7 +88,7 @@
    "w": 390,
    "h": 885,
    "x": 1410,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "L5.html",
@@ -106,7 +106,7 @@
    "w": 390,
    "h": 869,
    "x": 1880,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "L6.html",
@@ -124,7 +124,7 @@
    "w": 390,
    "h": 956,
    "x": 2350,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "L7.html",
@@ -142,7 +142,7 @@
    "w": 390,
    "h": 924,
    "x": 2820,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "L8.html",
@@ -160,7 +160,7 @@
    "w": 390,
    "h": 869,
    "x": 3290,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "L9.html",
@@ -178,7 +178,7 @@
    "w": 390,
    "h": 869,
    "x": 3760,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "L10.html",
@@ -196,7 +196,7 @@
    "w": 390,
    "h": 869,
    "x": 4230,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "S1.html",
@@ -214,7 +214,7 @@
    "w": 390,
    "h": 923,
    "x": 0,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "S2.html",
@@ -232,7 +232,7 @@
    "w": 390,
    "h": 892,
    "x": 470,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "S7.html",
@@ -250,7 +250,7 @@
    "w": 390,
    "h": 1032,
    "x": 940,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "S3.html",
@@ -268,7 +268,7 @@
    "w": 390,
    "h": 869,
    "x": 1410,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "S4.html",
@@ -286,7 +286,7 @@
    "w": 390,
    "h": 869,
    "x": 1880,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "S5.html",
@@ -304,7 +304,7 @@
    "w": 390,
    "h": 869,
    "x": 2350,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "S6.html",
@@ -322,7 +322,7 @@
    "w": 390,
    "h": 869,
    "x": 2820,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "O1.html",
@@ -340,7 +340,7 @@
    "w": 390,
    "h": 1053,
    "x": 0,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "O2.html",
@@ -358,7 +358,7 @@
    "w": 390,
    "h": 1034,
    "x": 470,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "O3.html",
@@ -376,7 +376,7 @@
    "w": 390,
    "h": 972,
    "x": 940,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "O4.html",
@@ -394,7 +394,7 @@
    "w": 390,
    "h": 869,
    "x": 1410,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "O5.html",
@@ -412,7 +412,7 @@
    "w": 390,
    "h": 922,
    "x": 1880,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "O6.html",
@@ -430,7 +430,7 @@
    "w": 390,
    "h": 906,
    "x": 2350,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "O7.html",
@@ -448,7 +448,7 @@
    "w": 390,
    "h": 1020,
    "x": 2820,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "O8.html",
@@ -466,7 +466,7 @@
    "w": 390,
    "h": 886,
    "x": 3290,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "O9.html",
@@ -484,7 +484,7 @@
    "w": 390,
    "h": 869,
    "x": 3760,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "O10.html",
@@ -502,14 +502,14 @@
    "w": 390,
    "h": 933,
    "x": 4230,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "E1.html",
    "page": "explorer",
    "title": "E1 · Origin: the checkpoint chain, English",
    "w": 390,
-   "h": 1009,
+   "h": 1026,
    "x": 0,
    "y": 0
   },
@@ -520,14 +520,14 @@
    "w": 390,
    "h": 1016,
    "x": 0,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "E2.html",
    "page": "explorer",
    "title": "E2 · A checkpoint and its anchors, English",
    "w": 390,
-   "h": 993,
+   "h": 1010,
    "x": 470,
    "y": 0
   },
@@ -538,7 +538,7 @@
    "w": 390,
    "h": 1016,
    "x": 470,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "E3.html",
@@ -556,7 +556,7 @@
    "w": 390,
    "h": 872,
    "x": 940,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "E4.html",
@@ -574,14 +574,14 @@
    "w": 390,
    "h": 869,
    "x": 1410,
-   "y": 1169
+   "y": 1350
   },
   {
    "file": "E5.html",
    "page": "explorer",
    "title": "E5 · Ledger: proofs only, English",
    "w": 390,
-   "h": 896,
+   "h": 913,
    "x": 1880,
    "y": 0
   },
@@ -592,7 +592,43 @@
    "w": 390,
    "h": 871,
    "x": 1880,
-   "y": 1169
+   "y": 1350
+  },
+  {
+   "file": "E6.html",
+   "page": "explorer",
+   "title": "E6 · Corpus: every paper's timestamps, English",
+   "w": 390,
+   "h": 1190,
+   "x": 2350,
+   "y": 0
+  },
+  {
+   "file": "E6Km.html",
+   "page": "explorer",
+   "title": "E6 · Corpus: every paper's timestamps, Khmer",
+   "w": 390,
+   "h": 1322,
+   "x": 2350,
+   "y": 1350
+  },
+  {
+   "file": "E7.html",
+   "page": "explorer",
+   "title": "E7 · A paper and its four legs, English",
+   "w": 390,
+   "h": 935,
+   "x": 2820,
+   "y": 0
+  },
+  {
+   "file": "E7Km.html",
+   "page": "explorer",
+   "title": "E7 · A paper and its four legs, Khmer",
+   "w": 390,
+   "h": 999,
+   "x": 2820,
+   "y": 1350
   },
   {
    "file": "L1Dark.html",
@@ -601,7 +637,7 @@
    "w": 390,
    "h": 844,
    "x": 0,
-   "y": 2382
+   "y": 2832
   },
   {
    "file": "S1Dark.html",
@@ -610,16 +646,106 @@
    "w": 390,
    "h": 844,
    "x": 0,
-   "y": 2382
+   "y": 2832
   },
   {
    "file": "E1Dark.html",
    "page": "explorer",
    "title": "E1 · dark pass, English",
    "w": 390,
-   "h": 1009,
+   "h": 1026,
    "x": 0,
-   "y": 2382
+   "y": 2832
+  },
+  {
+   "file": "E1D.html",
+   "page": "explorer",
+   "title": "E1D · Origin, desktop, English",
+   "w": 1280,
+   "h": 878,
+   "x": 0,
+   "y": 3836
+  },
+  {
+   "file": "E1DKm.html",
+   "page": "explorer",
+   "title": "E1D · Origin, desktop, Khmer",
+   "w": 1280,
+   "h": 957,
+   "x": 0,
+   "y": 4936
+  },
+  {
+   "file": "E2D.html",
+   "page": "explorer",
+   "title": "E2D · A checkpoint, desktop, English",
+   "w": 1280,
+   "h": 800,
+   "x": 1400,
+   "y": 3836
+  },
+  {
+   "file": "E2DKm.html",
+   "page": "explorer",
+   "title": "E2D · A checkpoint, desktop, Khmer",
+   "w": 1280,
+   "h": 811,
+   "x": 1400,
+   "y": 4936
+  },
+  {
+   "file": "E6D.html",
+   "page": "explorer",
+   "title": "E6D · Corpus, desktop, English",
+   "w": 1280,
+   "h": 808,
+   "x": 2800,
+   "y": 3836
+  },
+  {
+   "file": "E6DKm.html",
+   "page": "explorer",
+   "title": "E6D · Corpus, desktop, Khmer",
+   "w": 1280,
+   "h": 872,
+   "x": 2800,
+   "y": 4936
+  },
+  {
+   "file": "O4D.html",
+   "page": "origin",
+   "title": "O4D · Dashboard overview, desktop, English",
+   "w": 1280,
+   "h": 800,
+   "x": 0,
+   "y": 3836
+  },
+  {
+   "file": "O4DKm.html",
+   "page": "origin",
+   "title": "O4D · Dashboard overview, desktop, Khmer",
+   "w": 1280,
+   "h": 811,
+   "x": 0,
+   "y": 4936
+  },
+  {
+   "file": "O5D.html",
+   "page": "origin",
+   "title": "O5D · API keys, desktop, English",
+   "w": 1280,
+   "h": 800,
+   "x": 1400,
+   "y": 3836
+  },
+  {
+   "file": "O5DKm.html",
+   "page": "origin",
+   "title": "O5D · API keys, desktop, Khmer",
+   "w": 1280,
+   "h": 811,
+   "x": 1400,
+   "y": 4936
   }
  ],
  "annotations": [],

@@ -8,9 +8,11 @@ import glob, io, json, os, re, subprocess
 HERE = os.path.dirname(os.path.abspath(__file__))
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 # The board list comes from canvas.json, never a filename pattern: a pattern silently skipped every new prefix once.
-boards = [os.path.join(HERE, b["file"]) for b in json.load(io.open(os.path.join(HERE, "canvas.json"), encoding="utf-8"))["artboards"]]
+_ab = json.load(io.open(os.path.join(HERE, "canvas.json"), encoding="utf-8"))["artboards"]
+boards = [os.path.join(HERE, b["file"]) for b in _ab]
+WIDTH = dict((b["file"], b["w"]) for b in _ab)  # a desktop board is measured at its own width, never 390
 probe = "<!doctype html><meta charset=utf-8><body>" + "".join(
-    '<iframe src="%s" style="width:390px;height:400px;border:0" data-f="%s"></iframe>' % (os.path.basename(f), os.path.basename(f)) for f in boards
+    '<iframe src="%s" style="width:%dpx;height:400px;border:0" data-f="%s"></iframe>' % (os.path.basename(f), WIDTH[os.path.basename(f)], os.path.basename(f)) for f in boards
 ) + """<pre id=out></pre><script>
 onload=()=>{const o={};for(const i of document.querySelectorAll('iframe'))o[i.dataset.f]=i.contentDocument.documentElement.scrollHeight;
 document.getElementById('out').textContent='H='+JSON.stringify(o)+'=H'}</script>"""

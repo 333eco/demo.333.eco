@@ -122,6 +122,17 @@ h1{font-size:26px;line-height:1.2;margin:14px 0 6px;letter-spacing:-.015em}
 .cube{flex:none;width:28px;height:28px;border-radius:7px;background:var(--accent);box-shadow:inset 0 0 0 3px color-mix(in oklab,var(--accent) 55%,#fff);margin-top:2px}
 .bt{flex:1;border:1px solid var(--line);border-radius:12px;background:var(--surface);padding:10px 12px}
 .bt .chips .pill{font-size:11px;padding:2px 8px}
+.desk body{width:1280px;min-height:800px}
+.desk .app{padding:0 72px 32px;min-height:780px}
+.desk h1{font-size:34px}
+.cols{display:grid;grid-template-columns:1.35fr 1fr;gap:28px;align-items:start}
+.side{display:grid;grid-template-columns:200px 1fr;gap:36px;margin-top:8px}
+.nav a{display:block;padding:9px 12px;border-radius:10px;color:var(--ink-dim);font-size:14px}
+.nav a.on{background:var(--wash);color:var(--ink);font-weight:600}
+.tbl{width:100%;border-collapse:collapse;font-size:14px}
+.tbl th{text-align:left;color:var(--ink-dim);font-weight:500;padding:10px 8px;border-bottom:1px solid var(--line)}
+.tbl td{padding:12px 8px;border-bottom:1px solid var(--line)}
+.tbl tr:last-child td{border-bottom:0}
 footer{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);
   padding-top:14px;margin-top:20px;color:var(--ink-faint);font-size:11.5px}
 """
@@ -378,7 +389,21 @@ for _lang in T:
 O = {
  "en": {
   "o_prod": "B-Origin℠", "o_share": "Share",
-  "e_prod": "Explorer", "e_tabs": ("Origin", "Ledger"), "e_foot": "explorer.333.eco · read-only · every check runs in your browser",
+  "e_prod": "Explorer", "e_tabs": ("Origin", "Ledger", "Corpus"), "e_foot": "explorer.333.eco · read-only · every check runs in your browser",
+  "e6_h": "Corpus", "e6_lede": "Every paper and essay is timestamped the day its text changes, so anyone can check that today's text is the text that was published.",
+  "e6_count": "152 documents · all timestamped",
+  "e6_rows": (("Decided by No One", "23 Sep 2026", "10.5281/zenodo.22933319", "55bf 6c33 7813"),
+              ("Subject-Released Attestation", "7 Sep 2026", "10.5281/zenodo.22735458", "8ede 0637 fec6"),
+              ("The Reciters' Protocol", "7 Sep 2026", "10.5281/zenodo.22931221", "f54e c0dd e1ec"),
+              ("The Water Cycle", "6 Sep 2026", "10.5281/zenodo.22929365", "1efb ca93 cdb1")),
+  "e6_b": ("✓ Bitcoin", "✓ 3 timestamps", "✓ matches the deposit"),
+  "e6_th": ("Title", "Published", "Fingerprint", "Bitcoin", "Timestamps", "DOI", "Deposit"),
+  "e7_h": "Decided by No One", "e7_lede": "Defensive publication · 23 Sep 2026 · CC0",
+  "e7_kv": (("Fingerprint (SHA-256)", "55bf 6c33 7813 … c75d"), ("Source", "thonly/publications")),
+  "e7_legs": "The four legs",
+  "e7_l": (("Bitcoin", "OpenTimestamps proof in the repository"), ("Timestamp authorities", "In the weekly manifest: 3 authorities, one EU-qualified"),
+           ("Zenodo", "10.5281/zenodo.22933319 · the deposited copy matches today's text"), ("Corpus index", "corpus.333.eco serves the same fingerprint")),
+  "e7_c1h": "A change is finished only when all four agree", "e7_c1p": "A timestamp proves when this text existed. It never proves that the text is true.",
   "e_search": "Record ID, file fingerprint, or drop a file",
   "e1_h": "B-Origin records", "e1_lede": "Every hour the log seals a checkpoint, stamps it three ways, and has outside witnesses sign it. Anyone can check any of it.",
   "e_cp": "Checkpoint", "e_recs": "records", "e_tsa": "3 timestamps", "e_wit": "4 witnesses", "e_btc": "Bitcoin", "e_pend": "Bitcoin: pending",
@@ -476,7 +501,21 @@ O = {
  },
  "km": {
   "o_prod": "B-Origin℠", "o_share": "ចែករំលែក",
-  "e_prod": "កម្មវិធីរុករក", "e_tabs": ("Origin", "បញ្ជី"), "e_foot": "explorer.333.eco · អានបានតែប៉ុណ្ណោះ · ការពិនិត្យទាំងអស់ដំណើរការក្នុងកម្មវិធីរុករករបស់អ្នក",
+  "e_prod": "កម្មវិធីរុករក", "e_tabs": ("Origin", "បញ្ជី", "ឯកសារ"), "e_foot": "explorer.333.eco · អានបានតែប៉ុណ្ណោះ · ការពិនិត្យទាំងអស់ដំណើរការក្នុងកម្មវិធីរុករករបស់អ្នក",
+  "e6_h": "ឯកសារស្រាវជ្រាវ", "e6_lede": "អត្ថបទ និងអត្ថាធិប្បាយនីមួយៗត្រូវបានបោះត្រាពេលវេលានៅថ្ងៃដែលអត្ថបទរបស់វាផ្លាស់ប្ដូរ ដូច្នេះអ្នកណាក៏អាចពិនិត្យថាអត្ថបទថ្ងៃនេះ គឺជាអត្ថបទដែលបានបោះពុម្ព។",
+  "e6_count": "ឯកសារ 152 · ទាំងអស់បានបោះត្រាពេលវេលា",
+  "e6_rows": (("Decided by No One", "២៣ កញ្ញា ២០២៦", "10.5281/zenodo.22933319", "55bf 6c33 7813"),
+              ("Subject-Released Attestation", "៧ កញ្ញា ២០២៦", "10.5281/zenodo.22735458", "8ede 0637 fec6"),
+              ("The Reciters' Protocol", "៧ កញ្ញា ២០២៦", "10.5281/zenodo.22931221", "f54e c0dd e1ec"),
+              ("The Water Cycle", "៦ កញ្ញា ២០២៦", "10.5281/zenodo.22929365", "1efb ca93 cdb1")),
+  "e6_b": ("✓ Bitcoin", "✓ ត្រាពេលវេលា ៣", "✓ ត្រូវនឹងច្បាប់ដែលបានដាក់"),
+  "e6_th": ("ចំណងជើង", "បោះពុម្ព", "ស្នាមម្រាមដៃ", "Bitcoin", "ត្រាពេលវេលា", "DOI", "ច្បាប់ដែលបានដាក់"),
+  "e7_h": "Decided by No One", "e7_lede": "ការបោះពុម្ពការពារ · ២៣ កញ្ញា ២០២៦ · CC0",
+  "e7_kv": (("ស្នាមម្រាមដៃ (SHA-256)", "55bf 6c33 7813 … c75d"), ("ប្រភព", "thonly/publications")),
+  "e7_legs": "ជើងទាំងបួន",
+  "e7_l": (("Bitcoin", "ភស្តុតាង OpenTimestamps នៅក្នុងឃ្លាំង"), ("អាជ្ញាធរបោះត្រាពេលវេលា", "ក្នុងបញ្ជីប្រចាំសប្ដាហ៍៖ អាជ្ញាធរ ៣ ម្នាក់មានគុណវុឌ្ឍិ EU"),
+           ("Zenodo", "10.5281/zenodo.22933319 · ច្បាប់ដែលបានដាក់ត្រូវនឹងអត្ថបទថ្ងៃនេះ"), ("សន្ទស្សន៍ឯកសារ", "corpus.333.eco ផ្ដល់ស្នាមម្រាមដៃដដែល")),
+  "e7_c1h": "ការផ្លាស់ប្ដូរមួយបញ្ចប់ លុះត្រាតែជើងទាំងបួនស្របគ្នា", "e7_c1p": "ត្រាពេលវេលាបញ្ជាក់ថាអត្ថបទនេះមាននៅពេលណា។ វាមិនដែលបញ្ជាក់ថាអត្ថបទនោះពិតទេ។",
   "e_search": "លេខកំណត់ត្រា ស្នាមម្រាមដៃឯកសារ ឬទម្លាក់ឯកសារ",
   "e1_h": "កំណត់ត្រា B-Origin", "e1_lede": "រៀងរាល់ម៉ោង បញ្ជីបិទត្រាចំណុចត្រួតពិនិត្យមួយ បោះត្រាពេលវេលាវាតាមបីវិធី ហើយឱ្យសាក្សីខាងក្រៅចុះហត្ថលេខា។ អ្នកណាក៏អាចពិនិត្យវាបាន។",
   "e_cp": "ចំណុចត្រួតពិនិត្យ", "e_recs": "កំណត់ត្រា", "e_tsa": "ត្រាពេលវេលា ៣", "e_wit": "សាក្សី ៤", "e_btc": "Bitcoin", "e_pend": "Bitcoin៖ កំពុងរង់ចាំ",
@@ -793,6 +832,65 @@ def E5(t):
     return (_etabs(t, 1) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["e5_h"], t["e5_lede"])
             + '<div class="chain">%s</div>' % rows + card(t["e5_c1h"], t["e5_c1p"], "log"))
 
+def _cbadges(t):
+    return "".join(_badge(x) for x in t["e6_b"])
+def E6(t):
+    rows = "".join('<div class="card"><div class="t"><b>%s</b></div><div class="s">%s · <span class="mono">%s</span></div>'
+                   '<div class="chips" style="margin-top:8px">%s</div><div class="s mono" style="margin-top:6px">DOI %s</div></div>'
+                   % (a, b, d, _cbadges(t), c) for a, b, c, d in t["e6_rows"])
+    return (_etabs(t, 2) + _esearch(t) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["e6_h"], t["e6_lede"])
+            + '<h2 class="sh">%s</h2>' % t["e6_count"] + rows)
+def E7(t):
+    kv = "".join("<dt>%s</dt><dd class='mono'>%s</dd>" % (a, b) for a, b in t["e7_kv"])
+    legs = "".join('<div class="row"><div><div class="t">✓ %s</div><div class="s">%s</div></div></div>' % (a, b) for a, b in t["e7_l"])
+    return (_etabs(t, 2) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["e7_h"], t["e7_lede"])
+            + '<div class="card"><dl class="kv" style="margin:0">%s</dl></div>' % kv
+            + '<div class="card"><h2>%s</h2>%s</div>' % (t["e7_legs"], legs) + card(t["e7_c1h"], t["e7_c1p"], "log"))
+
+# desktop: the same content, laid out for a 1280-wide screen
+def _rec_card(t):
+    kv = "".join("<dt>%s</dt><dd%s>%s</dd>" % (a, ' class="mono"' if i == 4 else "", b) for i, (a, b) in enumerate(t["e3_kv"]))
+    return '<div class="card"><h2>%s</h2><dl class="kv" style="margin:0">%s</dl></div>' % (t["e3_h"], kv)
+def E1D(t):
+    rows = "".join(_block(a, b, "%s %s" % (c, t["e_recs"]), d, t) for a, b, c, d in t["e1_rows"])
+    return (_etabs(t, 0) + '<div style="margin-top:16px">%s</div>' % _esearch(t)
+            + '<div class="cols"><div><h1>%s</h1><p class="lede">%s</p><div class="chain">%s</div><p class="more">%s</p></div>'
+              '<div style="padding-top:20px">%s%s</div></div>' % (t["e1_h"], t["e1_lede"], rows, t["e1_how"], _rec_card(t), card(t["e2_c1h"], t["e2_c1p"], "log")))
+def E2D(t):
+    kv = "".join("<dt>%s</dt><dd%s>%s</dd>" % (a, ' class="mono"' if i < 2 else "", b) for i, (a, b) in enumerate(t["e2_kv"]))
+    an = "".join('<div class="row"><div class="t">%s</div><span class="s">✓ %s</span></div>' % (a, b) for a, b in t["e2_a"])
+    return (_etabs(t, 0) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["e2_h"], t["e2_lede"])
+            + '<div class="cols"><div><div class="card"><dl class="kv" style="margin:0">%s</dl></div><div class="card"><h2>%s</h2>%s</div></div>'
+              '<div>%s%s</div></div>' % (kv, t["e2_anch"], an, card(t["e2_c1h"], t["e2_c1p"], "log"), card(t["e3_c1h"], t["e3_c1p"])))
+def E6D(t):
+    th = "".join("<th>%s</th>" % x for x in t["e6_th"])
+    tr = "".join('<tr><td><b>%s</b></td><td>%s</td><td class="mono">%s</td><td>✓</td><td>✓ 3</td><td class="mono">%s</td><td>✓</td></tr>' % (a, b, d, c)
+                 for a, b, c, d in t["e6_rows"])
+    return (_etabs(t, 2) + '<div style="margin-top:16px">%s</div>' % _esearch(t)
+            + "<h1>%s</h1><p class='lede'>%s</p>" % (t["e6_h"], t["e6_lede"]) + '<h2 class="sh">%s</h2>' % t["e6_count"]
+            + '<div class="card" style="padding:4px 12px"><table class="tbl"><thead><tr>%s</tr></thead><tbody>%s</tbody></table></div>' % (th, tr)
+            + card(t["e7_c1h"], t["e7_c1p"], "log"))
+def _side(t, on, main):
+    items = list(t["o_nav"]) + [t["o9_h"]]
+    nav = "".join('<a class="%s">%s</a>' % ("on" if i == on else "", x) for i, x in enumerate(items))
+    return _acct(t) + '<div class="side"><nav class="nav">%s</nav><div>%s</div></div>' % (nav, main)
+def O4D(t):
+    use = "".join('<div class="row"><div class="t">%s</div><b>%s</b></div>' % (a, b) for a, b in t["o4_use_i"])
+    keys = "".join('<div class="row"><div><div class="t">%s</div><div class="s">%s</div></div></div>' % (a, b) for a, b in t["o5_k"])
+    main = ("<h1>%s</h1>" % t["o4_h"]
+            + '<div class="cols" style="grid-template-columns:1fr 1fr"><div class="card"><h2>%s</h2><div class="big">%s</div><p>%s</p></div>'
+              '<div class="card"><h2>%s</h2>%s</div></div>' % (t["o4_cred"], t["o4_credv"], t["o4_credl"], t["o4_use"], use)
+            + '<div class="card"><h2>%s</h2>%s</div>' % (t["o5_list"], keys) + '<div class="note">%s</div>' % t["o4_fine"])
+    return _side(t, 0, main)
+def O5D(t):
+    tr = "".join('<tr><td><b>%s</b></td><td>%s</td><td style="text-align:right">%s</td></tr>' % (a, b, t["o5_revoke"]) for a, b in t["o5_k"])
+    main = ("<h1>%s</h1>" % t["o5_h"]
+            + '<div class="card" style="border-color:var(--accent)"><h2>%s</h2><div class="field mono">%s</div><p class="fine">%s</p></div>'
+              % (t["o5_new"], t["o5_key"], t["o5_once"])
+            + '<div class="card" style="padding:4px 12px"><table class="tbl"><tbody>%s</tbody></table></div>' % tr
+            + '<button class="btn" style="width:auto;padding:12px 22px">%s</button>' % t["o5_btn"])
+    return _side(t, 1, main)
+
 SCREENS = [  # (id, page, title, render)
     ("L1", "login", "Log in", L1), ("L2", "login", "Make a passkey", L2), ("L3", "login", "Under 18", L3),
     ("L4", "login", "What a site may know", L4), ("L5", "login", "Logged in: add a second passkey", L5),
@@ -807,12 +905,18 @@ SCREENS = [  # (id, page, title, render)
     ("O9", "origin", "Dashboard: notifications", O9), ("O10", "origin", "Docs: B-Trace and B-Signal", O10),
     ("E1", "explorer", "Origin: the checkpoint chain", E1), ("E2", "explorer", "A checkpoint and its anchors", E2),
     ("E3", "explorer", "A record and its proof", E3), ("E4", "explorer", "Search by a dropped file", E4),
-    ("E5", "explorer", "Ledger: proofs only", E5),
+    ("E5", "explorer", "Ledger: proofs only", E5), ("E6", "explorer", "Corpus: every paper's timestamps", E6),
+    ("E7", "explorer", "A paper and its four legs", E7),
 ]
-PUBLIC = {"O1", "O2", "O3", "O10", "E1", "E2", "E3", "E4", "E5"}  # public portal pages: a share button in the header (Default 8); auth pages get none
+PUBLIC = {"O1", "O2", "O3", "O10", "E1", "E2", "E3", "E4", "E5", "E6", "E7"}
+DESKTOP = [  # (id, page, title, render) — drawn at 1280, English and Khmer
+    ("E1D", "explorer", "Origin, desktop", E1D), ("E2D", "explorer", "A checkpoint, desktop", E2D), ("E6D", "explorer", "Corpus, desktop", E6D),
+    ("O4D", "origin", "Dashboard overview, desktop", O4D), ("O5D", "origin", "API keys, desktop", O5D),
+]
+PUBLIC |= {"E1D", "E2D", "E6D"}  # public portal pages: a share button in the header (Default 8); auth pages get none
 
 
-def page(sid, render, lang, dark=False):
+def page(sid, render, lang, dark=False, desk=False):
     t = T[lang]
     body = render(t).replace("℠", '<span class="sm">℠</span>')
     # Each screen's footer names its OWN origin (SPEC §0): Log in → login.333.eco · Sign → B.333.eco · portal → origin.333.eco
@@ -823,7 +927,7 @@ def page(sid, render, lang, dark=False):
     themes = "".join('<span%s>%s</span>' % (' class="on"' if i == (2 if dark else 0) else "", x) for i, x in enumerate(t["theme"]))
     langs = "".join('<span%s>%s</span>' % (' class="on"' if (i == 0) == (lang == "en") else "", x) for i, x in enumerate(t["lang"]))
     return ("""<!doctype html>
-<html lang="%s" class="%s%s">
+<html lang="%s" class="%s%s%s">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=%d">
@@ -836,13 +940,13 @@ def page(sid, render, lang, dark=False):
 </head>
 <body>
 %s<div class="app">
-<header>%s<span class="hr"><span class="seg">%s</span>%s</span></header>
+<header><span class="hl">%s</span><span class="hr"><span class="seg">%s</span>%s</span></header>
 %s
 <footer><span>%s</span><span class="seg">%s</span></footer>
 </div>
 </body>
 </html>
-""" % ("km" if lang == "km" else "en", "km" if lang == "km" else "en", " dark" if dark else "", W, sid,
+""" % ("km" if lang == "km" else "en", "km" if lang == "km" else "en", " dark" if dark else "", " desk" if desk else "", 1280 if desk else W, sid,
        '<div class="band">%s</div>' % t["band"] if t["band"] else "", mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid.startswith("O") else (' <span class="prod">%s</span>' % t["e_prod"] if sid.startswith("E") else "")),
        langs, ('<span class="sharebtn" aria-label="%s">%s</span>' % (t["o_share"], SHARE)) if sid in PUBLIC else "", body, foot, themes))
 
@@ -873,6 +977,15 @@ def main():
         io.open(os.path.join(HERE, f), "w", encoding="utf-8").write(page(sid, render, "en", dark=True).replace("@CSSV@", cssv))
         boards.append({"file": f, "page": pg, "title": "%s · dark pass, English" % sid, "w": W, "h": hh(f),
                        "x": 0, "y": rowy["km"] + tall_km + 160})
+    ydesk = rowy["km"] + tall_km + 160 + H + 160  # below the dark-pass row
+    dcol = {"explorer": 0, "origin": 0}
+    for sid, pg, title, render in DESKTOP:
+        for lang in ("en", "km"):
+            f = "%s%s.html" % (sid, "" if lang == "en" else "Km")
+            io.open(os.path.join(HERE, f), "w", encoding="utf-8").write(page(sid, render, lang, desk=True).replace("@CSSV@", cssv))
+            boards.append({"file": f, "page": pg, "title": "%s · %s, %s" % (sid, title, "English" if lang == "en" else "Khmer"),
+                           "w": 1280, "h": max(800, int(hts.get(f, 800))), "x": dcol[pg] * (1280 + 120), "y": ydesk + (0 if lang == "en" else 1100)})
+        dcol[pg] += 1
     canvas = {"pages": pages, "artboards": boards, "annotations": [], "launch": {"page": "login", "view": "canvas"}}
     io.open(os.path.join(HERE, "canvas.json"), "w", encoding="utf-8").write(json.dumps(canvas, ensure_ascii=False, indent=1))
     print("%d artboards written · board.css v=%s" % (len(boards), cssv))
