@@ -114,6 +114,7 @@ h1{font-size:26px;line-height:1.2;margin:14px 0 6px;letter-spacing:-.015em}
 .tabs span{font-size:13px;padding:8px 8px;color:var(--ink-dim);white-space:nowrap}
 .tabs span.on{color:var(--ink);font-weight:600;box-shadow:inset 0 -2px 0 var(--accent)}
 .big{font-size:30px;font-weight:600;letter-spacing:-.02em;margin:2px 0 4px}
+.code{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:12.5px/1.55 var(--font-mono);white-space:pre;overflow:hidden;margin:0 0 12px}
 footer{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);
   padding-top:14px;margin-top:20px;color:var(--ink-faint);font-size:11.5px}
 """
@@ -208,7 +209,7 @@ KEY = ('<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circ
 T = {
  "en": {
   "band": "", "lang": ("EN", "ខ្មែរ"), "theme": ("System", "Light", "Dark"),
-  "foot": "B.333.eco · passkeys only · no password, no email",
+  "foot": "B.333.eco · no passwords · only a passkey can sign",
   "from": "Asked by",
   # L1
   "l1_h": "Log in to 333.eco", "l1_lede": "with your HeartBank® passkey.",
@@ -286,7 +287,7 @@ T = {
  "km": {
   "band": "ភាសាខ្មែរ៖ សេចក្ដីព្រាងរបស់យើង មិនទាន់ពិនិត្យដោយអ្នកនិយាយភាសាកំណើត · Khmer: our draft, not yet reviewed",
   "lang": ("EN", "ខ្មែរ"), "theme": ("ប្រព័ន្ធ", "ភ្លឺ", "ងងឹត"),
-  "foot": "B.333.eco · ប្រើតែ passkey · គ្មានពាក្យសម្ងាត់ គ្មានអ៊ីមែល",
+  "foot": "B.333.eco · គ្មានពាក្យសម្ងាត់ · មានតែ passkey ទេដែលអាចចុះហត្ថលេខា",
   "from": "ស្នើដោយ",
   "l1_h": "ចូលទៅ 333.eco", "l1_lede": "ដោយប្រើ passkey HeartBank® របស់អ្នក។",
   "l1_c1h": "គ្មានពាក្យសម្ងាត់ឱ្យគេលួច", "l1_c1p": "ទូរសព្ទរបស់អ្នករក្សា passkey ហើយបើកវាដោយសោអេក្រង់របស់ទូរសព្ទផ្ទាល់។ វាមិនដែលចេញពីទូរសព្ទឡើយ។",
@@ -370,6 +371,29 @@ for _lang in T:
 O = {
  "en": {
   "o_prod": "B-Origin℠", "o_share": "Share",
+  "l7_link": "Other ways to log in",
+  "l7_h": "Other ways to log in", "l7_lede": "For phones that can't hold a passkey.",
+  "l7_e": "Email me a link", "l7_ev": "you@example.com", "l7_s": "Text me a code", "l7_sv": "+855 ·· ··· ···",
+  "l7_c1h": "These log you in. They can't sign.", "l7_c1p": "To sign a file, add a passkey, or withdraw a record, you need a passkey. A link or a text can be intercepted; a passkey can't.",
+  "l7_btn": "Send", "l7_no": "Back to passkey",
+  "l8_h": "To sign, use a passkey", "l8_lede": "You logged in with a text message. That's enough to log in, but not to put your name to a file.",
+  "l8_c1h": "This phone can't hold a passkey", "l8_c1p": "It's an older phone. You can keep logging in here, and sign from any newer phone or computer that has your passkey.",
+  "l8_btn": "Use a passkey on another device", "l8_no": "Not now",
+  "l9_h": "Log-ins and devices", "l9_lede": "Only you see this. We keep it for 12 months, with your country but never your address.",
+  "l9_now": "This session",
+  "l9_rows": (("iPhone · passkey", "Pixel Wild · now · Cambodia"), ("Android phone · text message", "Pixel Wild · 24 Oct · Cambodia"),
+              ("MacBook · passkey", "B.333.eco account · 22 Oct · United States")),
+  "l9_end": "End", "l9_btn": "Remove a device",
+  "l10_h": "Notifications", "l10_lede": "Only about your account's safety and your records. Never news or reminders.",
+  "l10_rows": (("A new log-in", "Any app, any method"), ("A passkey added or removed", ""), ("A record withdrawn", ""), ("A dispute added to your record", "")),
+  "l10_ios": "On iPhone, add B.333.eco to your Home Screen to receive these.",
+  "o9_h": "Notifications", "o9_lede": "Business events only. Each one is sent once.",
+  "o9_rows": (("Credits are low", "Once, when credits fall below $5.00 (you choose)"), ("Auto-reload ran", ""), ("A key created or revoked", ""),
+              ("Team changes", ""), ("Payment receipts", "")),
+  "o10_h": "Docs: B-Trace and B-Signal℠", "o10_lede": "One call returns what a file carries. B-Trace checks cost $0.005 each; checking records alone is free.",
+  "o10_code": '{\n  "records": [{\n    "signedWith": "passkey",\n    "at": "2026-10-25T21:14Z",\n    "source": "digitalCreation",\n    "rights": "CC-BY-4.0"\n  }],\n  "c2pa": { "present": true },\n  "iptc": { "source": "digitalCreation" },\n  "signal": 0.03\n}',
+  "o10_c1h": "What signal means", "o10_c1p": "B-Signal℠ is the AI markers found in the file, from 0 to 1. A higher number means more markers were found. It never measures how human a work is, and a low number doesn't prove a person made it.",
+  "o10_c2h": "One rule for your app", "o10_c2p": "Don't show B-Signal as a grade of someone's work. Show what the file carries instead: the record, its label and its limit. Our terms require it.",
   "o1_h": "Check a file", "o1_lede": "See what a picture carries about where it came from. Free, and we keep nothing.",
   "o1_drop": "sunflower.png · checked just now",
   "o1_has": "What this file carries",
@@ -391,8 +415,8 @@ O = {
   "o3_h": "Pricing", "o3_lede": "Free for people. Pay as you go for businesses that call the API.",
   "o3_free": "Free, forever", "o3_free_i": ("Checking a file at origin.333.eco", "Signing your own file",
               "The verify package: records and signatures, checked offline", "Looking up any record"),
-  "o3_paid": "Pay as you go", "o3_paid_i": (("B-Trace check by API", "[price to be set] per file"),
-              ("Signed records from your app", "[price to be set] per record")),
+  "o3_paid": "Pay as you go", "o3_paid_i": (("B-Trace check by API", "$0.005 per file"),
+              ("Signed records from your app", "$0.01 per record")),
   "o3_cred": "Prepay credits, from $5. They never expire, and unused credits are refunded on request.",
   "o3_never": "No one ever pays to be proven human.", "o3_btn": "Log in with HeartBank® to start",
   "o_dash": "dpixxi", "o_nav": ("Overview", "Keys", "Credits", "Packages", "Team"),
@@ -421,6 +445,29 @@ O = {
  },
  "km": {
   "o_prod": "B-Origin℠", "o_share": "ចែករំលែក",
+  "l7_link": "វិធីផ្សេងទៀតដើម្បីចូល",
+  "l7_h": "វិធីផ្សេងទៀតដើម្បីចូល", "l7_lede": "សម្រាប់ទូរសព្ទដែលមិនអាចរក្សា passkey បាន។",
+  "l7_e": "ផ្ញើតំណមកអ៊ីមែលខ្ញុំ", "l7_ev": "you@example.com", "l7_s": "ផ្ញើលេខកូដជាសារមកខ្ញុំ", "l7_sv": "+855 ·· ··· ···",
+  "l7_c1h": "វិធីទាំងនេះឱ្យអ្នកចូលបាន។ ពួកវាមិនអាចចុះហត្ថលេខាបានទេ។", "l7_c1p": "ដើម្បីចុះហត្ថលេខាលើឯកសារ បន្ថែម passkey ឬដកកំណត់ត្រាវិញ អ្នកត្រូវការ passkey។ តំណ ឬសារអាចត្រូវគេលួចចាប់បាន ប៉ុន្តែ passkey មិនអាចទេ។",
+  "l7_btn": "ផ្ញើ", "l7_no": "ត្រឡប់ទៅ passkey",
+  "l8_h": "ដើម្បីចុះហត្ថលេខា សូមប្រើ passkey", "l8_lede": "អ្នកបានចូលដោយសារ។ វាគ្រប់គ្រាន់ដើម្បីចូល ប៉ុន្តែមិនគ្រប់គ្រាន់ដើម្បីដាក់ឈ្មោះរបស់អ្នកលើឯកសារទេ។",
+  "l8_c1h": "ទូរសព្ទនេះមិនអាចរក្សា passkey បានទេ", "l8_c1p": "វាជាទូរសព្ទចាស់។ អ្នកអាចបន្តចូលនៅទីនេះ ហើយចុះហត្ថលេខាពីទូរសព្ទ ឬកុំព្យូទ័រថ្មីណាមួយដែលមាន passkey របស់អ្នក។",
+  "l8_btn": "ប្រើ passkey នៅលើឧបករណ៍ផ្សេង", "l8_no": "មិនមែនឥឡូវទេ",
+  "l9_h": "ការចូល និងឧបករណ៍", "l9_lede": "មានតែអ្នកប៉ុណ្ណោះដែលឃើញទំព័រនេះ។ យើងរក្សាទុកវារយៈពេល ១២ ខែ ជាមួយប្រទេសរបស់អ្នក ប៉ុន្តែមិនដែលរក្សាអាសយដ្ឋានរបស់អ្នកទេ។",
+  "l9_now": "វគ្គនេះ",
+  "l9_rows": (("iPhone · passkey", "Pixel Wild · ឥឡូវ · កម្ពុជា"), ("ទូរសព្ទ Android · សារ", "Pixel Wild · ២៤ តុលា · កម្ពុជា"),
+              ("MacBook · passkey", "គណនី B.333.eco · ២២ តុលា · សហរដ្ឋអាមេរិក")),
+  "l9_end": "បញ្ចប់", "l9_btn": "ដកឧបករណ៍ចេញ",
+  "l10_h": "ការជូនដំណឹង", "l10_lede": "តែអំពីសុវត្ថិភាពគណនីរបស់អ្នក និងកំណត់ត្រារបស់អ្នកប៉ុណ្ណោះ។ មិនដែលជាព័ត៌មាន ឬការរំលឹកទេ។",
+  "l10_rows": (("ការចូលថ្មី", "កម្មវិធីណាក៏ដោយ វិធីណាក៏ដោយ"), ("passkey ត្រូវបានបន្ថែម ឬដកចេញ", ""), ("កំណត់ត្រាត្រូវបានដកវិញ", ""), ("ការជំទាស់ត្រូវបានបន្ថែមលើកំណត់ត្រារបស់អ្នក", "")),
+  "l10_ios": "នៅលើ iPhone សូមបន្ថែម B.333.eco ទៅអេក្រង់ដើម ដើម្បីទទួលការជូនដំណឹងទាំងនេះ។",
+  "o9_h": "ការជូនដំណឹង", "o9_lede": "តែព្រឹត្តិការណ៍អាជីវកម្មប៉ុណ្ណោះ។ នីមួយៗផ្ញើតែម្ដង។",
+  "o9_rows": (("ក្រេឌីតនៅតិច", "ម្ដង នៅពេលក្រេឌីតធ្លាក់ក្រោម $5.00 (អ្នកជ្រើសរើស)"), ("ការបញ្ចូលស្វ័យប្រវត្តិបានដំណើរការ", ""), ("កូនសោត្រូវបានបង្កើត ឬដកសិទ្ធិ", ""),
+              ("ការផ្លាស់ប្ដូរក្រុម", ""), ("បង្កាន់ដៃការបង់ប្រាក់", "")),
+  "o10_h": "ឯកសារណែនាំ៖ B-Trace និង B-Signal℠", "o10_lede": "ការហៅមួយប្រាប់ពីអ្វីដែលឯកសារមាន។ ការពិនិត្យ B-Trace មួយតម្លៃ $0.005 ការពិនិត្យតែកំណត់ត្រាគឺឥតគិតថ្លៃ។",
+  "o10_code": '{\n  "records": [{\n    "signedWith": "passkey",\n    "at": "2026-10-25T21:14Z",\n    "source": "digitalCreation",\n    "rights": "CC-BY-4.0"\n  }],\n  "c2pa": { "present": true },\n  "iptc": { "source": "digitalCreation" },\n  "signal": 0.03\n}',
+  "o10_c1h": "អត្ថន័យរបស់ signal", "o10_c1p": "B-Signal℠ គឺជាសញ្ញា AI ដែលរកឃើញក្នុងឯកសារ ពី 0 ដល់ 1។ លេខខ្ពស់មានន័យថារកឃើញសញ្ញាច្រើន។ វាមិនដែលវាស់ថាស្នាដៃមួយជារបស់មនុស្សប៉ុណ្ណាទេ ហើយលេខទាបមិនបញ្ជាក់ថាមនុស្សជាអ្នកបង្កើតវាឡើយ។",
+  "o10_c2h": "ច្បាប់មួយសម្រាប់កម្មវិធីរបស់អ្នក", "o10_c2p": "កុំបង្ហាញ B-Signal ជាពិន្ទុនៃស្នាដៃរបស់នរណាម្នាក់។ ជំនួសមកវិញ សូមបង្ហាញអ្វីដែលឯកសារមាន៖ កំណត់ត្រា ស្លាក និងដែនកំណត់របស់វា។ លក្ខខណ្ឌរបស់យើងតម្រូវឱ្យធ្វើដូច្នេះ។",
   "o1_h": "ពិនិត្យឯកសារ", "o1_lede": "មើលថារូបភាពមួយមានព័ត៌មានអ្វីខ្លះអំពីប្រភពរបស់វា។ ឥតគិតថ្លៃ ហើយយើងមិនរក្សាទុកអ្វីទេ។",
   "o1_drop": "sunflower.png · ទើបពិនិត្យរួច",
   "o1_has": "អ្វីដែលឯកសារនេះមាន",
@@ -442,8 +489,8 @@ O = {
   "o3_h": "តម្លៃ", "o3_lede": "ឥតគិតថ្លៃសម្រាប់មនុស្ស។ បង់តាមការប្រើប្រាស់សម្រាប់អាជីវកម្មដែលហៅ API។",
   "o3_free": "ឥតគិតថ្លៃ ជារៀងរហូត", "o3_free_i": ("ការពិនិត្យឯកសារនៅ origin.333.eco", "ការចុះហត្ថលេខាលើឯកសាររបស់អ្នក",
               "កញ្ចប់ verify៖ ពិនិត្យកំណត់ត្រា និងហត្ថលេខា ដោយគ្មានអ៊ីនធឺណិត", "ការស្វែងរកកំណត់ត្រាណាមួយ"),
-  "o3_paid": "បង់តាមការប្រើប្រាស់", "o3_paid_i": (("ការពិនិត្យ B-Trace តាម API", "[តម្លៃនឹងកំណត់] ក្នុងមួយឯកសារ"),
-              ("កំណត់ត្រាដែលបានចុះហត្ថលេខាពីកម្មវិធីរបស់អ្នក", "[តម្លៃនឹងកំណត់] ក្នុងមួយកំណត់ត្រា")),
+  "o3_paid": "បង់តាមការប្រើប្រាស់", "o3_paid_i": (("ការពិនិត្យ B-Trace តាម API", "$0.005 ក្នុងមួយឯកសារ"),
+              ("កំណត់ត្រាដែលបានចុះហត្ថលេខាពីកម្មវិធីរបស់អ្នក", "$0.01 ក្នុងមួយកំណត់ត្រា")),
   "o3_cred": "បង់ទុកជាមុនជាក្រេឌីត ចាប់ពី $5។ ក្រេឌីតមិនផុតកំណត់ទេ ហើយក្រេឌីតដែលមិនបានប្រើនឹងសងវិញនៅពេលអ្នកស្នើ។",
   "o3_never": "គ្មាននរណាម្នាក់ត្រូវបង់ប្រាក់ដើម្បីបង្ហាញថាខ្លួនជាមនុស្សឡើយ។", "o3_btn": "ចូលជាមួយ HeartBank® ដើម្បីចាប់ផ្ដើម",
   "o_dash": "dpixxi", "o_nav": ("ទិដ្ឋភាពទូទៅ", "កូនសោ", "ក្រេឌីត", "កញ្ចប់", "ក្រុម"),
@@ -490,7 +537,7 @@ def btns(a, b=None, key=False):
 
 def L1(t): return (frm(t, APP, APP_MONO) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["l1_h"], t["l1_lede"])
                    + card(t["l1_c1h"], t["l1_c1p"], "key") + card(t["l1_c2h"], t["l1_c2p"], "split")
-                   + '<div class="grow"></div>' + btns(t["l1_btn"], t["l1_new"], key=True))
+                   + '<div class="grow"></div>' + btns(t["l1_btn"], t["l1_new"], key=True) + '<p class="more" style="text-align:center">%s</p>' % t["l7_link"])
 def L2(t): return (frm(t, APP, APP_MONO) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["l2_h"], t["l2_lede"])
                    + card(t["l2_c1h"], t["l2_c1p"], "key")
                    + '<div class="check"><b>✓</b><span>%s</span></div>' % t["l2_age"]
@@ -623,18 +670,48 @@ def O8(t):
             + '<div class="card"><h2>%s</h2><div class="field mono">%s</div></div>' % (t["o8_inv"], t["o8_invv"])
             + '<div class="grow"></div>' + btns(t["o8_btn"]))
 
+def L7(t):
+    return (frm(t, APP, APP_MONO) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["l7_h"], t["l7_lede"])
+            + '<div class="card"><h2>%s</h2><div class="field">%s</div><h2 style="margin-top:14px">%s</h2><div class="field mono">%s</div></div>'
+              % (t["l7_e"], t["l7_ev"], t["l7_s"], t["l7_sv"])
+            + card(t["l7_c1h"], t["l7_c1p"], "key") + '<div class="grow"></div>' + btns(t["l7_btn"], t["l7_no"]))
+def L8(t):
+    return (frm(t, EDITOR, EDITOR[:2]) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["l8_h"], t["l8_lede"])
+            + card(t["l8_c1h"], t["l8_c1p"], "two") + '<div class="grow"></div>' + btns(t["l8_btn"], t["l8_no"], key=True))
+def L9(t):
+    rows = "".join('<div class="row"><div><div class="t">%s%s</div><div class="s">%s</div></div>%s</div>'
+                   % (a, ' <span class="pill on">%s</span>' % t["l9_now"] if i == 0 else "", b, "" if i == 0 else '<span class="s">%s</span>' % t["l9_end"])
+                   for i, (a, b) in enumerate(t["l9_rows"]))
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (t["l9_h"], t["l9_lede"]) + '<div class="card">%s</div>' % rows
+            + '<div class="grow"></div>' + btns(t["l9_btn"]).replace('class="btn"', 'class="btn ghost"'))
+def _toggles(rows):
+    return '<div class="card">%s</div>' % "".join(
+        '<div class="row"><div><div class="t">%s</div>%s</div><span class="tog on"></span></div>' % (a, '<div class="s">%s</div>' % b if b else "")
+        for a, b in rows)
+def L10(t):
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (t["l10_h"], t["l10_lede"]) + _toggles(t["l10_rows"]) + '<p class="fine">%s</p>' % t["l10_ios"])
+def O9(t):
+    return (_acct(t) + _nav(t, -1) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["o9_h"], t["o9_lede"]) + _toggles(t["o9_rows"]))
+def O10(t):
+    import html as _h
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (t["o10_h"], t["o10_lede"])
+            + '<pre class="code">%s</pre>' % _h.escape(t["o10_code"])
+            + card(t["o10_c1h"], t["o10_c1p"]) + card(t["o10_c2h"], t["o10_c2p"]))
+
 SCREENS = [  # (id, page, title, render)
     ("L1", "login", "Log in", L1), ("L2", "login", "Make a passkey", L2), ("L3", "login", "Under 18", L3),
     ("L4", "login", "What a site may know", L4), ("L5", "login", "Logged in: add a second passkey", L5),
-    ("L6", "login", "Your account", L6),
+    ("L6", "login", "Your account", L6), ("L7", "login", "Other ways to log in", L7),
+    ("L8", "login", "A text-message session can't sign", L8), ("L9", "login", "Log-ins and devices", L9), ("L10", "login", "Notifications", L10),
     ("S1", "sign", "Sign a file", S1), ("S2", "sign", "Signed", S2), ("S7", "sign", "What this record shows (sheet)", S7), ("S3", "sign", "Withdraw a record", S3),
     ("S4", "sign", "A device lost or stolen", S4), ("S5", "sign", "Bring your works back", S5),
     ("S6", "sign", "Dispute a record", S6),
     ("O1", "origin", "Check a file (B-Trace)", O1), ("O2", "origin", "Sign your own file", O2), ("O3", "origin", "Pricing", O3),
     ("O4", "origin", "Dashboard: overview", O4), ("O5", "origin", "Dashboard: API keys", O5),
     ("O6", "origin", "Dashboard: prepay credits", O6), ("O7", "origin", "Dashboard: packages", O7), ("O8", "origin", "Dashboard: team", O8),
+    ("O9", "origin", "Dashboard: notifications", O9), ("O10", "origin", "Docs: B-Trace and B-Signal", O10),
 ]
-PUBLIC = {"O1", "O2", "O3"}  # public portal pages: a share button in the header (Default 8); auth pages get none
+PUBLIC = {"O1", "O2", "O3", "O10"}  # public portal pages: a share button in the header (Default 8); auth pages get none
 
 
 def page(sid, render, lang, dark=False):

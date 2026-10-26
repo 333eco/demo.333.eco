@@ -28,7 +28,7 @@
    "page": "login",
    "title": "L1 · Log in, Khmer",
    "w": 390,
-   "h": 871,
+   "h": 907,
    "x": 0,
    "y": 1094
   },
@@ -120,6 +120,78 @@
    "w": 390,
    "h": 956,
    "x": 2350,
+   "y": 1094
+  },
+  {
+   "file": "L7.html",
+   "page": "login",
+   "title": "L7 · Other ways to log in, English",
+   "w": 390,
+   "h": 844,
+   "x": 2820,
+   "y": 0
+  },
+  {
+   "file": "L7Km.html",
+   "page": "login",
+   "title": "L7 · Other ways to log in, Khmer",
+   "w": 390,
+   "h": 924,
+   "x": 2820,
+   "y": 1094
+  },
+  {
+   "file": "L8.html",
+   "page": "login",
+   "title": "L8 · A text-message session can't sign, English",
+   "w": 390,
+   "h": 844,
+   "x": 3290,
+   "y": 0
+  },
+  {
+   "file": "L8Km.html",
+   "page": "login",
+   "title": "L8 · A text-message session can't sign, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 3290,
+   "y": 1094
+  },
+  {
+   "file": "L9.html",
+   "page": "login",
+   "title": "L9 · Log-ins and devices, English",
+   "w": 390,
+   "h": 844,
+   "x": 3760,
+   "y": 0
+  },
+  {
+   "file": "L9Km.html",
+   "page": "login",
+   "title": "L9 · Log-ins and devices, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 3760,
+   "y": 1094
+  },
+  {
+   "file": "L10.html",
+   "page": "login",
+   "title": "L10 · Notifications, English",
+   "w": 390,
+   "h": 844,
+   "x": 4230,
+   "y": 0
+  },
+  {
+   "file": "L10Km.html",
+   "page": "login",
+   "title": "L10 · Notifications, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 4230,
    "y": 1094
   },
   {
@@ -390,6 +462,42 @@
    "w": 390,
    "h": 886,
    "x": 3290,
+   "y": 1094
+  },
+  {
+   "file": "O9.html",
+   "page": "origin",
+   "title": "O9 · Dashboard: notifications, English",
+   "w": 390,
+   "h": 844,
+   "x": 3760,
+   "y": 0
+  },
+  {
+   "file": "O9Km.html",
+   "page": "origin",
+   "title": "O9 · Dashboard: notifications, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 3760,
+   "y": 1094
+  },
+  {
+   "file": "O10.html",
+   "page": "origin",
+   "title": "O10 · Docs: B-Trace and B-Signal, English",
+   "w": 390,
+   "h": 844,
+   "x": 4230,
+   "y": 0
+  },
+  {
+   "file": "O10Km.html",
+   "page": "origin",
+   "title": "O10 · Docs: B-Trace and B-Signal, Khmer",
+   "w": 390,
+   "h": 933,
+   "x": 4230,
    "y": 1094
   },
   {
