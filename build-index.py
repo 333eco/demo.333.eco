@@ -28,11 +28,19 @@ page = """<!doctype html>
 <meta property="og:url" content="https://demo.333.eco/">
 <meta property="og:site_name" content="b.333.eco drawings">
 <meta property="og:title" content="Log in and Sign with HeartBank&#174;: drawings">
-<meta property="og:description" content="The b.333.eco screens, drawn in English and Khmer. These are drawings. They charge nobody.">
+<meta property="og:description" content="The B.333.eco screens, drawn in English and Khmer. These are drawings. They charge nobody.">
 <meta property="og:image" content="https://demo.333.eco/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Log in and Sign with HeartBank on a dark ground, the B-Emblem standing in for the B.">
+<link rel="manifest" href="site.webmanifest">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="description" content="Drawings of the B.333.eco screens: Log in with HeartBank proves who you are; Sign with HeartBank puts your name to one file. English and Khmer.">
+<meta name="twitter:title" content="Log in and Sign with HeartBank&#174;: drawings">
+<meta name="twitter:description" content="The B.333.eco screens, drawn in English and Khmer. These are drawings. They charge nobody.">
+<meta name="twitter:image" content="https://demo.333.eco/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0f52ba">
 <style>[hidden]{display:none!important}
@@ -41,6 +49,10 @@ page = """<!doctype html>
 body{margin:0;padding:2.5rem 16px 4rem;background:var(--bg);color:var(--fg);font:1rem/1.6 system-ui,sans-serif}
 main{max-width:36rem;margin:0 auto}
 h1{font-size:1.9rem;line-height:1.2;margin:0 0 .5rem}
+.top{display:flex;justify-content:flex-end;margin:-1.5rem 0 1rem}
+.share{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--line);border-radius:999px;background:none;color:var(--fg);font:inherit;font-size:.9rem;padding:.4rem .9rem;cursor:pointer}
+.share svg{width:18px;height:18px}
+#toast{position:fixed;left:50%%;bottom:24px;transform:translateX(-50%%);background:var(--fg);color:var(--bg);border-radius:999px;padding:.5rem 1rem;font-size:.9rem}
 p{color:var(--dim)}
 .start{display:block;border:1px solid var(--acc);border-radius:1rem;padding:1rem 1.2rem;margin:1.5rem 0;color:var(--fg);text-decoration:none}
 .start b{color:var(--acc)}
@@ -51,12 +63,23 @@ small{display:block;margin-top:2rem;color:var(--dim)}</style>
 </head>
 <body>
 <main>
+<div class="top"><button type="button" class="share" id="share" aria-label="Share this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>Share</button></div>
 <h1>Log in and Sign with HeartBank&#174;: drawings</h1>
-<p>The screens for b.333.eco, the estate's identity layer: <b>Log in</b> proves who you are; <b>Sign</b> puts your name to one file. English and Khmer, with a dark pass.</p>
+<p>The screens for B.333.eco, the estate's identity layer: <b>Log in</b> proves who you are; <b>Sign</b> puts your name to one file. English and Khmer, with a dark pass.</p>
 <a class="start" href="wall.html"><b>Start here</b><br>Every screen on one wall. Drag to pan, pinch to zoom, tap a screen to open it.</a>
 <ul>%s</ul>
 <small>These are drawings. They charge nobody, and nothing here is live. The Khmer is our own placeholder until a native reader approves it. Hidden from search by named crawler; shareable by link. This site counts visits without cookies.</small>
 </main>
+<div id="toast" hidden>Link copied</div>
+<script>
+document.getElementById("share").addEventListener("click", async () => {
+  const url = location.href.split("?")[0], text = document.querySelector('meta[name="description"]').content;
+  try { if (navigator.share) { await navigator.share({ title: document.title, text, url }); return; } }
+  catch (e) { if (e && e.name === "AbortError") return; }
+  try { await navigator.clipboard.writeText(url); const t = document.getElementById("toast"); t.hidden = false; setTimeout(() => { t.hidden = true; }, 2200); }
+  catch { window.prompt("", url); }
+});
+</script>
 </body>
 </html>
 """ % rows

@@ -26,7 +26,7 @@
    "w": 390,
    "h": 871,
    "x": 0,
-   "y": 1019
+   "y": 1051
   },
   {
    "file": "L2.html",
@@ -44,7 +44,7 @@
    "w": 390,
    "h": 869,
    "x": 470,
-   "y": 1019
+   "y": 1051
   },
   {
    "file": "L3.html",
@@ -62,7 +62,7 @@
    "w": 390,
    "h": 869,
    "x": 940,
-   "y": 1019
+   "y": 1051
   },
   {
    "file": "L4.html",
@@ -80,7 +80,7 @@
    "w": 390,
    "h": 885,
    "x": 1410,
-   "y": 1019
+   "y": 1051
   },
   {
    "file": "L5.html",
@@ -98,7 +98,7 @@
    "w": 390,
    "h": 869,
    "x": 1880,
-   "y": 1019
+   "y": 1051
   },
   {
    "file": "L6.html",
@@ -116,7 +116,7 @@
    "w": 390,
    "h": 956,
    "x": 2350,
-   "y": 1019
+   "y": 1051
   },
   {
    "file": "S1.html",
@@ -134,7 +134,7 @@
    "w": 390,
    "h": 923,
    "x": 0,
-   "y": 1019
+   "y": 1051
   },
   {
    "file": "S2.html",
@@ -150,9 +150,27 @@
    "page": "sign",
    "title": "S2 · Signed, Khmer",
    "w": 390,
-   "h": 869,
+   "h": 892,
    "x": 470,
-   "y": 1019
+   "y": 1051
+  },
+  {
+   "file": "S7.html",
+   "page": "sign",
+   "title": "S7 · What this record shows (sheet), English",
+   "w": 390,
+   "h": 891,
+   "x": 940,
+   "y": 0
+  },
+  {
+   "file": "S7Km.html",
+   "page": "sign",
+   "title": "S7 · What this record shows (sheet), Khmer",
+   "w": 390,
+   "h": 1008,
+   "x": 940,
+   "y": 1051
   },
   {
    "file": "S3.html",
@@ -160,7 +178,7 @@
    "title": "S3 · Withdraw a record, English",
    "w": 390,
    "h": 844,
-   "x": 940,
+   "x": 1410,
    "y": 0
   },
   {
@@ -169,8 +187,8 @@
    "title": "S3 · Withdraw a record, Khmer",
    "w": 390,
    "h": 869,
-   "x": 940,
-   "y": 1019
+   "x": 1410,
+   "y": 1051
   },
   {
    "file": "S4.html",
@@ -178,7 +196,7 @@
    "title": "S4 · A device lost or stolen, English",
    "w": 390,
    "h": 844,
-   "x": 1410,
+   "x": 1880,
    "y": 0
   },
   {
@@ -187,8 +205,8 @@
    "title": "S4 · A device lost or stolen, Khmer",
    "w": 390,
    "h": 869,
-   "x": 1410,
-   "y": 1019
+   "x": 1880,
+   "y": 1051
   },
   {
    "file": "S5.html",
@@ -196,7 +214,7 @@
    "title": "S5 · Bring your works back, English",
    "w": 390,
    "h": 844,
-   "x": 1880,
+   "x": 2350,
    "y": 0
   },
   {
@@ -205,8 +223,8 @@
    "title": "S5 · Bring your works back, Khmer",
    "w": 390,
    "h": 869,
-   "x": 1880,
-   "y": 1019
+   "x": 2350,
+   "y": 1051
   },
   {
    "file": "S6.html",
@@ -214,7 +232,7 @@
    "title": "S6 · Dispute a record, English",
    "w": 390,
    "h": 844,
-   "x": 2350,
+   "x": 2820,
    "y": 0
   },
   {
@@ -223,8 +241,8 @@
    "title": "S6 · Dispute a record, Khmer",
    "w": 390,
    "h": 869,
-   "x": 2350,
-   "y": 1019
+   "x": 2820,
+   "y": 1051
   },
   {
    "file": "L1Dark.html",
@@ -233,7 +251,7 @@
    "w": 390,
    "h": 844,
    "x": 0,
-   "y": 2135
+   "y": 2219
   },
   {
    "file": "S1Dark.html",
@@ -242,7 +260,7 @@
    "w": 390,
    "h": 844,
    "x": 0,
-   "y": 2135
+   "y": 2219
   }
  ],
  "annotations": [],

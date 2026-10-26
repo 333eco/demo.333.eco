@@ -88,6 +88,20 @@ h1{font-size:26px;line-height:1.2;margin:14px 0 6px;letter-spacing:-.015em}
 .check b{flex:none;width:20px;height:20px;border-radius:6px;border:1.5px solid var(--accent);background:var(--accent);
   color:var(--accent-ink);display:grid;place-items:center;font-size:12px}
 .note{border-left:3px solid var(--accent);background:var(--wash);border-radius:0 12px 12px 0;padding:12px 14px;font-size:14px;margin:0 0 12px}
+.more{margin:12px 0 0;color:var(--accent);font-weight:600;font-size:14px}
+.scrim{position:absolute;inset:0;background:color-mix(in oklab,var(--ink) 38%,transparent)}
+.app{position:relative}
+.sheet{position:absolute;left:0;right:0;top:96px;padding:10px 20px 28px;background:var(--bg);border-radius:22px 22px 0 0;
+  box-shadow:0 -8px 30px rgba(0,0,0,.18)}
+.grab{width:40px;height:5px;border-radius:3px;background:var(--line-strong);margin:0 auto 6px}
+.sh{font-size:13px;letter-spacing:.02em;color:var(--ink-dim);margin:16px 0 6px;text-transform:uppercase}
+.km .sh{text-transform:none;letter-spacing:0}
+.ticks,.dots{list-style:none;margin:0;padding:0}
+.ticks li,.dots li{display:flex;gap:10px;align-items:flex-start;padding:6px 0;font-size:14px}
+.ticks svg{flex:none;margin-top:2px}
+.dots i{flex:none;width:6px;height:6px;border-radius:50%;background:var(--ink-faint);margin:9px 6px 0}
+.pill{flex:none;font-size:12px;border:1px solid var(--line-strong);border-radius:999px;padding:3px 10px;color:var(--ink-dim)}
+.pill.on{border-color:var(--accent);color:var(--accent);font-weight:600}
 footer{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);
   padding-top:14px;margin-top:20px;color:var(--ink-faint);font-size:11.5px}
 """
@@ -164,7 +178,7 @@ KEY = ('<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circ
 T = {
  "en": {
   "band": "", "lang": ("EN", "ខ្មែរ"), "theme": ("System", "Light", "Dark"),
-  "foot": "b.333.eco · passkeys only · no password, no email",
+  "foot": "B.333.eco · passkeys only · no password, no email",
   "from": "Asked by",
   # L1
   "l1_h": "Log in to 333.eco", "l1_lede": "with your HeartBank® passkey.",
@@ -181,7 +195,7 @@ T = {
   "l3_btn": "Back to 333.eco",
   # L4
   "l4_h": "333.eco would like to know", "l4_lede": "Share only what you choose. You can change it any time in your account.",
-  "l4_r1t": "That you are a verified person", "l4_r1s": "Yes or no. Nothing else about you.",
+  "l4_r1t": "That you have a HeartBank® passkey", "l4_r1s": "Yes or no. Nothing else about you.",
   "l4_r2t": "Your @handle", "l4_r2s": "Your public name in the registry.",
   "l4_c1h": "Its own ID for you", "l4_c1p": "333.eco can't link this ID to any other site you log in to.",
   "l4_btn": "Continue", "l4_no": "Not now",
@@ -192,9 +206,9 @@ T = {
   # L6
   "l6_h": "Your account", "l6_lede": "Everything we hold about you is on this page.",
   "l6_pk": "Passkeys", "l6_pk1": ("iPhone", "Added 25 Oct 2026"), "l6_pk2": ("MacBook", "Added 25 Oct 2026"),
-  "l6_st": "Sites you log in to", "l6_st1": ("333.eco", "Shares: verified person"), "l6_change": "Change",
+  "l6_st": "Sites you log in to", "l6_st1": ("333.eco", "Shares: has a passkey"), "l6_change": "Change",
   "l6_wk": "Your signed works", "l6_wk1": ("sunflower.png", "Signed 25 Oct 2026"),
-  "l6_q": "Who checked a fact about you", "l6_q1": ("333.eco", "Checked: verified person · 25 Oct"),
+  "l6_q": "Who checked a fact about you", "l6_q1": ("333.eco", "Checked: has a passkey · 25 Oct"),
   # S1
   "s_from": "dpixxi", "s1_h": "Sign this file", "s1_lede": "dpixxi asks you to put your name to it.",
   "s1_kvm": "How it was made", "s1_kvmv": "Digital creation", "s1_kvf": "File", "s1_kvt": "Tool", "s1_kvtv": "dpixxi editor",
@@ -204,10 +218,21 @@ T = {
   "s1_btn": "Sign with passkey", "s1_fine": "Your file stays on your device. Only its fingerprint is sent.",
   # S2
   "s2_h": "Signed", "s2_lede": "A record of this file is now in the public log.",
-  "s2_kv": (("Signed by", "a verified person"), ("On", "25 Oct 2026, 2:14 pm"), ("How", "Digital creation"),
+  "s2_kv": (("Signed by", "a person with a HeartBank® passkey"), ("On", "25 Oct 2026, 2:14 pm"), ("How", "Digital creation"),
             ("Shared under", "CC BY 4.0"), ("Record", "7f3a 91c2 … c21e")),
   "s2_c1h": "Anyone can check it", "s2_c1p": "At origin.333.eco, or with the free verify package. Checking the signature never needs us online.",
   "s2_btn": "Done", "s2_no": "Show my @handle on it",
+  "s2_more": "What this record shows ›",
+  "s7_h": "What this record shows", "s7_has": "This record carries",
+  "s7_has_i": ("A passkey on an approved phone or computer, unlocked by its owner at the moment of signing",
+               "The file's fingerprint, which matches only this picture",
+               "The time, anchored to Bitcoin every day",
+               "Co-signatures from independent witnesses, so the log can't be quietly changed"),
+  "s7_not": "What a record can't show", "s7_not_i": ("Who imagined the work", "That this person holds only one account"),
+  "s7_today": "What HeartBank® can prove today",
+  "s7_today_i": (("A passkey on an approved device", "Live"), ("A family tree vouched for by relatives", "Being built"),
+                 ("Live breath, from a wearable heart", "Planned"), ("A family tree checked by DNA", "Planned")),
+  "s7_fine": "Every layer is optional. None is needed to sign.", "s7_btn": "Close",
   # S3
   "s3_h": "Withdraw this record?", "s3_lede": "sunflower.png · signed 25 Oct 2026",
   "s3_c1h": "Nothing is erased", "s3_c1p": "The record stays in the public log, marked “withdrawn by the signer on 25 Oct 2026”. Your @handle comes off it everywhere.",
@@ -223,7 +248,7 @@ T = {
   "s5_c1h": "Works with no @handle", "s5_c1p": "They stay valid and anyone can still check them, but they can't be moved to a new account.",
   "s5_btn": "Prove it with the registry",
   # S6
-  "s6_h": "Dispute this record", "s6_lede": "sunflower.png · signed by a verified person · 25 Oct 2026",
+  "s6_h": "Dispute this record", "s6_lede": "sunflower.png · signed with a HeartBank® passkey · 25 Oct 2026",
   "s6_c1h": "HeartBank® never decides", "s6_c1p": "Your statement is added to the public log beside the record. Anyone checking the file sees both.",
   "s6_field": "What you say", "s6_fieldv": "I drew this in March 2026. My own record of it is 1b9e … 44d0.",
   "s6_btn": "Sign my statement",
@@ -231,7 +256,7 @@ T = {
  "km": {
   "band": "ភាសាខ្មែរ៖ សេចក្ដីព្រាងរបស់យើង មិនទាន់ពិនិត្យដោយអ្នកនិយាយភាសាកំណើត · Khmer: our draft, not yet reviewed",
   "lang": ("EN", "ខ្មែរ"), "theme": ("ប្រព័ន្ធ", "ភ្លឺ", "ងងឹត"),
-  "foot": "b.333.eco · ប្រើតែ passkey · គ្មានពាក្យសម្ងាត់ គ្មានអ៊ីមែល",
+  "foot": "B.333.eco · ប្រើតែ passkey · គ្មានពាក្យសម្ងាត់ គ្មានអ៊ីមែល",
   "from": "ស្នើដោយ",
   "l1_h": "ចូលទៅ 333.eco", "l1_lede": "ដោយប្រើ passkey HeartBank® របស់អ្នក។",
   "l1_c1h": "គ្មានពាក្យសម្ងាត់ឱ្យគេលួច", "l1_c1p": "ទូរសព្ទរបស់អ្នករក្សា passkey ហើយបើកវាដោយសោអេក្រង់របស់ទូរសព្ទផ្ទាល់។ វាមិនដែលចេញពីទូរសព្ទឡើយ។",
@@ -244,7 +269,7 @@ T = {
   "l3_c1h": "ប្រសិនបើអ្នកនៅក្មេង", "l3_c1p": "សូមបង្ហាញទំព័រនេះទៅឪពុកម្ដាយ ឬអាណាព្យាបាល។ គ្មានអ្វីអំពីអ្នកត្រូវបានរក្សាទុកទេ។",
   "l3_btn": "ត្រឡប់ទៅ 333.eco",
   "l4_h": "333.eco ចង់ដឹង", "l4_lede": "ចែករំលែកតែអ្វីដែលអ្នកជ្រើសរើស។ អ្នកអាចប្ដូរវាបានគ្រប់ពេលក្នុងគណនីរបស់អ្នក។",
-  "l4_r1t": "ថាអ្នកជាមនុស្សដែលបានផ្ទៀងផ្ទាត់", "l4_r1s": "បាទ/ចាស ឬទេ។ គ្មានអ្វីផ្សេងអំពីអ្នកឡើយ។",
+  "l4_r1t": "ថាអ្នកមាន passkey HeartBank®", "l4_r1s": "បាទ/ចាស ឬទេ។ គ្មានអ្វីផ្សេងអំពីអ្នកឡើយ។",
   "l4_r2t": "@handle របស់អ្នក", "l4_r2s": "ឈ្មោះសាធារណៈរបស់អ្នកក្នុងបញ្ជី។",
   "l4_c1h": "លេខសម្គាល់ផ្ទាល់ខ្លួនសម្រាប់អ្នក", "l4_c1p": "333.eco មិនអាចភ្ជាប់លេខសម្គាល់នេះទៅគេហទំព័រផ្សេងទៀតដែលអ្នកចូលបានទេ។",
   "l4_btn": "បន្ត", "l4_no": "មិនមែនឥឡូវទេ",
@@ -253,9 +278,9 @@ T = {
   "l5_btn": "បន្ថែមឧបករណ៍មួយទៀត", "l5_no": "ពេលក្រោយ",
   "l6_h": "គណនីរបស់អ្នក", "l6_lede": "អ្វីៗទាំងអស់ដែលយើងរក្សាទុកអំពីអ្នក មាននៅលើទំព័រនេះ។",
   "l6_pk": "Passkeys", "l6_pk1": ("iPhone", "បានបន្ថែម ២៥ តុលា ២០២៦"), "l6_pk2": ("MacBook", "បានបន្ថែម ២៥ តុលា ២០២៦"),
-  "l6_st": "គេហទំព័រដែលអ្នកចូល", "l6_st1": ("333.eco", "ចែករំលែក៖ មនុស្សដែលបានផ្ទៀងផ្ទាត់"), "l6_change": "ប្ដូរ",
+  "l6_st": "គេហទំព័រដែលអ្នកចូល", "l6_st1": ("333.eco", "ចែករំលែក៖ មាន passkey"), "l6_change": "ប្ដូរ",
   "l6_wk": "ស្នាដៃដែលអ្នកបានចុះហត្ថលេខា", "l6_wk1": ("sunflower.png", "ចុះហត្ថលេខា ២៥ តុលា ២០២៦"),
-  "l6_q": "អ្នកដែលបានពិនិត្យការពិតអំពីអ្នក", "l6_q1": ("333.eco", "បានពិនិត្យ៖ មនុស្សដែលបានផ្ទៀងផ្ទាត់ · ២៥ តុលា"),
+  "l6_q": "អ្នកដែលបានពិនិត្យការពិតអំពីអ្នក", "l6_q1": ("333.eco", "បានពិនិត្យ៖ មាន passkey · ២៥ តុលា"),
   "s_from": "dpixxi", "s1_h": "ចុះហត្ថលេខាលើឯកសារនេះ", "s1_lede": "dpixxi សុំឱ្យអ្នកដាក់ឈ្មោះរបស់អ្នកលើវា។",
   "s1_kvm": "របៀបដែលវាត្រូវបានបង្កើត", "s1_kvmv": "ការបង្កើតឌីជីថល (Digital creation)", "s1_kvf": "ឯកសារ", "s1_kvt": "ឧបករណ៍", "s1_kvtv": "កម្មវិធីកែ dpixxi",
   "s1_hint": "dpixxi អានព័ត៌មាននេះពីប្រវត្តិរបស់កម្មវិធីកែផ្ទាល់។",
@@ -263,10 +288,21 @@ T = {
   "s1_note": "ការចុះហត្ថលេខាបន្ថែមកំណត់ត្រាសាធារណៈ៖ អ្នកណាចុះហត្ថលេខា ពេលណា និងរបៀបដែលវាត្រូវបានបង្កើត។ វាបង្ហាញថាអ្នកបានចុះហត្ថលេខា មិនមែនថាអ្នកជាអ្នកគិតវាឡើងទេ។",
   "s1_btn": "ចុះហត្ថលេខាដោយ passkey", "s1_fine": "ឯកសាររបស់អ្នកនៅលើឧបករណ៍របស់អ្នក។ មានតែស្នាមម្រាមដៃឌីជីថលរបស់វាប៉ុណ្ណោះដែលត្រូវបានផ្ញើ។",
   "s2_h": "បានចុះហត្ថលេខា", "s2_lede": "កំណត់ត្រានៃឯកសារនេះ ឥឡូវមាននៅក្នុងបញ្ជីសាធារណៈ។",
-  "s2_kv": (("ចុះហត្ថលេខាដោយ", "មនុស្សដែលបានផ្ទៀងផ្ទាត់"), ("នៅ", "២៥ តុលា ២០២៦ ម៉ោង ២:១៤ រសៀល"), ("របៀប", "ការបង្កើតឌីជីថល"),
+  "s2_kv": (("ចុះហត្ថលេខាដោយ", "មនុស្សដែលមាន passkey HeartBank®"), ("នៅ", "២៥ តុលា ២០២៦ ម៉ោង ២:១៤ រសៀល"), ("របៀប", "ការបង្កើតឌីជីថល"),
             ("ចែករំលែកក្រោម", "CC BY 4.0"), ("កំណត់ត្រា", "7f3a 91c2 … c21e")),
   "s2_c1h": "អ្នកណាក៏អាចពិនិត្យវាបាន", "s2_c1p": "នៅ origin.333.eco ឬដោយកញ្ចប់ verify ឥតគិតថ្លៃ។ ការពិនិត្យហត្ថលេខាមិនត្រូវការយើងនៅលើបណ្ដាញទេ។",
   "s2_btn": "រួចរាល់", "s2_no": "បង្ហាញ @handle របស់ខ្ញុំលើវា",
+  "s2_more": "អ្វីដែលកំណត់ត្រានេះបង្ហាញ ›",
+  "s7_h": "អ្វីដែលកំណត់ត្រានេះបង្ហាញ", "s7_has": "កំណត់ត្រានេះមាន",
+  "s7_has_i": ("passkey នៅលើទូរសព្ទ ឬកុំព្យូទ័រដែលបានអនុម័ត ដែលម្ចាស់បានបើកនៅពេលចុះហត្ថលេខា",
+               "ស្នាមម្រាមដៃឌីជីថលរបស់ឯកសារ ដែលត្រូវគ្នាតែនឹងរូបភាពនេះប៉ុណ្ណោះ",
+               "ពេលវេលា ដែលបានភ្ជាប់ទៅ Bitcoin រៀងរាល់ថ្ងៃ",
+               "ហត្ថលេខារួមពីសាក្សីឯករាជ្យ ដើម្បីកុំឱ្យបញ្ជីអាចត្រូវបានប្ដូរដោយស្ងាត់ៗ"),
+  "s7_not": "អ្វីដែលកំណត់ត្រាមិនអាចបង្ហាញ", "s7_not_i": ("អ្នកណាជាអ្នកគិតស្នាដៃនេះ", "ថាមនុស្សនេះមានគណនីតែមួយប៉ុណ្ណោះ"),
+  "s7_today": "អ្វីដែល HeartBank® អាចបង្ហាញភស្តុតាងបាននៅថ្ងៃនេះ",
+  "s7_today_i": (("passkey នៅលើឧបករណ៍ដែលបានអនុម័ត", "ដំណើរការ"), ("មែកធាងគ្រួសារ ដែលសាច់ញាតិធានា", "កំពុងសាងសង់"),
+                 ("ដង្ហើមផ្ទាល់ ពីបេះដូងដែលពាក់ជាប់ខ្លួន", "គ្រោងទុក"), ("មែកធាងគ្រួសារ ដែលពិនិត្យដោយ DNA", "គ្រោងទុក")),
+  "s7_fine": "ស្រទាប់នីមួយៗជាជម្រើស។ មិនត្រូវការស្រទាប់ណាមួយដើម្បីចុះហត្ថលេខាទេ។", "s7_btn": "បិទ",
   "s3_h": "ដកកំណត់ត្រានេះវិញ?", "s3_lede": "sunflower.png · ចុះហត្ថលេខា ២៥ តុលា ២០២៦",
   "s3_c1h": "គ្មានអ្វីត្រូវបានលុបទេ", "s3_c1p": "កំណត់ត្រានៅតែមានក្នុងបញ្ជីសាធារណៈ ដោយមានសម្គាល់ថា «បានដកវិញដោយអ្នកចុះហត្ថលេខា នៅ ២៥ តុលា ២០២៦»។ @handle របស់អ្នកត្រូវបានដកចេញពីវានៅគ្រប់កន្លែង។",
   "s3_btn": "ដកវិញ", "s3_no": "រក្សាទុក",
@@ -278,7 +314,7 @@ T = {
   "s5_field": "@handle", "s5_fieldv": "@thon",
   "s5_c1h": "ស្នាដៃដែលគ្មាន @handle", "s5_c1p": "វានៅតែមានសុពលភាព ហើយអ្នកណាក៏នៅតែអាចពិនិត្យបាន ប៉ុន្តែមិនអាចផ្លាស់ទៅគណនីថ្មីបានទេ។",
   "s5_btn": "បង្ហាញភស្តុតាងតាមរយៈបញ្ជី",
-  "s6_h": "ជំទាស់នឹងកំណត់ត្រានេះ", "s6_lede": "sunflower.png · ចុះហត្ថលេខាដោយមនុស្សដែលបានផ្ទៀងផ្ទាត់ · ២៥ តុលា ២០២៦",
+  "s6_h": "ជំទាស់នឹងកំណត់ត្រានេះ", "s6_lede": "sunflower.png · ចុះហត្ថលេខាដោយ passkey HeartBank® · ២៥ តុលា ២០២៦",
   "s6_c1h": "HeartBank® មិនដែលសម្រេចទេ", "s6_c1p": "សេចក្ដីថ្លែងរបស់អ្នកត្រូវបានបន្ថែមទៅក្នុងបញ្ជីសាធារណៈ នៅក្បែរកំណត់ត្រា។ អ្នកណាដែលពិនិត្យឯកសារនឹងឃើញទាំងពីរ។",
   "s6_field": "អ្វីដែលអ្នកនិយាយ", "s6_fieldv": "ខ្ញុំគូរវានៅខែមីនា ២០២៦។ កំណត់ត្រារបស់ខ្ញុំគឺ 1b9e … 44d0។",
   "s6_btn": "ចុះហត្ថលេខាលើសេចក្ដីថ្លែងរបស់ខ្ញុំ",
@@ -335,7 +371,7 @@ def S1(t):
 def S2(t):
     kv = "".join("<dt>%s</dt><dd%s>%s</dd>" % (a, ' class="mono"' if i == 4 else "", b) for i, (a, b) in enumerate(t["s2_kv"]))
     return ("<h1>%s</h1><p class='lede'>%s</p>" % (t["s2_h"], t["s2_lede"])
-            + '<div class="card"><div class="thumb">%s<dl class="kv">%s</dl></div></div>' % (sunflower(64), kv)
+            + '<div class="card"><div class="thumb">%s<dl class="kv">%s</dl></div><p class="more">%s</p></div>' % (sunflower(64), kv, t["s2_more"])
             + card(t["s2_c1h"], t["s2_c1p"], "log") + '<div class="grow"></div>' + btns(t["s2_btn"], t["s2_no"]))
 def S3(t): return ("<h1>%s</h1><p class='lede'>%s</p>" % (t["s3_h"], t["s3_lede"])
                    + card(t["s3_c1h"], t["s3_c1p"], "log") + '<div class="grow"></div>' + btns(t["s3_btn"], t["s3_no"], key=True))
@@ -351,11 +387,24 @@ def S6(t): return ("<h1>%s</h1><p class='lede'>%s</p>" % (t["s6_h"], t["s6_lede"
                    + '<div class="card"><h2>%s</h2><div class="field area">%s</div></div>' % (t["s6_field"], t["s6_fieldv"])
                    + '<div class="grow"></div>' + btns(t["s6_btn"], key=True))
 
+def S7(t):
+    ok = '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="var(--accent)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+    has = "".join('<li>%s<span>%s</span></li>' % (ok, x) for x in t["s7_has_i"])
+    nots = "".join('<li><i></i><span>%s</span></li>' % x for x in t["s7_not_i"])
+    today = "".join('<div class="row"><div class="t">%s</div><span class="pill%s">%s</span></div>' % (a, " on" if i == 0 else "", b)
+                    for i, (a, b) in enumerate(t["s7_today_i"]))
+    return (S2(t) + '<div class="scrim"></div><div class="sheet"><div class="grab"></div>'
+            + "<h1>%s</h1>" % t["s7_h"]
+            + '<h2 class="sh">%s</h2><ul class="ticks">%s</ul>' % (t["s7_has"], has)
+            + '<h2 class="sh">%s</h2><ul class="dots">%s</ul>' % (t["s7_not"], nots)
+            + '<div class="card"><h2>%s</h2>%s<p class="fine">%s</p></div>' % (t["s7_today"], today, t["s7_fine"])
+            + btns(t["s7_btn"]).replace('class="btn"', 'class="btn ghost"') + '</div>')
+
 SCREENS = [  # (id, page, title, render)
     ("L1", "login", "Log in", L1), ("L2", "login", "Make a passkey", L2), ("L3", "login", "Under 18", L3),
     ("L4", "login", "What a site may know", L4), ("L5", "login", "Logged in: add a second passkey", L5),
     ("L6", "login", "Your account", L6),
-    ("S1", "sign", "Sign a file", S1), ("S2", "sign", "Signed", S2), ("S3", "sign", "Withdraw a record", S3),
+    ("S1", "sign", "Sign a file", S1), ("S2", "sign", "Signed", S2), ("S7", "sign", "What this record shows (sheet)", S7), ("S3", "sign", "Withdraw a record", S3),
     ("S4", "sign", "A device lost or stolen", S4), ("S5", "sign", "Bring your works back", S5),
     ("S6", "sign", "Dispute a record", S6),
 ]
@@ -375,7 +424,8 @@ def page(sid, render, lang, dark=False):
 <meta name="viewport" content="width=%d">
 <meta name="googlebot" content="noindex,nofollow"><meta name="bingbot" content="noindex,nofollow">
 <meta name="slurp" content="noindex,nofollow"><meta name="yandex" content="noindex,nofollow">
-<title>b.333.eco · %s</title>
+<title>B.333.eco · %s</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <style>[hidden]{display:none!important}</style>
 <link rel="stylesheet" href="board.css?v=@CSSV@">
 </head>
