@@ -94,5 +94,6 @@ h1{font-size:26px;line-height:1.2;margin:14px 0 6px;letter-spacing:-.015em}
 .tabs span.on{color:var(--ink);font-weight:600;box-shadow:inset 0 -2px 0 var(--accent)}
 .big{font-size:30px;font-weight:600;letter-spacing:-.02em;margin:2px 0 4px}
 .code{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:12.5px/1.55 var(--font-mono);white-space:pre;overflow:hidden;margin:0 0 12px}
+.sm{font-size:.55em;vertical-align:.6em;line-height:0;margin-left:.04em}
 footer{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);
   padding-top:14px;margin-top:20px;color:var(--ink-faint);font-size:11.5px}

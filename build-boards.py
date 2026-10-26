@@ -115,6 +115,7 @@ h1{font-size:26px;line-height:1.2;margin:14px 0 6px;letter-spacing:-.015em}
 .tabs span.on{color:var(--ink);font-weight:600;box-shadow:inset 0 -2px 0 var(--accent)}
 .big{font-size:30px;font-weight:600;letter-spacing:-.02em;margin:2px 0 4px}
 .code{background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font:12.5px/1.55 var(--font-mono);white-space:pre;overflow:hidden;margin:0 0 12px}
+.sm{font-size:.55em;vertical-align:.6em;line-height:0;margin-left:.04em}
 footer{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);
   padding-top:14px;margin-top:20px;color:var(--ink-faint);font-size:11.5px}
 """
@@ -373,8 +374,8 @@ O = {
   "o_prod": "B-Origin℠", "o_share": "Share",
   "l7_link": "Other ways to log in",
   "l7_h": "Other ways to log in", "l7_lede": "For phones that can't hold a passkey.",
-  "l7_e": "Email me a link", "l7_ev": "you@example.com", "l7_s": "Text me a code", "l7_sv": "+855 ·· ··· ···",
-  "l7_c1h": "These log you in. They can't sign.", "l7_c1p": "To sign a file, add a passkey, or withdraw a record, you need a passkey. A link or a text can be intercepted; a passkey can't.",
+  "l7_e": "Email me a code", "l7_ev": "you@example.com", "l7_s": "Text me a code", "l7_sv": "+855 ·· ··· ···",
+  "l7_c1h": "These log you in. They can't sign.", "l7_c1p": "To sign a file, add a passkey, or withdraw a record, you need a passkey. A code can be intercepted; a passkey can't.",
   "l7_btn": "Send", "l7_no": "Back to passkey",
   "l8_h": "To sign, use a passkey", "l8_lede": "You logged in with a text message. That's enough to log in, but not to put your name to a file.",
   "l8_c1h": "This phone can't hold a passkey", "l8_c1p": "It's an older phone. You can keep logging in here, and sign from any newer phone or computer that has your passkey.",
@@ -390,13 +391,13 @@ O = {
   "o9_h": "Notifications", "o9_lede": "Business events only. Each one is sent once.",
   "o9_rows": (("Credits are low", "Once, when credits fall below $5.00 (you choose)"), ("Auto-reload ran", ""), ("A key created or revoked", ""),
               ("Team changes", ""), ("Payment receipts", "")),
-  "o10_h": "Docs: B-Trace and B-Signal℠", "o10_lede": "One call returns what a file carries. B-Trace checks cost $0.005 each; checking records alone is free.",
+  "o10_h": "Docs: B-Trace℠ and B-Signal℠", "o10_lede": "One call returns what a file carries. B-Trace checks cost $0.005 each; checking records alone is free.",
   "o10_code": '{\n  "records": [{\n    "signedWith": "passkey",\n    "at": "2026-10-25T21:14Z",\n    "source": "digitalCreation",\n    "rights": "CC-BY-4.0"\n  }],\n  "c2pa": { "present": true },\n  "iptc": { "source": "digitalCreation" },\n  "signal": 0.03\n}',
   "o10_c1h": "What signal means", "o10_c1p": "B-Signal℠ is the AI markers found in the file, from 0 to 1. A higher number means more markers were found. It never measures how human a work is, and a low number doesn't prove a person made it.",
   "o10_c2h": "One rule for your app", "o10_c2p": "Don't show B-Signal as a grade of someone's work. Show what the file carries instead: the record, its label and its limit. Our terms require it.",
   "o1_h": "Check a file", "o1_lede": "See what a picture carries about where it came from. Free, and we keep nothing.",
   "o1_drop": "sunflower.png · checked just now",
-  "o1_has": "What this file carries",
+  "o1_has": "B-Trace℠: what this file carries",
   "o1_rec": "A B-Origin record", "o1_recv": "Signed with a HeartBank® passkey · 25 Oct 2026 · Digital creation · CC BY 4.0",
   "o1_recl": "A record shows who signed it, not who imagined it.",
   "o1_c2pa": "Content credentials (C2PA)", "o1_c2pav": "Signed inside the file by HeartBank®: the same record.",
@@ -415,7 +416,7 @@ O = {
   "o3_h": "Pricing", "o3_lede": "Free for people. Pay as you go for businesses that call the API.",
   "o3_free": "Free, forever", "o3_free_i": ("Checking a file at origin.333.eco", "Signing your own file",
               "The verify package: records and signatures, checked offline", "Looking up any record"),
-  "o3_paid": "Pay as you go", "o3_paid_i": (("B-Trace check by API", "$0.005 per file"),
+  "o3_paid": "Pay as you go", "o3_paid_i": (("B-Trace℠ check by API", "$0.005 per file"),
               ("Signed records from your app", "$0.01 per record")),
   "o3_cred": "Prepay credits, from $5. They never expire, and unused credits are refunded on request.",
   "o3_never": "No one ever pays to be proven human.", "o3_btn": "Log in with HeartBank® to start",
@@ -447,8 +448,8 @@ O = {
   "o_prod": "B-Origin℠", "o_share": "ចែករំលែក",
   "l7_link": "វិធីផ្សេងទៀតដើម្បីចូល",
   "l7_h": "វិធីផ្សេងទៀតដើម្បីចូល", "l7_lede": "សម្រាប់ទូរសព្ទដែលមិនអាចរក្សា passkey បាន។",
-  "l7_e": "ផ្ញើតំណមកអ៊ីមែលខ្ញុំ", "l7_ev": "you@example.com", "l7_s": "ផ្ញើលេខកូដជាសារមកខ្ញុំ", "l7_sv": "+855 ·· ··· ···",
-  "l7_c1h": "វិធីទាំងនេះឱ្យអ្នកចូលបាន។ ពួកវាមិនអាចចុះហត្ថលេខាបានទេ។", "l7_c1p": "ដើម្បីចុះហត្ថលេខាលើឯកសារ បន្ថែម passkey ឬដកកំណត់ត្រាវិញ អ្នកត្រូវការ passkey។ តំណ ឬសារអាចត្រូវគេលួចចាប់បាន ប៉ុន្តែ passkey មិនអាចទេ។",
+  "l7_e": "ផ្ញើលេខកូដមកអ៊ីមែលខ្ញុំ", "l7_ev": "you@example.com", "l7_s": "ផ្ញើលេខកូដជាសារមកខ្ញុំ", "l7_sv": "+855 ·· ··· ···",
+  "l7_c1h": "វិធីទាំងនេះឱ្យអ្នកចូលបាន។ ពួកវាមិនអាចចុះហត្ថលេខាបានទេ។", "l7_c1p": "ដើម្បីចុះហត្ថលេខាលើឯកសារ បន្ថែម passkey ឬដកកំណត់ត្រាវិញ អ្នកត្រូវការ passkey។ លេខកូដអាចត្រូវគេលួចចាប់បាន ប៉ុន្តែ passkey មិនអាចទេ។",
   "l7_btn": "ផ្ញើ", "l7_no": "ត្រឡប់ទៅ passkey",
   "l8_h": "ដើម្បីចុះហត្ថលេខា សូមប្រើ passkey", "l8_lede": "អ្នកបានចូលដោយសារ។ វាគ្រប់គ្រាន់ដើម្បីចូល ប៉ុន្តែមិនគ្រប់គ្រាន់ដើម្បីដាក់ឈ្មោះរបស់អ្នកលើឯកសារទេ។",
   "l8_c1h": "ទូរសព្ទនេះមិនអាចរក្សា passkey បានទេ", "l8_c1p": "វាជាទូរសព្ទចាស់។ អ្នកអាចបន្តចូលនៅទីនេះ ហើយចុះហត្ថលេខាពីទូរសព្ទ ឬកុំព្យូទ័រថ្មីណាមួយដែលមាន passkey របស់អ្នក។",
@@ -464,13 +465,13 @@ O = {
   "o9_h": "ការជូនដំណឹង", "o9_lede": "តែព្រឹត្តិការណ៍អាជីវកម្មប៉ុណ្ណោះ។ នីមួយៗផ្ញើតែម្ដង។",
   "o9_rows": (("ក្រេឌីតនៅតិច", "ម្ដង នៅពេលក្រេឌីតធ្លាក់ក្រោម $5.00 (អ្នកជ្រើសរើស)"), ("ការបញ្ចូលស្វ័យប្រវត្តិបានដំណើរការ", ""), ("កូនសោត្រូវបានបង្កើត ឬដកសិទ្ធិ", ""),
               ("ការផ្លាស់ប្ដូរក្រុម", ""), ("បង្កាន់ដៃការបង់ប្រាក់", "")),
-  "o10_h": "ឯកសារណែនាំ៖ B-Trace និង B-Signal℠", "o10_lede": "ការហៅមួយប្រាប់ពីអ្វីដែលឯកសារមាន។ ការពិនិត្យ B-Trace មួយតម្លៃ $0.005 ការពិនិត្យតែកំណត់ត្រាគឺឥតគិតថ្លៃ។",
+  "o10_h": "ឯកសារណែនាំ៖ B-Trace℠ និង B-Signal℠", "o10_lede": "ការហៅមួយប្រាប់ពីអ្វីដែលឯកសារមាន។ ការពិនិត្យ B-Trace មួយតម្លៃ $0.005 ការពិនិត្យតែកំណត់ត្រាគឺឥតគិតថ្លៃ។",
   "o10_code": '{\n  "records": [{\n    "signedWith": "passkey",\n    "at": "2026-10-25T21:14Z",\n    "source": "digitalCreation",\n    "rights": "CC-BY-4.0"\n  }],\n  "c2pa": { "present": true },\n  "iptc": { "source": "digitalCreation" },\n  "signal": 0.03\n}',
   "o10_c1h": "អត្ថន័យរបស់ signal", "o10_c1p": "B-Signal℠ គឺជាសញ្ញា AI ដែលរកឃើញក្នុងឯកសារ ពី 0 ដល់ 1។ លេខខ្ពស់មានន័យថារកឃើញសញ្ញាច្រើន។ វាមិនដែលវាស់ថាស្នាដៃមួយជារបស់មនុស្សប៉ុណ្ណាទេ ហើយលេខទាបមិនបញ្ជាក់ថាមនុស្សជាអ្នកបង្កើតវាឡើយ។",
   "o10_c2h": "ច្បាប់មួយសម្រាប់កម្មវិធីរបស់អ្នក", "o10_c2p": "កុំបង្ហាញ B-Signal ជាពិន្ទុនៃស្នាដៃរបស់នរណាម្នាក់។ ជំនួសមកវិញ សូមបង្ហាញអ្វីដែលឯកសារមាន៖ កំណត់ត្រា ស្លាក និងដែនកំណត់របស់វា។ លក្ខខណ្ឌរបស់យើងតម្រូវឱ្យធ្វើដូច្នេះ។",
   "o1_h": "ពិនិត្យឯកសារ", "o1_lede": "មើលថារូបភាពមួយមានព័ត៌មានអ្វីខ្លះអំពីប្រភពរបស់វា។ ឥតគិតថ្លៃ ហើយយើងមិនរក្សាទុកអ្វីទេ។",
   "o1_drop": "sunflower.png · ទើបពិនិត្យរួច",
-  "o1_has": "អ្វីដែលឯកសារនេះមាន",
+  "o1_has": "B-Trace℠៖ អ្វីដែលឯកសារនេះមាន",
   "o1_rec": "កំណត់ត្រា B-Origin", "o1_recv": "ចុះហត្ថលេខាដោយ passkey HeartBank® · ២៥ តុលា ២០២៦ · ការបង្កើតឌីជីថល · CC BY 4.0",
   "o1_recl": "កំណត់ត្រាបង្ហាញថាអ្នកណាបានចុះហត្ថលេខា មិនមែនអ្នកណាជាអ្នកគិតវាឡើងទេ។",
   "o1_c2pa": "ព័ត៌មានប្រភពខ្លឹមសារ (C2PA)", "o1_c2pav": "ចុះហត្ថលេខាក្នុងឯកសារដោយ HeartBank®៖ ជាកំណត់ត្រាដដែល។",
@@ -489,7 +490,7 @@ O = {
   "o3_h": "តម្លៃ", "o3_lede": "ឥតគិតថ្លៃសម្រាប់មនុស្ស។ បង់តាមការប្រើប្រាស់សម្រាប់អាជីវកម្មដែលហៅ API។",
   "o3_free": "ឥតគិតថ្លៃ ជារៀងរហូត", "o3_free_i": ("ការពិនិត្យឯកសារនៅ origin.333.eco", "ការចុះហត្ថលេខាលើឯកសាររបស់អ្នក",
               "កញ្ចប់ verify៖ ពិនិត្យកំណត់ត្រា និងហត្ថលេខា ដោយគ្មានអ៊ីនធឺណិត", "ការស្វែងរកកំណត់ត្រាណាមួយ"),
-  "o3_paid": "បង់តាមការប្រើប្រាស់", "o3_paid_i": (("ការពិនិត្យ B-Trace តាម API", "$0.005 ក្នុងមួយឯកសារ"),
+  "o3_paid": "បង់តាមការប្រើប្រាស់", "o3_paid_i": (("ការពិនិត្យ B-Trace℠ តាម API", "$0.005 ក្នុងមួយឯកសារ"),
               ("កំណត់ត្រាដែលបានចុះហត្ថលេខាពីកម្មវិធីរបស់អ្នក", "$0.01 ក្នុងមួយកំណត់ត្រា")),
   "o3_cred": "បង់ទុកជាមុនជាក្រេឌីត ចាប់ពី $5។ ក្រេឌីតមិនផុតកំណត់ទេ ហើយក្រេឌីតដែលមិនបានប្រើនឹងសងវិញនៅពេលអ្នកស្នើ។",
   "o3_never": "គ្មាននរណាម្នាក់ត្រូវបង់ប្រាក់ដើម្បីបង្ហាញថាខ្លួនជាមនុស្សឡើយ។", "o3_btn": "ចូលជាមួយ HeartBank® ដើម្បីចាប់ផ្ដើម",
@@ -716,7 +717,7 @@ PUBLIC = {"O1", "O2", "O3", "O10"}  # public portal pages: a share button in the
 
 def page(sid, render, lang, dark=False):
     t = T[lang]
-    body = render(t)
+    body = render(t).replace("℠", '<span class="sm">℠</span>')
     assert not re.search(r"\bsign[\s-]?in\b", body, re.I), "%s: 'sign in' is barred (Default 10)" % sid
     assert "notar" not in body.lower(), "%s: 'notary' is barred in public copy" % sid
     themes = "".join('<span%s>%s</span>' % (' class="on"' if i == (2 if dark else 0) else "", x) for i, x in enumerate(t["theme"]))
