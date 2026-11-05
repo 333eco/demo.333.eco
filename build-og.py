@@ -63,7 +63,7 @@ CARDS = {
     "og.png": '<div class="inner">'
               '<h1 style="font-size:96px">Heart' + emblem() + 'ank'
               '<span class="reg">&#174;</span></h1>'
-              '<p>Log in proves who you are. Sign puts your name to one file. '
+              '<p>Hold an @name or a #tag, and make your page. Log in, and Sign. '
               'Drawings, in English and Khmer.</p></div>',
 }
 

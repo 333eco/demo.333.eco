@@ -42,7 +42,7 @@ CSS = """
 .lab{font-size:13px;color:var(--ink-dim);margin:12px 0 0}
 .lab+.field{margin-top:4px}
 .placeholder{font:600 11px var(--font-mono);color:var(--ink-faint);letter-spacing:.03em;margin:0 0 8px}
-.desk .ladder{grid-template-columns:repeat(3,1fr)}.desk .rung{grid-template-columns:1fr}
+.desk .ladder{grid-template-columns:repeat(3,1fr)}.desk .rung{grid-template-columns:1fr;align-content:start;align-items:start}
 .desk .said{font-size:34px}
 """
 
@@ -285,8 +285,7 @@ def R10():    # after the year: the fact, once
 
 
 def R11():    # the same page for a name nobody holds and a name whose year ended: it can't show which
-    return ('<div class="center"><div class="tagword" style="margin-top:40px">@sokha.keo</div></div>' +
-            head("", _("Names here belong to people, said the way they say them.", "ឈ្មោះនៅទីនេះជារបស់មនុស្ស ហៅតាមរបៀបដែលពួកគេហៅ។")).replace("<h1></h1>", "") +
+    return ('<div class="center"><div class="tagword" style="margin-top:40px">@sokha.keo</div><p class="lede">%s</p></div>' % _("Names here belong to people, said the way they say them.", "ឈ្មោះនៅទីនេះជារបស់មនុស្ស ហៅតាមរបៀបដែលពួកគេហៅ។") +
             btn(_("Find your own name", "រកឈ្មោះរបស់អ្នក")))
 
 

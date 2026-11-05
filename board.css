@@ -136,5 +136,5 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:10px;bo
 .lab{font-size:13px;color:var(--ink-dim);margin:12px 0 0}
 .lab+.field{margin-top:4px}
 .placeholder{font:600 11px var(--font-mono);color:var(--ink-faint);letter-spacing:.03em;margin:0 0 8px}
-.desk .ladder{grid-template-columns:repeat(3,1fr)}.desk .rung{grid-template-columns:1fr}
+.desk .ladder{grid-template-columns:repeat(3,1fr)}.desk .rung{grid-template-columns:1fr;align-content:start;align-items:start}
 .desk .said{font-size:34px}
