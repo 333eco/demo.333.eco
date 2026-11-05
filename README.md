@@ -1,6 +1,6 @@
 # demo.333.eco
 
-Drawings of the `b.333.eco` screens: **Log in with HeartBank®** (proves who you are) and **Sign with HeartBank®**
+Drawings of **the B-Registry** (hold an @name or a #tag, make your page; `registry_boards.py`) and the identity screens: **Log in with HeartBank®** (proves who you are) and **Sign with HeartBank®**
 (puts your name to one file). English and Khmer, with one dark pass per surface. These are drawings. They charge
 nobody, and nothing here is live.
 
@@ -23,6 +23,7 @@ node scripts/check-brand.mjs       # the vendored brand layer still matches bran
 ## Rules the generator enforces
 
 - **Log in** authenticates and **Sign** attests. The phrase *sign in* is refused at build time, in either language.
+- The registry's words are checked at build time (`registry_boards.py`, `BARRED`): no gift or donation language for a fee, no name reported as gone for good, no banking word, no ticking clock.
 - The word *notary* is refused at build time. No score, grade or "unverified" badge is drawn anywhere.
 - The emblem and neutrals are READ from `brand/` (`brand.py`); the only surface value is the sapphire accent block.
 - The Khmer is our own draft until a native reader approves it, and every Khmer board says so.

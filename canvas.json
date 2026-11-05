@@ -1,6 +1,10 @@
 {
  "pages": [
   {
+   "id": "registry",
+   "name": "B-Registry℠"
+  },
+  {
    "id": "login",
    "name": "Log in with HeartBank®"
   },
@@ -19,6 +23,366 @@
  ],
  "artboards": [
   {
+   "file": "R1.html",
+   "page": "registry",
+   "title": "R1 · Front door, English",
+   "w": 390,
+   "h": 1324,
+   "x": 0,
+   "y": 0
+  },
+  {
+   "file": "R1Km.html",
+   "page": "registry",
+   "title": "R1 · Front door, Khmer",
+   "w": 390,
+   "h": 1408,
+   "x": 0,
+   "y": 1484
+  },
+  {
+   "file": "R2.html",
+   "page": "registry",
+   "title": "R2 · Names for you, English",
+   "w": 390,
+   "h": 844,
+   "x": 470,
+   "y": 0
+  },
+  {
+   "file": "R2Km.html",
+   "page": "registry",
+   "title": "R2 · Names for you, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 470,
+   "y": 1484
+  },
+  {
+   "file": "R3.html",
+   "page": "registry",
+   "title": "R3 · Offers, when one just went, English",
+   "w": 390,
+   "h": 844,
+   "x": 940,
+   "y": 0
+  },
+  {
+   "file": "R3Km.html",
+   "page": "registry",
+   "title": "R3 · Offers, when one just went, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 940,
+   "y": 1484
+  },
+  {
+   "file": "R4.html",
+   "page": "registry",
+   "title": "R4 · The fee, before the card, English",
+   "w": 390,
+   "h": 844,
+   "x": 1410,
+   "y": 0
+  },
+  {
+   "file": "R4Km.html",
+   "page": "registry",
+   "title": "R4 · The fee, before the card, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 1410,
+   "y": 1484
+  },
+  {
+   "file": "R5.html",
+   "page": "registry",
+   "title": "R5 · The fee, from the card's country, English",
+   "w": 390,
+   "h": 844,
+   "x": 1880,
+   "y": 0
+  },
+  {
+   "file": "R5Km.html",
+   "page": "registry",
+   "title": "R5 · The fee, from the card's country, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 1880,
+   "y": 1484
+  },
+  {
+   "file": "R6.html",
+   "page": "registry",
+   "title": "R6 · Held, English",
+   "w": 390,
+   "h": 844,
+   "x": 2350,
+   "y": 0
+  },
+  {
+   "file": "R6Km.html",
+   "page": "registry",
+   "title": "R6 · Held, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 2350,
+   "y": 1484
+  },
+  {
+   "file": "R7.html",
+   "page": "registry",
+   "title": "R7 · Your page: edit, renew, download, English",
+   "w": 390,
+   "h": 937,
+   "x": 2820,
+   "y": 0
+  },
+  {
+   "file": "R7Km.html",
+   "page": "registry",
+   "title": "R7 · Your page: edit, renew, download, Khmer",
+   "w": 390,
+   "h": 1044,
+   "x": 2820,
+   "y": 1484
+  },
+  {
+   "file": "R8.html",
+   "page": "registry",
+   "title": "R8 · A person's page, English",
+   "w": 390,
+   "h": 844,
+   "x": 3290,
+   "y": 0
+  },
+  {
+   "file": "R8Km.html",
+   "page": "registry",
+   "title": "R8 · A person's page, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 3290,
+   "y": 1484
+  },
+  {
+   "file": "R9.html",
+   "page": "registry",
+   "title": "R9 · The one notice before the year ends, English",
+   "w": 390,
+   "h": 844,
+   "x": 3760,
+   "y": 0
+  },
+  {
+   "file": "R9Km.html",
+   "page": "registry",
+   "title": "R9 · The one notice before the year ends, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 3760,
+   "y": 1484
+  },
+  {
+   "file": "R10.html",
+   "page": "registry",
+   "title": "R10 · After the year ends: 90 days, English",
+   "w": 390,
+   "h": 844,
+   "x": 4230,
+   "y": 0
+  },
+  {
+   "file": "R10Km.html",
+   "page": "registry",
+   "title": "R10 · After the year ends: 90 days, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 4230,
+   "y": 1484
+  },
+  {
+   "file": "R11.html",
+   "page": "registry",
+   "title": "R11 · A name nobody holds (same page for one that lapsed), English",
+   "w": 390,
+   "h": 844,
+   "x": 4700,
+   "y": 0
+  },
+  {
+   "file": "R11Km.html",
+   "page": "registry",
+   "title": "R11 · A name nobody holds (same page for one that lapsed), Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 4700,
+   "y": 1484
+  },
+  {
+   "file": "R12.html",
+   "page": "registry",
+   "title": "R12 · What a tag is, English",
+   "w": 390,
+   "h": 885,
+   "x": 5170,
+   "y": 0
+  },
+  {
+   "file": "R12Km.html",
+   "page": "registry",
+   "title": "R12 · What a tag is, Khmer",
+   "w": 390,
+   "h": 944,
+   "x": 5170,
+   "y": 1484
+  },
+  {
+   "file": "R13.html",
+   "page": "registry",
+   "title": "R13 · Brand window: claim a tag, English",
+   "w": 390,
+   "h": 844,
+   "x": 5640,
+   "y": 0
+  },
+  {
+   "file": "R13Km.html",
+   "page": "registry",
+   "title": "R13 · Brand window: claim a tag, Khmer",
+   "w": 390,
+   "h": 912,
+   "x": 5640,
+   "y": 1484
+  },
+  {
+   "file": "R14.html",
+   "page": "registry",
+   "title": "R14 · Tag read and ready: the fee, English",
+   "w": 390,
+   "h": 844,
+   "x": 6110,
+   "y": 0
+  },
+  {
+   "file": "R14Km.html",
+   "page": "registry",
+   "title": "R14 · Tag read and ready: the fee, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 6110,
+   "y": 1484
+  },
+  {
+   "file": "R15.html",
+   "page": "registry",
+   "title": "R15 · A free tag: the steward's form, English",
+   "w": 390,
+   "h": 844,
+   "x": 6580,
+   "y": 0
+  },
+  {
+   "file": "R15Km.html",
+   "page": "registry",
+   "title": "R15 · A free tag: the steward's form, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 6580,
+   "y": 1484
+  },
+  {
+   "file": "R16.html",
+   "page": "registry",
+   "title": "R16 · A company's tag page, English",
+   "w": 390,
+   "h": 844,
+   "x": 7050,
+   "y": 0
+  },
+  {
+   "file": "R16Km.html",
+   "page": "registry",
+   "title": "R16 · A company's tag page, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 7050,
+   "y": 1484
+  },
+  {
+   "file": "R17.html",
+   "page": "registry",
+   "title": "R17 · A steward's tag page, English",
+   "w": 390,
+   "h": 844,
+   "x": 7520,
+   "y": 0
+  },
+  {
+   "file": "R17Km.html",
+   "page": "registry",
+   "title": "R17 · A steward's tag page, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 7520,
+   "y": 1484
+  },
+  {
+   "file": "R18.html",
+   "page": "registry",
+   "title": "R18 · The rules, English",
+   "w": 390,
+   "h": 844,
+   "x": 7990,
+   "y": 0
+  },
+  {
+   "file": "R18Km.html",
+   "page": "registry",
+   "title": "R18 · The rules, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 7990,
+   "y": 1484
+  },
+  {
+   "file": "R19.html",
+   "page": "registry",
+   "title": "R19 · The statement, English",
+   "w": 390,
+   "h": 844,
+   "x": 8460,
+   "y": 0
+  },
+  {
+   "file": "R19Km.html",
+   "page": "registry",
+   "title": "R19 · The statement, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 8460,
+   "y": 1484
+  },
+  {
+   "file": "R20.html",
+   "page": "registry",
+   "title": "R20 · Terms and privacy, English",
+   "w": 390,
+   "h": 844,
+   "x": 8930,
+   "y": 0
+  },
+  {
+   "file": "R20Km.html",
+   "page": "registry",
+   "title": "R20 · Terms and privacy, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 8930,
+   "y": 1484
+  },
+  {
    "file": "L1.html",
    "page": "login",
    "title": "L1 · Log in, English",
@@ -34,7 +398,7 @@
    "w": 390,
    "h": 907,
    "x": 0,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "L2.html",
@@ -52,7 +416,7 @@
    "w": 390,
    "h": 869,
    "x": 470,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "L3.html",
@@ -70,7 +434,7 @@
    "w": 390,
    "h": 869,
    "x": 940,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "L4.html",
@@ -88,7 +452,7 @@
    "w": 390,
    "h": 885,
    "x": 1410,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "L5.html",
@@ -106,7 +470,7 @@
    "w": 390,
    "h": 869,
    "x": 1880,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "L6.html",
@@ -124,7 +488,7 @@
    "w": 390,
    "h": 956,
    "x": 2350,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "L7.html",
@@ -142,7 +506,7 @@
    "w": 390,
    "h": 924,
    "x": 2820,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "L8.html",
@@ -160,7 +524,7 @@
    "w": 390,
    "h": 869,
    "x": 3290,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "L9.html",
@@ -178,7 +542,7 @@
    "w": 390,
    "h": 869,
    "x": 3760,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "L10.html",
@@ -196,7 +560,7 @@
    "w": 390,
    "h": 869,
    "x": 4230,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "S1.html",
@@ -214,7 +578,7 @@
    "w": 390,
    "h": 923,
    "x": 0,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "S2.html",
@@ -232,7 +596,7 @@
    "w": 390,
    "h": 892,
    "x": 470,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "S7.html",
@@ -250,7 +614,7 @@
    "w": 390,
    "h": 1008,
    "x": 940,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "S3.html",
@@ -268,7 +632,7 @@
    "w": 390,
    "h": 869,
    "x": 1410,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "S4.html",
@@ -286,7 +650,7 @@
    "w": 390,
    "h": 869,
    "x": 1880,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "S5.html",
@@ -304,7 +668,7 @@
    "w": 390,
    "h": 869,
    "x": 2350,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "S6.html",
@@ -322,7 +686,7 @@
    "w": 390,
    "h": 869,
    "x": 2820,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "O1.html",
@@ -340,7 +704,7 @@
    "w": 390,
    "h": 1053,
    "x": 0,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "O2.html",
@@ -358,7 +722,7 @@
    "w": 390,
    "h": 1034,
    "x": 470,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "O3.html",
@@ -376,7 +740,7 @@
    "w": 390,
    "h": 972,
    "x": 940,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "O4.html",
@@ -394,7 +758,7 @@
    "w": 390,
    "h": 869,
    "x": 1410,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "O5.html",
@@ -412,7 +776,7 @@
    "w": 390,
    "h": 922,
    "x": 1880,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "O6.html",
@@ -430,7 +794,7 @@
    "w": 390,
    "h": 906,
    "x": 2350,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "O7.html",
@@ -448,7 +812,7 @@
    "w": 390,
    "h": 1020,
    "x": 2820,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "O8.html",
@@ -466,7 +830,7 @@
    "w": 390,
    "h": 886,
    "x": 3290,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "O9.html",
@@ -484,7 +848,7 @@
    "w": 390,
    "h": 869,
    "x": 3760,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "O10.html",
@@ -502,7 +866,7 @@
    "w": 390,
    "h": 933,
    "x": 4230,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "E1.html",
@@ -520,7 +884,7 @@
    "w": 390,
    "h": 1016,
    "x": 0,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "E2.html",
@@ -538,7 +902,7 @@
    "w": 390,
    "h": 1016,
    "x": 470,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "E3.html",
@@ -556,7 +920,7 @@
    "w": 390,
    "h": 872,
    "x": 940,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "E4.html",
@@ -574,7 +938,7 @@
    "w": 390,
    "h": 869,
    "x": 1410,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "E5.html",
@@ -592,7 +956,7 @@
    "w": 390,
    "h": 871,
    "x": 1880,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "E6.html",
@@ -610,7 +974,7 @@
    "w": 390,
    "h": 1322,
    "x": 2350,
-   "y": 1350
+   "y": 1484
   },
   {
    "file": "E7.html",
@@ -628,7 +992,16 @@
    "w": 390,
    "h": 999,
    "x": 2820,
-   "y": 1350
+   "y": 1484
+  },
+  {
+   "file": "R1Dark.html",
+   "page": "registry",
+   "title": "R1 · dark pass, English",
+   "w": 390,
+   "h": 1324,
+   "x": 0,
+   "y": 3052
   },
   {
    "file": "L1Dark.html",
@@ -637,7 +1010,7 @@
    "w": 390,
    "h": 844,
    "x": 0,
-   "y": 2832
+   "y": 3052
   },
   {
    "file": "S1Dark.html",
@@ -646,7 +1019,7 @@
    "w": 390,
    "h": 844,
    "x": 0,
-   "y": 2832
+   "y": 3052
   },
   {
    "file": "E1Dark.html",
@@ -655,7 +1028,43 @@
    "w": 390,
    "h": 1026,
    "x": 0,
-   "y": 2832
+   "y": 3052
+  },
+  {
+   "file": "R1D.html",
+   "page": "registry",
+   "title": "R1D · Front door, desktop, English",
+   "w": 1280,
+   "h": 800,
+   "x": 0,
+   "y": 4056
+  },
+  {
+   "file": "R1DKm.html",
+   "page": "registry",
+   "title": "R1D · Front door, desktop, Khmer",
+   "w": 1280,
+   "h": 811,
+   "x": 0,
+   "y": 5156
+  },
+  {
+   "file": "R8D.html",
+   "page": "registry",
+   "title": "R8D · A person's page, desktop, English",
+   "w": 1280,
+   "h": 800,
+   "x": 1400,
+   "y": 4056
+  },
+  {
+   "file": "R8DKm.html",
+   "page": "registry",
+   "title": "R8D · A person's page, desktop, Khmer",
+   "w": 1280,
+   "h": 811,
+   "x": 1400,
+   "y": 5156
   },
   {
    "file": "E1D.html",
@@ -664,7 +1073,7 @@
    "w": 1280,
    "h": 878,
    "x": 0,
-   "y": 3836
+   "y": 4056
   },
   {
    "file": "E1DKm.html",
@@ -673,7 +1082,7 @@
    "w": 1280,
    "h": 957,
    "x": 0,
-   "y": 4936
+   "y": 5156
   },
   {
    "file": "E2D.html",
@@ -682,7 +1091,7 @@
    "w": 1280,
    "h": 800,
    "x": 1400,
-   "y": 3836
+   "y": 4056
   },
   {
    "file": "E2DKm.html",
@@ -691,7 +1100,7 @@
    "w": 1280,
    "h": 811,
    "x": 1400,
-   "y": 4936
+   "y": 5156
   },
   {
    "file": "E6D.html",
@@ -700,7 +1109,7 @@
    "w": 1280,
    "h": 808,
    "x": 2800,
-   "y": 3836
+   "y": 4056
   },
   {
    "file": "E6DKm.html",
@@ -709,7 +1118,7 @@
    "w": 1280,
    "h": 872,
    "x": 2800,
-   "y": 4936
+   "y": 5156
   },
   {
    "file": "O4D.html",
@@ -718,7 +1127,7 @@
    "w": 1280,
    "h": 800,
    "x": 0,
-   "y": 3836
+   "y": 4056
   },
   {
    "file": "O4DKm.html",
@@ -727,7 +1136,7 @@
    "w": 1280,
    "h": 811,
    "x": 0,
-   "y": 4936
+   "y": 5156
   },
   {
    "file": "O5D.html",
@@ -736,7 +1145,7 @@
    "w": 1280,
    "h": 800,
    "x": 1400,
-   "y": 3836
+   "y": 4056
   },
   {
    "file": "O5DKm.html",
@@ -745,12 +1154,12 @@
    "w": 1280,
    "h": 811,
    "x": 1400,
-   "y": 4936
+   "y": 5156
   }
  ],
  "annotations": [],
  "launch": {
-  "page": "login",
+  "page": "registry",
   "view": "canvas"
  }
 }

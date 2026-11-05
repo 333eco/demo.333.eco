@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate the b.333.eco artboards (Log in with HeartBank® · Sign with HeartBank®) and canvas.json.
+"""Generate the 333.eco artboards (the B-Registry, Log in with HeartBank®, Sign with HeartBank®, origin, explorer) and canvas.json.
 
     python3 build-boards.py && python3 build-index.py && python3 build-wall.py
 
@@ -15,6 +15,7 @@ The Khmer is OURS and UNREVIEWED; every Khmer board says so in its top band.
 """
 import io, json, os, re
 from brand import EMBLEM, tok
+import registry_boards as R
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 W, H = 390, 844
@@ -915,6 +916,17 @@ DESKTOP = [  # (id, page, title, render) — drawn at 1280, English and Khmer
 ]
 PUBLIC |= {"E1D", "E2D", "E6D"}  # public portal pages: a share button in the header (Default 8); auth pages get none
 
+# The B-Registry screens live in registry_boards.py. Its language is set per render, and it reuses the one emblem helper.
+R.heart, R.person = heart, person
+def _in(render, lang):
+    R.LANG[0] = lang
+    return render()
+def _r(render):
+    return lambda t: _in(render, "km" if t is T["km"] else "en")
+SCREENS = [(i, p, n, _r(f)) for i, p, n, f in R.SCREENS] + SCREENS
+DESKTOP = [(i, p, n, _r(f)) for i, p, n, f in R.DESKTOP] + DESKTOP
+PUBLIC |= R.PUBLIC
+
 
 def page(sid, render, lang, dark=False, desk=False):
     t = T[lang]
@@ -924,6 +936,10 @@ def page(sid, render, lang, dark=False, desk=False):
     foot = t["e_foot"] if sid.startswith("E") else t["foot"].replace("B.333.eco", host, 1)
     assert not re.search(r"\bsign[\s-]?in\b", body, re.I), "%s: 'sign in' is barred (Default 10)" % sid
     assert "notar" not in body.lower(), "%s: 'notary' is barred in public copy" % sid
+    registry = sid[0] == "R"
+    if registry:
+        R.check(sid, body)
+        foot = R.FOOT[1 if lang == "km" else 0]
     themes = "".join('<span%s>%s</span>' % (' class="on"' if i == (2 if dark else 0) else "", x) for i, x in enumerate(t["theme"]))
     langs = "".join('<span%s>%s</span>' % (' class="on"' if (i == 0) == (lang == "en") else "", x) for i, x in enumerate(t["lang"]))
     return ("""<!doctype html>
@@ -947,12 +963,12 @@ def page(sid, render, lang, dark=False, desk=False):
 </body>
 </html>
 """ % ("km" if lang == "km" else "en", "km" if lang == "km" else "en", " dark" if dark else "", " desk" if desk else "", 1280 if desk else W, sid,
-       '<div class="band">%s</div>' % t["band"] if t["band"] else "", mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid.startswith("O") else (' <span class="prod">%s</span>' % t["e_prod"] if sid.startswith("E") else "")),
+       '<div class="band">%s</div>' % t["band"] if t["band"] else "", R.brandmark(EMBLEM) if registry else mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid.startswith("O") else (' <span class="prod">%s</span>' % t["e_prod"] if sid.startswith("E") else "")),
        langs, ('<span class="sharebtn" aria-label="%s">%s</span>' % (t["o_share"], SHARE)) if sid in PUBLIC else "", body, foot, themes))
 
 
 def main():
-    css = brand_css(CSS)
+    css = brand_css(CSS + R.CSS)
     io.open(os.path.join(HERE, "board.css"), "w", encoding="utf-8").write(css)
     import hashlib
     cssv = hashlib.sha256(css.encode()).hexdigest()[:8]
@@ -961,8 +977,8 @@ def main():
     def hh(f): return max(H, int(hts.get(f, H)))
     tall_en = max([H] + [int(v) for k, v in hts.items() if not k.endswith("Km.html")])
     tall_km = max([H] + [int(v) for k, v in hts.items() if k.endswith("Km.html")])
-    boards, col = [], {"login": 0, "sign": 0, "origin": 0, "explorer": 0}
-    pages = [{"id": "login", "name": "Log in with HeartBank®"}, {"id": "sign", "name": "Sign with HeartBank®"}, {"id": "origin", "name": "origin.333.eco"}, {"id": "explorer", "name": "explorer.333.eco"}]
+    boards, col = [], {"registry": 0, "login": 0, "sign": 0, "origin": 0, "explorer": 0}
+    pages = [{"id": "registry", "name": "B-Registry℠"}, {"id": "login", "name": "Log in with HeartBank®"}, {"id": "sign", "name": "Sign with HeartBank®"}, {"id": "origin", "name": "origin.333.eco"}, {"id": "explorer", "name": "explorer.333.eco"}]
     rowy = {"en": 0, "km": tall_en + 160}
     for sid, pg, title, render in SCREENS:
         for lang in ("en", "km"):
@@ -971,14 +987,14 @@ def main():
             boards.append({"file": f, "page": pg, "title": "%s · %s, %s" % (sid, title, "English" if lang == "en" else "Khmer"),
                            "w": W, "h": hh(f), "x": col[pg] * (W + 80), "y": rowy[lang]})
         col[pg] += 1
-    for sid, pg in (("L1", "login"), ("S1", "sign"), ("E1", "explorer")):  # one dark pass per surface (Default 6)
+    for sid, pg in (("R1", "registry"), ("L1", "login"), ("S1", "sign"), ("E1", "explorer")):  # one dark pass per surface (Default 6)
         f = "%sDark.html" % sid
         render = dict((s[0], s[3]) for s in SCREENS)[sid]
         io.open(os.path.join(HERE, f), "w", encoding="utf-8").write(page(sid, render, "en", dark=True).replace("@CSSV@", cssv))
         boards.append({"file": f, "page": pg, "title": "%s · dark pass, English" % sid, "w": W, "h": hh(f),
                        "x": 0, "y": rowy["km"] + tall_km + 160})
     ydesk = rowy["km"] + tall_km + 160 + H + 160  # below the dark-pass row
-    dcol = {"explorer": 0, "origin": 0}
+    dcol = {"registry": 0, "explorer": 0, "origin": 0}
     for sid, pg, title, render in DESKTOP:
         for lang in ("en", "km"):
             f = "%s%s.html" % (sid, "" if lang == "en" else "Km")
@@ -986,7 +1002,7 @@ def main():
             boards.append({"file": f, "page": pg, "title": "%s · %s, %s" % (sid, title, "English" if lang == "en" else "Khmer"),
                            "w": 1280, "h": max(800, int(hts.get(f, 800))), "x": dcol[pg] * (1280 + 120), "y": ydesk + (0 if lang == "en" else 1100)})
         dcol[pg] += 1
-    canvas = {"pages": pages, "artboards": boards, "annotations": [], "launch": {"page": "login", "view": "canvas"}}
+    canvas = {"pages": pages, "artboards": boards, "annotations": [], "launch": {"page": "registry", "view": "canvas"}}
     io.open(os.path.join(HERE, "canvas.json"), "w", encoding="utf-8").write(json.dumps(canvas, ensure_ascii=False, indent=1))
     print("%d artboards written · board.css v=%s" % (len(boards), cssv))
 
