@@ -13,8 +13,8 @@ python3 -m http.server 8333 &      # measure.py reads the boards over HTTP
 python3 build-boards.py            # the boards + board.css + canvas.json, from the brand layer
 python3 measure.py                 # each board's real height → heights.json (a Khmer screen is never cut)
 python3 build-boards.py            # again, so canvas.json carries the measured heights
+python3 build-og.py                # the link-preview card (before the index: the index stamps its hash)
 python3 build-index.py && python3 build-wall.py   # the front door and the wall, generated from canvas.json
-python3 build-og.py                # the link-preview card
 node scripts/check-brand.mjs       # the vendored brand layer still matches brand.lock
 ```
 

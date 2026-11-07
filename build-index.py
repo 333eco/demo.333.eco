@@ -28,19 +28,19 @@ page = """<!doctype html>
 <meta property="og:url" content="https://demo.333.eco/">
 <meta property="og:site_name" content="b.333.eco drawings">
 <meta property="og:title" content="333.eco: drawings">
-<meta property="og:description" content="The B.333.eco screens, drawn in English and Khmer. These are drawings. They charge nobody.">
-<meta property="og:image" content="https://demo.333.eco/og.png">
+<meta property="og:description" content="Hold an @name or a #tag, and make your page. The 333.eco screens, drawn in English and Khmer. These are drawings. They charge nobody.">
+<meta property="og:image" content="https://demo.333.eco/og.png?v=@OGV@">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Log in and Sign with HeartBank on a dark ground, the B-Emblem standing in for the B.">
+<meta property="og:image:alt" content="333.eco beside the B-Emblem, over the words Pay now. Pay later. Thank after.">
 <link rel="manifest" href="site.webmanifest">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <meta name="description" content="Drawings of the B.333.eco screens: Log in with HeartBank proves who you are; Sign with HeartBank puts your name to one file. English and Khmer.">
 <meta name="twitter:title" content="333.eco: drawings">
-<meta name="twitter:description" content="The B.333.eco screens, drawn in English and Khmer. These are drawings. They charge nobody.">
-<meta name="twitter:image" content="https://demo.333.eco/og.png">
+<meta name="twitter:description" content="Hold an @name or a #tag, and make your page. The 333.eco screens, drawn in English and Khmer. These are drawings. They charge nobody.">
+<meta name="twitter:image" content="https://demo.333.eco/og.png?v=@OGV@">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0f52ba">
 <style>[hidden]{display:none!important}
@@ -85,6 +85,9 @@ document.getElementById("share").addEventListener("click", async () => {
 """ % rows
 for _p, _k in (("L", "bg"), ("L", "ink"), ("L", "ink-dim"), ("L", "line"), ("D", "bg"), ("D", "ink"), ("D", "ink-dim"), ("D", "line")):
     page = page.replace("@%s_%s@" % (_p, _k.upper().replace("-", "_")), tok("%s-%s" % (_p.lower(), _k)))
+# The card's address carries its own hash, so a new card is a new URL to every preview cache (run build-og.py first).
+_og = os.path.join(HERE, "og.png")
+page = page.replace("@OGV@", hashlib.sha256(io.open(_og, "rb").read()).hexdigest()[:8] if os.path.exists(_og) else "0")
 assert "@L_" not in page and "@D_" not in page, "unfilled brand placeholder"
 io.open(os.path.join(HERE, "index.html"), "w", encoding="utf-8").write(page)
 print("index.html written: %d artboards" % len(boards))

@@ -33,7 +33,7 @@ SHELL = """<!doctype html><html><head><meta charset="utf-8">
   html,body{width:1200px;height:630px;overflow:hidden}
   body{background:@D_BG@;color:@D_INK@;
        font-family:"IBM Plex Sans",system-ui,sans-serif;
-       display:flex;flex-direction:column;justify-content:center;
+       display:flex;flex-direction:column;justify-content:center;padding-bottom:40px;
        padding:0 92px;position:relative;-webkit-font-smoothing:antialiased}
   /* one soft accent bloom, bottom-left, so the card is not a flat rectangle */
   body::before{content:"";position:absolute;left:-160px;bottom:-260px;width:760px;height:760px;
@@ -45,6 +45,9 @@ SHELL = """<!doctype html><html><head><meta charset="utf-8">
       margin-left:-.09em;margin-right:-.04em}
   .reg{font-size:.34em;vertical-align:1.3em;font-weight:500;margin-left:.06em}
   p{font-size:30px;line-height:1.5;color:@D_INK_DIM@;max-width:23ch}
+  .site{display:flex;align-items:center;gap:14px;font-size:38px;font-weight:500;color:@D_INK@;margin-bottom:22px}
+  .site .em{margin:0;vertical-align:0}
+  .wide{max-width:44ch;font-size:27px}
   .km{font-family:"Noto Sans Khmer","IBM Plex Sans",sans-serif}
   .foot{position:absolute;left:92px;bottom:56px;display:flex;align-items:center;gap:14px;
         font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:22px;color:#7fa6e6}
@@ -60,13 +63,12 @@ def emblem(size_em=".92em"):
 
 
 CARDS = {
+    # The registry leads: 333.eco is the B-Registry's home, so the card names the site, not a body's wordmark.
     "og.png": '<div class="inner">'
-              '<h1 style="font-size:96px">Heart' + emblem() + 'ank'
-              '<span class="reg">&#174;</span></h1>'
-              '<p>Hold an @name or a #tag, and make your page. Log in, and Sign. '
-              'Drawings, in English and Khmer.</p></div>',
+              '<div class="site">' + emblem("1em") + '333.eco</div>'
+              '<h1 style="font-size:76px;margin-bottom:22px">Pay now.<br>Pay later.<br>Thank after.</h1>'
+              '<p class="wide">Hold an @name or a #tag, and make your page. Drawings, in English and Khmer.</p></div>',
 }
-
 
 def main():
     if not os.path.exists(CHROME):
