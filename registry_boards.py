@@ -319,8 +319,14 @@ def R8P():    # the disclaimer, one tap from the beat
     return ('<div class="center">' + _face() + _said() + '</div><div class="scrim"></div><div class="sheet"><div class="grab"></div>' +
             '<h1 style="font-size:22px">%s</h1>' % _("Why the heart beats", "ហេតុអ្វីបេះដូងលោត") +
             '<p class="lede">%s</p>' % _(DISCLAIMER[0], DISCLAIMER[1]) +
-            card(_("When this changes", "ពេលណាវាផ្លាស់ប្ដូរ"), _("When there's a way to show a name is held by one real person, holding a name will need it, and this note will say so.",
-                 "ពេលមានវិធីបង្ហាញថាឈ្មោះមួយត្រូវបានកាន់ដោយមនុស្សពិតម្នាក់ ការកាន់ឈ្មោះនឹងត្រូវការវា ហើយកំណត់ចំណាំនេះនឹងប្រាប់។")) +
+            '<div class="sh">%s</div><div class="card">' % _("What HeartBank® can show today", "អ្វីដែល HeartBank® អាចបង្ហាញបាននៅថ្ងៃនេះ") +
+            "".join('<div class="rail"><span>%s</span><span class="pill%s">%s</span></div>' % (a, " on" if i == 0 else "", b) for i, (a, b) in enumerate((
+                (_("A passkey", "passkey"), _("Live", "ដំណើរការ")),
+                (_("A family tree vouched for by relatives", "មែកធាងគ្រួសារ ដែលសាច់ញាតិធានា"), _("Being built", "កំពុងសាងសង់")),
+                (_("Live breath, from a wearable heart", "ដង្ហើមផ្ទាល់ ពីបេះដូងពាក់"), _("Planned", "គ្រោងទុក")),
+                (_("A family tree checked by DNA", "មែកធាងគ្រួសារ ដែលពិនិត្យដោយ DNA"), _("Planned", "គ្រោងទុក"))))) + '</div>' +
+            '<p class="fine" style="margin-top:0">%s</p>' % _("This list is the same on every page. It says what HeartBank® can do, not what this person has done. If a name ever needs more than a passkey, this note will say so.",
+                                                              "បញ្ជីនេះដូចគ្នានៅគ្រប់ទំព័រ។ វានិយាយពីអ្វីដែល HeartBank® អាចធ្វើ មិនមែនអ្វីដែលមនុស្សនេះបានធ្វើទេ។ ប្រសិនបើឈ្មោះណាមួយត្រូវការលើសពី passkey កំណត់ចំណាំនេះនឹងប្រាប់។") +
             btn(_("Close", "បិទ")) + '</div>')
 
 
@@ -413,7 +419,7 @@ def R14():    # read and accepted: pay
             '<div class="card"><p class="price">$33 <small>%s</small></p><p style="margin-top:6px">%s</p></div>' % (_("a year", "ក្នុងមួយឆ្នាំ"), _("Your card is from Cambodia.", "ប័ណ្ណរបស់អ្នកមកពីកម្ពុជា។")) +
             '<div class="card">' + tog(_("Renew each year", "បន្តរៀងរាល់ឆ្នាំ"), _("Off unless you turn it on.", "បិទ លុះត្រាអ្នកបើក។")) + '</div>' +
             field(_("Card number", "លេខប័ណ្ណ"), "•••• •••• •••• 4242") +
-            btn(_("Pay $33 and hold it", "បង់ ៣៣ ដុល្លារ ហើយកាន់វា")) +
+            btn(_("Pay $33 and hold it", "បង់ ៣៣ ដុល្លារ ហើយកាន់វា"), _("Pay with KHQR instead", "បង់តាម KHQR ជំនួសវិញ")) +
             '<p class="fine">%s</p>' % _("Sold by [the seller LLC]. A tag can move with the business that holds it.", "លក់ដោយ [the seller LLC]។ ស្លាកអាចផ្លាស់ទីជាមួយអាជីវកម្មដែលកាន់វា។"))
 
 
