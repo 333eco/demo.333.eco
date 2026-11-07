@@ -1,4 +1,8 @@
 {
     "dir": "brand",
-    "files": ["tokens.css", "emblem.path.txt"]
+    "files": [
+        "tokens.css",
+        "emblem.path.txt",
+        "motion.css"
+    ]
 }

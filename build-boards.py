@@ -14,7 +14,7 @@ Copy rules this file must keep:
 The Khmer is OURS and UNREVIEWED; every Khmer board says so in its top band.
 """
 import io, json, os, re
-from brand import EMBLEM, tok
+from brand import EMBLEM, tok, motion
 import registry_boards as R
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -918,6 +918,7 @@ PUBLIC |= {"E1D", "E2D", "E6D"}  # public portal pages: a share button in the he
 
 # The B-Registry screens live in registry_boards.py. Its language is set per render, and it reuses the one emblem helper.
 R.heart, R.person = heart, person
+R.poh(EMBLEM)
 def _in(render, lang):
     R.LANG[0] = lang
     return render()
@@ -968,7 +969,7 @@ def page(sid, render, lang, dark=False, desk=False):
 
 
 def main():
-    css = brand_css(CSS + R.CSS)
+    css = brand_css(CSS + R.CSS) + motion()
     io.open(os.path.join(HERE, "board.css"), "w", encoding="utf-8").write(css)
     import hashlib
     cssv = hashlib.sha256(css.encode()).hexdigest()[:8]

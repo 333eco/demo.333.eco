@@ -11,3 +11,10 @@ def tok(name):
     if not m:
         raise SystemExit("brand: brand/tokens.css has no --%s; sync the brand layer" % name)
     return re.sub(r"\s+", "", m.group(1))
+
+
+def motion():
+    """The heartbeat, verbatim from the vendored motion.css, plus the two numbers it reads from tokens.css.
+    The numbers go on `html`, never by importing tokens.css (that would override the drawing's palette)."""
+    css = io.open(os.path.join(HERE, "brand", "motion.css"), encoding="utf-8").read()
+    return "html{--beat-duration:%s;--beat-delay:%s}\n%s" % (tok("beat-duration"), tok("beat-delay"), css)

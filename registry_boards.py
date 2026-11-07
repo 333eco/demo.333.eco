@@ -44,6 +44,13 @@ CSS = """
 .placeholder{font:600 11px var(--font-mono);color:var(--ink-faint);letter-spacing:.03em;margin:0 0 8px}
 .desk .ladder{grid-template-columns:repeat(3,1fr)}.desk .rung{grid-template-columns:1fr;align-content:start;align-items:start}
 .desk .said{font-size:34px}
+.said .poh{display:inline-block;width:.8em;height:.8em;color:var(--accent);vertical-align:-.02em;margin-right:.18em}
+.why{display:table;margin-left:auto;margin-right:auto;font-size:12.5px;color:var(--ink-dim);border-bottom:1px dotted var(--line-strong);margin:6px auto 2px}
+.rail{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 0;border-top:1px solid var(--line);font-size:14px}
+.rail:first-of-type{border-top:0}
+.rail b{font-weight:600}.rail .s{display:block;font-size:12.5px;color:var(--ink-dim)}
+.qr{display:block;margin:6px auto 8px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:10px}
+.ref{font-family:var(--font-mono);font-size:15px;letter-spacing:.06em}
 """
 
 
@@ -159,9 +166,9 @@ def _pool_card():
 def _id_card():
     return card(_("A person has a name. A thing has a tag.", "មនុស្សមានឈ្មោះ។ របស់មានស្លាក។"),
                 _("An @name is how people find you and thank you, said the way your family says it: 333.eco/@sokha.keo. "
-                  "A #tag is the address of a company, a place or a machine: 333.eco/sunriseteas. A name costs $3 to $12 a year, set by your card's country. A tag costs $333.",
+                  "A #tag is the address of a company, a place or a machine: 333.eco/sunriseteas. A name costs $3 to $12 a year, set by your card's country. A tag costs $33 or $333, set the same way.",
                   "@name គឺជារបៀបដែលគេរកឃើញ និងអរគុណអ្នក ហៅតាមរបៀបគ្រួសារអ្នកហៅ៖ 333.eco/@sokha.keo។ "
-                  "#tag គឺជាអាសយដ្ឋានរបស់ក្រុមហ៊ុន ទីកន្លែង ឬម៉ាស៊ីន៖ 333.eco/sunriseteas។ ឈ្មោះមានតម្លៃ ៣ ទៅ ១២ ដុល្លារក្នុងមួយឆ្នាំ តាមប្រទេសនៃប័ណ្ណរបស់អ្នក។ ស្លាកមានតម្លៃ ៣៣៣ ដុល្លារ។"), s_id())
+                  "#tag គឺជាអាសយដ្ឋានរបស់ក្រុមហ៊ុន ទីកន្លែង ឬម៉ាស៊ីន៖ 333.eco/sunriseteas។ ឈ្មោះមានតម្លៃ ៣ ទៅ ១២ ដុល្លារក្នុងមួយឆ្នាំ តាមប្រទេសនៃប័ណ្ណរបស់អ្នក។ ស្លាកមានតម្លៃ ៣៣ ឬ ៣៣៣ ដុល្លារ តាមរបៀបដូចគ្នា។"), s_id())
 
 
 def _find():
@@ -202,7 +209,7 @@ def R3():
 def _hold_facts():
     return ('<ul class="dots" style="margin-top:12px">' + "".join("<li><i></i><span>%s</span></li>" % x for x in (
         _("You hold a registration. You don't own the name.", "អ្នកកាន់ការចុះឈ្មោះ។ អ្នកមិនមែនជាម្ចាស់ឈ្មោះនោះទេ។"),
-        _("Names are for adults.", "ឈ្មោះសម្រាប់មនុស្សពេញវ័យ។"),
+        _("Names are for adults, and holding one needs a passkey on your account.", "ឈ្មោះសម្រាប់មនុស្សពេញវ័យ ហើយការកាន់ឈ្មោះត្រូវការ passkey នៅលើគណនីរបស់អ្នក។"),
         _("Sold by [the seller LLC]. <span class='link'>Terms</span>", "លក់ដោយ [the seller LLC]។ <span class='link'>លក្ខខណ្ឌ</span>"))) + '</ul>')
 
 
@@ -226,6 +233,36 @@ def R5():     # the fee, once known
             btn(_("Pay $6 and hold it", "បង់ ៦ ដុល្លារ ហើយកាន់វា")) + _hold_facts())
 
 
+def _qr(px=168):
+    """A drawn stand-in for a KHQR code: a fixed pattern, never a scannable code."""
+    import random
+    rnd = random.Random(333)
+    n, c = 25, px / 25.0
+    r = ['<svg class="qr" width="%d" height="%d" viewBox="0 0 %d %d" aria-hidden="true">' % (px + 20, px + 20, px, px)]
+    for y in range(n):
+        for x in range(n):
+            corner = any(x0 <= x < x0 + 7 and y0 <= y < y0 + 7 for x0, y0 in ((0, 0), (n - 7, 0), (0, n - 7)))
+            on = ((x in (0, 6) or y in (0, 6) or (2 <= x <= 4 and 2 <= y <= 4)) if corner and (x < 7 and y < 7) else
+                  (x in (n - 7, n - 1) or y in (0, 6) or (n - 5 <= x <= n - 3 and 2 <= y <= 4)) if corner and x >= n - 7 else
+                  (x in (0, 6) or y in (n - 7, n - 1) or (2 <= x <= 4 and n - 5 <= y <= n - 3)) if corner else rnd.random() < .45)
+            if on:
+                r.append('<rect x="%.1f" y="%.1f" width="%.2f" height="%.2f" fill="#111"/>' % (x * c, y * c, c + .1, c + .1))
+    r.append('</svg>')
+    return "".join(r)
+
+
+def R5K():    # Cambodia: KHQR, settled by hand
+    return ('<p class="placeholder">[ PLACEHOLDER RATE AND ACCOUNT ]</p>' + head(_("Hold %s" % MINE, "កាន់ %s" % MINE)) +
+            '<div class="card center"><p class="price">24,600៛ <small>%s</small></p><p style="margin-top:4px">%s</p>' % (
+                _("a year", "ក្នុងមួយឆ្នាំ"), _("$6 at the posted rate of 4,100៛.", "៦ ដុល្លារ តាមអត្រាដែលបានបង្ហាញ ៤.១០០៛។")) +
+            _qr() + '<div class="lab">%s</div><div class="ref">333-K7QF</div></div>' % _("Reference", "លេខយោង") +
+            '<ul class="dots">' + "".join("<li><i></i><span>%s</span></li>" % x for x in (
+                _("Pay in your bank app. The reference is already in the code.", "បង់នៅក្នុងកម្មវិធីធនាគាររបស់អ្នក។ លេខយោងមាននៅក្នុងកូដរួចហើយ។"),
+                _("We keep the name for you for 3 days while we check. We'll email you when it's yours.", "យើងរក្សាឈ្មោះសម្រាប់អ្នក ៣ ថ្ងៃ ខណៈយើងពិនិត្យ។ យើងនឹងផ្ញើអ៊ីមែលពេលវាជារបស់អ្នក។"),
+                _("Paid to [the registry's KHQR account], used for nothing else.", "បង់ទៅ [គណនី KHQR របស់បញ្ជី] ដែលមិនប្រើសម្រាប់អ្វីផ្សេងទៀតទេ។"))) + '</ul>' +
+            _hold_facts())
+
+
 def R6():     # held
     return (head(_("%s is yours to hold" % MINE, "%s ជារបស់អ្នកសម្រាប់កាន់" % MINE), _("Through 5 November 2027. Your receipt is in your email.", "រហូតដល់ ៥ វិច្ឆិកា ២០២៧។ បង្កាន់ដៃនៅក្នុងអ៊ីមែលរបស់អ្នក។")) +
             card(_("Make your page", "បង្កើតទំព័ររបស់អ្នក"), _("Say your name your way, in your own voice if you like. Only you write it.", "ហៅឈ្មោះតាមរបៀបរបស់អ្នក ដោយសំឡេងផ្ទាល់ប្រសិនបើអ្នកចង់។ មានតែអ្នកទេដែលសរសេរវា។"), s_id()) +
@@ -239,6 +276,12 @@ def R7():     # your page, editing
             field(_("A short line", "បន្ទាត់ខ្លី"), _("I make kites in Kampot.", "ខ្ញុំធ្វើខ្លែងនៅកំពត។")) +
             field(_("Links", "តំណ"), "sokhakites.example") +
             btn(_("Save", "រក្សាទុក")) +
+            '<div class="sh">%s</div><div class="card">' % _("Ways to send you money (optional)", "វិធីផ្ញើប្រាក់ឱ្យអ្នក (ស្រេចចិត្ត)") +
+            '<div class="rail"><span><b>KHQR</b><span class="s">ABA · Sokha Keo</span></span><span class="link">%s</span></div>' % _("Change", "ប្ដូរ") +
+            '<div class="rail"><span><b>Zelle</b><span class="s">s•••@example.com</span></span><span class="link">%s</span></div>' % _("Change", "ប្ដូរ") +
+            '<div class="more">+ %s</div></div>' % _("Add a way", "បន្ថែមវិធី") +
+            '<p class="fine" style="margin-top:0">%s</p>' % _("People see these only after they thank you. KHQR shows your name and Zelle your email or phone to whoever sends. A change needs your passkey, and we'll email you when it happens.",
+                                                              "មនុស្សឃើញវាតែបន្ទាប់ពីពួកគេអរគុណអ្នក។ KHQR បង្ហាញឈ្មោះរបស់អ្នក ហើយ Zelle បង្ហាញអ៊ីមែល ឬលេខទូរស័ព្ទ ដល់អ្នកដែលផ្ញើ។ ការប្ដូរត្រូវការ passkey របស់អ្នក ហើយយើងនឹងផ្ញើអ៊ីមែលពេលវាកើតឡើង។") +
             '<div class="sh">%s</div><div class="card">' % _("Yours", "របស់អ្នក") +
             tog(_("Renew each year", "បន្តរៀងរាល់ឆ្នាំ"), _("Held through 5 November 2027.", "កាន់រហូតដល់ ៥ វិច្ឆិកា ២០២៧។")) +
             tog(_("Let search engines find my page", "អនុញ្ញាតឱ្យម៉ាស៊ីនស្វែងរករកឃើញទំព័ររបស់ខ្ញុំ"), _("Off unless you turn it on.", "បិទ លុះត្រាអ្នកបើក។")) +
@@ -251,8 +294,55 @@ def _face():
 
 
 def _said():
-    return ('<div class="said">សុខា កែវ</div><div class="handle">Sokha Keo · @sokha.keo</div>'
+    return ('<div class="said">' + POH + 'សុខា កែវ</div><div class="handle">Sokha Keo · @sokha.keo</div>'
+            '<div class="why">ⓘ %s</div>' % _("Why the heart beats", "ហេតុអ្វីបេះដូងលោត") +
             '<div class="play">▶ %s</div><p class="lede">%s</p>' % (_("Hear it said", "ស្ដាប់ការហៅឈ្មោះ"), _("I make kites in Kampot.", "ខ្ញុំធ្វើខ្លែងនៅកំពត។")))
+
+
+POH = None  # set below, once the emblem path is known
+
+
+def poh(emblem):
+    """The Proof of Humanity mark beside a person: it beats on EVERY @name page alike (founder 2026-11-06),
+    because holding a name needs a passkey. Its disclaimer says what that does and doesn't show."""
+    global POH
+    POH = '<svg class="poh beating" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="%s"/></svg>' % emblem
+
+
+DISCLAIMER = ("This heart beats on every @name: each is held by someone who logs in with a passkey. "
+              "A passkey shows they hold a key. It doesn't show who they are, or that they're only one person.",
+              "បេះដូងនេះលោតនៅលើគ្រប់ @name៖ ម្នាក់ៗត្រូវបានកាន់ដោយអ្នកដែលចូលដោយ passkey។ "
+              "passkey បង្ហាញថាពួកគេកាន់សោមួយ។ វាមិនបង្ហាញថាពួកគេជានរណា ឬថាពួកគេជាមនុស្សតែម្នាក់នោះទេ។")
+
+
+def R8P():    # the disclaimer, one tap from the beat
+    return ('<div class="center">' + _face() + _said() + '</div><div class="scrim"></div><div class="sheet"><div class="grab"></div>' +
+            '<h1 style="font-size:22px">%s</h1>' % _("Why the heart beats", "ហេតុអ្វីបេះដូងលោត") +
+            '<p class="lede">%s</p>' % _(DISCLAIMER[0], DISCLAIMER[1]) +
+            card(_("When this changes", "ពេលណាវាផ្លាស់ប្ដូរ"), _("When there's a way to show a name is held by one real person, holding a name will need it, and this note will say so.",
+                 "ពេលមានវិធីបង្ហាញថាឈ្មោះមួយត្រូវបានកាន់ដោយមនុស្សពិតម្នាក់ ការកាន់ឈ្មោះនឹងត្រូវការវា ហើយកំណត់ចំណាំនេះនឹងប្រាប់។")) +
+            btn(_("Close", "បិទ")) + '</div>')
+
+
+def _rails():
+    rows = (("KHQR", _("Cambodia", "កម្ពុជា")), ("Zelle", _("United States", "សហរដ្ឋអាមេរិក")), ("Wise", _("most countries", "ប្រទេសភាគច្រើន")))
+    return '<div class="card">' + "".join('<div class="rail"><span><b>%s</b><span class="s">%s</span></span><span class="link">%s</span></div>' % (n, w, _("Open", "បើក")) for n, w in rows) + '</div>'
+
+
+def R8T():    # thanking: words first, always
+    return (head(_("Thank @sokha.keo", "អរគុណ @sokha.keo"), _("Say what you're thanking her for. That's the thanks; nothing else is needed.", "និយាយថាអ្នកអរគុណនាងចំពោះអ្វី។ នោះហើយជាការអរគុណ គ្មានអ្វីផ្សេងទៀតត្រូវការទេ។")) +
+            field(_("Your words", "ពាក្យរបស់អ្នក"), _("The kite you made for my daughter flew all afternoon.", "ខ្លែងដែលអ្នកធ្វើឱ្យកូនស្រីខ្ញុំ ហោះពេញមួយរសៀល។"), True) +
+            btn(_("Send my thanks", "ផ្ញើការអរគុណរបស់ខ្ញុំ")) +
+            '<p class="fine">%s</p>' % _("Your thanks carries Kiitos, which is how HeartBank® records a thank-you. Nothing is owed.", "ការអរគុណរបស់អ្នកមាន Kiitos ដែលជារបៀបដែល HeartBank® កត់ត្រាការអរគុណ។ មិនជំពាក់អ្វីទេ។"))
+
+
+def R8M():    # after the words: money, only if they'd like
+    return (head(_("Your thanks reached @sokha.keo", "ការអរគុណរបស់អ្នកបានទៅដល់ @sokha.keo")) +
+            '<div class="sh">%s</div>' % _("Send money too, only if you'd like", "ផ្ញើប្រាក់ផងដែរ លុះត្រាតែអ្នកចង់") +
+            _rails() +
+            '<p class="fine">%s</p>' % _("These are Sokha's own accounts; the money goes straight to her. 333.eco never learns whether you sent anything. KHQR and Zelle show each of you the other's name.",
+                                         "ទាំងនេះជាគណនីផ្ទាល់របស់សុខា ប្រាក់ទៅដល់នាងផ្ទាល់។ 333.eco មិនដែលដឹងថាអ្នកបានផ្ញើអ្វីឬអត់ទេ។ KHQR និង Zelle បង្ហាញឈ្មោះរបស់អ្នកទាំងពីរដល់គ្នាទៅវិញទៅមក។") +
+            '<button class="btn ghost">%s</button>' % _("Done", "រួចរាល់"))
 
 
 def _thank():
@@ -294,10 +384,10 @@ def R12():    # the tag page
                  _("A #tag is the address of a company, a product, a place or a machine. It lives at 333.eco/yourtag.",
                    "#tag គឺជាអាសយដ្ឋានរបស់ក្រុមហ៊ុន ផលិតផល ទីកន្លែង ឬម៉ាស៊ីន។ វានៅ 333.eco/yourtag។")) +
             '<div class="note">%s</div>' % _("Holding a #tag helps support Thank After.", "ការកាន់ #tag ជួយគាំទ្រការអរគុណតាមក្រោយ។") +
-            '<div class="card"><p class="price">$333 <small>%s</small></p><p style="margin-top:6px">%s</p></div>' % (
-                _("a year, one price", "ក្នុងមួយឆ្នាំ តម្លៃតែមួយ"),
-                _("This price doesn't fall. The @name fee is meant to, because brands are not the point and people are.",
-                  "តម្លៃនេះមិនធ្លាក់ចុះទេ។ ថ្លៃ @name ត្រូវបានគេរំពឹងថានឹងធ្លាក់ចុះ ព្រោះយីហោមិនមែនជាគោលដៅទេ មនុស្សទើបជាគោលដៅ។")) +
+            '<div class="card"><p class="price">$33 <small>%s</small> $333</p><p style="margin-top:6px">%s</p></div>' % (
+                _("or", "ឬ"),
+                _("$33 a year when your card is from a low or lower-middle income country, $333 everywhere else. This price doesn't fall. The @name fee is meant to, because brands are not the point and people are.",
+                  "៣៣ ដុល្លារក្នុងមួយឆ្នាំ ពេលប័ណ្ណរបស់អ្នកមកពីប្រទេសដែលមានប្រាក់ចំណូលទាប ឬមធ្យមកម្រិតទាប និង ៣៣៣ ដុល្លារនៅកន្លែងផ្សេងទៀត។ តម្លៃនេះមិនធ្លាក់ចុះទេ។ ថ្លៃ @name ត្រូវបានគេរំពឹងថានឹងធ្លាក់ចុះ ព្រោះយីហោមិនមែនជាគោលដៅទេ មនុស្សទើបជាគោលដៅ។")) +
             btn(_("Claim a tag for a business", "ទាមទារស្លាកសម្រាប់អាជីវកម្ម"), _("Ask for a free tag: a river, a temple, a species", "សុំស្លាកឥតគិតថ្លៃ៖ ទន្លេ វត្ត ប្រភេទសត្វ")) +
             '<div style="height:14px"></div>' +
             card(_("An address, nothing more", "អាសយដ្ឋាន គ្មានអ្វីលើសពីនេះ"),
@@ -320,10 +410,10 @@ def R13():    # the brand window
 
 def R14():    # read and accepted: pay
     return (head(_("%s is ready for you" % TAG, "%s រួចរាល់សម្រាប់អ្នក" % TAG), _("A person read your registration and it matches.", "មនុស្សម្នាក់បានអានការចុះបញ្ជីរបស់អ្នក ហើយវាត្រូវគ្នា។")) +
-            '<div class="card"><p class="price">$333 <small>%s</small></p></div>' % _("a year", "ក្នុងមួយឆ្នាំ") +
+            '<div class="card"><p class="price">$33 <small>%s</small></p><p style="margin-top:6px">%s</p></div>' % (_("a year", "ក្នុងមួយឆ្នាំ"), _("Your card is from Cambodia.", "ប័ណ្ណរបស់អ្នកមកពីកម្ពុជា។")) +
             '<div class="card">' + tog(_("Renew each year", "បន្តរៀងរាល់ឆ្នាំ"), _("Off unless you turn it on.", "បិទ លុះត្រាអ្នកបើក។")) + '</div>' +
             field(_("Card number", "លេខប័ណ្ណ"), "•••• •••• •••• 4242") +
-            btn(_("Pay $333 and hold it", "បង់ ៣៣៣ ដុល្លារ ហើយកាន់វា")) +
+            btn(_("Pay $33 and hold it", "បង់ ៣៣ ដុល្លារ ហើយកាន់វា")) +
             '<p class="fine">%s</p>' % _("Sold by [the seller LLC]. A tag can move with the business that holds it.", "លក់ដោយ [the seller LLC]។ ស្លាកអាចផ្លាស់ទីជាមួយអាជីវកម្មដែលកាន់វា។"))
 
 
@@ -361,8 +451,11 @@ def R18():    # the rules
     return (head(_("The rules", "ច្បាប់")) + '<ul class="dots">' + "".join("<li><i></i><span>%s</span></li>" % r for _n, r in rows) + '</ul>' +
             '<div class="sh">%s</div>' % _("The @name fee, per year", "ថ្លៃ @name ក្នុងមួយឆ្នាំ") +
             "".join('<div class="sum"><i>%s</i><span>%s</span></div>' % f for f in fees) +
-            '<p class="fine">%s</p>' % _("By your card's country and the World Bank's income groups, reread each July. Nothing else about you changes the fee.",
-                                         "តាមប្រទេសនៃប័ណ្ណរបស់អ្នក និងក្រុមប្រាក់ចំណូលរបស់ធនាគារពិភពលោក អានឡើងវិញរៀងរាល់ខែកក្កដា។ គ្មានអ្វីផ្សេងទៀតអំពីអ្នកប្ដូរថ្លៃទេ។"))
+            '<div class="sh">%s</div>' % _("The #tag fee, per year", "ថ្លៃ #tag ក្នុងមួយឆ្នាំ") +
+            '<div class="sum"><i>%s</i><span>$33</span></div><div class="sum"><i>%s</i><span>$333</span></div>' % (
+                _("Low or lower-middle income", "ប្រាក់ចំណូលទាប ឬមធ្យមកម្រិតទាប"), _("Upper-middle or high income", "ប្រាក់ចំណូលមធ្យមកម្រិតខ្ពស់ ឬខ្ពស់")) +
+            '<p class="fine">%s</p>' % _("By your card's country and the World Bank's income groups, reread each July; paying by KHQR is Cambodia's fee. Nothing else about you changes the fee.",
+                                         "តាមប្រទេសនៃប័ណ្ណរបស់អ្នក និងក្រុមប្រាក់ចំណូលរបស់ធនាគារពិភពលោក អានឡើងវិញរៀងរាល់ខែកក្កដា ការបង់តាម KHQR គឺជាថ្លៃរបស់កម្ពុជា។ គ្មានអ្វីផ្សេងទៀតអំពីអ្នកប្ដូរថ្លៃទេ។"))
 
 
 def R19():    # the statement
@@ -387,8 +480,9 @@ def R20():    # terms and privacy: the skeleton counsel fills
 
 SCREENS = [  # (id, page, title, render)
     ("R1", "registry", "Front door", R1), ("R2", "registry", "Names for you", R2), ("R3", "registry", "Offers, when one just went", R3),
-    ("R4", "registry", "The fee, before the card", R4), ("R5", "registry", "The fee, from the card's country", R5), ("R6", "registry", "Held", R6),
-    ("R7", "registry", "Your page: edit, renew, download", R7), ("R8", "registry", "A person's page", R8),
+    ("R4", "registry", "The fee, before the card", R4), ("R5", "registry", "The fee, from the card's country", R5), ("R5K", "registry", "Cambodia: KHQR, settled by hand", R5K), ("R6", "registry", "Held", R6),
+    ("R7", "registry", "Your page: edit, renew, download", R7), ("R8", "registry", "A person's page: the heart beats on every name", R8),
+    ("R8P", "registry", "Why the heart beats (passkey note)", R8P), ("R8T", "registry", "Thank: words first", R8T), ("R8M", "registry", "Money too, only if they'd like", R8M),
     ("R9", "registry", "The one notice before the year ends", R9), ("R10", "registry", "After the year ends: 90 days", R10),
     ("R11", "registry", "A name nobody holds (same page for one that lapsed)", R11), ("R12", "registry", "What a tag is", R12),
     ("R13", "registry", "Brand window: claim a tag", R13), ("R14", "registry", "Tag read and ready: the fee", R14), ("R15", "registry", "A free tag: the steward's form", R15),
@@ -398,6 +492,7 @@ SCREENS = [  # (id, page, title, render)
 DESKTOP = [("R1D", "registry", "Front door, desktop", R1D), ("R8D", "registry", "A person's page, desktop", R8D)]
 # A page about a named person gets the preview card and no share button (Default 8); signed-in pages get neither.
 PUBLIC = {"R1", "R1D", "R12", "R16", "R17", "R18", "R19"}
+# the person-page boards stay without a share button (Default 8)
 
 
 # ⛔ Refused at build time. Each entry is a thing the founder's rulings bar from this surface's copy.
@@ -411,7 +506,9 @@ BARRED = [
     (r"\bsupporters?\b|thank you for support|help the pool|\braised\b", "no ask, no badge, no total"),
     (r"\bnew\b|\bfirst of its kind\b", "no novelty claim"),
     (r"\bverified (holder|badge)\b|\bscore\b|\branked?\b", "class, never endorsement"),
-    (r"ធនាគារ(?!ពិភពលោក)", "ធនាគារ is the regulated word; only the World Bank's own name"),
+    (r"\bverified\b(?! person)|proven human|real human|a real person", "a passkey shows a key, never a proven human (A562)"),
+    (r"\bclub\b|\bmembers?\b", "a holder is not a member"),
+    (r"ធនាគារ(?!ពិភពលោក|របស់អ្នក)", "ធនាគារ is the regulated word; only the World Bank's name or a person's own bank"),
 ]
 
 

@@ -113,12 +113,30 @@
    "y": 1484
   },
   {
+   "file": "R5K.html",
+   "page": "registry",
+   "title": "R5K · Cambodia: KHQR, settled by hand, English",
+   "w": 390,
+   "h": 896,
+   "x": 2350,
+   "y": 0
+  },
+  {
+   "file": "R5KKm.html",
+   "page": "registry",
+   "title": "R5K · Cambodia: KHQR, settled by hand, Khmer",
+   "w": 390,
+   "h": 974,
+   "x": 2350,
+   "y": 1484
+  },
+  {
    "file": "R6.html",
    "page": "registry",
    "title": "R6 · Held, English",
    "w": 390,
    "h": 844,
-   "x": 2350,
+   "x": 2820,
    "y": 0
   },
   {
@@ -127,7 +145,7 @@
    "title": "R6 · Held, Khmer",
    "w": 390,
    "h": 869,
-   "x": 2350,
+   "x": 2820,
    "y": 1484
   },
   {
@@ -135,8 +153,8 @@
    "page": "registry",
    "title": "R7 · Your page: edit, renew, download, English",
    "w": 390,
-   "h": 937,
-   "x": 2820,
+   "h": 1261,
+   "x": 3290,
    "y": 0
   },
   {
@@ -144,26 +162,80 @@
    "page": "registry",
    "title": "R7 · Your page: edit, renew, download, Khmer",
    "w": 390,
-   "h": 1044,
-   "x": 2820,
+   "h": 1373,
+   "x": 3290,
    "y": 1484
   },
   {
    "file": "R8.html",
    "page": "registry",
-   "title": "R8 · A person's page, English",
+   "title": "R8 · A person's page: the heart beats on every name, English",
    "w": 390,
    "h": 844,
-   "x": 3290,
+   "x": 3760,
    "y": 0
   },
   {
    "file": "R8Km.html",
    "page": "registry",
-   "title": "R8 · A person's page, Khmer",
+   "title": "R8 · A person's page: the heart beats on every name, Khmer",
    "w": 390,
    "h": 869,
-   "x": 3290,
+   "x": 3760,
+   "y": 1484
+  },
+  {
+   "file": "R8P.html",
+   "page": "registry",
+   "title": "R8P · Why the heart beats (passkey note), English",
+   "w": 390,
+   "h": 844,
+   "x": 4230,
+   "y": 0
+  },
+  {
+   "file": "R8PKm.html",
+   "page": "registry",
+   "title": "R8P · Why the heart beats (passkey note), Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 4230,
+   "y": 1484
+  },
+  {
+   "file": "R8T.html",
+   "page": "registry",
+   "title": "R8T · Thank: words first, English",
+   "w": 390,
+   "h": 844,
+   "x": 4700,
+   "y": 0
+  },
+  {
+   "file": "R8TKm.html",
+   "page": "registry",
+   "title": "R8T · Thank: words first, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 4700,
+   "y": 1484
+  },
+  {
+   "file": "R8M.html",
+   "page": "registry",
+   "title": "R8M · Money too, only if they'd like, English",
+   "w": 390,
+   "h": 844,
+   "x": 5170,
+   "y": 0
+  },
+  {
+   "file": "R8MKm.html",
+   "page": "registry",
+   "title": "R8M · Money too, only if they'd like, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 5170,
    "y": 1484
   },
   {
@@ -172,7 +244,7 @@
    "title": "R9 · The one notice before the year ends, English",
    "w": 390,
    "h": 844,
-   "x": 3760,
+   "x": 5640,
    "y": 0
   },
   {
@@ -181,7 +253,7 @@
    "title": "R9 · The one notice before the year ends, Khmer",
    "w": 390,
    "h": 869,
-   "x": 3760,
+   "x": 5640,
    "y": 1484
   },
   {
@@ -190,7 +262,7 @@
    "title": "R10 · After the year ends: 90 days, English",
    "w": 390,
    "h": 844,
-   "x": 4230,
+   "x": 6110,
    "y": 0
   },
   {
@@ -199,7 +271,7 @@
    "title": "R10 · After the year ends: 90 days, Khmer",
    "w": 390,
    "h": 869,
-   "x": 4230,
+   "x": 6110,
    "y": 1484
   },
   {
@@ -208,7 +280,7 @@
    "title": "R11 · A name nobody holds (same page for one that lapsed), English",
    "w": 390,
    "h": 844,
-   "x": 4700,
+   "x": 6580,
    "y": 0
   },
   {
@@ -217,7 +289,7 @@
    "title": "R11 · A name nobody holds (same page for one that lapsed), Khmer",
    "w": 390,
    "h": 869,
-   "x": 4700,
+   "x": 6580,
    "y": 1484
   },
   {
@@ -225,8 +297,8 @@
    "page": "registry",
    "title": "R12 · What a tag is, English",
    "w": 390,
-   "h": 885,
-   "x": 5170,
+   "h": 927,
+   "x": 7050,
    "y": 0
   },
   {
@@ -234,8 +306,8 @@
    "page": "registry",
    "title": "R12 · What a tag is, Khmer",
    "w": 390,
-   "h": 944,
-   "x": 5170,
+   "h": 992,
+   "x": 7050,
    "y": 1484
   },
   {
@@ -244,7 +316,7 @@
    "title": "R13 · Brand window: claim a tag, English",
    "w": 390,
    "h": 844,
-   "x": 5640,
+   "x": 7520,
    "y": 0
   },
   {
@@ -253,7 +325,7 @@
    "title": "R13 · Brand window: claim a tag, Khmer",
    "w": 390,
    "h": 912,
-   "x": 5640,
+   "x": 7520,
    "y": 1484
   },
   {
@@ -262,7 +334,7 @@
    "title": "R14 · Tag read and ready: the fee, English",
    "w": 390,
    "h": 844,
-   "x": 6110,
+   "x": 7990,
    "y": 0
   },
   {
@@ -271,7 +343,7 @@
    "title": "R14 · Tag read and ready: the fee, Khmer",
    "w": 390,
    "h": 869,
-   "x": 6110,
+   "x": 7990,
    "y": 1484
   },
   {
@@ -280,7 +352,7 @@
    "title": "R15 · A free tag: the steward's form, English",
    "w": 390,
    "h": 844,
-   "x": 6580,
+   "x": 8460,
    "y": 0
   },
   {
@@ -289,7 +361,7 @@
    "title": "R15 · A free tag: the steward's form, Khmer",
    "w": 390,
    "h": 869,
-   "x": 6580,
+   "x": 8460,
    "y": 1484
   },
   {
@@ -298,7 +370,7 @@
    "title": "R16 · A company's tag page, English",
    "w": 390,
    "h": 844,
-   "x": 7050,
+   "x": 8930,
    "y": 0
   },
   {
@@ -307,7 +379,7 @@
    "title": "R16 · A company's tag page, Khmer",
    "w": 390,
    "h": 869,
-   "x": 7050,
+   "x": 8930,
    "y": 1484
   },
   {
@@ -316,7 +388,7 @@
    "title": "R17 · A steward's tag page, English",
    "w": 390,
    "h": 844,
-   "x": 7520,
+   "x": 9400,
    "y": 0
   },
   {
@@ -325,7 +397,7 @@
    "title": "R17 · A steward's tag page, Khmer",
    "w": 390,
    "h": 869,
-   "x": 7520,
+   "x": 9400,
    "y": 1484
   },
   {
@@ -333,8 +405,8 @@
    "page": "registry",
    "title": "R18 · The rules, English",
    "w": 390,
-   "h": 844,
-   "x": 7990,
+   "h": 910,
+   "x": 9870,
    "y": 0
   },
   {
@@ -342,8 +414,8 @@
    "page": "registry",
    "title": "R18 · The rules, Khmer",
    "w": 390,
-   "h": 869,
-   "x": 7990,
+   "h": 962,
+   "x": 9870,
    "y": 1484
   },
   {
@@ -352,7 +424,7 @@
    "title": "R19 · The statement, English",
    "w": 390,
    "h": 844,
-   "x": 8460,
+   "x": 10340,
    "y": 0
   },
   {
@@ -361,7 +433,7 @@
    "title": "R19 · The statement, Khmer",
    "w": 390,
    "h": 869,
-   "x": 8460,
+   "x": 10340,
    "y": 1484
   },
   {
@@ -370,7 +442,7 @@
    "title": "R20 · Terms and privacy, English",
    "w": 390,
    "h": 844,
-   "x": 8930,
+   "x": 10810,
    "y": 0
   },
   {
@@ -379,7 +451,7 @@
    "title": "R20 · Terms and privacy, Khmer",
    "w": 390,
    "h": 869,
-   "x": 8930,
+   "x": 10810,
    "y": 1484
   },
   {
