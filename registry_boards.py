@@ -61,7 +61,7 @@ def brandmark(emblem):
 FOOT = ("333.eco · sold by [the seller LLC] · visits are counted without cookies",
         "333.eco · លក់ដោយ [the seller LLC] · រាប់ការចូលមើលដោយគ្មាន cookie")
 
-MINE = "@sokha-keo"
+MINE = "@sokha.keo"
 TAG = "#sunriseteas"
 
 
@@ -165,9 +165,9 @@ def _pool_card():
 
 def _id_card():
     return card(_("A person has a name. A thing has a tag.", "មនុស្សមានឈ្មោះ។ របស់មានស្លាក។"),
-                _("An @name is how people find you and thank you, said the way your family says it: 333.eco/@sokha-keo. "
+                _("An @name is how people find you and thank you, said the way your family says it: 333.eco/@sokha.keo. "
                   "A #tag is the address of a company, a place or a machine: 333.eco/sunriseteas. A name costs $3 to $12 a year, set by your card's country. A tag costs $33 or $333, set the same way.",
-                  "@name គឺជារបៀបដែលគេរកឃើញ និងអរគុណអ្នក ហៅតាមរបៀបគ្រួសារអ្នកហៅ៖ 333.eco/@sokha-keo។ "
+                  "@name គឺជារបៀបដែលគេរកឃើញ និងអរគុណអ្នក ហៅតាមរបៀបគ្រួសារអ្នកហៅ៖ 333.eco/@sokha.keo។ "
                   "#tag គឺជាអាសយដ្ឋានរបស់ក្រុមហ៊ុន ទីកន្លែង ឬម៉ាស៊ីន៖ 333.eco/sunriseteas។ ឈ្មោះមានតម្លៃ ៣ ទៅ ១២ ដុល្លារក្នុងមួយឆ្នាំ តាមប្រទេសនៃប័ណ្ណរបស់អ្នក។ ស្លាកមានតម្លៃ ៣៣ ឬ ៣៣៣ ដុល្លារ តាមរបៀបដូចគ្នា។"), s_id())
 
 
@@ -188,7 +188,7 @@ def R1D():
             '<div class="cols" style="grid-template-columns:1fr 1fr;margin-top:24px"><div>' + _id_card() + '</div><div>' + _pool_card() + '</div></div>')
 
 
-OFFERS = ["@sokha-keo", "@sokha", "@s-keo", "@keo-sokha"]  # what claim.ts offers() builds from "Sokha Keo"; a dot is not yet legal
+OFFERS = ["@sokha.keo", "@sokha", "@s.keo", "@keo.sokha"]  # what claim.ts offers() builds from "Sokha Keo", a dot first (2026-11-06)
 
 
 def R2():
@@ -201,7 +201,7 @@ def R2():
 
 
 def R3():
-    rows = ["@sokha-s", "@sokhas", "@keo-sokha"]
+    rows = ["@s.keo", "@keo.sokha", "@sokha.k"]
     return (head(_("That one just went", "ឈ្មោះនោះទើបតែបាត់"), _("Here are three more, from the same name.", "នេះគឺបីទៀត ពីឈ្មោះដដែល។")) +
             '<div class="card">' + radio(rows) + '</div>' + btn(_("Hold this name", "កាន់ឈ្មោះនេះ")))
 
@@ -270,7 +270,7 @@ def R6():     # held
 
 
 def R7():     # your page, editing
-    return (head(_("Your page", "ទំព័ររបស់អ្នក"), '<span class="mono">333.eco/@sokha-keo</span>') +
+    return (head(_("Your page", "ទំព័ររបស់អ្នក"), '<span class="mono">333.eco/@sokha.keo</span>') +
             field(_("Your name as you write it", "ឈ្មោះរបស់អ្នកតាមរបៀបដែលអ្នកសរសេរ"), "សុខា កែវ · Sokha Keo") +
             '<div class="lab">%s</div><div class="play">▶ %s</div>' % (_("Your name, said by you (you choose)", "ឈ្មោះរបស់អ្នក ហៅដោយអ្នក (អ្នកជ្រើសរើស)"), _("Record it", "ថតសំឡេង")) +
             field(_("A short line", "បន្ទាត់ខ្លី"), _("I make kites in Kampot.", "ខ្ញុំធ្វើខ្លែងនៅកំពត។")) +
@@ -294,7 +294,7 @@ def _face():
 
 
 def _said():
-    return ('<div class="said">' + POH + 'សុខា កែវ</div><div class="handle">Sokha Keo · @sokha-keo</div>'
+    return ('<div class="said">' + POH + 'សុខា កែវ</div><div class="handle">Sokha Keo · @sokha.keo</div>'
             '<div class="why">ⓘ %s</div>' % _("Why the heart beats", "ហេតុអ្វីបេះដូងលោត") +
             '<div class="play">▶ %s</div><p class="lede">%s</p>' % (_("Hear it said", "ស្ដាប់ការហៅឈ្មោះ"), _("I make kites in Kampot.", "ខ្ញុំធ្វើខ្លែងនៅកំពត។")))
 
@@ -336,14 +336,14 @@ def _rails():
 
 
 def R8T():    # thanking: words first, always
-    return (head(_("Thank @sokha-keo", "អរគុណ @sokha-keo"), _("Say what you're thanking her for. That's the thanks; nothing else is needed.", "និយាយថាអ្នកអរគុណនាងចំពោះអ្វី។ នោះហើយជាការអរគុណ គ្មានអ្វីផ្សេងទៀតត្រូវការទេ។")) +
+    return (head(_("Thank @sokha.keo", "អរគុណ @sokha.keo"), _("Say what you're thanking her for. That's the thanks; nothing else is needed.", "និយាយថាអ្នកអរគុណនាងចំពោះអ្វី។ នោះហើយជាការអរគុណ គ្មានអ្វីផ្សេងទៀតត្រូវការទេ។")) +
             field(_("Your words", "ពាក្យរបស់អ្នក"), _("The kite you made for my daughter flew all afternoon.", "ខ្លែងដែលអ្នកធ្វើឱ្យកូនស្រីខ្ញុំ ហោះពេញមួយរសៀល។"), True) +
             btn(_("Send my thanks", "ផ្ញើការអរគុណរបស់ខ្ញុំ")) +
             '<p class="fine">%s</p>' % _("Your thanks carries Kiitos, which is how HeartBank® records a thank-you. Nothing is owed.", "ការអរគុណរបស់អ្នកមាន Kiitos ដែលជារបៀបដែល HeartBank® កត់ត្រាការអរគុណ។ មិនជំពាក់អ្វីទេ។"))
 
 
 def R8M():    # after the words: money, only if they'd like
-    return (head(_("Your thanks reached @sokha-keo", "ការអរគុណរបស់អ្នកបានទៅដល់ @sokha-keo")) +
+    return (head(_("Your thanks reached @sokha.keo", "ការអរគុណរបស់អ្នកបានទៅដល់ @sokha.keo")) +
             '<div class="sh">%s</div>' % _("Send money too, only if you'd like", "ផ្ញើប្រាក់ផងដែរ លុះត្រាតែអ្នកចង់") +
             _rails() +
             '<p class="fine">%s</p>' % _("These are Sokha's own accounts; the money goes straight to her. 333.eco never learns whether you sent anything. KHQR and Zelle show each of you the other's name.",
@@ -352,7 +352,7 @@ def R8M():    # after the words: money, only if they'd like
 
 
 def _thank():
-    return '<button class="btn">%s</button>' % _("Thank @sokha-keo", "អរគុណ @sokha-keo")
+    return '<button class="btn">%s</button>' % _("Thank @sokha.keo", "អរគុណ @sokha.keo")
 
 
 def _links():
@@ -381,7 +381,7 @@ def R10():    # after the year: the fact, once
 
 
 def R11():    # the same page for a name nobody holds and a name whose year ended: it can't show which
-    return ('<div class="center"><div class="tagword" style="margin-top:40px">@sokha-keo</div><p class="lede">%s</p></div>' % _("Names here belong to people, said the way they say them.", "ឈ្មោះនៅទីនេះជារបស់មនុស្ស ហៅតាមរបៀបដែលពួកគេហៅ។") +
+    return ('<div class="center"><div class="tagword" style="margin-top:40px">@sokha.keo</div><p class="lede">%s</p></div>' % _("Names here belong to people, said the way they say them.", "ឈ្មោះនៅទីនេះជារបស់មនុស្ស ហៅតាមរបៀបដែលពួកគេហៅ។") +
             btn(_("Find your own name", "រកឈ្មោះរបស់អ្នក")))
 
 
