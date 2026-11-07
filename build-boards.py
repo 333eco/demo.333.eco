@@ -406,16 +406,20 @@ O = {
            ("Zenodo", "10.5281/zenodo.22933319 · the archived copy matches today's text"), ("Corpus index", "corpus.333.eco serves the same fingerprint")),
   "e7_c1h": "A change is finished only when all four agree", "e7_c1p": "A timestamp proves when this text existed. It never proves that the text is true.",
   "e_search": "Record ID, file fingerprint, or drop a file",
-  "e1_h": "B-Origin records", "e1_lede": "Every hour the log seals a checkpoint, stamps it three ways, and has outside witnesses sign it. Anyone can check any of it.",
-  "e_cp": "Checkpoint", "e_recs": "records", "e_tsa": "3 timestamps", "e_wit": "4 witnesses", "e_btc": "Bitcoin", "e_pend": "Bitcoin: pending",
-  "e1_rows": (("#18,204", "26 Oct, 2:00 pm", "61,903", False), ("#18,203", "26 Oct, 1:00 pm", "61,877", False),
-              ("#18,190", "25 Oct, 11:00 pm", "61,511", True), ("#18,189", "25 Oct, 10:00 pm", "61,480", True)),
+  "e1_h": "Records", "e1_lede": "A public log of what people chose to sign. It only ever grows, and every entry below was checked in your browser just now.",
+  "e1_ok": "3 entries, all checked", "e1_okp": "The log's signature, its tree, and each entry's signature were checked in your browser.",
+  "e1_list": "Records, newest first", "e1_cols": ("#", "Signed (UTC)", "How it was made", "File fingerprint"),
+  # REAL entries of log.333.eco/origin, read 2026-11-07: a drawing on a page about checkable fingerprints never invents one
+  "e1_rows": (("2", "4 Nov 2026", "Combined, partly with AI", "9079 e066 bd78 … 5dc1"), ("1", "4 Nov 2026", "Combined, partly with AI", "e97a d0c9 3e29 … b9e6"),
+              ("0", "3 Nov 2026", "Combined, partly with AI", "e97a d0c9 3e29 … b9e6")),
+  "e1_clocks": "Sealed by outside clocks", "e1_clocksp": "At these sizes the log's state was also timestamped outside our control. Open a record to check its own.",
+  "e1_clock_rows": ("3 entries: timestamp authorities · Bitcoin", "1 entry: timestamp authorities"),
   "e1_how": "How to check this yourself ›",
   "e2_h": "Checkpoint #18,190", "e2_lede": "25 Oct 2026, 11:00 pm · 61,511 records",
   "e2_kv": (("Root", "9f3a 77c1 e0d4 … 2b6a"), ("Previous", "#18,189 · 41c7 … 0e19"), ("Consistent with previous", "✓ checked in your browser")),
   "e2_anch": "Anchors",
   "e2_a": (("Timestamp authority 1", "EU-qualified · 11:00:04 pm"), ("Timestamp authority 2", "11:00:05 pm"), ("Timestamp authority 3", "11:00:05 pm"),
-           ("Witnesses", "4 of 4 co-signed"), ("Bitcoin", "Block 972,416 · 1:38 am, 26 Oct")),
+           ("Bitcoin", "Block 972,416 · 1:38 am, 26 Oct")),  # ⛔ no witness row until a witness exists (A515)
   "e2_c1h": "Check it yourself", "e2_c1p": "Download the checkpoint and its proofs, then run the free verify package or any OpenTimestamps and RFC 3161 tool. None of it needs us.",
   "e3_h": "Record 7f3a 91c2 … c21e", "e3_lede": "In checkpoint #18,204",
   "e3_kv": (("Signed with", "a HeartBank® passkey"), ("When", "26 Oct 2026, 1:47 pm"), ("How it was made", "Digital creation"),
@@ -425,9 +429,16 @@ O = {
   "e4_h": "Search", "e4_drop": "sunflower.png · fingerprinted on this device",
   "e4_res": "1 record matches this file", "e4_row": ("Record 7f3a … c21e", "Signed 26 Oct 2026 · Digital creation"),
   "e4_fine": "The file was never uploaded. Only its fingerprint was compared.",
-  "e5_h": "Gratitude ledger", "e5_lede": "Thanks are private. This page shows only the proofs that the ledger is whole and has never been rewritten.",
-  "e5_rows": (("#4,410", "26 Oct, 2:00 pm"), ("#4,409", "26 Oct, 1:00 pm"), ("#4,396", "25 Oct, 11:00 pm")),
-  "e5_c1h": "What is never shown here", "e5_c1p": "Who thanked whom, what was given, or how much. Each entry is sealed before it is counted; only its sealed fingerprint enters the tree.",
+  "e5_h": "Gratitude ledger", "e5_lede": "Thanks are private. This page shows only the proofs that the ledger is whole and has never been rewritten, and every check runs in your browser.",
+  "e5_l1h": "Its signature, its tree and every entry, checked", "e5_l1p": "Signed with the ledger's published key, and its root rebuilt here from all 256 entries. The size is padded every day, so it says only that the ledger ran.",
+  "e5_l2h": "Public entries close their day", "e5_l2p": "Each sits at the end of its day's entries, so where it falls says nothing about how many thanks came before it.",
+  # REAL: season 1 as committed at index 0 of log.333.eco/ledger (2026-11-06)
+  "e5_seas": "Seasons", "e5_s1": "Season 1", "e5_s1p": "Opens 26 Nov 2026 · ends 7 Jan 2027", "e5_rule": "Its rule was committed here before anyone thanked under it. The rule's fingerprint:",
+  "e5_hash": "YREfhlIakdpKEn1DeLhFO_WjW-RSPJfh00rS93-umN8",
+  "e5_clk": "Outside clocks", "e5_clkp": "The ledger's state at 256 entries was timestamped outside our control:",
+  "e5_tsa": ("accv-es signed it", "aped-gr signed it", "freetsa-de signed it"), "e5_btc": "Waiting for a block. This takes a few hours.",
+  "e5_rc_h": "Check a receipt", "e5_rc_p": "Paste a receipt from your own export. It is checked on this device and never sent anywhere.", "e5_rc_btn": "Check",
+  "e5_c1h": "What is never shown here", "e5_c1p": "Who thanked whom, what was given, or how much, or how often anyone thanks. Each entry is sealed before it is counted, and only its sealed fingerprint enters the tree.",
   "l7_link": "Other ways to log in",
   "l7_h": "Other ways to log in", "l7_lede": "For phones that can't hold a passkey.",
   "l7_e": "Email me a code", "l7_ev": "you@example.com", "l7_s": "Text me a code", "l7_sv": "+855 ·· ··· ···",
@@ -518,16 +529,19 @@ O = {
            ("Zenodo", "10.5281/zenodo.22933319 · ច្បាប់ដែលបានរក្សាទុកត្រូវនឹងអត្ថបទថ្ងៃនេះ"), ("សន្ទស្សន៍ឯកសារ", "corpus.333.eco ផ្ដល់ស្នាមម្រាមដៃដដែល")),
   "e7_c1h": "ការផ្លាស់ប្ដូរមួយបញ្ចប់ លុះត្រាតែជើងទាំងបួនស្របគ្នា", "e7_c1p": "ត្រាពេលវេលាបញ្ជាក់ថាអត្ថបទនេះមាននៅពេលណា។ វាមិនដែលបញ្ជាក់ថាអត្ថបទនោះពិតទេ។",
   "e_search": "លេខកំណត់ត្រា ស្នាមម្រាមដៃឯកសារ ឬទម្លាក់ឯកសារ",
-  "e1_h": "កំណត់ត្រា B-Origin", "e1_lede": "រៀងរាល់ម៉ោង បញ្ជីបិទត្រាចំណុចត្រួតពិនិត្យមួយ បោះត្រាពេលវេលាវាតាមបីវិធី ហើយឱ្យសាក្សីខាងក្រៅចុះហត្ថលេខា។ អ្នកណាក៏អាចពិនិត្យវាបាន។",
-  "e_cp": "ចំណុចត្រួតពិនិត្យ", "e_recs": "កំណត់ត្រា", "e_tsa": "ត្រាពេលវេលា ៣", "e_wit": "សាក្សី ៤", "e_btc": "Bitcoin", "e_pend": "Bitcoin៖ កំពុងរង់ចាំ",
-  "e1_rows": (("#18,204", "២៦ តុលា ម៉ោង ២:០០ រសៀល", "61,903", False), ("#18,203", "២៦ តុលា ម៉ោង ១:០០ រសៀល", "61,877", False),
-              ("#18,190", "២៥ តុលា ម៉ោង ១១:០០ យប់", "61,511", True), ("#18,189", "២៥ តុលា ម៉ោង ១០:០០ យប់", "61,480", True)),
+  "e1_h": "កំណត់ត្រា", "e1_lede": "កំណត់ហេតុសាធារណៈនៃអ្វីដែលមនុស្សបានជ្រើសរើសចុះហត្ថលេខា។ វាគ្រាន់តែកើនឡើង ហើយកំណត់ត្រានីមួយៗខាងក្រោមត្រូវបានពិនិត្យក្នុងកម្មវិធីរុករករបស់អ្នកមុននេះបន្តិច។",
+  "e1_ok": "៣ ធាតុ បានពិនិត្យទាំងអស់", "e1_okp": "ហត្ថលេខារបស់កំណត់ហេតុ មែកធាងរបស់វា និងហត្ថលេខារបស់ធាតុនីមួយៗត្រូវបានពិនិត្យក្នុងកម្មវិធីរុករករបស់អ្នក។",
+  "e1_list": "កំណត់ត្រា ថ្មីបំផុតមុន", "e1_cols": ("#", "បានចុះហត្ថលេខា (UTC)", "របៀបបង្កើត", "ស្នាមម្រាមដៃឯកសារ"),
+  "e1_rows": (("2", "៤ វិច្ឆិកា ២០២៦", "ផ្សំ ដោយប្រើ AI ខ្លះ", "9079 e066 bd78 … 5dc1"), ("1", "៤ វិច្ឆិកា ២០២៦", "ផ្សំ ដោយប្រើ AI ខ្លះ", "e97a d0c9 3e29 … b9e6"),
+              ("0", "៣ វិច្ឆិកា ២០២៦", "ផ្សំ ដោយប្រើ AI ខ្លះ", "e97a d0c9 3e29 … b9e6")),
+  "e1_clocks": "បានបិទត្រាដោយនាឡិកាខាងក្រៅ", "e1_clocksp": "នៅទំហំទាំងនេះ ស្ថានភាពកំណត់ហេតុក៏ត្រូវបានបោះត្រាពេលវេលានៅក្រៅការគ្រប់គ្រងរបស់យើង។ បើកកំណត់ត្រាដើម្បីពិនិត្យរបស់វា។",
+  "e1_clock_rows": ("៣ ធាតុ៖ អាជ្ញាធរបោះត្រាពេលវេលា · Bitcoin", "១ ធាតុ៖ អាជ្ញាធរបោះត្រាពេលវេលា"),
   "e1_how": "របៀបពិនិត្យដោយខ្លួនឯង ›",
   "e2_h": "ចំណុចត្រួតពិនិត្យ #18,190", "e2_lede": "២៥ តុលា ២០២៦ ម៉ោង ១១:០០ យប់ · កំណត់ត្រា 61,511",
   "e2_kv": (("ឫស", "9f3a 77c1 e0d4 … 2b6a"), ("មុន", "#18,189 · 41c7 … 0e19"), ("ស្របនឹងមុន", "✓ បានពិនិត្យក្នុងកម្មវិធីរុករករបស់អ្នក")),
   "e2_anch": "ការភ្ជាប់",
   "e2_a": (("អាជ្ញាធរបោះត្រាពេលវេលា ១", "មានគុណវុឌ្ឍិ EU · ១១:០០:០៤ យប់"), ("អាជ្ញាធរបោះត្រាពេលវេលា ២", "១១:០០:០៥ យប់"), ("អាជ្ញាធរបោះត្រាពេលវេលា ៣", "១១:០០:០៥ យប់"),
-           ("សាក្សី", "បានចុះហត្ថលេខារួម ៤ ក្នុងចំណោម ៤"), ("Bitcoin", "ប្លុក 972,416 · ១:៣៨ ព្រឹក ២៦ តុលា")),
+           ("Bitcoin", "ប្លុក 972,416 · ១:៣៨ ព្រឹក ២៦ តុលា")),
   "e2_c1h": "ពិនិត្យដោយខ្លួនឯង", "e2_c1p": "ទាញយកចំណុចត្រួតពិនិត្យ និងភស្តុតាងរបស់វា រួចដំណើរការកញ្ចប់ verify ឥតគិតថ្លៃ ឬឧបករណ៍ OpenTimestamps និង RFC 3161 ណាមួយ។ គ្មានអ្វីត្រូវការយើងទេ។",
   "e3_h": "កំណត់ត្រា 7f3a 91c2 … c21e", "e3_lede": "ក្នុងចំណុចត្រួតពិនិត្យ #18,204",
   "e3_kv": (("ចុះហត្ថលេខាដោយ", "passkey HeartBank®"), ("ពេលណា", "២៦ តុលា ២០២៦ ម៉ោង ១:៤៧ រសៀល"), ("របៀបដែលវាត្រូវបានបង្កើត", "ការបង្កើតឌីជីថល"),
@@ -537,9 +551,15 @@ O = {
   "e4_h": "ស្វែងរក", "e4_drop": "sunflower.png · គណនាស្នាមម្រាមដៃនៅលើឧបករណ៍នេះ",
   "e4_res": "មានកំណត់ត្រា ១ ត្រូវគ្នានឹងឯកសារនេះ", "e4_row": ("កំណត់ត្រា 7f3a … c21e", "ចុះហត្ថលេខា ២៦ តុលា ២០២៦ · ការបង្កើតឌីជីថល"),
   "e4_fine": "ឯកសារមិនដែលត្រូវបានផ្ទុកឡើងទេ។ មានតែស្នាមម្រាមដៃរបស់វាប៉ុណ្ណោះដែលត្រូវបានប្រៀបធៀប។",
-  "e5_h": "បញ្ជីការដឹងគុណ", "e5_lede": "ការអរគុណគឺជាឯកជន។ ទំព័រនេះបង្ហាញតែភស្តុតាងថាបញ្ជីនៅពេញលេញ ហើយមិនដែលត្រូវបានសរសេរឡើងវិញ។",
-  "e5_rows": (("#4,410", "២៦ តុលា ម៉ោង ២:០០ រសៀល"), ("#4,409", "២៦ តុលា ម៉ោង ១:០០ រសៀល"), ("#4,396", "២៥ តុលា ម៉ោង ១១:០០ យប់")),
-  "e5_c1h": "អ្វីដែលមិនដែលបង្ហាញនៅទីនេះ", "e5_c1p": "អ្នកណាអរគុណអ្នកណា អ្វីដែលបានផ្ដល់ ឬចំនួនប៉ុន្មាន។ ធាតុនីមួយៗត្រូវបានបិទត្រាមុនពេលរាប់ មានតែស្នាមម្រាមដៃដែលបានបិទត្រាប៉ុណ្ណោះចូលក្នុងដើមឈើ។",
+  "e5_h": "បញ្ជីការដឹងគុណ", "e5_lede": "ការអរគុណគឺជាឯកជន។ ទំព័រនេះបង្ហាញតែភស្តុតាងថាបញ្ជីនៅពេញលេញ ហើយមិនដែលត្រូវបានសរសេរឡើងវិញ ហើយការពិនិត្យទាំងអស់ដំណើរការក្នុងកម្មវិធីរុករករបស់អ្នក។",
+  "e5_l1h": "ហត្ថលេខា ដើមឈើ និងធាតុទាំងអស់របស់វា បានពិនិត្យ", "e5_l1p": "ចុះហត្ថលេខាដោយសោដែលបានបោះពុម្ពរបស់បញ្ជី ហើយឫសរបស់វាត្រូវបានសាងសង់ឡើងវិញនៅទីនេះពីធាតុទាំង ២៥៦។ ទំហំត្រូវបានបំពេញរៀងរាល់ថ្ងៃ ដូច្នេះវាប្រាប់តែថាបញ្ជីបានដំណើរការ។",
+  "e5_l2h": "ធាតុសាធារណៈបិទថ្ងៃរបស់វា", "e5_l2p": "ធាតុនីមួយៗនៅចុងធាតុនៃថ្ងៃរបស់វា ដូច្នេះទីតាំងរបស់វាមិនប្រាប់ពីចំនួនការអរគុណមុនវាទេ។",
+  "e5_seas": "រដូវ", "e5_s1": "រដូវ 1", "e5_s1p": "បើក ២៦ វិច្ឆិកា ២០២៦ · បញ្ចប់ ៧ មករា ២០២៧", "e5_rule": "ច្បាប់របស់វាត្រូវបានប្តេជ្ញានៅទីនេះ មុនពេលនរណាម្នាក់អរគុណក្រោមវា។ ស្នាមម្រាមដៃរបស់ច្បាប់៖",
+  "e5_hash": "YREfhlIakdpKEn1DeLhFO_WjW-RSPJfh00rS93-umN8",
+  "e5_clk": "នាឡិកាខាងក្រៅ", "e5_clkp": "ស្ថានភាពនៃបញ្ជីនៅ ២៥៦ ធាតុ ត្រូវបានបោះត្រាពេលវេលានៅក្រៅការគ្រប់គ្រងរបស់យើង៖",
+  "e5_tsa": ("accv-es បានចុះហត្ថលេខា", "aped-gr បានចុះហត្ថលេខា", "freetsa-de បានចុះហត្ថលេខា"), "e5_btc": "កំពុងរង់ចាំប្លុក។ វាចំណាយពេលពីរបីម៉ោង។",
+  "e5_rc_h": "ពិនិត្យបង្កាន់ដៃ", "e5_rc_p": "បិទភ្ជាប់បង្កាន់ដៃពីការនាំចេញរបស់អ្នក។ វាត្រូវបានពិនិត្យនៅលើឧបករណ៍នេះ ហើយមិនដែលផ្ញើទៅកន្លែងណាទេ។", "e5_rc_btn": "ពិនិត្យ",
+  "e5_c1h": "អ្វីដែលមិនដែលបង្ហាញនៅទីនេះ", "e5_c1p": "អ្នកណាអរគុណអ្នកណា អ្វីដែលបានផ្ដល់ ឬចំនួនប៉ុន្មាន ឬញឹកញាប់ប៉ុណ្ណា។ ធាតុនីមួយៗត្រូវបានបិទត្រាមុនពេលរាប់ មានតែស្នាមម្រាមដៃដែលបានបិទត្រាប៉ុណ្ណោះចូលក្នុងដើមឈើ។",
   "l7_link": "វិធីផ្សេងទៀតដើម្បីចូល",
   "l7_h": "វិធីផ្សេងទៀតដើម្បីចូល", "l7_lede": "សម្រាប់ទូរសព្ទដែលមិនអាចរក្សា passkey បាន។",
   "l7_e": "ផ្ញើលេខកូដមកអ៊ីមែលខ្ញុំ", "l7_ev": "you@example.com", "l7_s": "ផ្ញើលេខកូដជាសារមកខ្ញុំ", "l7_sv": "+855 ·· ··· ···",
@@ -804,10 +824,20 @@ def _block(num, when, extra, done, t):
     return ('<div class="blk"><div class="cube"></div><div class="bt"><div class="t"><b class="mono">%s</b> · %s</div>'
             '<div class="s">%s</div><div class="chips" style="margin-top:6px">%s%s%s</div></div></div>'
             % (num, when, extra, _badge("✓ " + t["e_tsa"]), _badge("✓ " + t["e_wit"]), _badge("⛓ " + t["e_btc"]) if done else _badge(t["e_pend"], False)))
+def _leg(h, p):
+    return '<div class="row" style="display:block"><div class="t"><span style="color:var(--accent)">✓</span> %s</div><div class="s">%s</div></div>' % (h, p)
+def _recs(t):
+    c = t["e1_cols"]
+    head = '<div class="row" style="border:0"><span class="s">%s</span><span class="s">%s</span><span class="s">%s</span></div>' % (c[0], c[1], c[2])
+    rows = "".join('<div class="row"><div><div class="t"><b class="mono">%s</b> · %s</div><div class="s">%s</div><div class="s mono">%s</div></div><span class="s">›</span></div>' % (a, b, d, e)
+                   for a, b, d, e in t["e1_rows"])
+    return '<div class="card"><h2>%s</h2>%s</div>' % (t["e1_list"], rows)
+def _clocks(t):
+    return '<div class="card"><h2>%s</h2><p>%s</p>%s</div>' % (t["e1_clocks"], t["e1_clocksp"], "".join('<p class="s">%s</p>' % x for x in t["e1_clock_rows"]))
 def E1(t):
-    rows = "".join(_block(a, b, "%s %s" % (c, t["e_recs"]), d, t) for a, b, c, d in t["e1_rows"])
+    """B-Origin as built (redrawn 2026-11-07): a checked list of records, not an hourly block chain, and ⛔ no witness until one exists."""
     return (_etabs(t, 0) + _esearch(t) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["e1_h"], t["e1_lede"])
-            + '<div class="chain">%s</div>' % rows + '<p class="more">%s</p>' % t["e1_how"])
+            + '<div class="card">%s</div>' % _leg(t["e1_ok"], t["e1_okp"]) + _recs(t) + _clocks(t) + '<p class="more">%s</p>' % t["e1_how"])
 def E2(t):
     kv = "".join("<dt>%s</dt><dd%s>%s</dd>" % (a, ' class="mono"' if i < 2 else "", b) for i, (a, b) in enumerate(t["e2_kv"]))
     an = "".join('<div class="row"><div class="t">%s</div><span class="s">✓ %s</span></div>' % (a, b) for a, b in t["e2_a"])
@@ -829,9 +859,14 @@ def E4(t):
             + '<h2 class="sh">%s</h2><div class="card"><div class="row" style="border:0;padding:0"><div><div class="t mono">%s</div><div class="s">%s</div></div><span class="s">›</span></div></div>' % (t["e4_res"], a, b)
             + '<p class="fine">%s</p>' % t["e4_fine"])
 def E5(t):
-    rows = "".join(_block(a, b, "", i == 2, t) for i, (a, b) in enumerate(t["e5_rows"]))
+    """The ledger as built (redrawn 2026-11-07): proofs only, a daily padded checkpoint, season 1's rule, the receipt box the width of its card."""
+    tsa = "".join(_leg(x, "") for x in t["e5_tsa"])
     return (_etabs(t, 1) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["e5_h"], t["e5_lede"])
-            + '<div class="chain">%s</div>' % rows + card(t["e5_c1h"], t["e5_c1p"], "log"))
+            + '<div class="card">%s%s</div>' % (_leg(t["e5_l1h"], t["e5_l1p"]), _leg(t["e5_l2h"], t["e5_l2p"]))
+            + '<div class="card"><h2>%s</h2><div class="t"><b>%s</b></div><p class="s">%s</p><p class="s">%s</p><p class="mono s">%s</p></div>' % (t["e5_seas"], t["e5_s1"], t["e5_s1p"], t["e5_rule"], t["e5_hash"])
+            + '<div class="card"><h2>%s</h2><p class="s">%s</p>%s<div class="row" style="display:block"><div class="t">Bitcoin</div><div class="s">%s</div></div></div>' % (t["e5_clk"], t["e5_clkp"], tsa, t["e5_btc"])
+            + '<div class="card"><h2>%s</h2><p>%s</p><div class="field mono" style="width:100%%;box-sizing:border-box;min-height:72px;color:var(--ink-dim)">{"index": …, "seal": "…", "origin": "log.333.eco/ledger", "sig": "…"}</div>%s</div>' % (t["e5_rc_h"], t["e5_rc_p"], btns(t["e5_rc_btn"]))
+            + card(t["e5_c1h"], t["e5_c1p"], "log"))
 
 def _cbadges(t):
     return "".join(_badge(x) for x in t["e6_b"])
@@ -853,10 +888,9 @@ def _rec_card(t):
     kv = "".join("<dt>%s</dt><dd%s>%s</dd>" % (a, ' class="mono"' if i == 4 else "", b) for i, (a, b) in enumerate(t["e3_kv"]))
     return '<div class="card"><h2>%s</h2><dl class="kv" style="margin:0">%s</dl></div>' % (t["e3_h"], kv)
 def E1D(t):
-    rows = "".join(_block(a, b, "%s %s" % (c, t["e_recs"]), d, t) for a, b, c, d in t["e1_rows"])
     return (_etabs(t, 0) + '<div style="margin-top:16px">%s</div>' % _esearch(t)
-            + '<div class="cols"><div><h1>%s</h1><p class="lede">%s</p><div class="chain">%s</div><p class="more">%s</p></div>'
-              '<div style="padding-top:20px">%s%s</div></div>' % (t["e1_h"], t["e1_lede"], rows, t["e1_how"], _rec_card(t), card(t["e2_c1h"], t["e2_c1p"], "log")))
+            + '<div class="cols"><div><h1>%s</h1><p class="lede">%s</p><div class="card">%s</div>%s</div>'
+              '<div style="padding-top:20px">%s%s</div></div>' % (t["e1_h"], t["e1_lede"], _leg(t["e1_ok"], t["e1_okp"]), _recs(t), _clocks(t), card(t["e2_c1h"], t["e2_c1p"], "log")))
 def E2D(t):
     kv = "".join("<dt>%s</dt><dd%s>%s</dd>" % (a, ' class="mono"' if i < 2 else "", b) for i, (a, b) in enumerate(t["e2_kv"]))
     an = "".join('<div class="row"><div class="t">%s</div><span class="s">✓ %s</span></div>' % (a, b) for a, b in t["e2_a"])
