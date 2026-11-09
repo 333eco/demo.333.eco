@@ -12,6 +12,11 @@ boards = sorted(c["artboards"], key=lambda b: (b["y"], b["x"]))
 rows = "".join(
     '<li><a href="%s?v=%s&w=%d">%s</a><span class="m">%d px wide</span></li>' % (b["file"], hashlib.sha256(io.open(os.path.join(HERE, b["file"]), "rb").read()).hexdigest()[:8], b["w"], html.escape(b["title"]), b["w"])
     for b in boards)
+# The Earth's drawings live in earth/ and are listed here too: one landing page for the whole site (founder 2026-11-09: "merge them").
+_e = json.load(io.open(os.path.join(HERE, "earth", "canvas.json"), encoding="utf-8"))
+earth_rows = "".join(
+    '<li><a href="earth/%s?v=%s&w=%d">%s</a><span class="m">%d px wide</span></li>' % (b["file"], hashlib.sha256(io.open(os.path.join(HERE, "earth", b["file"]), "rb").read()).hexdigest()[:8], b["w"], html.escape(b.get("title", b.get("name", b["file"]))), b["w"])
+    for b in sorted(_e["artboards"], key=lambda b: (b["y"], b["x"])))
 page = """<!doctype html>
 <html lang="en">
 <head>
@@ -59,6 +64,7 @@ p{color:var(--dim)}
 ul{list-style:none;margin:0;padding:0}
 li{display:flex;justify-content:space-between;gap:1rem;padding:.8rem 0;border-top:1px solid var(--line)}
 li a{color:var(--fg)} .m{color:var(--dim);font-size:.85rem;white-space:nowrap}
+h2{font-size:1.4rem;line-height:1.25;margin:2.5rem 0 .4rem}
 small{display:block;margin-top:2rem;color:var(--dim)}</style>
 </head>
 <body>
@@ -67,6 +73,11 @@ small{display:block;margin-top:2rem;color:var(--dim)}</style>
 <h1>333.eco: drawings</h1>
 <p><b>The B-Registry</b>: hold an @name or a #tag and make your page. Then the estate's identity layer: <b>Log in</b> at login.333.eco proves who you are; <b>Sign</b> at B.333.eco puts your name to one file. Then <b>origin.333.eco</b>: check a file, sign your own, pricing, and the dashboard for businesses. And <b>explorer.333.eco</b>: the public logs, checkpoint by checkpoint. English and Khmer, with a dark pass. Prices are placeholders.</p>
 <a class="start" href="wall.html"><b>Start here</b><br>Every screen on one wall. Drag to pan, pinch to zoom, tap a screen to open it.</a>
+<ul>%s</ul>
+<h2 id="earth">earth.333.eco</h2>
+<p>The public sea of Kiitos and Kiitti, and <b>your record</b>, the page where a person opens their own entries and receipts after a passkey log-in.</p>
+<a class="start" href="earth/Earth.html"><b>The Earth</b><br>The prototype: every balance in the world as a sea around zero. Drag it, pinch it, tap a place. Every number is made up.</a>
+<a class="start" href="earth/wall.html"><b>Its wall</b><br>Every earth.333.eco screen on one wall.</a>
 <ul>%s</ul>
 <small>These are drawings. They charge nobody, and nothing here is live. The Khmer is our own placeholder until a native reader approves it. Hidden from search by named crawler; shareable by link. This site counts visits without cookies.</small>
 </main>
@@ -82,7 +93,7 @@ document.getElementById("share").addEventListener("click", async () => {
 </script>
 </body>
 </html>
-""" % rows
+""" % (rows, earth_rows)
 for _p, _k in (("L", "bg"), ("L", "ink"), ("L", "ink-dim"), ("L", "line"), ("D", "bg"), ("D", "ink"), ("D", "ink-dim"), ("D", "line")):
     page = page.replace("@%s_%s@" % (_p, _k.upper().replace("-", "_")), tok("%s-%s" % (_p.lower(), _k)))
 # The card's address carries its own hash, so a new card is a new URL to every preview cache (run build-og.py first).
