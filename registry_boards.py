@@ -132,7 +132,13 @@ def rung(title, sub, a, b, on=False):
     """Item and money, in the order they cross: the drawing is the argument, the words only name it."""
     def cup(x): return ('<path d="M%d 8h15v11a6 6 0 0 1-6 6h-3a6 6 0 0 1-6-6z" fill="var(--ink-faint)"/>'
                         '<path d="M%d 11h3a3 3 0 0 1 0 8h-3" fill="none" stroke="var(--ink-faint)" stroke-width="2"/>' % (x, x + 15))
-    def coin(x): return '<circle cx="%d" cy="16" r="8" fill="none" stroke="var(--ink-dim)" stroke-width="2"/>' % (x + 7)
+    def coin(x):    # a milled edge, a rim, and the dollar sign the site's prices are written in
+        cx = x + 7
+        return ('<circle cx="%d" cy="16" r="9" fill="var(--ink-dim)"/>'
+                '<circle cx="%d" cy="16" r="9.3" fill="none" stroke="var(--ink-dim)" stroke-width=".8" stroke-dasharray=".9 .9"/>'
+                '<circle cx="%d" cy="16" r="7" fill="none" stroke="var(--surface)" stroke-width=".8"/>'
+                '<path d="M%s 13.8c-.3-.8-1.1-1.3-2.1-1.3-1.3 0-2.3.7-2.3 1.7 0 1.1 1 1.5 2.3 1.8s2.3.7 2.3 1.8c0 1-1 1.7-2.3 1.7-1 0-1.8-.5-2.1-1.3M%d 11.1v9.8" '
+                'fill="none" stroke="var(--surface)" stroke-width="1.4" stroke-linecap="round"/>' % (cx, cx, cx, cx + 2.1, cx))
     def thank(x): return heart(x + 7, 16, 1.6)
     d = {"cup": cup, "coin": coin, "thank": thank}
     # Shown at twice the drawing's units (founder 2026-11-08); the viewBox is cropped to the ink so a card can hold it.
@@ -168,9 +174,9 @@ def _pool_card():
 def _id_card():
     return card(_("A person has a name. A thing has a tag.", "មនុស្សមានឈ្មោះ។ របស់មានស្លាក។"),
                 _("An @name is how people find you and thank you, said the way your family says it: 333.eco/@sokha.keo. "
-                  "A #tag is the address of a company, a place or a machine: 333.eco/sunriseteas. A name costs $3 to $12 a year, set by your card's country. A tag costs $33 or $333, set the same way.",
+                  "A #tag is the address of a company, a place or a machine: 333.eco/sunriseteas. A name costs $3 to $12 a year, set by your card's country. A tag costs $33 or $333, set the same way. <span class='link'>What's a #tag?</span>",
                   "@name គឺជារបៀបដែលគេរកឃើញ និងអរគុណអ្នក ហៅតាមរបៀបគ្រួសារអ្នកហៅ៖ 333.eco/@sokha.keo។ "
-                  "#tag គឺជាអាសយដ្ឋានរបស់ក្រុមហ៊ុន ទីកន្លែង ឬម៉ាស៊ីន៖ 333.eco/sunriseteas។ ឈ្មោះមានតម្លៃ ៣ ទៅ ១២ ដុល្លារក្នុងមួយឆ្នាំ តាមប្រទេសនៃប័ណ្ណរបស់អ្នក។ ស្លាកមានតម្លៃ ៣៣ ឬ ៣៣៣ ដុល្លារ តាមរបៀបដូចគ្នា។"), s_id())
+                  "#tag គឺជាអាសយដ្ឋានរបស់ក្រុមហ៊ុន ទីកន្លែង ឬម៉ាស៊ីន៖ 333.eco/sunriseteas។ ឈ្មោះមានតម្លៃ ៣ ទៅ ១២ ដុល្លារក្នុងមួយឆ្នាំ តាមប្រទេសនៃប័ណ្ណរបស់អ្នក។ ស្លាកមានតម្លៃ ៣៣ ឬ ៣៣៣ ដុល្លារ តាមរបៀបដូចគ្នា។ <span class='link'>តើ #tag ជាអ្វី?</span>"), s_id())
 
 
 def _find():
