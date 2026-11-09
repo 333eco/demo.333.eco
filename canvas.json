@@ -27,7 +27,7 @@
    "page": "registry",
    "title": "R1 · Front door, English",
    "w": 390,
-   "h": 1324,
+   "h": 1388,
    "x": 0,
    "y": 0
   },
@@ -36,7 +36,7 @@
    "page": "registry",
    "title": "R1 · Front door, Khmer",
    "w": 390,
-   "h": 1408,
+   "h": 1468,
    "x": 0,
    "y": 1783
   },
@@ -297,7 +297,7 @@
    "page": "registry",
    "title": "R12 · What a tag is, English",
    "w": 390,
-   "h": 927,
+   "h": 967,
    "x": 7050,
    "y": 0
   },
@@ -306,7 +306,7 @@
    "page": "registry",
    "title": "R12 · What a tag is, Khmer",
    "w": 390,
-   "h": 992,
+   "h": 1032,
    "x": 7050,
    "y": 1783
   },
@@ -315,7 +315,7 @@
    "page": "registry",
    "title": "R13 · Brand window: claim a tag, English",
    "w": 390,
-   "h": 844,
+   "h": 859,
    "x": 7520,
    "y": 0
   },
@@ -324,7 +324,7 @@
    "page": "registry",
    "title": "R13 · Brand window: claim a tag, Khmer",
    "w": 390,
-   "h": 912,
+   "h": 952,
    "x": 7520,
    "y": 1783
   },
@@ -1071,7 +1071,7 @@
    "page": "registry",
    "title": "R1 · dark pass, English",
    "w": 390,
-   "h": 1324,
+   "h": 1388,
    "x": 0,
    "y": 3657
   },

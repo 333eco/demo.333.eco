@@ -24,7 +24,8 @@ CSS = """
 .rmark{display:inline-flex;align-items:center;gap:7px;font-weight:600;font-size:1.1rem;letter-spacing:-.01em;white-space:nowrap}
 .rmark svg{width:20px;height:20px;color:var(--accent)}
 .ladder{display:grid;grid-template-columns:1fr;gap:8px;margin:0 0 16px}
-.rung{display:grid;grid-template-columns:104px 1fr;gap:12px;align-items:center;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:8px 14px}
+.fit{white-space:nowrap;font-size:23.9px}.km .fit{font-size:18.9px}.desk .fit{font-size:26px}
+.rung{display:grid;grid-template-columns:168px 1fr;gap:12px;align-items:center;border:1px solid var(--line);border-radius:14px;background:var(--surface);padding:8px 14px}
 .rung.on{border-color:var(--accent);background:var(--wash)}
 .rung b{font-size:14px;font-weight:600}.rung span{display:block;font-size:12.5px;color:var(--ink-dim)}
 .card .price{font-size:32px;font-weight:600;letter-spacing:-.02em;margin:0;color:var(--ink);line-height:1.2}
@@ -69,8 +70,8 @@ def card(h, p, svg=""):
     return '<div class="card">%s<h2>%s</h2><p>%s</p></div>' % (svg, h, p)
 
 
-def head(h, lede=""):
-    return "<h1>%s</h1>" % h + ("<p class='lede'>%s</p>" % lede if lede else "")
+def head(h, lede="", fit=False):
+    return "<h1%s>%s</h1>" % (' class="fit"' if fit else "", h) + ("<p class='lede'>%s</p>" % lede if lede else "")
 
 
 def field(label, value, area=False):
@@ -91,7 +92,7 @@ def tog(t, s, on=False):
 
 
 def sp(body, w=56, h=40):
-    return '<svg class="spot" width="%d" height="%d" viewBox="0 0 %d %d" aria-hidden="true">%s</svg>' % (w, h, w, h, body)
+    return '<svg class="spot" width="%d" height="%d" viewBox="0 0 %d %d" aria-hidden="true">%s</svg>' % (w * 2, h * 2, w, h, body)
 
 
 def s_id():      # a person and a thing, side by side
@@ -132,10 +133,11 @@ def rung(title, sub, a, b, on=False):
     def cup(x): return ('<path d="M%d 8h15v11a6 6 0 0 1-6 6h-3a6 6 0 0 1-6-6z" fill="var(--ink-faint)"/>'
                         '<path d="M%d 11h3a3 3 0 0 1 0 8h-3" fill="none" stroke="var(--ink-faint)" stroke-width="2"/>' % (x, x + 15))
     def coin(x): return '<circle cx="%d" cy="16" r="8" fill="none" stroke="var(--ink-dim)" stroke-width="2"/>' % (x + 7)
-    def thank(x): return heart(x + 7, 16, .8)
+    def thank(x): return heart(x + 7, 16, 1.6)
     d = {"cup": cup, "coin": coin, "thank": thank}
-    svg = ('<svg width="96" height="32" viewBox="0 0 96 32" aria-hidden="true">%s'
-           '<path d="M34 16h20M49 11l6 5-6 5" fill="none" stroke="var(--ink-faint)" stroke-width="2" stroke-linecap="round"/>%s</svg>'
+    # Shown at twice the drawing's units (founder 2026-11-08); the viewBox is cropped to the ink so a card can hold it.
+    svg = ('<svg width="168" height="64" viewBox="6 0 84 32" aria-hidden="true">%s'
+           '<path d="M37 16h17M49 11l6 5-6 5" fill="none" stroke="var(--ink-faint)" stroke-width="2" stroke-linecap="round"/>%s</svg>'
            % (d[a](10), d[b](66)))
     return '<div class="rung%s">%s<div><b>%s</b><span>%s</span></div></div>' % (" on" if on else "", svg, title, sub)
 
@@ -149,7 +151,7 @@ def ladder():
 
 
 def _front_words():
-    return (_("Pay now.<br>Pay later.<br>Thank after.", "បង់ឥឡូវ។<br>បង់តាមក្រោយ។<br>អរគុណតាមក្រោយ។"),
+    return (_("Pay now. Pay later. Thank after.", "បង់ឥឡូវ។ បង់តាមក្រោយ។ អរគុណតាមក្រោយ។"),
             _("Thank After means you get it first, then decide what thanks it's worth. Nothing is owed.",
               "អរគុណតាមក្រោយ មានន័យថា អ្នកទទួលបានរបស់មុន រួចសម្រេចថាវាសមនឹងការអរគុណប៉ុណ្ណា។ មិនជំពាក់អ្វីទេ។"),
             _("Holding an @name or a #tag helps support it.", "ការកាន់ @name ឬ #tag ជួយគាំទ្រវា។"))
@@ -178,13 +180,13 @@ def _find():
 
 def R1():     # front door
     h, l, s = _front_words()
-    return (head(h, l) + ladder() + '<div class="note">%s</div>' % s + _find() + '<div style="height:16px"></div>' + _id_card() + _pool_card() +
+    return (head(h, l, fit=True) + ladder() + '<div class="note">%s</div>' % s + _find() + '<div style="height:16px"></div>' + _id_card() + _pool_card() +
             '<p class="fine"><span class="link">%s</span></p>' % _("The rules, in plain words", "ច្បាប់ ជាពាក្យសាមញ្ញ"))
 
 
 def R1D():
     h, l, s = _front_words()
-    return ('<div class="cols"><div>' + head(h, l) + ladder() + '<div class="note">%s</div>' % s + '</div><div>' + _find() + '</div></div>'
+    return ('<div class="cols"><div>' + head(h, l, fit=True) + ladder() + '<div class="note">%s</div>' % s + '</div><div>' + _find() + '</div></div>'
             '<div class="cols" style="grid-template-columns:1fr 1fr;margin-top:24px"><div>' + _id_card() + '</div><div>' + _pool_card() + '</div></div>')
 
 
