@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-theme="dark" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="googlebot" content="noindex,nofollow"><meta name="bingbot" content="noindex,nofollow">
+<title>earth.333.eco prototype</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=Noto+Sans+Khmer:wght@400;500;600&display=swap">
+<style>
+:root{--bg:#fcfbfe;--ink:#16141c;--dim:#5b5866;--line:rgba(22,20,28,.16);--glass:rgba(255,255,255,.78);--accent:#0f52ba}
+[data-theme=dark]{--bg:#0a0a10;--ink:#f3f2f7;--dim:#aeabba;--line:rgba(243,242,247,.2);--glass:rgba(16,16,26,.72);--accent:#8ab4f8}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+[data-lang=km] body{font-family:"Noto Sans Khmer","IBM Plex Sans",sans-serif}
+html[data-lang=en] [data-l=km],html[data-lang=km] [data-l=en]{display:none!important}[hidden]{display:none!important}
+#earth{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab}
+.top{position:fixed;left:0;right:0;top:0;padding:max(16px,env(safe-area-inset-top)) 18px 0;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;pointer-events:none}
+.top>*{pointer-events:auto}.head{max-width:30rem}
+h1{font-family:"Newsreader",Georgia,serif;font-weight:600;font-size:clamp(1.45rem,4.4vw,2.5rem);line-height:1.12;letter-spacing:-.018em;margin:0}
+[data-lang=km] h1{font-family:inherit;letter-spacing:0;line-height:1.45;font-size:clamp(1.15rem,3.6vw,2rem)}
+p.sub{color:var(--dim);margin:6px 0 0;font-size:.92rem;line-height:1.45;max-width:26rem}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;font-size:.8rem;background:var(--glass);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.seg button{border:0;background:none;color:var(--dim);font:inherit;padding:6px 13px;border-radius:999px;cursor:pointer}.seg button.on{background:var(--ink);color:var(--bg)}
+.tools{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.bottom{position:fixed;left:0;right:0;bottom:0;padding:0 14px max(14px,env(safe-area-inset-bottom));display:flex;flex-direction:column;align-items:center;gap:9px;pointer-events:none}
+.bottom>*{pointer-events:auto}
+.panel{background:var(--glass);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;padding:10px 14px;font-size:.84rem;line-height:1.4;max-width:34rem;width:100%}
+.legend{display:flex;flex-direction:column;gap:4px;align-items:center}.lr{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:center;justify-content:center}.legend b{font-weight:600}
+.ramp{display:inline-flex;height:9px;width:76px;border-radius:5px;overflow:hidden;vertical-align:middle;margin-right:6px}.ramp i{flex:1}
+.row{display:flex;justify-content:space-between;gap:10px;color:var(--dim);margin-top:5px;font-size:.79rem;flex-wrap:wrap}
+#card{position:fixed;left:50%;top:44%;transform:translate(-50%,-50%);max-width:17rem;text-align:center;font-size:.9rem;pointer-events:none}
+#card b{font-size:1.2rem}.proto{font-family:ui-monospace,Menlo,monospace;font-size:.68rem;color:var(--dim);text-align:center}
+@media (max-width:640px){.panel{text-align:center}.row{flex-direction:column;align-items:center;gap:2px}}
+.fallback{display:none}.no-gl #earth{display:none}.no-gl .fallback{display:block;position:fixed;left:50%;top:50%;transform:translate(-50%,-52%);width:min(92vw,62vh);height:auto;border-radius:50%}
+.still .top,.still .bottom{display:none}.still,.still body{background:transparent}
+</style>
+</head>
+<body>
+<canvas id="earth" aria-label="A turning globe. Each place rises or falls around zero as people thank one another."></canvas>
+<img class="fallback" src="earth-still.png" alt="The Earth, with colored crests where people have thanked one another.">
+<div class="top">
+  <div class="head">
+    <h1 data-l="en">Every thank makes a crest and a trough.</h1>
+    <h1 data-l="km">រាល់ការអរគុណបង្កើតកំពូលរលក និងបាតរលក។</h1>
+    <p class="sub" data-l="en">The kind rise and the thankful fall by the same amount, so the sea never gets higher. It only moves.</p>
+    <p class="sub" data-l="km">អ្នកមានចិត្តល្អឡើង ហើយអ្នកដឹងគុណចុះ ក្នុងចំនួនដូចគ្នា ដូច្នេះសមុទ្រមិនដែលខ្ពស់ឡើងទេ។ វាគ្រាន់តែផ្លាស់ទី។</p>
+  </div>
+  <div class="tools">
+    <div class="seg" id="lang"><button data-v="en" class="on">EN</button><button data-v="km">ខ្មែរ</button></div>
+    <div class="seg" id="theme"><button data-v="light">☀</button><button data-v="dark" class="on">☾</button></div>
+  </div>
+</div>
+<div class="panel" id="card" hidden>
+  <div data-l="en">This part of the world, about 1,100 km across</div>
+  <div data-l="km">ផ្នែកនេះនៃពិភពលោក ទំហំប្រហែល ១១០០ គីឡូម៉ែត្រ</div>
+  <div style="margin-top:6px">Kiitos <b id="card-k"></b> &nbsp; Kiitti <b id="card-t"></b></div>
+</div>
+<div class="bottom">
+  <div class="seg" id="sea"><button data-sea="kiitos" class="on">Kiitos</button><button data-sea="kiitti">Kiitti</button></div>
+  <div class="panel">
+    <div class="legend">
+      <div class="lr"><span data-l="en"><b>Crest</b> kind</span><span data-l="km"><b>កំពូលរលក</b> ចិត្តល្អ</span>
+      <span data-l="en"><b>Trough</b> thankful</span><span data-l="km"><b>បាតរលក</b> ដឹងគុណ</span></div>
+      <div class="lr"><span class="ramp"><i style="background:#dc2626"></i><i style="background:#ea580c"></i><i style="background:#ca8a04"></i><i style="background:#16a34a"></i><i style="background:#2563eb"></i><i style="background:#4f46e5"></i><i style="background:#7c3aed"></i></span><span data-l="en">how often a place crosses zero</span><span data-l="km">ញឹកញាប់ប៉ុណ្ណាដែលកន្លែងមួយឆ្លងកាត់សូន្យ</span></div>
+    </div>
+    <div class="row"><span id="day"></span></div>
+  </div>
+  <div class="proto"><span data-l="en">Prototype. Every number here is made up. Drag to turn, pinch to zoom, tap a place.</span><span data-l="km">គំរូសាកល្បង។ លេខទាំងអស់នៅទីនេះជាការបង្កើតឡើង។ អូសដើម្បីបង្វិល។ ខ្មែរនេះជាពាក្យរង់ចាំ។</span></div>
+</div>
+<script>
+(function(){var r=document.documentElement,n=(navigator.language||"").toLowerCase().indexOf("km")===0;
+function wire(id,attr,ev){var s=document.getElementById(id);s.addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;r.dataset[attr]=b.dataset.v;s.querySelectorAll("button").forEach(function(x){x.classList.toggle("on",x===b)});document.dispatchEvent(new Event(ev))})}
+if(n){r.dataset.lang="km";document.querySelectorAll("#lang button").forEach(function(b){b.classList.toggle("on",b.dataset.v==="km")})}
+wire("lang","lang","langchange");wire("theme","theme","themechange")})();
+</script>
+<script src="earth.js"></script>
+</body>
+</html>

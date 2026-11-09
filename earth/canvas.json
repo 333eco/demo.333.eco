@@ -1,0 +1,109 @@
+{
+ "artboards": [
+  {
+   "file": "LandingEnPhone.html",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 1448,
+   "title": "1 · The front page, English, phone",
+   "page": "front"
+  },
+  {
+   "file": "LandingKmPhone.html",
+   "x": 510,
+   "y": 0,
+   "w": 390,
+   "h": 1518,
+   "title": "2 · The front page, Khmer, phone",
+   "page": "front"
+  },
+  {
+   "file": "LandingEnDesktop.html",
+   "x": 1020,
+   "y": 0,
+   "w": 1440,
+   "h": 999,
+   "title": "3 · The front page, English, desktop",
+   "page": "front"
+  },
+  {
+   "file": "LandingDarkPhone.html",
+   "x": 2580,
+   "y": 0,
+   "w": 390,
+   "h": 1448,
+   "title": "4 · Dark pass, front page, phone",
+   "page": "front"
+  },
+  {
+   "file": "RecordEnPhone.html",
+   "x": 0,
+   "y": 0,
+   "w": 390,
+   "h": 2015,
+   "title": "5 · Your record, English, phone",
+   "page": "you"
+  },
+  {
+   "file": "RecordKmPhone.html",
+   "x": 510,
+   "y": 0,
+   "w": 390,
+   "h": 2268,
+   "title": "6 · Your record, Khmer, phone",
+   "page": "you"
+  },
+  {
+   "file": "RecordEnDesktop.html",
+   "x": 1020,
+   "y": 0,
+   "w": 1440,
+   "h": 1679,
+   "title": "7 · Your record, English, desktop",
+   "page": "you"
+  },
+  {
+   "file": "RecordDarkPhone.html",
+   "x": 2580,
+   "y": 0,
+   "w": 390,
+   "h": 2015,
+   "title": "8 · Dark pass, your record, phone",
+   "page": "you"
+  },
+  {
+   "file": "StatesEn.html",
+   "x": 3090,
+   "y": 0,
+   "w": 390,
+   "h": 1823,
+   "title": "9 · Nothing yet, needs a passkey, can't open, English",
+   "page": "you"
+  },
+  {
+   "file": "StatesKm.html",
+   "x": 3600,
+   "y": 0,
+   "w": 390,
+   "h": 1848,
+   "title": "10 · Nothing yet, needs a passkey, can't open, Khmer",
+   "page": "you"
+  }
+ ],
+ "annotations": [],
+ "launch": {
+  "view": "canvas",
+  "page": "front"
+ },
+ "pages": [
+  {
+   "id": "front",
+   "name": "The front page"
+  },
+  {
+   "id": "you",
+   "name": "Your record"
+  }
+ ]
+}

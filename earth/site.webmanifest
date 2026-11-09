@@ -1,0 +1,27 @@
+{
+  "name": "earth.333.eco drawings",
+  "short_name": "demo.333.eco/earth",
+  "description": "Drawings of the earth.333.eco screens, in English and Khmer. They charge nobody.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fcfbfe",
+  "theme_color": "#0f52ba",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+:root,[data-theme="light"]{
+  --bg:#fcfbfe; --surface:#f4f1fb; --surface-2:#ebe7f5; --line:rgba(20,16,30,0.12); --line-strong:rgba(20,16,30,0.28);
+  --ink:#16141c; --ink-dim:#5b5766; --beat-duration:1.5s; --beat-delay:0s;
+  --accent:#0f52ba; --accent-ink:#ffffff; --wash:rgba(15,82,186,.08); --edge:rgba(15,82,186,.26);
+  --font-display:"Newsreader",Georgia,serif; --font-text:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace; --font-khmer:"Noto Sans Khmer",sans-serif;
+  --r-card:1.25rem; --r-control:1rem; --r-pill:999px;
+}
+[data-theme="dark"]{
+  --bg:#0a0a0f; --surface:#17171d; --surface-2:#1f1f27; --line:rgba(255,255,255,0.08); --line-strong:rgba(255,255,255,0.18);
+  --ink:#f5f5f7; --ink-dim:#9b9ba5;
+  --accent:#8ab4f8; --accent-ink:#10141c; --wash:rgba(138,180,248,.10); --edge:rgba(138,180,248,.30);
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-text);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+.km{font-family:var(--font-khmer),var(--font-text);line-height:1.75}
+.board{width:var(--w);margin:0 auto;padding:0 var(--pad);background:var(--bg)}
+.desk{--w:1440px;--pad:96px} .phone{--w:390px;--pad:20px}
+header{display:flex;align-items:center;justify-content:space-between;padding:22px 0;gap:12px}
+.wordmark{font-family:var(--font-display);font-weight:600;font-size:1.5rem;white-space:nowrap;letter-spacing:-.01em;
+  --emblem-cap:.66em;--emblem-size:calc(var(--emblem-cap)*1.1);--emblem-box:calc(var(--emblem-size)/.7534)}
+.wordmark svg{width:var(--emblem-box);height:var(--emblem-box);color:var(--accent);vertical-align:baseline;
+  margin-top:calc(var(--emblem-box)*-.09312);margin-bottom:calc(var(--emblem-box)*-.15333);
+  margin-left:calc(var(--emblem-box)*-.15343 + 1px);margin-right:calc(var(--emblem-box)*-.09312 - 1px)}
+.wordmark sup{font-size:.72em;font-weight:500;vertical-align:.25em;margin-left:.05em;line-height:0}
+.tools{display:flex;gap:8px;align-items:center}
+.seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:var(--r-pill);padding:3px;font-size:.8rem}
+.seg span{padding:5px 12px;border-radius:var(--r-pill);color:var(--ink-dim)}
+.seg span.on{background:var(--ink);color:var(--bg)}
+.share{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line-strong);border-radius:var(--r-pill);padding:6px 13px;font-size:.85rem}
+.share svg{width:16px;height:16px;flex:none}
+.phone .share{padding:7px 9px}.phone .share .lbl{display:none}
+h1{font-family:var(--font-display);font-weight:600;letter-spacing:-.022em;line-height:1.08;margin:0}
+.desk h1{font-size:3.6rem;max-width:17ch} .phone h1{font-size:2.4rem}
+.km h1,h1.km{letter-spacing:0;line-height:1.4} .desk h1.km{font-size:2.8rem;max-width:22ch} .phone h1.km{font-size:1.8rem}
+.para{font-size:1.15rem;margin:24px 0 0;max-width:60ch}
+.phone .para{font-size:1.05rem}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);border-radius:var(--r-control);padding:14px 26px;font-weight:600;font-size:1.05rem}
+.btn2{display:inline-block;border:1px solid var(--line-strong);border-radius:var(--r-control);padding:12px 20px;font-weight:600;font-size:.95rem}
+.note{color:var(--ink-dim);font-size:.9rem;margin:12px 0 0;max-width:60ch}
+.flush{margin:0}
+.tagline{font-family:var(--font-mono);color:var(--ink-dim);font-size:.75rem;margin:0 0 14px}
+.cta{margin:30px 0 0}
+a.link,.link{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
+.intro{padding:28px 0 56px}
+.desk .intro{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
+.art{border:1px solid var(--edge);background:var(--wash);border-radius:var(--r-card);padding:20px;margin-top:32px}
+.desk .art{margin-top:0}
+.art svg{width:100%;height:auto;display:block}
+.you{padding:12px 0 8px}
+.you .sub{color:var(--ink-dim);margin:14px 0 0;max-width:62ch}
+.legend{background:var(--wash);border-radius:var(--r-control);padding:12px 16px;margin:20px 0 0;font-size:.95rem;max-width:62ch}
+.dl{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin:22px 0 0}
+.season{font-family:var(--font-mono);font-size:.78rem;color:var(--ink-dim);margin:34px 0 10px}
+.season.km{font-family:var(--font-khmer);font-size:.9rem}
+.rows{border:1px solid var(--line);border-radius:var(--r-card);background:var(--surface);overflow:hidden}
+.row{padding:16px 18px;border-top:1px solid var(--line)}
+.row:first-child{border-top:0}
+.line{display:flex;gap:14px;align-items:flex-start}
+.ico{flex:none;width:34px;height:34px;border-radius:50%;background:var(--wash);display:flex;align-items:center;justify-content:center;color:var(--accent)}
+.ico svg{width:20px;height:20px}
+.what{font-weight:500}
+.meta{color:var(--ink-dim);font-size:.88rem}
+.sum{display:inline-block;margin:8px 0 0 48px;color:var(--accent);font-size:.9rem}
+.receipt{margin:10px 0 0 48px;background:var(--surface-2);border-radius:var(--r-control);padding:14px}
+.phone .receipt{margin-left:0}
+.f{display:grid;grid-template-columns:1fr;gap:1px;margin:0 0 10px}
+.desk .f{grid-template-columns:170px 1fr;gap:12px}
+.f dt{color:var(--ink-dim);font-size:.82rem}
+.f dd{margin:0;font-family:var(--font-mono);font-size:.82rem;word-break:break-all}
+.acts{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:12px}
+.small{color:var(--ink-dim);font-size:.9rem;margin:18px 0 0;max-width:62ch}
+.state{padding:44px 0;border-top:1px solid var(--line)}
+.state:first-of-type{border-top:0}
+.state h2{font-family:var(--font-display);font-weight:600;font-size:1.7rem;line-height:1.2;margin:0 0 10px}
+.state h2.km{font-size:1.45rem;line-height:1.45}
+.state p{margin:0 0 18px;max-width:60ch}
+.spot{width:100%;height:88px;display:block;margin:0 0 16px;background:var(--wash);border-radius:var(--r-control)}
+footer{border-top:1px solid var(--line);margin-top:56px;padding:30px 0 48px;color:var(--ink-dim);font-size:.88rem}
+footer p{margin:0 0 14px}
+.foot-row{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin:0 0 18px}
+.foot-row p{margin:0}
+.nw{white-space:nowrap}
+.sm{font-size:.5em;vertical-align:.7em;margin-left:.04em;line-height:0}
