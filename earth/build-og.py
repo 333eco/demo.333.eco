@@ -48,12 +48,14 @@ SHELL = """<!doctype html><html><head><meta charset="utf-8">
   .site{display:flex;align-items:center;gap:14px;font-size:38px;font-weight:500;color:@D_INK@;margin-bottom:22px}
   .site .em{margin:0;vertical-align:0}
   .wide{max-width:44ch;font-size:27px}
+  .globe{position:absolute;right:-70px;top:50%;transform:translateY(-50%);width:600px;height:600px}
+  .star{position:absolute;width:var(--s);height:var(--s);color:#dfe6f5}
   .km{font-family:"Noto Sans Khmer","IBM Plex Sans",sans-serif}
   .foot{position:absolute;left:92px;bottom:56px;display:flex;align-items:center;gap:14px;
         font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:22px;color:#7fa6e6}
   .rule{width:52px;height:2px;background:#7fa6e6;opacity:.5}
 </style></head><body>{BODY}
-<div class="foot"><span class="rule"></span>demo.333.eco/earth</div>
+<div class="foot"><span class="rule"></span>{FOOT}</div>
 </body></html>"""
 
 
@@ -62,32 +64,37 @@ def emblem(size_em=".92em"):
             '<path fill="currentColor" d="%s"/></svg>' % (size_em, size_em, EMBLEM))
 
 
+STAR = '<svg class="star" style="--s:%dpx;left:%dpx;top:%dpx;opacity:%s" viewBox="-10 -10 20 20"><path fill="currentColor" d="M0-10Q.6-.6 10 0Q.6.6 0 10Q-.6.6-10 0Q-.6-.6 0-10Z"/></svg>'
+STARS = "".join(STAR % t for t in [(26, 560, 70, .9), (14, 640, 150, .6), (18, 520, 500, .7), (12, 610, 560, .5), (30, 1130, 40, .9), (16, 1070, 90, .6), (20, 1150, 560, .8), (12, 700, 40, .5), (14, 90, 60, .5), (20, 470, 40, .55)])
+GLOBE = '<img class="globe" src="file://%s" alt="">' % os.path.join(HERE, "earth-still-calm.png")
+
+def card(tag):
+    return (STARS + GLOBE + '<div class="inner">'
+            '<div style="font-family:Newsreader,Georgia,serif;font-weight:600;font-size:46px;letter-spacing:-.02em;margin-bottom:20px">Heart' + emblem(".92em") + 'ank<span class="reg">®</span></div>'
+            '<h1 style="font-size:66px;margin-bottom:22px;max-width:9.5em">Every thank makes a crest and a trough.</h1>'
+            '<p class="wide" style="max-width:21em">' + tag + '</p></div>')
+
+# name -> (body, the address at the foot)
 CARDS = {
-    "og.png": '<div class="inner">'
-              '<div class="site">Heart' + emblem("1em") + 'ank</div>'
-              '<h1 style="font-size:76px;margin-bottom:22px">A private record<br>of your thanks.</h1>'
-              '<p class="wide">The ledger.heartbank.net screens. Drawings, in English and Khmer.</p></div>',
-    # The live site's card: no "drawings" on it. Copied to ledger.heartbank.net public/og.png.
-    "og-site.png": '<div class="inner">'
-              '<div class="site">Heart' + emblem("1em") + 'ank</div>'
-              '<h1 style="font-size:76px;margin-bottom:22px">A private record<br>of your thanks.</h1>'
-              '<p class="wide">Kept encrypted, and yours to open and download.</p></div>',
+    "og.png": (card("The earth.333.eco screens. Drawings, in English and Khmer."), "demo.333.eco/earth"),
+    # The live site's card: no "drawings" on it. sync-site copies it to the ledger's public/og.png.
+    "og-site.png": (card("The kind rise, the thankful fall, and the sea never gets higher."), "earth.333.eco"),
 }
 
 def main():
     if not os.path.exists(CHROME):
         sys.exit("Chrome not found at %s — render the cards elsewhere." % CHROME)
     only = set(sys.argv[1:])
-    for name, body in CARDS.items():
+    for name, (body, foot) in CARDS.items():
         if only and name not in only:
             continue
         with tempfile.TemporaryDirectory() as tmp:
             src = os.path.join(tmp, "card.html")
-            io.open(src, "w", encoding="utf-8").write(brand_fill(SHELL).replace("{BODY}", body))
+            io.open(src, "w", encoding="utf-8").write(brand_fill(SHELL).replace("{BODY}", body).replace("{FOOT}", foot))
             out = os.path.join(HERE, name)
             subprocess.run([CHROME, "--headless", "--disable-gpu", "--hide-scrollbars",
                             "--force-device-scale-factor=1", "--window-size=1200,630",
-                            "--virtual-time-budget=4000",
+                            "--virtual-time-budget=4000", "--allow-file-access-from-files",
                             "--screenshot=" + out, "file://" + src],
                            check=True, capture_output=True)
             print("%-22s %6d bytes" % (name, os.path.getsize(out)))
