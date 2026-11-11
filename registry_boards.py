@@ -283,13 +283,14 @@ def R7():     # your page, editing
             '<div class="lab">%s</div><div class="play">▶ %s</div>' % (_("Your name, said by you (you choose)", "ឈ្មោះរបស់អ្នក ហៅដោយអ្នក (អ្នកជ្រើសរើស)"), _("Record it", "ថតសំឡេង")) +
             field(_("A short line", "បន្ទាត់ខ្លី"), _("I make kites in Kampot.", "ខ្ញុំធ្វើខ្លែងនៅកំពត។")) +
             field(_("Links", "តំណ"), "sokhakites.example") +
+            '<p class="fine" style="margin:6px 0 0">%s</p>' % _("Your page is public as soon as you save it. Only you can change it.", "ទំព័ររបស់អ្នកក្លាយជាសាធារណៈភ្លាមៗពេលអ្នករក្សាទុក។ មានតែអ្នកទេដែលអាចកែវាបាន។") +
             btn(_("Save", "រក្សាទុក")) +
             '<div class="sh">%s</div><div class="card">' % _("Ways to send you money (optional)", "វិធីផ្ញើប្រាក់ឱ្យអ្នក (ស្រេចចិត្ត)") +
             '<div class="rail"><span><b>KHQR</b><span class="s">ABA · Sokha Keo</span></span><span class="link">%s</span></div>' % _("Change", "ប្ដូរ") +
             '<div class="rail"><span><b>Zelle</b><span class="s">s•••@example.com</span></span><span class="link">%s</span></div>' % _("Change", "ប្ដូរ") +
             '<div class="more">+ %s</div></div>' % _("Add a way", "បន្ថែមវិធី") +
-            '<p class="fine" style="margin-top:0">%s</p>' % _("People see these only after they thank you. KHQR shows your name and Zelle your email or phone to whoever sends. A change needs your passkey, and we'll email you when it happens.",
-                                                              "មនុស្សឃើញវាតែបន្ទាប់ពីពួកគេអរគុណអ្នក។ KHQR បង្ហាញឈ្មោះរបស់អ្នក ហើយ Zelle បង្ហាញអ៊ីមែល ឬលេខទូរស័ព្ទ ដល់អ្នកដែលផ្ញើ។ ការប្ដូរត្រូវការ passkey របស់អ្នក ហើយយើងនឹងផ្ញើអ៊ីមែលពេលវាកើតឡើង។") +
+            '<p class="fine" style="margin-top:0">%s</p>' % _("People see these only after they thank you. KHQR shows your name and Zelle your email or phone to whoever sends. A change needs a fresh log-in with your passkey.",
+                                                              "មនុស្សឃើញវាតែបន្ទាប់ពីពួកគេអរគុណអ្នក។ KHQR បង្ហាញឈ្មោះរបស់អ្នក ហើយ Zelle បង្ហាញអ៊ីមែល ឬលេខទូរស័ព្ទ ដល់អ្នកដែលផ្ញើ។ ការប្ដូរត្រូវការការចូលថ្មីដោយ passkey របស់អ្នក។") +
             '<div class="sh">%s</div><div class="card">' % _("Yours", "របស់អ្នក") +
             tog(_("Renew each year", "បន្តរៀងរាល់ឆ្នាំ"), _("Held through 5 November 2027.", "កាន់រហូតដល់ ៥ វិច្ឆិកា ២០២៧។")) +
             tog(_("Let search engines find my page", "អនុញ្ញាតឱ្យម៉ាស៊ីនស្វែងរករកឃើញទំព័ររបស់ខ្ញុំ"), _("Off unless you turn it on.", "បិទ លុះត្រាអ្នកបើក។")) +
@@ -367,12 +368,16 @@ def _links():
     return '<div class="lnk"><span>sokhakites.example</span><span class="link">↗</span></div>'
 
 
+def _report():    # the conduct process (founder 2026-11-08): impersonation, harassment, slurs
+    return '<p class="fine center"><span class="link" style="font-weight:400">%s</span></p>' % _("Report this page", "រាយការណ៍ទំព័រនេះ")
+
+
 def R8():     # a person's page, as a visitor sees it: nothing here counts anyone
-    return '<div class="center">' + _face() + _said() + '</div>' + _thank() + '<div style="height:14px"></div>' + _links()
+    return '<div class="center">' + _face() + _said() + '</div>' + _thank() + '<div style="height:14px"></div>' + _links() + _report()
 
 
 def R8D():
-    return ('<div class="cols"><div>' + _face().replace('margin', 'x') + _said() + '</div><div>' + _thank() + '<div style="height:14px"></div>' + _links() + '</div></div>')
+    return ('<div class="cols"><div>' + _face().replace('margin', 'x') + _said() + '</div><div>' + _thank() + '<div style="height:14px"></div>' + _links() + _report() + '</div></div>')
 
 
 def R9():     # one plain notice, before the year ends
