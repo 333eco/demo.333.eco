@@ -1219,7 +1219,7 @@
    "page": "developers",
    "title": "D9 · Register an app (its own file), English",
    "w": 390,
-   "h": 853,
+   "h": 893,
    "x": 3760,
    "y": 0
   },
@@ -1228,7 +1228,7 @@
    "page": "developers",
    "title": "D9 · Register an app (its own file), Khmer",
    "w": 390,
-   "h": 961,
+   "h": 1003,
    "x": 3760,
    "y": 1783
   },
@@ -1246,7 +1246,7 @@
    "page": "developers",
    "title": "D10 · One app: key, usage, pause, export, Khmer",
    "w": 390,
-   "h": 899,
+   "h": 941,
    "x": 4230,
    "y": 1783
   },
@@ -1408,8 +1408,62 @@
    "page": "developers",
    "title": "D18 · Register: the file needs fixing, Khmer",
    "w": 390,
-   "h": 901,
+   "h": 943,
    "x": 7990,
+   "y": 1783
+  },
+  {
+   "file": "D19.html",
+   "page": "developers",
+   "title": "D19 · Balance: prepay (from origin), English",
+   "w": 390,
+   "h": 892,
+   "x": 8460,
+   "y": 0
+  },
+  {
+   "file": "D19Km.html",
+   "page": "developers",
+   "title": "D19 · Balance: prepay (from origin), Khmer",
+   "w": 390,
+   "h": 1030,
+   "x": 8460,
+   "y": 1783
+  },
+  {
+   "file": "D20.html",
+   "page": "developers",
+   "title": "D20 · Team (from origin), English",
+   "w": 390,
+   "h": 844,
+   "x": 8930,
+   "y": 0
+  },
+  {
+   "file": "D20Km.html",
+   "page": "developers",
+   "title": "D20 · Team (from origin), Khmer",
+   "w": 390,
+   "h": 879,
+   "x": 8930,
+   "y": 1783
+  },
+  {
+   "file": "D21.html",
+   "page": "developers",
+   "title": "D21 · Notifications (from origin, without the low-balance warning), English",
+   "w": 390,
+   "h": 844,
+   "x": 9400,
+   "y": 0
+  },
+  {
+   "file": "D21Km.html",
+   "page": "developers",
+   "title": "D21 · Notifications (from origin, without the low-balance warning), Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 9400,
    "y": 1783
   },
   {

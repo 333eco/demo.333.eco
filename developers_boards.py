@@ -21,7 +21,7 @@ DT = {
 "en": {
   "foot": "developers.333.eco · drawings · nothing here is live",
   "prod": "Developers",
-  "nav": ("Apps", "Keys", "Usage", "Balance"),
+  "nav": ("Apps", "Keys", "Usage", "Balance", "Team", "Notifications"),
   # D1 the front door
   "d1_h": "Build with HeartBank®",
   "d1_lede": "One site for every door: log people in, sign files, record thanks, and check it all yourself. Your agent can build with you.",
@@ -121,7 +121,7 @@ DT = {
 "km": {
   "foot": "developers.333.eco · គំនូរ · គ្មានអ្វីនៅទីនេះដំណើរការពិតទេ",
   "prod": "អ្នកអភិវឌ្ឍ",
-  "nav": ("កម្មវិធី", "កូនសោ", "ការប្រើប្រាស់", "សមតុល្យ"),
+  "nav": ("កម្មវិធី", "កូនសោ", "ការប្រើប្រាស់", "សមតុល្យ", "ក្រុម", "ការជូនដំណឹង"),
   "d1_h": "បង្កើតជាមួយ HeartBank®",
   "d1_lede": "គេហទំព័រតែមួយសម្រាប់ទ្វារទាំងអស់៖ ឱ្យមនុស្សចូល ចុះហត្ថលេខាលើឯកសារ កត់ត្រាការអរគុណ ហើយពិនិត្យវាទាំងអស់ដោយខ្លួនឯង។ ភ្នាក់ងាររបស់អ្នកអាចបង្កើតជាមួយអ្នក។",
   "d1_cards": (("Log in with HeartBank®", "បញ្ជាក់ថានរណាម្នាក់ជានរណា ដោយប្រើ passkey។ គ្មានពាក្យសម្ងាត់។ កម្មវិធីនីមួយៗទទួលបាន ID ផ្ទាល់ខ្លួនសម្រាប់មនុស្សម្នាក់។", "key"),
@@ -405,6 +405,30 @@ def D18(t, d):
             + '<div class="card"><h2>%s</h2>%s</div>' % (d["d9_checks_h"], checks)
             + '<div class="grow"></div>' + btns(d["d18_btn"]))
 
+# ── batch 3 (2026-11-11): the business half, merged from origin.333.eco/dashboard (O6, O8, O9 reuse their own words) ──
+def D19(t, d):
+    amt = "".join('<span class="chip%s">%s</span>' % (" on" if i == 1 else "", a) for i, a in enumerate(t["o6_amt"]))
+    return (_tabs(d, 3) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["o6_h"], t["o6_lede"])
+            + '<div class="card"><h2>%s</h2><div class="big">%s</div></div>' % (t["o4_cred"], t["o4_credv"])
+            + '<div class="card"><h2>%s</h2><div class="chips">%s</div><p class="fine">%s</p></div>' % (t["o6_ah"], amt, t["o6_never"])
+            + '<div class="card"><div class="row"><div><div class="t">%s</div><div class="s">%s</div></div><span class="tog"></span></div></div>'
+              % (t["o6_auto"], t["o6_autos"])
+            + '<div class="note">%s</div>' % t["o6_zero"] + '<div class="grow"></div>' + btns(t["o6_btn"]))
+def D20(t, d):
+    ppl = [person(0, 0, "var(--accent)", "#c99a6e", "#2a1d17", "bun", .55), person(0, 0, "#4f7a62", "#b98a63", "#2a1d17", "cap", .55),
+           person(0, 0, "#c0603f", "#e0b48a", "#2a1d17", "pigtails", .55)]
+    rows = "".join('<div class="row"><div class="thumb"><svg width="40" height="40" viewBox="-20 -20 40 40" aria-hidden="true">%s</svg>'
+                   '<div><div class="t">%s</div><div class="s">%s</div></div></div></div>' % (ppl[i], a, b) for i, (a, b) in enumerate(t["o8_m"]))
+    return (_tabs(d, 4) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["o8_h"], t["o8_lede"]) + '<div class="card">%s</div>' % rows
+            + '<div class="card"><h2>%s</h2><div class="field mono">%s</div></div>' % (t["o8_inv"], t["o8_invv"])
+            + '<div class="grow"></div>' + btns(t["o8_btn"]))
+def D21(t, d):
+    # ⛔ origin's "Credits are low" row is NOT carried: a warning that a balance is falling is barred (/build Default 13, Sig-8)
+    rows = [r for r in t["o9_rows"] if "$5.00" not in r[1]]
+    toggles = "".join('<div class="row"><div><div class="t">%s</div>%s</div><span class="tog on"></span></div>'
+                      % (a, '<div class="s">%s</div>' % b if b else "") for a, b in rows)
+    return _tabs(d, 5) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["o9_h"], t["o9_lede"]) + '<div class="card">%s</div>' % toggles
+
 # desktop (1280): developers work at desks
 def _dside(items, on, main):
     nav = "".join('<a class="%s">%s</a>' % ("on" if i == on else "", x) for i, x in enumerate(items))
@@ -437,6 +461,8 @@ SCREENS = [  # (id, page, title, render(t, d)) — page "developers", except the
     ("D12", "developers", "Lookup", D12), ("D13", "developers", "Verify, free", D13), ("D14", "developers", "Changes", D14),
     ("D15", "developers", "Developer terms", D15), ("D16", "developers", "The verified-human badge", D16),
     ("D17", "developers", "Your apps: the first visit", D17), ("D18", "developers", "Register: the file needs fixing", D18),
+    ("D19", "developers", "Balance: prepay (from origin)", D19), ("D20", "developers", "Team (from origin)", D20),
+    ("D21", "developers", "Notifications (from origin, without the low-balance warning)", D21),
 ]
 DESKTOP = [  # (id, page, title, render(t, d)) at 1280
     ("D1D", "developers", "Build with HeartBank®, desktop", D1D), ("D2D", "developers", "Thank docs, desktop", D2D),
