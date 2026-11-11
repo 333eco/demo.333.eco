@@ -821,7 +821,7 @@
   {
    "file": "O4.html",
    "page": "origin",
-   "title": "O4 · Dashboard: overview, English",
+   "title": "O4 · Dashboard: overview · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), English",
    "w": 390,
    "h": 844,
    "x": 1410,
@@ -830,7 +830,7 @@
   {
    "file": "O4Km.html",
    "page": "origin",
-   "title": "O4 · Dashboard: overview, Khmer",
+   "title": "O4 · Dashboard: overview · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), Khmer",
    "w": 390,
    "h": 869,
    "x": 1410,
@@ -839,7 +839,7 @@
   {
    "file": "O5.html",
    "page": "origin",
-   "title": "O5 · Dashboard: API keys, English",
+   "title": "O5 · Dashboard: API keys · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), English",
    "w": 390,
    "h": 844,
    "x": 1880,
@@ -848,7 +848,7 @@
   {
    "file": "O5Km.html",
    "page": "origin",
-   "title": "O5 · Dashboard: API keys, Khmer",
+   "title": "O5 · Dashboard: API keys · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), Khmer",
    "w": 390,
    "h": 922,
    "x": 1880,
@@ -857,7 +857,7 @@
   {
    "file": "O6.html",
    "page": "origin",
-   "title": "O6 · Dashboard: prepay credits, English",
+   "title": "O6 · Dashboard: prepay credits · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), English",
    "w": 390,
    "h": 844,
    "x": 2350,
@@ -866,7 +866,7 @@
   {
    "file": "O6Km.html",
    "page": "origin",
-   "title": "O6 · Dashboard: prepay credits, Khmer",
+   "title": "O6 · Dashboard: prepay credits · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), Khmer",
    "w": 390,
    "h": 906,
    "x": 2350,
@@ -875,7 +875,7 @@
   {
    "file": "O7.html",
    "page": "origin",
-   "title": "O7 · Dashboard: packages, English",
+   "title": "O7 · Dashboard: packages · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), English",
    "w": 390,
    "h": 934,
    "x": 2820,
@@ -884,7 +884,7 @@
   {
    "file": "O7Km.html",
    "page": "origin",
-   "title": "O7 · Dashboard: packages, Khmer",
+   "title": "O7 · Dashboard: packages · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), Khmer",
    "w": 390,
    "h": 1020,
    "x": 2820,
@@ -893,7 +893,7 @@
   {
    "file": "O8.html",
    "page": "origin",
-   "title": "O8 · Dashboard: team, English",
+   "title": "O8 · Dashboard: team · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), English",
    "w": 390,
    "h": 844,
    "x": 3290,
@@ -902,7 +902,7 @@
   {
    "file": "O8Km.html",
    "page": "origin",
-   "title": "O8 · Dashboard: team, Khmer",
+   "title": "O8 · Dashboard: team · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), Khmer",
    "w": 390,
    "h": 886,
    "x": 3290,
@@ -911,7 +911,7 @@
   {
    "file": "O9.html",
    "page": "origin",
-   "title": "O9 · Dashboard: notifications, English",
+   "title": "O9 · Dashboard: notifications · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), English",
    "w": 390,
    "h": 844,
    "x": 3760,
@@ -920,7 +920,7 @@
   {
    "file": "O9Km.html",
    "page": "origin",
-   "title": "O9 · Dashboard: notifications, Khmer",
+   "title": "O9 · Dashboard: notifications · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), Khmer",
    "w": 390,
    "h": 869,
    "x": 3760,
@@ -1415,25 +1415,25 @@
   {
    "file": "D19.html",
    "page": "developers",
-   "title": "D19 · Balance: prepay (from origin), English",
+   "title": "D19 · Balance: billing.thonly.com and your own cap (live origin dashboard), English",
    "w": 390,
-   "h": 892,
+   "h": 973,
    "x": 8460,
    "y": 0
   },
   {
    "file": "D19Km.html",
    "page": "developers",
-   "title": "D19 · Balance: prepay (from origin), Khmer",
+   "title": "D19 · Balance: billing.thonly.com and your own cap (live origin dashboard), Khmer",
    "w": 390,
-   "h": 1030,
+   "h": 1117,
    "x": 8460,
    "y": 1783
   },
   {
    "file": "D20.html",
    "page": "developers",
-   "title": "D20 · Team (from origin), English",
+   "title": "D20 · Overview: this month (live origin dashboard), English",
    "w": 390,
    "h": 844,
    "x": 8930,
@@ -1442,16 +1442,16 @@
   {
    "file": "D20Km.html",
    "page": "developers",
-   "title": "D20 · Team (from origin), Khmer",
+   "title": "D20 · Overview: this month (live origin dashboard), Khmer",
    "w": 390,
-   "h": 879,
+   "h": 869,
    "x": 8930,
    "y": 1783
   },
   {
    "file": "D21.html",
    "page": "developers",
-   "title": "D21 · Notifications (from origin, without the low-balance warning), English",
+   "title": "D21 · Start (live origin dashboard), English",
    "w": 390,
    "h": 844,
    "x": 9400,
@@ -1460,7 +1460,7 @@
   {
    "file": "D21Km.html",
    "page": "developers",
-   "title": "D21 · Notifications (from origin, without the low-balance warning), Khmer",
+   "title": "D21 · Start (live origin dashboard), Khmer",
    "w": 390,
    "h": 869,
    "x": 9400,
@@ -1604,7 +1604,7 @@
   {
    "file": "O4D.html",
    "page": "origin",
-   "title": "O4D · Dashboard overview, desktop, English",
+   "title": "O4D · Dashboard overview, desktop · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), English",
    "w": 1280,
    "h": 800,
    "x": 0,
@@ -1613,7 +1613,7 @@
   {
    "file": "O4DKm.html",
    "page": "origin",
-   "title": "O4D · Dashboard overview, desktop, Khmer",
+   "title": "O4D · Dashboard overview, desktop · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), Khmer",
    "w": 1280,
    "h": 811,
    "x": 0,
@@ -1622,7 +1622,7 @@
   {
    "file": "O5D.html",
    "page": "origin",
-   "title": "O5D · API keys, desktop, English",
+   "title": "O5D · API keys, desktop · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), English",
    "w": 1280,
    "h": 800,
    "x": 1400,
@@ -1631,7 +1631,7 @@
   {
    "file": "O5DKm.html",
    "page": "origin",
-   "title": "O5D · API keys, desktop, Khmer",
+   "title": "O5D · API keys, desktop · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com), Khmer",
    "w": 1280,
    "h": 811,
    "x": 1400,

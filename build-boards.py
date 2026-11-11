@@ -936,9 +936,9 @@ SCREENS = [  # (id, page, title, render)
     ("S4", "sign", "A device lost or stolen", S4), ("S5", "sign", "Bring your works back", S5),
     ("S6", "sign", "Dispute a record", S6),
     ("O1", "origin", "Check a file (B-Trace)", O1), ("O2", "origin", "Sign your own file", O2), ("O3", "origin", "Pricing", O3),
-    ("O4", "origin", "Dashboard: overview", O4), ("O5", "origin", "Dashboard: API keys", O5),
-    ("O6", "origin", "Dashboard: prepay credits", O6), ("O7", "origin", "Dashboard: packages", O7), ("O8", "origin", "Dashboard: team", O8),
-    ("O9", "origin", "Dashboard: notifications", O9), ("O10", "origin", "Docs: B-Trace and B-Signal", O10),
+    ("O4", "origin", "Dashboard: overview · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com)", O4), ("O5", "origin", "Dashboard: API keys · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com)", O5),
+    ("O6", "origin", "Dashboard: prepay credits · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com)", O6), ("O7", "origin", "Dashboard: packages · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com)", O7), ("O8", "origin", "Dashboard: team · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com)", O8),
+    ("O9", "origin", "Dashboard: notifications · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com)", O9), ("O10", "origin", "Docs: B-Trace and B-Signal", O10),
     ("E1", "explorer", "Origin: the checkpoint chain", E1), ("E2", "explorer", "A checkpoint and its anchors", E2),
     ("E3", "explorer", "A record and its proof", E3), ("E4", "explorer", "Search by a dropped file", E4),
     ("E5", "explorer", "Ledger: proofs only", E5), ("E6", "explorer", "Corpus: every paper's timestamps", E6),
@@ -947,7 +947,7 @@ SCREENS = [  # (id, page, title, render)
 PUBLIC = {"O1", "O2", "O3", "O10", "E1", "E2", "E3", "E4", "E5", "E6", "E7"}
 DESKTOP = [  # (id, page, title, render) — drawn at 1280, English and Khmer
     ("E1D", "explorer", "Origin, desktop", E1D), ("E2D", "explorer", "A checkpoint, desktop", E2D), ("E6D", "explorer", "Corpus, desktop", E6D),
-    ("O4D", "origin", "Dashboard overview, desktop", O4D), ("O5D", "origin", "API keys, desktop", O5D),
+    ("O4D", "origin", "Dashboard overview, desktop · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com)", O4D), ("O5D", "origin", "API keys, desktop · STALE: the live origin.333.eco/dashboard is the source (balance at billing.thonly.com)", O5D),
 ]
 PUBLIC |= {"E1D", "E2D", "E6D"}  # public portal pages: a share button in the header (Default 8); auth pages get none
 

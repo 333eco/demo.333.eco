@@ -21,7 +21,7 @@ DT = {
 "en": {
   "foot": "developers.333.eco · drawings · nothing here is live",
   "prod": "Developers",
-  "nav": ("Apps", "Keys", "Usage", "Balance", "Team", "Notifications"),
+  "nav": ("Overview", "Apps", "API keys", "Balance", "Start"),  # the live origin.333.eco/dashboard's tabs (client/dash.ts)
   # D1 the front door
   "d1_h": "Build with HeartBank®",
   "d1_lede": "One site for every door: log people in, sign files, record thanks, and check it all yourself. Your agent can build with you.",
@@ -121,7 +121,7 @@ DT = {
 "km": {
   "foot": "developers.333.eco · គំនូរ · គ្មានអ្វីនៅទីនេះដំណើរការពិតទេ",
   "prod": "អ្នកអភិវឌ្ឍ",
-  "nav": ("កម្មវិធី", "កូនសោ", "ការប្រើប្រាស់", "សមតុល្យ", "ក្រុម", "ការជូនដំណឹង"),
+  "nav": ("ទិដ្ឋភាពរួម", "កម្មវិធី", "កូនសោ API", "សមតុល្យ", "ចាប់ផ្តើម"),
   "d1_h": "បង្កើតជាមួយ HeartBank®",
   "d1_lede": "គេហទំព័រតែមួយសម្រាប់ទ្វារទាំងអស់៖ ឱ្យមនុស្សចូល ចុះហត្ថលេខាលើឯកសារ កត់ត្រាការអរគុណ ហើយពិនិត្យវាទាំងអស់ដោយខ្លួនឯង។ ភ្នាក់ងាររបស់អ្នកអាចបង្កើតជាមួយអ្នក។",
   "d1_cards": (("Log in with HeartBank®", "បញ្ជាក់ថានរណាម្នាក់ជានរណា ដោយប្រើ passkey។ គ្មានពាក្យសម្ងាត់។ កម្មវិធីនីមួយៗទទួលបាន ID ផ្ទាល់ខ្លួនសម្រាប់មនុស្សម្នាក់។", "key"),
@@ -351,16 +351,16 @@ def D7(t, d):
 def D8(t, d):
     apps = "".join('<div class="row"><div><div class="t">%s</div><div class="s mono">%s</div><div class="chips">%s</div></div></div>'
                    % (a, h, "".join('<span class="chip on">%s</span>' % x for x in z)) for a, h, z in d["d8_apps"])
-    return (_tabs(d, 0) + "<h1>%s</h1>" % d["d8_h"] + '<div class="card">%s</div>' % apps + '<div class="grow"></div>' + btns(d["d8_btn"]))
+    return (_tabs(d, 1) + "<h1>%s</h1>" % d["d8_h"] + '<div class="card">%s</div>' % apps + '<div class="grow"></div>' + btns(d["d8_btn"]))
 def D9(t, d):
     checks = "".join('<div class="row"><div class="t">✓ %s</div><span class="s">%s</span></div>' % (a, b) for a, b in d["d9_checks"])
-    return (_tabs(d, 0) + "<h1>%s</h1><p class='lede'>%s</p>" % (d["d9_h"], d["d9_lede"])
+    return (_tabs(d, 1) + "<h1>%s</h1><p class='lede'>%s</p>" % (d["d9_h"], d["d9_lede"])
             + '<div class="card"><h2>%s</h2><div class="field mono">%s</div></div>' % (d["d9_field"], d["d9_val"])
             + '<div class="card"><h2>%s</h2>%s</div>' % (d["d9_checks_h"], checks) + '<div class="note">%s</div>' % d["d9_ready"]
             + '<div class="grow"></div>' + btns(d["d9_btn"]))
 def D10(t, d):
     use = "".join('<div class="row"><div class="t">%s</div><b>%s</b></div>' % (a, b) for a, b in d["d10_use"])
-    return (_tabs(d, 1) + "<h1>%s</h1>" % d["d10_h"]
+    return (_tabs(d, 2) + "<h1>%s</h1>" % d["d10_h"]
             + '<div class="card" style="border-color:var(--accent)"><h2>%s</h2><div class="field mono">%s</div><p class="fine">%s</p>%s</div>'
               % (d["d10_key_h"], d["d10_key"], d["d10_once"], '<button class="btn">%s</button>' % d["d10_copy"])
             + '<div class="card"><h2>%s</h2>%s</div>' % (d["d10_use_h"], use)
@@ -396,38 +396,56 @@ def D16(t, d):
             + '<div class="card"><div class="vhrow">%s%s</div></div>' % (_badge(d["d16_label"]), _badge(d["d16_label"], dark=True))
             + _rows(d["d16_rows"]) + '<div class="chips">%s</div>' % "".join('<span class="chip">%s</span>' % x for x in d["d16_dl"]))
 def D17(t, d):
-    return (_tabs(d, 0) + "<h1>%s</h1>" % d["d17_h"] + '<div class="card">%s<p>%s</p></div>' % (_spot("box"), d["d17_p"])
+    return (_tabs(d, 1) + "<h1>%s</h1>" % d["d17_h"] + '<div class="card">%s<p>%s</p></div>' % (_spot("box"), d["d17_p"])
             + '<div class="grow"></div>' + btns(d["d8_btn"]))
 def D18(t, d):
     checks = "".join('<div class="row"><div class="t">%s %s</div><span class="s">%s</span></div>' % (m, a, b) for m, a, b in d["d18_checks"])
-    return (_tabs(d, 0) + "<h1>%s</h1><p class='lede'>%s</p>" % (d["d18_h"], d["d18_lede"])
+    return (_tabs(d, 1) + "<h1>%s</h1><p class='lede'>%s</p>" % (d["d18_h"], d["d18_lede"])
             + '<div class="card"><h2>%s</h2><div class="field mono">%s</div></div>' % (d["d9_field"], d["d9_val"])
             + '<div class="card"><h2>%s</h2>%s</div>' % (d["d9_checks_h"], checks)
             + '<div class="grow"></div>' + btns(d["d18_btn"]))
 
-# ── batch 3 (2026-11-11): the business half, merged from origin.333.eco/dashboard (O6, O8, O9 reuse their own words) ──
-def D19(t, d):
-    amt = "".join('<span class="chip%s">%s</span>' % (" on" if i == 1 else "", a) for i, a in enumerate(t["o6_amt"]))
-    return (_tabs(d, 3) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["o6_h"], t["o6_lede"])
-            + '<div class="card"><h2>%s</h2><div class="big">%s</div></div>' % (t["o4_cred"], t["o4_credv"])
-            + '<div class="card"><h2>%s</h2><div class="chips">%s</div><p class="fine">%s</p></div>' % (t["o6_ah"], amt, t["o6_never"])
-            + '<div class="card"><div class="row"><div><div class="t">%s</div><div class="s">%s</div></div><span class="tog"></span></div></div>'
-              % (t["o6_auto"], t["o6_autos"])
-            + '<div class="note">%s</div>' % t["o6_zero"] + '<div class="grow"></div>' + btns(t["o6_btn"]))
-def D20(t, d):
-    ppl = [person(0, 0, "var(--accent)", "#c99a6e", "#2a1d17", "bun", .55), person(0, 0, "#4f7a62", "#b98a63", "#2a1d17", "cap", .55),
-           person(0, 0, "#c0603f", "#e0b48a", "#2a1d17", "pigtails", .55)]
-    rows = "".join('<div class="row"><div class="thumb"><svg width="40" height="40" viewBox="-20 -20 40 40" aria-hidden="true">%s</svg>'
-                   '<div><div class="t">%s</div><div class="s">%s</div></div></div></div>' % (ppl[i], a, b) for i, (a, b) in enumerate(t["o8_m"]))
-    return (_tabs(d, 4) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["o8_h"], t["o8_lede"]) + '<div class="card">%s</div>' % rows
-            + '<div class="card"><h2>%s</h2><div class="field mono">%s</div></div>' % (t["o8_inv"], t["o8_invv"])
-            + '<div class="grow"></div>' + btns(t["o8_btn"]))
-def D21(t, d):
-    # ⛔ no "credits are low" row: a warning that a balance is falling is barred (/build Default 13, Sig-8); removed from origin's O9 too, 2026-11-11
-    rows = t["o9_rows"]
-    toggles = "".join('<div class="row"><div><div class="t">%s</div>%s</div><span class="tog on"></span></div>'
-                      % (a, '<div class="s">%s</div>' % b if b else "") for a, b in rows)
-    return _tabs(d, 5) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["o9_h"], t["o9_lede"]) + '<div class="card">%s</div>' % toggles
+# ── batch 3, redrawn 2026-11-11 from the LIVE origin.333.eco/dashboard (founder: "Origin's drawings are stale because prepaid balance
+#    is handled by billing.thonly.com. Please refer to origin.333.eco/dashboard for businesses"). Words copied from client/dash.ts.
+LIVE = {
+  "en": {"balH": "Balance", "payH": "Paying for use", "payP": "Signed records and lookups are paid from a balance at billing.thonly.com. B-Origin℠ holds no money.",
+         "connect": "Connect a balance", "capH": "Your own monthly cap", "capField": "Dollars a month (empty for none)",
+         "capNote": "At your cap, or at zero, paid API calls stop with a clear error. A person's own Sign is never touched.",
+         "priceH": "What it will cost", "prices": (("A record signed through your app", "$0.01, and this may change before billing opens"),
+                                                  ("Checking any record, finding a file's record", "Free, forever"), ("A person signing their own file", "Free, forever")),
+         "never": "No one ever pays to be proven human.", "month": "This month", "signedLabel": "records signed through your apps",
+         "lookups": "API lookups", "lookupsP": "files looked up through your keys",
+         "recount": "This comes straight from the public log, so you can recount it yourself.",
+         "guideH": "Get started", "guideP": "Ask for your app, install the package, and add one button and one page.", "readDocs": "Read the docs",
+         "verifyP": "Anyone can check a record for free, with no account:"},
+  "km": {"balH": "សមតុល្យ", "payH": "ការបង់ថ្លៃការប្រើ", "payP": "កំណត់ត្រាដែលបានចុះហត្ថលេខា និងការស្វែងរក ត្រូវបង់ពីសមតុល្យនៅ billing.thonly.com។ B-Origin℠ មិនកាន់ប្រាក់ទេ។",
+         "connect": "ភ្ជាប់សមតុល្យ", "capH": "ដែនកំណត់ប្រចាំខែរបស់អ្នក", "capField": "ដុល្លារក្នុងមួយខែ (ទុកទទេប្រសិនបើគ្មាន)",
+         "capNote": "នៅដែនកំណត់ ឬនៅសូន្យ ការហៅ API ដែលត្រូវបង់នឹងឈប់ជាមួយកំហុសច្បាស់លាស់។ Sign ផ្ទាល់ខ្លួនរបស់មនុស្សម្នាក់មិនត្រូវបានប៉ះពាល់ទេ។",
+         "priceH": "តម្លៃ", "prices": (("កំណត់ត្រាដែលចុះហត្ថលេខាតាមកម្មវិធីរបស់អ្នក", "$0.01 ហើយវាអាចផ្លាស់ប្តូរមុនពេលបើកការគិតប្រាក់"),
+                                     ("ពិនិត្យកំណត់ត្រា រកកំណត់ត្រារបស់ឯកសារ", "ឥតគិតថ្លៃ ជារៀងរហូត"), ("អ្នកម្នាក់ចុះហត្ថលេខាលើឯកសារផ្ទាល់ខ្លួន", "ឥតគិតថ្លៃ ជារៀងរហូត")),
+         "never": "គ្មាននរណាត្រូវបង់ប្រាក់ដើម្បីបញ្ជាក់ថាជាមនុស្សឡើយ។", "month": "ខែនេះ", "signedLabel": "កំណត់ត្រាដែលបានចុះហត្ថលេខាតាមកម្មវិធីរបស់អ្នក",
+         "lookups": "ការរកមើលតាម API", "lookupsP": "ឯកសារដែលបានរកមើលតាមកូនសោរបស់អ្នក",
+         "recount": "លេខនេះមកពីកំណត់ហេតុសាធារណៈដោយផ្ទាល់ ដូច្នេះអ្នកអាចរាប់វាឡើងវិញដោយខ្លួនឯង។",
+         "guideH": "ចាប់ផ្តើម", "guideP": "ស្នើសុំកម្មវិធីរបស់អ្នក ដំឡើងកញ្ចប់ ហើយបន្ថែមប៊ូតុងមួយ និងទំព័រមួយ។", "readDocs": "អានឯកសារ",
+         "verifyP": "អ្នកណាក៏អាចពិនិត្យកំណត់ត្រាបានដោយឥតគិតថ្លៃ ដោយគ្មានគណនី៖"},
+}
+def _lv(d): return LIVE["km" if d is DT["km"] else "en"]
+def D19(t, d):  # Balance: a link to billing.thonly.com and the owner's own cap; ⛔ no money held here, no low-balance warning
+    L = _lv(d)
+    return (_tabs(d, 3) + "<h1>%s</h1>" % L["balH"]
+            + '<div class="card"><h2>%s</h2><p>%s</p>%s</div>' % (L["payH"], L["payP"], '<button class="btn ghost">%s</button>' % L["connect"])
+            + '<div class="card"><h2>%s</h2><div class="field">%s</div><p class="fine">%s</p></div>' % (L["capH"], L["capField"], L["capNote"])
+            + '<h2 class="sh">%s</h2>' % L["priceH"] + _rows(L["prices"]) + '<p class="fine">%s</p>' % L["never"])
+def D20(t, d):  # Overview: plain figures, recountable from the public log
+    L = _lv(d)
+    return (_tabs(d, 0) + "<h1>%s</h1>" % APP
+            + '<div class="card"><h2>%s</h2><div class="big">1,204</div><p>%s</p></div>' % (L["month"], L["signedLabel"])
+            + '<div class="card"><h2>%s</h2><div class="big">312</div><p>%s</p></div>' % (L["lookups"], L["lookupsP"])
+            + '<div class="note">%s</div>' % L["recount"])
+def D21(t, d):  # Start
+    L = _lv(d)
+    return (_tabs(d, 4) + "<h1>%s</h1><p class='lede'>%s</p>" % (L["guideH"], L["guideP"]) + _code("npm install @333eco/origin-attest")
+            + btns(L["readDocs"]) + '<p class="fine" style="margin-top:16px">%s</p>' % L["verifyP"] + _code("npm install @333eco/origin-verify"))
 
 # desktop (1280): developers work at desks
 def _dside(items, on, main):
@@ -449,7 +467,7 @@ def D8D(t, d):
                  % (a, h, " · ".join(z)) for a, h, z in d["d8_apps"])
     main = ("<h1>%s</h1>" % d["d8_h"] + '<div class="card" style="padding:4px 12px"><table class="tbl"><tbody>%s</tbody></table></div>' % tr
             + '<button class="btn" style="width:auto;padding:12px 22px">%s</button>' % d["d8_btn"])
-    return _dside(d["nav"], 0, main)
+    return _dside(d["nav"], 1, main)
 
 SCREENS = [  # (id, page, title, render(t, d)) — page "developers", except the consent screen, which is login.333.eco's
     ("D1", "developers", "Build with HeartBank®", D1), ("D2", "developers", "Thank with HeartBank®", D2),
@@ -461,8 +479,8 @@ SCREENS = [  # (id, page, title, render(t, d)) — page "developers", except the
     ("D12", "developers", "Lookup", D12), ("D13", "developers", "Verify, free", D13), ("D14", "developers", "Changes", D14),
     ("D15", "developers", "Developer terms", D15), ("D16", "developers", "The verified-human badge", D16),
     ("D17", "developers", "Your apps: the first visit", D17), ("D18", "developers", "Register: the file needs fixing", D18),
-    ("D19", "developers", "Balance: prepay (from origin)", D19), ("D20", "developers", "Team (from origin)", D20),
-    ("D21", "developers", "Notifications (from origin, without the low-balance warning)", D21),
+    ("D19", "developers", "Balance: billing.thonly.com and your own cap (live origin dashboard)", D19),
+    ("D20", "developers", "Overview: this month (live origin dashboard)", D20), ("D21", "developers", "Start (live origin dashboard)", D21),
 ]
 DESKTOP = [  # (id, page, title, render(t, d)) at 1280
     ("D1D", "developers", "Build with HeartBank®, desktop", D1D), ("D2D", "developers", "Thank docs, desktop", D2D),
