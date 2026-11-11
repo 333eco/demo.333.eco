@@ -56,7 +56,7 @@ out = """<!doctype html>
 <meta name="bingbot" content="noindex,nofollow">
 <meta name="slurp" content="noindex,nofollow">
 <meta name="yandex" content="noindex,nofollow">
-<title>B.333.eco: Log in and Sign — the wall</title>
+<title>demo.333.eco: the wall</title>
 <meta name="theme-color" content="#0f52ba">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>

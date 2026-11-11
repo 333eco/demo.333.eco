@@ -25,7 +25,7 @@ CSS = """
 :root{
   --bg:@L_BG@; --surface:@L_SURFACE@; --surface-2:@L_SURFACE_2@; --line:@L_LINE@; --line-strong:@L_LINE_STRONG@;
   --ink:@L_INK@; --ink-dim:@L_INK_DIM@; --ink-faint:@L_INK_FAINT@;
-  /* ── this surface's own (b.333.eco): the accent 333.eco already wears, the brand layer's sapphire gem ── */
+  /* ── this surface's own (333.eco's identity screens): the accent 333.eco already wears, the brand layer's sapphire gem ── */
   --accent:@SAPPHIRE@; --accent-ink:#ffffff;
   --wash:color-mix(in oklab,var(--accent) 9%,transparent); --edge:color-mix(in oklab,var(--accent) 30%,transparent);
   /* ─────────────────────────────────────────────────────────────────────────────────────────────────────── */
@@ -229,7 +229,7 @@ KEY = ('<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circ
 T = {
  "en": {
   "band": "", "lang": ("EN", "ខ្មែរ"), "theme": ("System", "Light", "Dark"),
-  "foot": "B.333.eco · no passwords · only a passkey can sign",
+  "foot": "sign.333.eco · no passwords · only a passkey can sign",
   "from": "Asked by",
   # L1
   "l1_h": "Log in to 333.eco", "l1_lede": "with your HeartBank® passkey.",
@@ -307,7 +307,7 @@ T = {
  "km": {
   "band": "ភាសាខ្មែរ៖ សេចក្ដីព្រាងរបស់យើង មិនទាន់ពិនិត្យដោយអ្នកនិយាយភាសាកំណើត · Khmer: our draft, not yet reviewed",
   "lang": ("EN", "ខ្មែរ"), "theme": ("ប្រព័ន្ធ", "ភ្លឺ", "ងងឹត"),
-  "foot": "B.333.eco · គ្មានពាក្យសម្ងាត់ · មានតែ passkey ទេដែលអាចចុះហត្ថលេខា",
+  "foot": "sign.333.eco · គ្មានពាក្យសម្ងាត់ · មានតែ passkey ទេដែលអាចចុះហត្ថលេខា",
   "from": "ស្នើដោយ",
   "l1_h": "ចូលទៅ 333.eco", "l1_lede": "ដោយប្រើ passkey HeartBank® របស់អ្នក។",
   "l1_c1h": "គ្មានពាក្យសម្ងាត់ឱ្យគេលួច", "l1_c1p": "ទូរសព្ទរបស់អ្នករក្សា passkey ហើយបើកវាដោយសោអេក្រង់របស់ទូរសព្ទផ្ទាល់។ វាមិនដែលចេញពីទូរសព្ទឡើយ។",
@@ -451,11 +451,11 @@ O = {
   "l9_h": "Log-ins and devices", "l9_lede": "Only you see this. We keep it for 12 months, with your country but never your address.",
   "l9_now": "This session",
   "l9_rows": (("iPhone · passkey", "Pixel Wild · now · Cambodia"), ("Android phone · text message", "Pixel Wild · 24 Oct · Cambodia"),
-              ("MacBook · passkey", "B.333.eco account · 22 Oct · United States")),
+              ("MacBook · passkey", "sign.333.eco passkey · 22 Oct · United States")),
   "l9_end": "End", "l9_btn": "Remove a device",
   "l10_h": "Notifications", "l10_lede": "Only about your account's safety and your records. Never news or reminders.",
   "l10_rows": (("A new log-in", "Any app, any method"), ("A passkey added or removed", ""), ("A record withdrawn", ""), ("A dispute added to your record", "")),
-  "l10_ios": "On iPhone, add B.333.eco to your Home Screen to receive these.",
+  "l10_ios": "On iPhone, add login.333.eco to your Home Screen to receive these.",
   "o9_h": "Notifications", "o9_lede": "Business events only. Each one is sent once.",
   "o9_rows": (("Credits are low", "Once, when credits fall below $5.00 (you choose)"), ("Auto-reload ran", ""), ("A key created or revoked", ""),
               ("Team changes", ""), ("Payment receipts", "")),
@@ -572,11 +572,11 @@ O = {
   "l9_h": "ការចូល និងឧបករណ៍", "l9_lede": "មានតែអ្នកប៉ុណ្ណោះដែលឃើញទំព័រនេះ។ យើងរក្សាទុកវារយៈពេល ១២ ខែ ជាមួយប្រទេសរបស់អ្នក ប៉ុន្តែមិនដែលរក្សាអាសយដ្ឋានរបស់អ្នកទេ។",
   "l9_now": "វគ្គនេះ",
   "l9_rows": (("iPhone · passkey", "Pixel Wild · ឥឡូវ · កម្ពុជា"), ("ទូរសព្ទ Android · សារ", "Pixel Wild · ២៤ តុលា · កម្ពុជា"),
-              ("MacBook · passkey", "គណនី B.333.eco · ២២ តុលា · សហរដ្ឋអាមេរិក")),
+              ("MacBook · passkey", "passkey sign.333.eco · ២២ តុលា · សហរដ្ឋអាមេរិក")),
   "l9_end": "បញ្ចប់", "l9_btn": "ដកឧបករណ៍ចេញ",
   "l10_h": "ការជូនដំណឹង", "l10_lede": "តែអំពីសុវត្ថិភាពគណនីរបស់អ្នក និងកំណត់ត្រារបស់អ្នកប៉ុណ្ណោះ។ មិនដែលជាព័ត៌មាន ឬការរំលឹកទេ។",
   "l10_rows": (("ការចូលថ្មី", "កម្មវិធីណាក៏ដោយ វិធីណាក៏ដោយ"), ("passkey ត្រូវបានបន្ថែម ឬដកចេញ", ""), ("កំណត់ត្រាត្រូវបានដកវិញ", ""), ("ការជំទាស់ត្រូវបានបន្ថែមលើកំណត់ត្រារបស់អ្នក", "")),
-  "l10_ios": "នៅលើ iPhone សូមបន្ថែម B.333.eco ទៅអេក្រង់ដើម ដើម្បីទទួលការជូនដំណឹងទាំងនេះ។",
+  "l10_ios": "នៅលើ iPhone សូមបន្ថែម login.333.eco ទៅអេក្រង់ដើម ដើម្បីទទួលការជូនដំណឹងទាំងនេះ។",
   "o9_h": "ការជូនដំណឹង", "o9_lede": "តែព្រឹត្តិការណ៍អាជីវកម្មប៉ុណ្ណោះ។ នីមួយៗផ្ញើតែម្ដង។",
   "o9_rows": (("ក្រេឌីតនៅតិច", "ម្ដង នៅពេលក្រេឌីតធ្លាក់ក្រោម $5.00 (អ្នកជ្រើសរើស)"), ("ការបញ្ចូលស្វ័យប្រវត្តិបានដំណើរការ", ""), ("កូនសោត្រូវបានបង្កើត ឬដកសិទ្ធិ", ""),
               ("ការផ្លាស់ប្ដូរក្រុម", ""), ("បង្កាន់ដៃការបង់ប្រាក់", "")),
@@ -974,9 +974,9 @@ PUBLIC |= DV.PUBLIC
 def page(sid, render, lang, dark=False, desk=False):
     t = T[lang]
     body = render(t).replace("℠", '<span class="sm">℠</span>')
-    # Each screen's footer names its OWN origin (SPEC §0): Log in → login.333.eco · Sign → B.333.eco · portal → origin.333.eco
-    host = {"L": "login.333.eco", "O": "origin.333.eco", "E": "explorer.333.eco", "D": "developers.333.eco"}.get(sid[0], "B.333.eco")
-    foot = t["e_foot"] if sid.startswith("E") else t["foot"].replace("B.333.eco", host, 1)
+    # Each screen's footer names its OWN origin (SPEC §0): Log in → login.333.eco · Sign → sign.333.eco · portal → origin.333.eco (⛔ never "B": B.333.eco is B-Link, A601)
+    host = {"L": "login.333.eco", "O": "origin.333.eco", "E": "explorer.333.eco", "D": "developers.333.eco"}.get(sid[0], "sign.333.eco")
+    foot = t["e_foot"] if sid.startswith("E") else t["foot"].replace("sign.333.eco", host, 1)
     dv = sid[0] == "D" or sid == "L11"
     if dv:
         DV.check(sid, body)

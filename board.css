@@ -2,7 +2,7 @@
 :root{
   --bg:#fcfbfe; --surface:#f4f1fb; --surface-2:#ebe7f5; --line:rgba(20,16,30,0.12); --line-strong:rgba(20,16,30,0.28);
   --ink:#16141c; --ink-dim:#5b5766; --ink-faint:#8b8796;
-  /* ── this surface's own (b.333.eco): the accent 333.eco already wears, the brand layer's sapphire gem ── */
+  /* ── this surface's own (333.eco's identity screens): the accent 333.eco already wears, the brand layer's sapphire gem ── */
   --accent:#0f52ba; --accent-ink:#ffffff;
   --wash:color-mix(in oklab,var(--accent) 9%,transparent); --edge:color-mix(in oklab,var(--accent) 30%,transparent);
   /* ─────────────────────────────────────────────────────────────────────────────────────────────────────── */

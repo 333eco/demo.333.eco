@@ -31,7 +31,7 @@ page = """<!doctype html>
 <title>333.eco: drawings</title>
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://demo.333.eco/">
-<meta property="og:site_name" content="b.333.eco drawings">
+<meta property="og:site_name" content="demo.333.eco drawings">
 <meta property="og:title" content="333.eco: drawings">
 <meta property="og:description" content="Hold an @name or a #tag, and make your page. The 333.eco screens, drawn in English and Khmer. These are drawings. They charge nobody.">
 <meta property="og:image" content="https://demo.333.eco/og.png?v=@OGV@">
@@ -42,7 +42,7 @@ page = """<!doctype html>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta name="description" content="Drawings of the B.333.eco screens: Log in with HeartBank proves who you are; Sign with HeartBank puts your name to one file. English and Khmer.">
+<meta name="description" content="Drawings of the 333.eco screens: Log in with HeartBank proves who you are; Sign with HeartBank puts your name to one file; developers.333.eco gathers every API. English and Khmer.">
 <meta name="twitter:title" content="333.eco: drawings">
 <meta name="twitter:description" content="Hold an @name or a #tag, and make your page. The 333.eco screens, drawn in English and Khmer. These are drawings. They charge nobody.">
 <meta name="twitter:image" content="https://demo.333.eco/og.png?v=@OGV@">
@@ -71,7 +71,7 @@ small{display:block;margin-top:2rem;color:var(--dim)}</style>
 <main>
 <div class="top"><button type="button" class="share" id="share" aria-label="Share this page"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg>Share</button></div>
 <h1>333.eco: drawings</h1>
-<p><b>The B-Registry</b>: hold an @name or a #tag and make your page. Then the estate's identity layer: <b>Log in</b> at login.333.eco proves who you are; <b>Sign</b> at B.333.eco puts your name to one file. Then <b>origin.333.eco</b>: check a file, sign your own, pricing, and the dashboard for businesses. And <b>explorer.333.eco</b>: the public logs, checkpoint by checkpoint. English and Khmer, with a dark pass. Prices are placeholders.</p>
+<p><b>The B-Registry</b>: hold an @name or a #tag and make your page. Then the estate's identity layer: <b>Log in</b> at login.333.eco proves who you are; <b>Sign</b> at sign.333.eco puts your name to one file. Then <b>origin.333.eco</b>: check a file, sign your own, pricing, and the dashboard for businesses. <b>explorer.333.eco</b>: the public logs, checkpoint by checkpoint. And <b>developers.333.eco</b>: one site for every HeartBank® API, its MCP server and its sandbox. English and Khmer, with a dark pass. Prices are placeholders.</p>
 <a class="start" href="wall.html"><b>Start here</b><br>Every screen on one wall. Drag to pan, pinch to zoom, tap a screen to open it.</a>
 <ul>%s</ul>
 <h2 id="earth">earth.333.eco</h2>
