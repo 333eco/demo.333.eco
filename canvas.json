@@ -1287,6 +1287,132 @@
    "y": 1783
   },
   {
+   "file": "D12.html",
+   "page": "developers",
+   "title": "D12 · Lookup, English",
+   "w": 390,
+   "h": 844,
+   "x": 5170,
+   "y": 0
+  },
+  {
+   "file": "D12Km.html",
+   "page": "developers",
+   "title": "D12 · Lookup, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 5170,
+   "y": 1783
+  },
+  {
+   "file": "D13.html",
+   "page": "developers",
+   "title": "D13 · Verify, free, English",
+   "w": 390,
+   "h": 844,
+   "x": 5640,
+   "y": 0
+  },
+  {
+   "file": "D13Km.html",
+   "page": "developers",
+   "title": "D13 · Verify, free, Khmer",
+   "w": 390,
+   "h": 933,
+   "x": 5640,
+   "y": 1783
+  },
+  {
+   "file": "D14.html",
+   "page": "developers",
+   "title": "D14 · Changes, English",
+   "w": 390,
+   "h": 844,
+   "x": 6110,
+   "y": 0
+  },
+  {
+   "file": "D14Km.html",
+   "page": "developers",
+   "title": "D14 · Changes, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 6110,
+   "y": 1783
+  },
+  {
+   "file": "D15.html",
+   "page": "developers",
+   "title": "D15 · Developer terms, English",
+   "w": 390,
+   "h": 844,
+   "x": 6580,
+   "y": 0
+  },
+  {
+   "file": "D15Km.html",
+   "page": "developers",
+   "title": "D15 · Developer terms, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 6580,
+   "y": 1783
+  },
+  {
+   "file": "D16.html",
+   "page": "developers",
+   "title": "D16 · The verified-human badge, English",
+   "w": 390,
+   "h": 844,
+   "x": 7050,
+   "y": 0
+  },
+  {
+   "file": "D16Km.html",
+   "page": "developers",
+   "title": "D16 · The verified-human badge, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 7050,
+   "y": 1783
+  },
+  {
+   "file": "D17.html",
+   "page": "developers",
+   "title": "D17 · Your apps: the first visit, English",
+   "w": 390,
+   "h": 844,
+   "x": 7520,
+   "y": 0
+  },
+  {
+   "file": "D17Km.html",
+   "page": "developers",
+   "title": "D17 · Your apps: the first visit, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 7520,
+   "y": 1783
+  },
+  {
+   "file": "D18.html",
+   "page": "developers",
+   "title": "D18 · Register: the file needs fixing, English",
+   "w": 390,
+   "h": 844,
+   "x": 7990,
+   "y": 0
+  },
+  {
+   "file": "D18Km.html",
+   "page": "developers",
+   "title": "D18 · Register: the file needs fixing, Khmer",
+   "w": 390,
+   "h": 901,
+   "x": 7990,
+   "y": 1783
+  },
+  {
    "file": "R1Dark.html",
    "page": "registry",
    "title": "R1 · dark pass, English",
@@ -1455,6 +1581,60 @@
    "w": 1280,
    "h": 811,
    "x": 1400,
+   "y": 5761
+  },
+  {
+   "file": "D1D.html",
+   "page": "developers",
+   "title": "D1D · Build with HeartBank®, desktop, English",
+   "w": 1280,
+   "h": 800,
+   "x": 0,
+   "y": 4661
+  },
+  {
+   "file": "D1DKm.html",
+   "page": "developers",
+   "title": "D1D · Build with HeartBank®, desktop, Khmer",
+   "w": 1280,
+   "h": 811,
+   "x": 0,
+   "y": 5761
+  },
+  {
+   "file": "D2D.html",
+   "page": "developers",
+   "title": "D2D · Thank docs, desktop, English",
+   "w": 1280,
+   "h": 938,
+   "x": 1400,
+   "y": 4661
+  },
+  {
+   "file": "D2DKm.html",
+   "page": "developers",
+   "title": "D2D · Thank docs, desktop, Khmer",
+   "w": 1280,
+   "h": 976,
+   "x": 1400,
+   "y": 5761
+  },
+  {
+   "file": "D8D.html",
+   "page": "developers",
+   "title": "D8D · Your apps, desktop, English",
+   "w": 1280,
+   "h": 800,
+   "x": 2800,
+   "y": 4661
+  },
+  {
+   "file": "D8DKm.html",
+   "page": "developers",
+   "title": "D8D · Your apps, desktop, Khmer",
+   "w": 1280,
+   "h": 811,
+   "x": 2800,
    "y": 5761
   }
  ],

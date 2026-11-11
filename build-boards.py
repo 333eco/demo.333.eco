@@ -967,6 +967,7 @@ PUBLIC |= R.PUBLIC
 def _dv(f):
     return lambda t: f(t, DV.DT["km" if t is T["km"] else "en"])
 SCREENS += [(i, p, n, _dv(f)) for i, p, n, f in DV.SCREENS]
+DESKTOP += [(i, p, n, _dv(f)) for i, p, n, f in DV.DESKTOP]
 PUBLIC |= DV.PUBLIC
 
 
@@ -1041,7 +1042,7 @@ def main():
         boards.append({"file": f, "page": pg, "title": "%s · dark pass, English" % sid, "w": W, "h": hh(f),
                        "x": 0, "y": rowy["km"] + tall_km + 160})
     ydesk = rowy["km"] + tall_km + 160 + H + 160  # below the dark-pass row
-    dcol = {"registry": 0, "explorer": 0, "origin": 0}
+    dcol = {"registry": 0, "explorer": 0, "origin": 0, "developers": 0}
     for sid, pg, title, render in DESKTOP:
         for lang in ("en", "km"):
             f = "%s%s.html" % (sid, "" if lang == "en" else "Km")

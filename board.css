@@ -153,6 +153,9 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:10px;bo
 /* a phone-width board never clips a code line or an address: it wraps (all boards; clipping hid the end of each sample) */
 .code{white-space:pre-wrap;overflow-wrap:anywhere}
 .field.mono{overflow-wrap:anywhere}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid2 .card{margin:0}
+.vhrow{display:flex;gap:10px;flex-wrap:wrap}
+.vhb{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-strong);border-radius:var(--r-pill);padding:5px 12px 5px 9px;font-size:13px;font-weight:600;background:#fff;color:#14161c}
 html{--beat-duration:1.5s;--beat-delay:0s}
 /* ============================================================================
    MOTION — the heartbeat

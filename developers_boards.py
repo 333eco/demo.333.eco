@@ -199,8 +199,80 @@ DT = {
   "d11_yes": "អនុម័ត", "d11_no": "បដិសេធ",
 },
 }
+# ── batch 2 (2026-11-11): the remaining pages, the empty and error states, desktop ──────────────────────────────────
+DT["en"].update({
+  "side": ("Log in", "Sign", "Thank", "Lookup", "Verify", "For agents", "Prices", "Changes"),
+  "d12_h": "Lookup",
+  "d12_lede": "Turn an @name or a #tag into what it names. Every page it points to is public; a lookup reads nothing private.",
+  "d12_rows": (("@mira", "A person's page"), ("#sunfield", "A tag"), ("Price", "[ placeholder: not yet ruled ]")),
+  "d12_code": 'const r = await lookup("@mira")\n// { kind: "person", page: "https://333.eco/@mira" }',
+  "d12_c1h": "Never a person's data", "d12_c1p": "The answer says where a name points, and nothing about who holds it.",
+  "d12_c2h": "A name nobody holds", "d12_c2p": "The answer says only that it isn't held now.",
+  "d13_h": "Verify, free",
+  "d13_lede": "Check what we publish without trusting us: no key, no account, and nothing is sent to us.",
+  "d13_rows": (("A receipt", "Against the public log at log.333.eco"), ("The zero-sum proof", "Every published proof, in your browser or with one command"),
+               ("Your own thanks", "After a season closes, from the record you download"), ("A record's signature", "Offline, with @333eco/origin-verify")),
+  "d13_code": "git clone https://github.com/333eco/zero-sum-proof.333.eco\nnode check.mjs --deep\nnode check-mine.mjs heartbank-record.json",
+  "d13_c1h": "Not the same as a B-Trace check", "d13_c1p": "Checking a file for traces is a separate service: free in the portal, metered through the API.",
+  "d14_h": "Changes",
+  "d14_lede": "Every change, dated. A version never breaks: an old one stays live for a stated time. [ placeholder: the time is not yet ruled ]",
+  "d14_rows": (("2026-11-10", "Thank: each ticket carries what is being signed, and the press page shows it"),
+               ("2026-11-10", "Thank: any app's writing can be paused at once"),
+               ("2026-11-09", "Verify: the zero-sum proof, published every night")),
+  "d15_h": "Developer terms",
+  "d15_lede": "In plain words first. [ placeholder: counsel has not reviewed these terms ]",
+  "d15_rows": (("You may not", "press for a person, pre-fill a thank, or show anyone a count of their thanks"),
+               ("You keep", "your own users' data; we never see it"),
+               ("We may", "pause an app's writing at once when it breaks these terms"),
+               ("Prices", "as the prices page states them")),
+  "d16_h": "The verified-human badge",
+  "d16_lede": "Show it beside a person only when their own log-in carries it.",
+  "d16_rows": (("Show it", "only for the person whose log-in carries it"), ("Never", "as a score, a rank or a reward"),
+               ("Never", "on a page about someone who didn't log in")),
+  "d16_dl": ("badge-light.svg", "badge-dark.svg"), "d16_label": "Verified human",
+  "d17_h": "Your apps", "d17_p": "Register an app to get its keys. Log in with HeartBank® is ready the moment you do.",
+  "d18_h": "Register an app",
+  "d18_lede": "We read your file. Two things need fixing on your site; nothing was registered.",
+  "d18_checks": (("✓", "The file", "Found on pixelwild.app"), ("✗", "Its client_id", "Must be exactly this address"),
+                 ("✗", "Where log-ins return", "One is on another site"), ("✓", "Your keys", "pixelwild.app/jwks.json")),
+  "d18_btn": "Read it again",
+  "d1d_lede": "One site for every door: log people in, sign files, record thanks, and check it all yourself. Add one MCP server and your agent can build with you.",
+})
+DT["km"].update({
+  "side": ("Log in", "Sign", "Thank", "Lookup", "ការផ្ទៀងផ្ទាត់", "សម្រាប់ភ្នាក់ងារ", "តម្លៃ", "ការផ្លាស់ប្តូរ"),
+  "d12_h": "Lookup",
+  "d12_lede": "បំប្លែង @name ឬ #tag ទៅជាអ្វីដែលវាដាក់ឈ្មោះ។ គ្រប់ទំព័រដែលវាចង្អុលទៅគឺសាធារណៈ ការរកមើលមិនអានអ្វីឯកជនទេ។",
+  "d12_rows": (("@mira", "ទំព័ររបស់មនុស្សម្នាក់"), ("#sunfield", "ស្លាកមួយ"), ("តម្លៃ", "[ ជំនួសបណ្ដោះអាសន្ន៖ មិនទាន់សម្រេច ]")),
+  "d12_c1h": "មិនដែលជាទិន្នន័យរបស់មនុស្សទេ", "d12_c1p": "ចម្លើយប្រាប់ថាឈ្មោះមួយចង្អុលទៅណា ហើយមិនប្រាប់អ្វីអំពីអ្នកដែលកាន់វាទេ។",
+  "d12_c2h": "ឈ្មោះដែលគ្មាននរណាកាន់", "d12_c2p": "ចម្លើយប្រាប់តែថាវាមិនត្រូវបានកាន់ឥឡូវនេះ។",
+  "d13_h": "ការផ្ទៀងផ្ទាត់ ដោយឥតគិតថ្លៃ",
+  "d13_lede": "ពិនិត្យអ្វីដែលយើងបោះពុម្ពដោយមិនចាំបាច់ជឿយើង៖ គ្មានកូនសោ គ្មានគណនី ហើយគ្មានអ្វីត្រូវបានផ្ញើមកយើងទេ។",
+  "d13_rows": (("បង្កាន់ដៃ", "ធៀបនឹងកំណត់ហេតុសាធារណៈនៅ log.333.eco"), ("ភស្តុតាងផលបូកសូន្យ", "គ្រប់ភស្តុតាងដែលបានបោះពុម្ព ក្នុងកម្មវិធីរុករករបស់អ្នក ឬដោយពាក្យបញ្ជាមួយ"),
+               ("ការអរគុណរបស់អ្នកផ្ទាល់", "បន្ទាប់ពីរដូវកាលបិទ ពីកំណត់ត្រាដែលអ្នកទាញយក"), ("ហត្ថលេខារបស់កំណត់ត្រា", "ក្រៅបណ្ដាញ ដោយ @333eco/origin-verify")),
+  "d13_c1h": "មិនដូចការពិនិត្យ B-Trace ទេ", "d13_c1p": "ការពិនិត្យឯកសាររកដានជាសេវាដាច់ដោយឡែក៖ ឥតគិតថ្លៃនៅក្នុងវិបផតថល គិតតាមការប្រើតាម API។",
+  "d14_h": "ការផ្លាស់ប្តូរ",
+  "d14_lede": "គ្រប់ការផ្លាស់ប្តូរ មានកាលបរិច្ឆេទ។ កំណែមួយមិនដែលខូចទេ៖ កំណែចាស់នៅដំណើរការក្នុងរយៈពេលដែលបានបញ្ជាក់។ [ ជំនួសបណ្ដោះអាសន្ន៖ រយៈពេលមិនទាន់សម្រេច ]",
+  "d14_rows": (("2026-11-10", "Thank៖ សំបុត្រនីមួយៗមានអ្វីដែលកំពុងត្រូវបានចុះហត្ថលេខា ហើយទំព័រចុចបង្ហាញវា"),
+               ("2026-11-10", "Thank៖ ការសរសេររបស់កម្មវិធីណាមួយអាចត្រូវបានផ្អាកភ្លាមៗ"),
+               ("2026-11-09", "ការផ្ទៀងផ្ទាត់៖ ភស្តុតាងផលបូកសូន្យ បោះពុម្ពរៀងរាល់យប់")),
+  "d15_h": "លក្ខខណ្ឌសម្រាប់អ្នកអភិវឌ្ឍ",
+  "d15_lede": "លក្ខខណ្ឌនៅជាភាសាអង់គ្លេសតែប៉ុណ្ណោះ រហូតដល់អ្នកនិយាយភាសាកំណើត និងមេធាវីពិនិត្យវា។ [ ជំនួសបណ្ដោះអាសន្ន ]",
+  "d15_rows": (),
+  "d16_h": "ផ្លាកសញ្ញាមនុស្សដែលបានផ្ទៀងផ្ទាត់",
+  "d16_lede": "បង្ហាញវានៅក្បែរមនុស្សម្នាក់ តែនៅពេលការចូលផ្ទាល់ខ្លួនរបស់ពួកគេមានវាប៉ុណ្ណោះ។",
+  "d16_rows": (("បង្ហាញវា", "តែសម្រាប់មនុស្សដែលការចូលរបស់ពួកគេមានវា"), ("មិនដែល", "ជាពិន្ទុ ចំណាត់ថ្នាក់ ឬរង្វាន់"),
+               ("មិនដែល", "នៅលើទំព័រអំពីនរណាម្នាក់ដែលមិនបានចូល")),
+  "d16_dl": ("badge-light.svg", "badge-dark.svg"), "d16_label": "មនុស្សដែលបានផ្ទៀងផ្ទាត់",
+  "d17_h": "កម្មវិធីរបស់អ្នក", "d17_p": "ចុះឈ្មោះកម្មវិធីមួយ ដើម្បីទទួលបានកូនសោរបស់វា។ Log in with HeartBank® រួចរាល់ភ្លាមៗពេលអ្នកចុះឈ្មោះ។",
+  "d18_h": "ចុះឈ្មោះកម្មវិធី",
+  "d18_lede": "យើងបានអានឯកសាររបស់អ្នក។ មានរឿងពីរដែលត្រូវកែលើគេហទំព័ររបស់អ្នក គ្មានអ្វីត្រូវបានចុះឈ្មោះទេ។",
+  "d18_checks": (("✓", "ឯកសារ", "រកឃើញនៅលើ pixelwild.app"), ("✗", "client_id របស់វា", "ត្រូវតែជាអាសយដ្ឋាននេះពិតប្រាកដ"),
+                 ("✗", "កន្លែងដែលការចូលត្រឡប់មកវិញ", "មួយនៅលើគេហទំព័រផ្សេង"), ("✓", "កូនសោរបស់អ្នក", "pixelwild.app/jwks.json")),
+  "d18_btn": "អានវាម្តងទៀត",
+  "d1d_lede": "គេហទំព័រតែមួយសម្រាប់ទ្វារទាំងអស់៖ ឱ្យមនុស្សចូល ចុះហត្ថលេខាលើឯកសារ កត់ត្រាការអរគុណ ហើយពិនិត្យវាទាំងអស់ដោយខ្លួនឯង។ បន្ថែមម៉ាស៊ីនមេ MCP មួយ ហើយភ្នាក់ងាររបស់អ្នកអាចបង្កើតជាមួយអ្នក។",
+})
 # code samples and the MCP address read the same in both languages
-for _k in ("d2_code", "d3_code", "d4_code", "d5_code"):
+for _k in ("d2_code", "d3_code", "d4_code", "d5_code", "d12_code", "d13_code"):
     DT["km"][_k] = DT["en"][_k]
 
 
@@ -304,6 +376,57 @@ def D11(t, d):
     return "<h1>%s</h1>" % d["d11_h"] + '<div class="card">%s</div>' % rows
 
 
+def D12(t, d):
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (d["d12_h"], d["d12_lede"]) + _rows(d["d12_rows"]) + _code(d["d12_code"])
+            + _card(d["d12_c1h"], d["d12_c1p"]) + _card(d["d12_c2h"], d["d12_c2p"]))
+def D13(t, d):
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (d["d13_h"], d["d13_lede"]) + _rows(d["d13_rows"]) + _code(d["d13_code"])
+            + _card(d["d13_c1h"], d["d13_c1p"], "log"))
+def D14(t, d):
+    rows = "".join('<div class="row"><div><div class="s mono">%s</div><div class="t">%s</div></div></div>' % (a, b) for a, b in d["d14_rows"])
+    return "<h1>%s</h1><p class='lede'>%s</p>" % (d["d14_h"], d["d14_lede"]) + '<div class="card">%s</div>' % rows
+def D15(t, d):
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (d["d15_h"], d["d15_lede"]) + (_rows(d["d15_rows"]) if d["d15_rows"] else ""))
+def _badge(label, dark=False):
+    style = ' style="background:#14161c;color:#f4f4f6;border-color:#2a2e38"' if dark else ""
+    return ('<span class="vhb"%s><svg width="16" height="16" viewBox="-9 -9 18 18" aria-hidden="true">%s</svg>%s</span>'
+            % (style, heart(0, 0, .9), label))
+def D16(t, d):
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (d["d16_h"], d["d16_lede"])
+            + '<div class="card"><div class="vhrow">%s%s</div></div>' % (_badge(d["d16_label"]), _badge(d["d16_label"], dark=True))
+            + _rows(d["d16_rows"]) + '<div class="chips">%s</div>' % "".join('<span class="chip">%s</span>' % x for x in d["d16_dl"]))
+def D17(t, d):
+    return (_tabs(d, 0) + "<h1>%s</h1>" % d["d17_h"] + '<div class="card">%s<p>%s</p></div>' % (_spot("box"), d["d17_p"])
+            + '<div class="grow"></div>' + btns(d["d8_btn"]))
+def D18(t, d):
+    checks = "".join('<div class="row"><div class="t">%s %s</div><span class="s">%s</span></div>' % (m, a, b) for m, a, b in d["d18_checks"])
+    return (_tabs(d, 0) + "<h1>%s</h1><p class='lede'>%s</p>" % (d["d18_h"], d["d18_lede"])
+            + '<div class="card"><h2>%s</h2><div class="field mono">%s</div></div>' % (d["d9_field"], d["d9_val"])
+            + '<div class="card"><h2>%s</h2>%s</div>' % (d["d9_checks_h"], checks)
+            + '<div class="grow"></div>' + btns(d["d18_btn"]))
+
+# desktop (1280): developers work at desks
+def _dside(items, on, main):
+    nav = "".join('<a class="%s">%s</a>' % ("on" if i == on else "", x) for i, x in enumerate(items))
+    return '<div class="side"><nav class="nav">%s</nav><div>%s</div></div>' % (nav, main)
+def D1D(t, d):
+    cards = "".join(_card(h, p, k) for h, p, k in d["d1_cards"])
+    return ('<div class="cols"><div><h1>%s</h1><p class="lede">%s</p><div class="note">%s</div>%s</div><div class="grid2">%s</div></div>'
+            % (d["d1_h"], d["d1d_lede"], d["d1_agent"], btns(d["d1_btn"], d["d1_btn2"]), cards)
+            + '<p class="fine" style="margin-top:22px">%s</p>' % d["d1_bank"])
+def D2D(t, d):
+    steps = "".join('<div class="row"><div><div class="t">%s</div><div class="s">%s</div></div></div>' % (a, b) for a, b in d["d2_steps"])
+    main = ("<h1>%s</h1><p class='lede'>%s</p>" % (d["d2_h"], d["d2_lede"])
+            + '<div class="cols"><div><div class="card">%s</div>%s%s%s</div><div>%s</div></div>'
+              % (steps, _card(d["d2_c1h"], d["d2_c1p"]), _card(d["d2_c2h"], d["d2_c2p"], "thank"), _card(d["d2_c3h"], d["d2_c3p"]), _code(d["d2_code"])))
+    return _dside(d["side"], 2, main)
+def D8D(t, d):
+    tr = "".join('<tr><td><b>%s</b></td><td class="mono">%s</td><td>%s</td></tr>'
+                 % (a, h, " · ".join(z)) for a, h, z in d["d8_apps"])
+    main = ("<h1>%s</h1>" % d["d8_h"] + '<div class="card" style="padding:4px 12px"><table class="tbl"><tbody>%s</tbody></table></div>' % tr
+            + '<button class="btn" style="width:auto;padding:12px 22px">%s</button>' % d["d8_btn"])
+    return _dside(d["nav"], 0, main)
+
 SCREENS = [  # (id, page, title, render(t, d)) — page "developers", except the consent screen, which is login.333.eco's
     ("D1", "developers", "Build with HeartBank®", D1), ("D2", "developers", "Thank with HeartBank®", D2),
     ("D3", "developers", "Log in with HeartBank®", D3), ("D4", "developers", "Sign with HeartBank®", D4),
@@ -311,8 +434,15 @@ SCREENS = [  # (id, page, title, render(t, d)) — page "developers", except the
     ("D8", "developers", "Dashboard: your apps", D8), ("D9", "developers", "Register an app (its own file)", D9),
     ("D10", "developers", "One app: key, usage, pause, export", D10), ("D11", "developers", "Review (founder)", D11),
     ("L11", "login", "An agent asks for your developer account", L11),
+    ("D12", "developers", "Lookup", D12), ("D13", "developers", "Verify, free", D13), ("D14", "developers", "Changes", D14),
+    ("D15", "developers", "Developer terms", D15), ("D16", "developers", "The verified-human badge", D16),
+    ("D17", "developers", "Your apps: the first visit", D17), ("D18", "developers", "Register: the file needs fixing", D18),
 ]
-PUBLIC = {"D1", "D2", "D3", "D4", "D5", "D6", "D7"}
+DESKTOP = [  # (id, page, title, render(t, d)) at 1280
+    ("D1D", "developers", "Build with HeartBank®, desktop", D1D), ("D2D", "developers", "Thank docs, desktop", D2D),
+    ("D8D", "developers", "Your apps, desktop", D8D),
+]
+PUBLIC = {"D1", "D2", "D3", "D4", "D5", "D6", "D7", "D12", "D13", "D14", "D15", "D16", "D1D", "D2D"}
 CSS = """
 .dtabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
 .dtabs a{font-size:13px;padding:6px 12px;border-radius:var(--r-pill);border:1px solid var(--line);color:var(--ink-dim)}
@@ -320,6 +450,9 @@ CSS = """
 /* a phone-width board never clips a code line or an address: it wraps (all boards; clipping hid the end of each sample) */
 .code{white-space:pre-wrap;overflow-wrap:anywhere}
 .field.mono{overflow-wrap:anywhere}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid2 .card{margin:0}
+.vhrow{display:flex;gap:10px;flex-wrap:wrap}
+.vhb{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-strong);border-radius:var(--r-pill);padding:5px 12px 5px 9px;font-size:13px;font-weight:600;background:#fff;color:#14161c}
 """
 BARRED = [  # words this surface must never draw
     (r"\bclaude\b|\bcursor\b|\bchatgpt\b|\bopenai\b|\banthropic\b|\bgemini\b", "no real company, product or model is named"),
