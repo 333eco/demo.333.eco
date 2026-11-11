@@ -50,6 +50,7 @@ T = {
         "privacy_link": "Privacy", "terms_link": "Terms", "home_link": "Back to the front page",
         "earth_h1": "Every thank makes a crest and a trough.",
         "earth_sub": "The kind rise and the thankful fall by the same amount, so the sea never gets higher. It only moves.",
+        "earth_zpg": "{zpg} visualized.", "earth_zpg_name": "The Zero-Point Game ℠",  # founder 2026-11-10; {zpg} links the paper
         "crest": "Crest", "crest_means": "kind", "trough": "Trough", "trough_means": "thankful", "color_means": "how often a place crosses zero",
         "earth_opens": "Season 1 opens on 26 November 2026.", "about_link": "What is this?",
         "card_place": "This part of the world, about 100 km across",
@@ -163,6 +164,7 @@ T = {
         "privacy_link": "ឯកជនភាព", "terms_link": "លក្ខខណ្ឌ", "home_link": "ត្រឡប់ទៅទំព័រដើម",
         "earth_h1": "រាល់ការអរគុណបង្កើតកំពូលរលក និងបាតរលក។",
         "earth_sub": "អ្នកមានចិត្តល្អឡើង ហើយអ្នកដឹងគុណចុះ ក្នុងចំនួនដូចគ្នា ដូច្នេះសមុទ្រមិនដែលខ្ពស់ឡើងទេ។ វាគ្រាន់តែផ្លាស់ទី។",
+        "earth_zpg": "{zpg} ជារូបភាព។", "earth_zpg_name": "The Zero-Point Game ℠",
         "crest": "កំពូលរលក", "crest_means": "ចិត្តល្អ", "trough": "បាតរលក", "trough_means": "ដឹងគុណ", "color_means": "ញឹកញាប់ប៉ុណ្ណាដែលកន្លែងមួយឆ្លងកាត់សូន្យ",
         "earth_opens": "រដូវកាលទី ១ បើកនៅថ្ងៃទី ២៦ វិច្ឆិកា ២០២៦។", "about_link": "នេះជាអ្វី?",
         "card_place": "ផ្នែកនេះនៃពិភពលោក ទំហំប្រហែល ១០០ គីឡូម៉ែត្រ",
