@@ -1,5 +1,7 @@
 # demo.333.eco
 
+> ⚠️ **2026-11-11: these drawings are a dated record, not a source.** Once a surface is live, the live site is the record of what exists; no live site is generated from these files or checked against them any more (founder: *"deprecate all source drawings everywhere; keeping the demo in sync is unrealistic"*; `/build` Default 18). A redesign starts from the live code.
+
 Drawings of **the B-Registry** (hold an @name or a #tag, make your page; `registry_boards.py`) and the identity screens: **Log in with HeartBank®** (proves who you are) and **Sign with HeartBank®**
 (puts your name to one file), and **developers.333.eco** (one site for every HeartBank® API, its MCP server and its sandbox; `developers_boards.py`, A600). English and Khmer, with one dark pass per surface. These are drawings. They charge
 nobody, and nothing here is live.
