@@ -15,7 +15,7 @@ import html as _h
 # injected by build-boards.py
 card = btns = spot = heart = person = None
 
-APP, APP_HOST, AGENT = "Pixel Wild", "pixelwild.app", "your-agent.example"
+APP, APP_HOST, AGENT = "Pixel Wild", "pixelwild.example", "your-agent.example"
 
 DT = {
 "en": {
@@ -51,8 +51,8 @@ DT = {
   "d3_bnote": "The second button is for people adding HeartBank® to an account they already have in your app.",
   "d3_self_h": "Register by publishing one file",
   "d3_self_p": "Your app's ID is the address of a small file on your own site: your name, where log-ins return, where your keys are. We read it at every log-in, so nothing is verified once and trusted after.",
-  "d3_code": '{\n  "client_id": "https://pixelwild.app/heartbank.json",\n  "client_name": "Pixel Wild",\n'
-             '  "redirect_uris": ["https://pixelwild.app/login/callback"],\n  "jwks_uri": "https://pixelwild.app/jwks.json"\n}',
+  "d3_code": '{\n  "client_id": "https://pixelwild.example/heartbank.json",\n  "client_name": "Pixel Wild",\n'
+             '  "redirect_uris": ["https://pixelwild.example/login/callback"],\n  "jwks_uri": "https://pixelwild.example/jwks.json"\n}',
   "d3_scopes_h": "What an app may ask for",
   "d3_scopes": (("Log in", "Ready at once"), ("Verified human", "After review"), ("The ledger", "After review")),
   # D4 Sign
@@ -97,9 +97,9 @@ DT = {
   "d9_h": "Register an app",
   "d9_lede": "Give us the address of your app's file. We read it now, and again at every log-in.",
   "d9_field": "Your app's ID (an address on your own site)",
-  "d9_val": "https://pixelwild.app/heartbank.json",
+  "d9_val": "https://pixelwild.example/heartbank.json",
   "d9_checks_h": "What we found",
-  "d9_checks": (("The file", "Found on pixelwild.app"), ("Name", APP), ("Where log-ins return", "Only on pixelwild.app"), ("Your keys", "pixelwild.app/jwks.json")),
+  "d9_checks": (("The file", "Found on pixelwild.example"), ("Name", APP), ("Where log-ins return", "Only on pixelwild.example"), ("Your keys", "pixelwild.example/jwks.json")),
   "d9_ready": "Log in with HeartBank® is ready now. Verified human, the ledger and Thank ask for review.",
   "d9_btn": "Register",
   # D10 one app
@@ -115,7 +115,7 @@ DT = {
   "l11_btn": "Allow with my passkey", "l11_no": "Not now",
   # D11 review
   "d11_h": "Asking for review",
-  "d11_rows": ((APP, "Verified human · pixelwild.app"), ("Sunfield Market", "Thank (season 2) · sunfield.example")),
+  "d11_rows": ((APP, "Verified human · pixelwild.example"), ("Sunfield Market", "Thank (season 2) · sunfield.example")),
   "d11_yes": "Approve", "d11_no": "Decline",
 },
 "km": {
@@ -180,9 +180,9 @@ DT = {
   "d9_h": "ចុះឈ្មោះកម្មវិធី",
   "d9_lede": "ផ្តល់អាសយដ្ឋាននៃឯកសារកម្មវិធីរបស់អ្នកមកយើង។ យើងអានវាឥឡូវនេះ និងម្តងទៀតរាល់ពេលចូល។",
   "d9_field": "ID កម្មវិធីរបស់អ្នក (អាសយដ្ឋាននៅលើគេហទំព័ររបស់អ្នក)",
-  "d9_val": "https://pixelwild.app/heartbank.json",
+  "d9_val": "https://pixelwild.example/heartbank.json",
   "d9_checks_h": "អ្វីដែលយើងបានរកឃើញ",
-  "d9_checks": (("ឯកសារ", "រកឃើញនៅលើ pixelwild.app"), ("ឈ្មោះ", APP), ("កន្លែងដែលការចូលត្រឡប់មកវិញ", "តែនៅលើ pixelwild.app"), ("កូនសោរបស់អ្នក", "pixelwild.app/jwks.json")),
+  "d9_checks": (("ឯកសារ", "រកឃើញនៅលើ pixelwild.example"), ("ឈ្មោះ", APP), ("កន្លែងដែលការចូលត្រឡប់មកវិញ", "តែនៅលើ pixelwild.example"), ("កូនសោរបស់អ្នក", "pixelwild.example/jwks.json")),
   "d9_ready": "Log in with HeartBank® រួចរាល់ឥឡូវនេះ។ មនុស្សដែលបានផ្ទៀងផ្ទាត់ បញ្ជី និង Thank ស្នើសុំការពិនិត្យ។",
   "d9_btn": "ចុះឈ្មោះ",
   "d10_h": APP,
@@ -195,7 +195,7 @@ DT = {
   "l11_local_h": "វាដំណើរការនៅលើកុំព្យូទ័រនេះ", "l11_local_p": "អាសយដ្ឋានរបស់វាគឺ localhost។ បន្តតែប្រសិនបើអ្នកទើបតែចាប់ផ្តើមភ្នាក់ងារនេះដោយខ្លួនឯង។",
   "l11_btn": "អនុញ្ញាតដោយ passkey របស់ខ្ញុំ", "l11_no": "មិនមែនឥឡូវនេះទេ",
   "d11_h": "ស្នើសុំការពិនិត្យ",
-  "d11_rows": ((APP, "មនុស្សដែលបានផ្ទៀងផ្ទាត់ · pixelwild.app"), ("Sunfield Market", "Thank (រដូវកាលទី ២) · sunfield.example")),
+  "d11_rows": ((APP, "មនុស្សដែលបានផ្ទៀងផ្ទាត់ · pixelwild.example"), ("Sunfield Market", "Thank (រដូវកាលទី ២) · sunfield.example")),
   "d11_yes": "អនុម័ត", "d11_no": "បដិសេធ",
 },
 }
@@ -233,8 +233,8 @@ DT["en"].update({
   "d17_h": "Your apps", "d17_p": "Register an app to get its keys. Log in with HeartBank® is ready the moment you do.",
   "d18_h": "Register an app",
   "d18_lede": "We read your file. Two things need fixing on your site; nothing was registered.",
-  "d18_checks": (("✓", "The file", "Found on pixelwild.app"), ("✗", "Its client_id", "Must be exactly this address"),
-                 ("✗", "Where log-ins return", "One is on another site"), ("✓", "Your keys", "pixelwild.app/jwks.json")),
+  "d18_checks": (("✓", "The file", "Found on pixelwild.example"), ("✗", "Its client_id", "Must be exactly this address"),
+                 ("✗", "Where log-ins return", "One is on another site"), ("✓", "Your keys", "pixelwild.example/jwks.json")),
   "d18_btn": "Read it again",
   "d1d_lede": "One site for every door: log people in, sign files, record thanks, and check it all yourself. Add one MCP server and your agent can build with you.",
 })
@@ -266,8 +266,8 @@ DT["km"].update({
   "d17_h": "កម្មវិធីរបស់អ្នក", "d17_p": "ចុះឈ្មោះកម្មវិធីមួយ ដើម្បីទទួលបានកូនសោរបស់វា។ Log in with HeartBank® រួចរាល់ភ្លាមៗពេលអ្នកចុះឈ្មោះ។",
   "d18_h": "ចុះឈ្មោះកម្មវិធី",
   "d18_lede": "យើងបានអានឯកសាររបស់អ្នក។ មានរឿងពីរដែលត្រូវកែលើគេហទំព័ររបស់អ្នក គ្មានអ្វីត្រូវបានចុះឈ្មោះទេ។",
-  "d18_checks": (("✓", "ឯកសារ", "រកឃើញនៅលើ pixelwild.app"), ("✗", "client_id របស់វា", "ត្រូវតែជាអាសយដ្ឋាននេះពិតប្រាកដ"),
-                 ("✗", "កន្លែងដែលការចូលត្រឡប់មកវិញ", "មួយនៅលើគេហទំព័រផ្សេង"), ("✓", "កូនសោរបស់អ្នក", "pixelwild.app/jwks.json")),
+  "d18_checks": (("✓", "ឯកសារ", "រកឃើញនៅលើ pixelwild.example"), ("✗", "client_id របស់វា", "ត្រូវតែជាអាសយដ្ឋាននេះពិតប្រាកដ"),
+                 ("✗", "កន្លែងដែលការចូលត្រឡប់មកវិញ", "មួយនៅលើគេហទំព័រផ្សេង"), ("✓", "កូនសោរបស់អ្នក", "pixelwild.example/jwks.json")),
   "d18_btn": "អានវាម្តងទៀត",
   "d1d_lede": "គេហទំព័រតែមួយសម្រាប់ទ្វារទាំងអស់៖ ឱ្យមនុស្សចូល ចុះហត្ថលេខាលើឯកសារ កត់ត្រាការអរគុណ ហើយពិនិត្យវាទាំងអស់ដោយខ្លួនឯង។ បន្ថែមម៉ាស៊ីនមេ MCP មួយ ហើយភ្នាក់ងាររបស់អ្នកអាចបង្កើតជាមួយអ្នក។",
 })
@@ -357,6 +357,7 @@ def D9(t, d):
     return (_tabs(d, 1) + "<h1>%s</h1><p class='lede'>%s</p>" % (d["d9_h"], d["d9_lede"])
             + '<div class="card"><h2>%s</h2><div class="field mono">%s</div></div>' % (d["d9_field"], d["d9_val"])
             + '<div class="card"><h2>%s</h2>%s</div>' % (d["d9_checks_h"], checks) + '<div class="note">%s</div>' % d["d9_ready"]
+            + '<div class="card"><div class="row"><span class="tog on"></span><div class="t">%s</div></div></div>' % _lv(d)["terms"]
             + '<div class="grow"></div>' + btns(d["d9_btn"]))
 def D10(t, d):
     use = "".join('<div class="row"><div class="t">%s</div><b>%s</b></div>' % (a, b) for a, b in d["d10_use"])
@@ -370,12 +371,24 @@ def D10(t, d):
 def L11(t, d):
     return ("<h1>%s</h1>" % d["l11_h"] + '<div class="card"><div class="big mono">%s</div><p>%s</p></div>' % (AGENT, d["l11_lede"])
             + _card(d["l11_local_h"], d["l11_local_p"], "agent") + '<div class="grow"></div>' + btns(d["l11_btn"], d["l11_no"], key=True))
-def D11(t, d):
-    rows = "".join('<div class="row"><div><div class="t">%s</div><div class="s">%s</div></div><span class="s">%s · %s</span></div>'
-                   % (a, b, d["d11_yes"], d["d11_no"]) for a, b in d["d11_rows"])
-    return "<h1>%s</h1>" % d["d11_h"] + '<div class="card">%s</div>' % rows
-
-
+def D11(t, d):  # the live Admin (origin.333.eco/admin + login.333.eco/developers/review): apps and API keys wait for the founder's yes
+    L = _lv(d)
+    item = lambda h, sub, extra="": ('<div class="row"><div><div class="t">%s</div><div class="s">%s</div>%s</div></div>' % (h, sub, extra))
+    waiting = (item(APP, "Log in · verified human · pixelwild.example") + item(APP, "Sign · tool name: Pixel Wild", '<p class="fine">%s</p>' % L["toolHint"])
+               + item("Sunfield Market", "API key · server lookups"))
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (L["adminH"], L["adminLede"]) + '<h2 class="sh">%s</h2><div class="card">%s</div>' % (L["waiting"], waiting)
+            + btns(L["approve"], L["refuse"]) + '<h2 class="sh">%s</h2>' % L["decided"]
+            + '<div class="card"><div class="row"><div class="t">Sunfield Market</div><span class="s">%s</span></div></div>' % L["undo"])
+def D22(t, d):  # Your businesses (live: origin.333.eco/dashboard, the first screen)
+    L = _lv(d)
+    rows = (('Pixel Wild Studio', "%s · %s" % (L["apps"](2), L["month_n"]("1,204"))), ("Sunfield Market", "%s · %s" % (L["apps"](1), L["month_n"]("38"))))
+    lst = "".join('<div class="row"><div><div class="t">%s</div><div class="s">%s</div></div></div>' % r for r in rows)
+    return "<h1>%s</h1><p class='lede'>%s</p>" % (L["title"], L["lede"]) + '<div class="card">%s</div>' % lst + '<div class="grow"></div>' + btns(L["add"])
+def D23(t, d):  # Tell us about your business (live: the start form)
+    L = _lv(d)
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (L["startH"], L["startP"])
+            + '<div class="card"><h2>%s</h2><div class="field">Pixel Wild Studio</div><h2 style="margin-top:14px">%s</h2><div class="field mono">hello@pixelwild.example</div></div>'
+              % (L["bizName"], L["contact"]) + '<div class="grow"></div>' + btns(L["start"]))
 def D12(t, d):
     return ("<h1>%s</h1><p class='lede'>%s</p>" % (d["d12_h"], d["d12_lede"]) + _rows(d["d12_rows"]) + _code(d["d12_code"])
             + _card(d["d12_c1h"], d["d12_c1p"]) + _card(d["d12_c2h"], d["d12_c2p"]))
@@ -417,7 +430,15 @@ LIVE = {
          "lookups": "API lookups", "lookupsP": "files looked up through your keys",
          "recount": "This comes straight from the public log, so you can recount it yourself.",
          "guideH": "Get started", "guideP": "Ask for your app, install the package, and add one button and one page.", "readDocs": "Read the docs",
-         "verifyP": "Anyone can check a record for free, with no account:"},
+         "verifyP": "Anyone can check a record for free, with no account:",
+         "title": "Your businesses", "lede": "Let the people who use your apps sign what they made.", "add": "Add a business",
+         "startH": "Tell us about your business", "startP": "It takes a minute, and nothing is charged. We'll use this address only to reach you about your apps.",
+         "bizName": "Business name", "contact": "Contact email", "start": "Continue",
+         "adminH": "Admin", "adminLede": "New apps and API keys wait here for your yes.", "waiting": "Waiting", "decided": "Decided",
+         "approve": "Approve", "refuse": "Refuse", "undo": "Undo",
+         "toolHint": "This name goes into every record the app signs, permanently, so keep it short and plain.",
+         "apps": lambda n: "1 app" if n == 1 else "%d apps" % n, "month_n": lambda n: "1 record this month" if n == 1 else "%s records this month" % n,
+         "terms": "I accept the developer terms, including the badge rules."},
   "km": {"balH": "សមតុល្យ", "payH": "ការបង់ថ្លៃការប្រើ", "payP": "កំណត់ត្រាដែលបានចុះហត្ថលេខា និងការស្វែងរក ត្រូវបង់ពីសមតុល្យនៅ billing.thonly.com។ B-Origin℠ មិនកាន់ប្រាក់ទេ។",
          "connect": "ភ្ជាប់សមតុល្យ", "capH": "ដែនកំណត់ប្រចាំខែរបស់អ្នក", "capField": "ដុល្លារក្នុងមួយខែ (ទុកទទេប្រសិនបើគ្មាន)",
          "capNote": "នៅដែនកំណត់ ឬនៅសូន្យ ការហៅ API ដែលត្រូវបង់នឹងឈប់ជាមួយកំហុសច្បាស់លាស់។ Sign ផ្ទាល់ខ្លួនរបស់មនុស្សម្នាក់មិនត្រូវបានប៉ះពាល់ទេ។",
@@ -427,7 +448,15 @@ LIVE = {
          "lookups": "ការរកមើលតាម API", "lookupsP": "ឯកសារដែលបានរកមើលតាមកូនសោរបស់អ្នក",
          "recount": "លេខនេះមកពីកំណត់ហេតុសាធារណៈដោយផ្ទាល់ ដូច្នេះអ្នកអាចរាប់វាឡើងវិញដោយខ្លួនឯង។",
          "guideH": "ចាប់ផ្តើម", "guideP": "ស្នើសុំកម្មវិធីរបស់អ្នក ដំឡើងកញ្ចប់ ហើយបន្ថែមប៊ូតុងមួយ និងទំព័រមួយ។", "readDocs": "អានឯកសារ",
-         "verifyP": "អ្នកណាក៏អាចពិនិត្យកំណត់ត្រាបានដោយឥតគិតថ្លៃ ដោយគ្មានគណនី៖"},
+         "verifyP": "អ្នកណាក៏អាចពិនិត្យកំណត់ត្រាបានដោយឥតគិតថ្លៃ ដោយគ្មានគណនី៖",
+         "title": "អាជីវកម្មរបស់អ្នក", "lede": "ឱ្យអ្នកប្រើកម្មវិធីរបស់អ្នកចុះហត្ថលេខាលើអ្វីដែលពួកគេបានបង្កើត។", "add": "បន្ថែមអាជីវកម្ម",
+         "startH": "ប្រាប់យើងអំពីអាជីវកម្មរបស់អ្នក", "startP": "ប្រើពេលមួយនាទី ហើយមិនគិតប្រាក់ទេ។ យើងនឹងប្រើអាសយដ្ឋាននេះតែដើម្បីទាក់ទងអ្នកអំពីកម្មវិធីរបស់អ្នកប៉ុណ្ណោះ។",
+         "bizName": "ឈ្មោះអាជីវកម្ម", "contact": "អ៊ីមែលទំនាក់ទំនង", "start": "បន្ត",
+         "adminH": "អ្នកគ្រប់គ្រង", "adminLede": "កម្មវិធីថ្មី និងកូនសោ API រង់ចាំការយល់ព្រមរបស់អ្នកនៅទីនេះ។", "waiting": "កំពុងរង់ចាំ", "decided": "បានសម្រេច",
+         "approve": "អនុម័ត", "refuse": "បដិសេធ", "undo": "មិនធ្វើវិញ",
+         "toolHint": "ឈ្មោះនេះចូលក្នុងកំណត់ត្រាទាំងអស់ដែលកម្មវិធីចុះហត្ថលេខា ជាអចិន្ត្រៃយ៍ ដូច្នេះសូមឱ្យវាខ្លី និងសាមញ្ញ។",
+         "apps": lambda n: "%d កម្មវិធី" % n, "month_n": lambda n: "%s កំណត់ត្រាខែនេះ" % n,
+         "terms": "ខ្ញុំយល់ព្រមលើលក្ខខណ្ឌសម្រាប់អ្នកអភិវឌ្ឍ រួមទាំងច្បាប់ផ្លាកសញ្ញា។"},
 }
 def _lv(d): return LIVE["km" if d is DT["km"] else "en"]
 def D19(t, d):  # Balance: a link to billing.thonly.com and the owner's own cap; ⛔ no money held here, no low-balance warning
@@ -474,7 +503,8 @@ SCREENS = [  # (id, page, title, render(t, d)) — page "developers", except the
     ("D3", "developers", "Log in with HeartBank®", D3), ("D4", "developers", "Sign with HeartBank®", D4),
     ("D5", "developers", "For agents: the MCP server", D5), ("D6", "developers", "Prices", D6), ("D7", "developers", "The sandbox", D7),
     ("D8", "developers", "Dashboard: your apps", D8), ("D9", "developers", "Register an app (its own file)", D9),
-    ("D10", "developers", "One app: key, usage, pause, export", D10), ("D11", "developers", "Review (founder)", D11),
+    ("D22", "developers", "Your businesses (live origin dashboard)", D22), ("D23", "developers", "Tell us about your business (live)", D23),
+    ("D10", "developers", "One app: key, usage, pause, export", D10), ("D11", "developers", "Admin: apps and keys wait for the founder (live)", D11),
     ("L11", "login", "An agent asks for your developer account", L11),
     ("D12", "developers", "Lookup", D12), ("D13", "developers", "Verify, free", D13), ("D14", "developers", "Changes", D14),
     ("D15", "developers", "Developer terms", D15), ("D16", "developers", "The verified-human badge", D16),
