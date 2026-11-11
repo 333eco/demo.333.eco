@@ -423,8 +423,8 @@ def D20(t, d):
             + '<div class="card"><h2>%s</h2><div class="field mono">%s</div></div>' % (t["o8_inv"], t["o8_invv"])
             + '<div class="grow"></div>' + btns(t["o8_btn"]))
 def D21(t, d):
-    # ⛔ origin's "Credits are low" row is NOT carried: a warning that a balance is falling is barred (/build Default 13, Sig-8)
-    rows = [r for r in t["o9_rows"] if "$5.00" not in r[1]]
+    # ⛔ no "credits are low" row: a warning that a balance is falling is barred (/build Default 13, Sig-8); removed from origin's O9 too, 2026-11-11
+    rows = t["o9_rows"]
     toggles = "".join('<div class="row"><div><div class="t">%s</div>%s</div><span class="tog on"></span></div>'
                       % (a, '<div class="s">%s</div>' % b if b else "") for a, b in rows)
     return _tabs(d, 5) + "<h1>%s</h1><p class='lede'>%s</p>" % (t["o9_h"], t["o9_lede"]) + '<div class="card">%s</div>' % toggles
