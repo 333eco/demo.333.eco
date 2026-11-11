@@ -425,7 +425,7 @@ LIVE = {
          "connect": "Connect a balance", "capH": "Your own monthly cap", "capField": "Dollars a month (empty for none)",
          "capNote": "At your cap, or at zero, paid API calls stop with a clear error. A person's own Sign is never touched.",
          "priceH": "What it will cost", "prices": (("A record signed through your app", "$0.01, and this may change before billing opens"),
-                                                  ("Look up a file from your server", "Free while this is being built, up to 2,000 a day for a business. The price we expect is $0.005 a lookup"),  # docs.ts #lookup
+                                                  ("Look up a file from your server", "Free while this is being built, up to 2,000 a day for a business. The price we expect is $0.002 a lookup"),  # docs.ts #lookup
                                                   ("Checking any record, finding a file's record", "Free, forever"), ("A person signing their own file", "Free, forever")),
          "never": "No one ever pays to be proven human.", "month": "This month", "signedLabel": "records signed through your apps",
          "lookups": "API lookups", "lookupsP": "files looked up through your keys",
@@ -444,7 +444,7 @@ LIVE = {
          "connect": "ភ្ជាប់សមតុល្យ", "capH": "ដែនកំណត់ប្រចាំខែរបស់អ្នក", "capField": "ដុល្លារក្នុងមួយខែ (ទុកទទេប្រសិនបើគ្មាន)",
          "capNote": "នៅដែនកំណត់ ឬនៅសូន្យ ការហៅ API ដែលត្រូវបង់នឹងឈប់ជាមួយកំហុសច្បាស់លាស់។ Sign ផ្ទាល់ខ្លួនរបស់មនុស្សម្នាក់មិនត្រូវបានប៉ះពាល់ទេ។",
          "priceH": "តម្លៃ", "prices": (("កំណត់ត្រាដែលចុះហត្ថលេខាតាមកម្មវិធីរបស់អ្នក", "$0.01 ហើយវាអាចផ្លាស់ប្តូរមុនពេលបើកការគិតប្រាក់"),
-                                     ("រកមើលឯកសារពីម៉ាស៊ីនមេរបស់អ្នក", "ឥតគិតថ្លៃ ខណៈពេលកំពុងបង្កើត រហូតដល់ 2,000 ក្នុងមួយថ្ងៃសម្រាប់អាជីវកម្មមួយ។ តម្លៃដែលយើងរំពឹងគឺ $0.005 ក្នុងមួយការរកមើល"),
+                                     ("រកមើលឯកសារពីម៉ាស៊ីនមេរបស់អ្នក", "ឥតគិតថ្លៃ ខណៈពេលកំពុងបង្កើត រហូតដល់ 2,000 ក្នុងមួយថ្ងៃសម្រាប់អាជីវកម្មមួយ។ តម្លៃដែលយើងរំពឹងគឺ $0.002 ក្នុងមួយការរកមើល"),
                                      ("ពិនិត្យកំណត់ត្រា រកកំណត់ត្រារបស់ឯកសារ", "ឥតគិតថ្លៃ ជារៀងរហូត"), ("អ្នកម្នាក់ចុះហត្ថលេខាលើឯកសារផ្ទាល់ខ្លួន", "ឥតគិតថ្លៃ ជារៀងរហូត")),
          "never": "គ្មាននរណាត្រូវបង់ប្រាក់ដើម្បីបញ្ជាក់ថាជាមនុស្សឡើយ។", "month": "ខែនេះ", "signedLabel": "កំណត់ត្រាដែលបានចុះហត្ថលេខាតាមកម្មវិធីរបស់អ្នក",
          "lookups": "ការរកមើលតាម API", "lookupsP": "ឯកសារដែលបានរកមើលតាមកូនសោរបស់អ្នក",
