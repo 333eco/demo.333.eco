@@ -16,6 +16,7 @@ The Khmer is OURS and UNREVIEWED; every Khmer board says so in its top band.
 import io, json, os, re
 from brand import EMBLEM, tok, motion
 import registry_boards as R
+import developers_boards as DV
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 W, H = 390, 844
@@ -952,6 +953,7 @@ PUBLIC |= {"E1D", "E2D", "E6D"}  # public portal pages: a share button in the he
 
 # The B-Registry screens live in registry_boards.py. Its language is set per render, and it reuses the one emblem helper.
 R.heart, R.person = heart, person
+DV.card, DV.btns, DV.spot, DV.heart, DV.person = card, btns, spot, heart, person
 R.poh(EMBLEM)
 def _in(render, lang):
     R.LANG[0] = lang
@@ -961,14 +963,24 @@ def _r(render):
 SCREENS = [(i, p, n, _r(f)) for i, p, n, f in R.SCREENS] + SCREENS
 DESKTOP = [(i, p, n, _r(f)) for i, p, n, f in R.DESKTOP] + DESKTOP
 PUBLIC |= R.PUBLIC
+# developers.333.eco (A600): its screens take (t, d), d = its own copy in the board's language
+def _dv(f):
+    return lambda t: f(t, DV.DT["km" if t is T["km"] else "en"])
+SCREENS += [(i, p, n, _dv(f)) for i, p, n, f in DV.SCREENS]
+PUBLIC |= DV.PUBLIC
 
 
 def page(sid, render, lang, dark=False, desk=False):
     t = T[lang]
     body = render(t).replace("℠", '<span class="sm">℠</span>')
     # Each screen's footer names its OWN origin (SPEC §0): Log in → login.333.eco · Sign → B.333.eco · portal → origin.333.eco
-    host = {"L": "login.333.eco", "O": "origin.333.eco", "E": "explorer.333.eco"}.get(sid[0], "B.333.eco")
+    host = {"L": "login.333.eco", "O": "origin.333.eco", "E": "explorer.333.eco", "D": "developers.333.eco"}.get(sid[0], "B.333.eco")
     foot = t["e_foot"] if sid.startswith("E") else t["foot"].replace("B.333.eco", host, 1)
+    dv = sid[0] == "D" or sid == "L11"
+    if dv:
+        DV.check(sid, body)
+        if sid[0] == "D":
+            foot = DV.DT["km" if lang == "km" else "en"]["foot"]
     assert not re.search(r"\bsign[\s-]?in\b", body, re.I), "%s: 'sign in' is barred (Default 10)" % sid
     assert "notar" not in body.lower(), "%s: 'notary' is barred in public copy" % sid
     registry = sid[0] == "R"
@@ -998,12 +1010,12 @@ def page(sid, render, lang, dark=False, desk=False):
 </body>
 </html>
 """ % ("km" if lang == "km" else "en", "km" if lang == "km" else "en", " dark" if dark else "", " desk" if desk else "", 1280 if desk else W, sid,
-       '<div class="band">%s</div>' % t["band"] if t["band"] else "", R.brandmark(EMBLEM) if registry else mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid.startswith("O") else (' <span class="prod">%s</span>' % t["e_prod"] if sid.startswith("E") else "")),
+       '<div class="band">%s</div>' % t["band"] if t["band"] else "", R.brandmark(EMBLEM) if registry else mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid.startswith("O") else (' <span class="prod">%s</span>' % t["e_prod"] if sid.startswith("E") else (' <span class="prod">%s</span>' % DV.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "D" else ""))),
        langs, ('<span class="sharebtn" aria-label="%s">%s</span>' % (t["o_share"], SHARE)) if sid in PUBLIC else "", body, foot, themes))
 
 
 def main():
-    css = brand_css(CSS + R.CSS) + motion()
+    css = brand_css(CSS + R.CSS + DV.CSS) + motion()
     io.open(os.path.join(HERE, "board.css"), "w", encoding="utf-8").write(css)
     import hashlib
     cssv = hashlib.sha256(css.encode()).hexdigest()[:8]
@@ -1012,8 +1024,8 @@ def main():
     def hh(f): return max(H, int(hts.get(f, H)))
     tall_en = max([H] + [int(v) for k, v in hts.items() if not k.endswith("Km.html")])
     tall_km = max([H] + [int(v) for k, v in hts.items() if k.endswith("Km.html")])
-    boards, col = [], {"registry": 0, "login": 0, "sign": 0, "origin": 0, "explorer": 0}
-    pages = [{"id": "registry", "name": "B-Registry℠"}, {"id": "login", "name": "Log in with HeartBank®"}, {"id": "sign", "name": "Sign with HeartBank®"}, {"id": "origin", "name": "origin.333.eco"}, {"id": "explorer", "name": "explorer.333.eco"}]
+    boards, col = [], {"registry": 0, "login": 0, "sign": 0, "origin": 0, "explorer": 0, "developers": 0}
+    pages = [{"id": "registry", "name": "B-Registry℠"}, {"id": "login", "name": "Log in with HeartBank®"}, {"id": "sign", "name": "Sign with HeartBank®"}, {"id": "origin", "name": "origin.333.eco"}, {"id": "explorer", "name": "explorer.333.eco"}, {"id": "developers", "name": "developers.333.eco"}]
     rowy = {"en": 0, "km": tall_en + 160}
     for sid, pg, title, render in SCREENS:
         for lang in ("en", "km"):
@@ -1022,7 +1034,7 @@ def main():
             boards.append({"file": f, "page": pg, "title": "%s · %s, %s" % (sid, title, "English" if lang == "en" else "Khmer"),
                            "w": W, "h": hh(f), "x": col[pg] * (W + 80), "y": rowy[lang]})
         col[pg] += 1
-    for sid, pg in (("R1", "registry"), ("L1", "login"), ("S1", "sign"), ("E1", "explorer")):  # one dark pass per surface (Default 6)
+    for sid, pg in (("R1", "registry"), ("L1", "login"), ("S1", "sign"), ("E1", "explorer"), ("D1", "developers")):  # one dark pass per surface (Default 6)
         f = "%sDark.html" % sid
         render = dict((s[0], s[3]) for s in SCREENS)[sid]
         io.open(os.path.join(HERE, f), "w", encoding="utf-8").write(page(sid, render, "en", dark=True).replace("@CSSV@", cssv))

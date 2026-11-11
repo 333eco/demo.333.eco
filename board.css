@@ -146,6 +146,13 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:10px;bo
 .rail b{font-weight:600}.rail .s{display:block;font-size:12.5px;color:var(--ink-dim)}
 .qr{display:block;margin:6px auto 8px;border:1px solid var(--line);border-radius:12px;background:#fff;padding:10px}
 .ref{font-family:var(--font-mono);font-size:15px;letter-spacing:.06em}
+
+.dtabs{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 14px}
+.dtabs a{font-size:13px;padding:6px 12px;border-radius:var(--r-pill);border:1px solid var(--line);color:var(--ink-dim)}
+.dtabs a.on{border-color:var(--accent);color:var(--ink);background:var(--wash);font-weight:600}
+/* a phone-width board never clips a code line or an address: it wraps (all boards; clipping hid the end of each sample) */
+.code{white-space:pre-wrap;overflow-wrap:anywhere}
+.field.mono{overflow-wrap:anywhere}
 html{--beat-duration:1.5s;--beat-delay:0s}
 /* ============================================================================
    MOTION — the heartbeat
