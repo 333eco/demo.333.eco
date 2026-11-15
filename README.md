@@ -3,7 +3,7 @@
 > ⚠️ **2026-11-11: these drawings are a dated record, not a source.** Once a surface is live, the live site is the record of what exists; no live site is generated from these files or checked against them any more (founder: *"deprecate all source drawings everywhere; keeping the demo in sync is unrealistic"*; `/build` Default 18). A redesign starts from the live code.
 
 Drawings of **the B-Registry** (hold an @name or a #tag, make your page; `registry_boards.py`) and the identity screens: **Log in with HeartBank®** (proves who you are) and **Sign with HeartBank®**
-(puts your name to one file), and **developers.333.eco** (one site for every HeartBank® API, its MCP server and its sandbox; `developers_boards.py`, A600). English and Khmer, with one dark pass per surface. These are drawings. They charge
+(puts your name to one file), and **developers.333.eco** (one site for every HeartBank® API, its MCP server and its sandbox; `developers_boards.py`, A600), and **B-Link at B.333.eco** (one short link for everything shared from a HeartBank® app, with the one page of storage.333.eco; `blink_boards.py`, A493 and A639). English and Khmer, with one dark pass per surface. These are drawings. They charge
 nobody, and nothing here is live.
 
 **Front door:** <https://demo.333.eco/> · **The wall** (every screen at once): <https://demo.333.eco/wall.html>
@@ -27,6 +27,7 @@ node scripts/check-brand.mjs       # the vendored brand layer still matches bran
 - **Log in** authenticates and **Sign** attests. The phrase *sign in* is refused at build time, in either language.
 - The registry's words are checked at build time (`registry_boards.py`, `BARRED`): no gift or donation language for a fee, no name reported as gone for good, no banking word, no ticking clock.
 - developers.333.eco's words are checked at build time (`developers_boards.py`, `BARRED` + `check()`): no real company, product or model named; no streak, ranking or countdown; a B-Trace check through the API is drawn as METERED (only a signature's verification is free).
+- B-Link's words are checked at build time (`blink_boards.py`, `BARRED` + `check()`): a preview states a fact and never a saving; no public page shows a count of opens; nothing is drawn as running out; no storage address is drawn.
 - The word *notary* is refused at build time. No score, grade or "unverified" badge is drawn anywhere.
 - The emblem and neutrals are READ from `brand/` (`brand.py`); the only surface value is the sapphire accent block.
 - The Khmer is our own draft until a native reader approves it, and every Khmer board says so.

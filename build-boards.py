@@ -17,6 +17,7 @@ import io, json, os, re
 from brand import EMBLEM, tok, motion
 import registry_boards as R
 import developers_boards as DV
+import blink_boards as BL
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 W, H = 390, 844
@@ -969,6 +970,12 @@ def _dv(f):
 SCREENS += [(i, p, n, _dv(f)) for i, p, n, f in DV.SCREENS]
 DESKTOP += [(i, p, n, _dv(f)) for i, p, n, f in DV.DESKTOP]
 PUBLIC |= DV.PUBLIC
+# B-Link at B.333.eco and the one storage.333.eco page (A493, A639): the same (t, d) shape
+BL.card, BL.btns, BL.spot, BL.heart, BL.person = card, btns, spot, heart, person
+def _bl(f):
+    return lambda t: f(t, BL.DT["km" if t is T["km"] else "en"])
+SCREENS += [(i, p, n, _bl(f)) for i, p, n, f in BL.SCREENS]
+PUBLIC |= BL.PUBLIC
 
 
 def page(sid, render, lang, dark=False, desk=False):
@@ -982,6 +989,10 @@ def page(sid, render, lang, dark=False, desk=False):
         DV.check(sid, body)
         if sid[0] == "D":
             foot = DV.DT["km" if lang == "km" else "en"]["foot"]
+    bl = sid[0] == "B" or sid.startswith("ST")
+    if bl:
+        BL.check(sid, body)
+        foot = BL.DT["km" if lang == "km" else "en"]["sfoot" if sid.startswith("ST") else "foot"]
     assert not re.search(r"\bsign[\s-]?in\b", body, re.I), "%s: 'sign in' is barred (Default 10)" % sid
     assert "notar" not in body.lower(), "%s: 'notary' is barred in public copy" % sid
     registry = sid[0] == "R"
@@ -1011,12 +1022,12 @@ def page(sid, render, lang, dark=False, desk=False):
 </body>
 </html>
 """ % ("km" if lang == "km" else "en", "km" if lang == "km" else "en", " dark" if dark else "", " desk" if desk else "", 1280 if desk else W, sid,
-       '<div class="band">%s</div>' % t["band"] if t["band"] else "", R.brandmark(EMBLEM) if registry else mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid.startswith("O") else (' <span class="prod">%s</span>' % t["e_prod"] if sid.startswith("E") else (' <span class="prod">%s</span>' % DV.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "D" else ""))),
+       '<div class="band">%s</div>' % t["band"] if t["band"] else "", R.brandmark(EMBLEM) if registry else mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid.startswith("O") else (' <span class="prod">%s</span>' % t["e_prod"] if sid.startswith("E") else (' <span class="prod">%s</span>' % DV.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "D" else (' <span class="prod">%s</span>' % BL.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "B" else "")))),
        langs, ('<span class="sharebtn" aria-label="%s">%s</span>' % (t["o_share"], SHARE)) if sid in PUBLIC else "", body, foot, themes))
 
 
 def main():
-    css = brand_css(CSS + R.CSS + DV.CSS) + motion()
+    css = brand_css(CSS + R.CSS + DV.CSS + BL.CSS) + motion()
     io.open(os.path.join(HERE, "board.css"), "w", encoding="utf-8").write(css)
     import hashlib
     cssv = hashlib.sha256(css.encode()).hexdigest()[:8]
@@ -1025,8 +1036,8 @@ def main():
     def hh(f): return max(H, int(hts.get(f, H)))
     tall_en = max([H] + [int(v) for k, v in hts.items() if not k.endswith("Km.html")])
     tall_km = max([H] + [int(v) for k, v in hts.items() if k.endswith("Km.html")])
-    boards, col = [], {"registry": 0, "login": 0, "sign": 0, "origin": 0, "explorer": 0, "developers": 0}
-    pages = [{"id": "registry", "name": "B-Registry℠"}, {"id": "login", "name": "Log in with HeartBank®"}, {"id": "sign", "name": "Sign with HeartBank®"}, {"id": "origin", "name": "origin.333.eco"}, {"id": "explorer", "name": "explorer.333.eco"}, {"id": "developers", "name": "developers.333.eco"}]
+    boards, col = [], {"registry": 0, "login": 0, "sign": 0, "origin": 0, "explorer": 0, "developers": 0, "blink": 0}
+    pages = [{"id": "registry", "name": "B-Registry℠"}, {"id": "login", "name": "Log in with HeartBank®"}, {"id": "sign", "name": "Sign with HeartBank®"}, {"id": "origin", "name": "origin.333.eco"}, {"id": "explorer", "name": "explorer.333.eco"}, {"id": "developers", "name": "developers.333.eco"}, {"id": "blink", "name": "B-Link · B.333.eco"}]
     rowy = {"en": 0, "km": tall_en + 160}
     for sid, pg, title, render in SCREENS:
         for lang in ("en", "km"):
@@ -1035,7 +1046,7 @@ def main():
             boards.append({"file": f, "page": pg, "title": "%s · %s, %s" % (sid, title, "English" if lang == "en" else "Khmer"),
                            "w": W, "h": hh(f), "x": col[pg] * (W + 80), "y": rowy[lang]})
         col[pg] += 1
-    for sid, pg in (("R1", "registry"), ("L1", "login"), ("S1", "sign"), ("E1", "explorer"), ("D1", "developers")):  # one dark pass per surface (Default 6)
+    for sid, pg in (("R1", "registry"), ("L1", "login"), ("S1", "sign"), ("E1", "explorer"), ("D1", "developers"), ("B1", "blink")):  # one dark pass per surface (Default 6)
         f = "%sDark.html" % sid
         render = dict((s[0], s[3]) for s in SCREENS)[sid]
         io.open(os.path.join(HERE, f), "w", encoding="utf-8").write(page(sid, render, "en", dark=True).replace("@CSSV@", cssv))

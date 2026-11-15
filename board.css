@@ -156,6 +156,17 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:10px;bo
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid2 .card{margin:0}
 .vhrow{display:flex;gap:10px;flex-wrap:wrap}
 .vhb{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-strong);border-radius:var(--r-pill);padding:5px 12px 5px 9px;font-size:13px;font-weight:600;background:#fff;color:#14161c}
+
+.baddr{display:block;margin:0 0 14px;font-size:17px;letter-spacing:.01em}
+.chat{margin:4px 0 18px;padding:14px;border-radius:var(--r);background:var(--surface-2);border:1px solid var(--line)}
+.chat .who{font-size:12px;color:var(--ink-dim);margin:0 0 6px 4px}
+.chat .bub{display:inline-block;background:var(--accent);color:var(--accent-ink);padding:8px 14px;border-radius:18px 18px 18px 6px;font-size:15px;margin:0 0 8px}
+.pcard{border-radius:14px;overflow:hidden;background:var(--surface);border:1px solid var(--line-strong);max-width:320px}
+.bcover{display:block;width:100%;height:auto}
+.pcard .pt{font-weight:600;font-size:15px;padding:10px 12px 2px;color:var(--ink)}
+.pcard .pf{font-size:13px;line-height:1.45;padding:0 12px;color:var(--ink-dim)}
+.pcard .ph{font-size:12px;padding:6px 12px 10px;color:var(--ink-faint);font-family:var(--font-mono,monospace)}
+.pillbtn{font-size:13px;font-weight:600;padding:6px 14px;border-radius:var(--r-pill);border:1px solid var(--accent);color:var(--ink);background:var(--wash)}
 html{--beat-duration:1.5s;--beat-delay:0s}
 /* ============================================================================
    MOTION — the heartbeat
