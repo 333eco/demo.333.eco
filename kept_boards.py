@@ -27,7 +27,7 @@ DT = {
   "how": "How it was made", "howv": "Made by hand on a device", "rights": "Share it under", "rightsv": "All rights reserved",
   "privacy": "Your file stays on your device. Only its fingerprint is sent.",
   "saveproof": "Save your proof", "another": "Sign another file", "signed": "Signed",
-  "signedl": "Your signature is saved. It joins the public log at the next hourly update, around 14:00.",
+  "signedl": "Your signature is saved. It joins the public log within the hour.", "records": "Your records",
   # new words (origin.333.eco)
   "k1_h": "Sign a file", "file": "sunflower.png · 2.4 MB",
   "keep": "Keep a copy here",
@@ -59,7 +59,7 @@ DT = {
   "how": "របៀបដែលវាត្រូវបានបង្កើត", "howv": "បង្កើតដោយដៃនៅលើឧបករណ៍", "rights": "ចែករំលែកក្រោម", "rightsv": "រក្សាសិទ្ធិគ្រប់យ៉ាង",
   "privacy": "ឯកសាររបស់អ្នកនៅលើឧបករណ៍របស់អ្នក។ មានតែស្នាមម្រាមដៃរបស់វាទេដែលត្រូវបានផ្ញើ។",
   "saveproof": "រក្សាទុកភស្តុតាងរបស់អ្នក", "another": "ចុះហត្ថលេខាលើឯកសារមួយទៀត", "signed": "បានចុះហត្ថលេខា",
-  "signedl": "ហត្ថលេខារបស់អ្នកត្រូវបានរក្សាទុក។ វានឹងចូលទៅក្នុងកំណត់ហេតុសាធារណៈនៅការធ្វើបច្ចុប្បន្នភាពរៀងរាល់ម៉ោងបន្ទាប់ ប្រហែល 14:00។",
+  "signedl": "ហត្ថលេខារបស់អ្នកត្រូវបានរក្សាទុក។ វានឹងចូលទៅក្នុងកំណត់ហេតុសាធារណៈក្នុងរយៈពេលមួយម៉ោង។", "records": "កំណត់ត្រារបស់អ្នក",
   "k1_h": "ចុះហត្ថលេខាលើឯកសារ", "file": "sunflower.png · 2.4 MB",
   "keep": "រក្សាច្បាប់ចម្លងនៅទីនេះ",
   "keep_says": "ឯកសាររបស់អ្នកនឹងចេញពីឧបករណ៍នេះ ហើយយើងរក្សាទុកវា ដែលយើងអាចមើលឃើញវា។ គ្មានអ្វីជាសាធារណៈនិយាយថាអ្នកបានរក្សាវាទុកទេ។",
@@ -136,13 +136,13 @@ def K2(t, d):
 def K3(t, d):
     return ("<h1>%s</h1><p class='lede'>%s</p>" % (d["signed"], d["signedl"])
             + '<div class="card"><div class="krow">%s<b>%s</b></div><p>%s</p></div>' % (OK, d["kept"], d["kept_p"])
-            + '<div class="grow"></div>' + btns(d["kept_b"], d["saveproof"]) + '<p class="fine" style="text-align:center">%s</p>' % d["another"])
+            + '<div class="grow"></div>' + btns(d["kept_b"], d["records"]) + '<p class="fine" style="text-align:center">%s</p>' % d["another"])
 
 
 def K4(t, d):
     return ("<h1>%s</h1><p class='lede'>%s</p>" % (d["signed"], d["signedl"]) + '<div class="note">%s</div>' % d["k4_note"]
             + btns(d["k4_b"]) + '<p class="fine">%s</p>' % d["k4_fine"]
-            + '<div class="grow"></div>' + btns(d["saveproof"], d["another"]))
+            + '<div class="grow"></div>' + btns(d["records"], d["another"]))
 
 
 def _rows(d):
