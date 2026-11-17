@@ -18,6 +18,7 @@ from brand import EMBLEM, tok, motion
 import registry_boards as R
 import developers_boards as DV
 import blink_boards as BL
+import kept_boards as KP
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 W, H = 390, 844
@@ -976,19 +977,27 @@ def _bl(f):
     return lambda t: f(t, BL.DT["km" if t is T["km"] else "en"])
 SCREENS += [(i, p, n, _bl(f)) for i, p, n, f in BL.SCREENS]
 PUBLIC |= BL.PUBLIC
+# Keep a copy at origin.333.eco (storage M4 = B-Origin M6, sign.333.eco SPEC §10c-bis): the same (t, d) shape
+KP.card, KP.btns, KP.spot, KP.heart, KP.person, KP.sunflower = card, btns, spot, heart, person, sunflower
+def _kp(f):
+    return lambda t: f(t, KP.DT["km" if t is T["km"] else "en"])
+SCREENS += [(i, p, n, _kp(f)) for i, p, n, f in KP.SCREENS]
+PUBLIC |= KP.PUBLIC
 
 
 def page(sid, render, lang, dark=False, desk=False):
     t = T[lang]
     body = render(t).replace("℠", '<span class="sm">℠</span>')
     # Each screen's footer names its OWN origin (SPEC §0): Log in → login.333.eco · Sign → sign.333.eco · portal → origin.333.eco (⛔ never "B": B.333.eco is B-Link, A601)
-    host = {"L": "login.333.eco", "O": "origin.333.eco", "E": "explorer.333.eco", "D": "developers.333.eco"}.get(sid[0], "sign.333.eco")
+    host = {"L": "login.333.eco", "O": "origin.333.eco", "K": "origin.333.eco", "E": "explorer.333.eco", "D": "developers.333.eco"}.get(sid[0], "sign.333.eco")
     foot = t["e_foot"] if sid.startswith("E") else t["foot"].replace("sign.333.eco", host, 1)
     dv = sid[0] == "D" or sid == "L11"
     if dv:
         DV.check(sid, body)
         if sid[0] == "D":
             foot = DV.DT["km" if lang == "km" else "en"]["foot"]
+    if sid[0] == "K":
+        KP.check(sid, body)
     bl = sid[0] == "B" or sid.startswith("ST")
     if bl:
         BL.check(sid, body)
@@ -1022,12 +1031,12 @@ def page(sid, render, lang, dark=False, desk=False):
 </body>
 </html>
 """ % ("km" if lang == "km" else "en", "km" if lang == "km" else "en", " dark" if dark else "", " desk" if desk else "", 1280 if desk else W, sid,
-       '<div class="band">%s</div>' % t["band"] if t["band"] else "", R.brandmark(EMBLEM) if registry else mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid.startswith("O") else (' <span class="prod">%s</span>' % t["e_prod"] if sid.startswith("E") else (' <span class="prod">%s</span>' % DV.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "D" else (' <span class="prod">%s</span>' % BL.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "B" else "")))),
+       '<div class="band">%s</div>' % t["band"] if t["band"] else "", R.brandmark(EMBLEM) if registry else mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid[0] in ("O", "K") else (' <span class="prod">%s</span>' % t["e_prod"] if sid.startswith("E") else (' <span class="prod">%s</span>' % DV.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "D" else (' <span class="prod">%s</span>' % BL.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "B" else "")))),
        langs, ('<span class="sharebtn" aria-label="%s">%s</span>' % (t["o_share"], SHARE)) if sid in PUBLIC else "", body, foot, themes))
 
 
 def main():
-    css = brand_css(CSS + R.CSS + DV.CSS + BL.CSS) + motion()
+    css = brand_css(CSS + R.CSS + DV.CSS + BL.CSS + KP.CSS) + motion()
     io.open(os.path.join(HERE, "board.css"), "w", encoding="utf-8").write(css)
     import hashlib
     cssv = hashlib.sha256(css.encode()).hexdigest()[:8]
@@ -1046,7 +1055,7 @@ def main():
             boards.append({"file": f, "page": pg, "title": "%s · %s, %s" % (sid, title, "English" if lang == "en" else "Khmer"),
                            "w": W, "h": hh(f), "x": col[pg] * (W + 80), "y": rowy[lang]})
         col[pg] += 1
-    for sid, pg in (("R1", "registry"), ("L1", "login"), ("S1", "sign"), ("E1", "explorer"), ("D1", "developers"), ("B1", "blink")):  # one dark pass per surface (Default 6)
+    for sid, pg in (("R1", "registry"), ("L1", "login"), ("S1", "sign"), ("E1", "explorer"), ("D1", "developers"), ("B1", "blink"), ("K1", "origin")):  # one dark pass per surface (Default 6)
         f = "%sDark.html" % sid
         render = dict((s[0], s[3]) for s in SCREENS)[sid]
         io.open(os.path.join(HERE, f), "w", encoding="utf-8").write(page(sid, render, "en", dark=True).replace("@CSSV@", cssv))

@@ -1633,6 +1633,150 @@
    "y": 1783
   },
   {
+   "file": "K1.html",
+   "page": "origin",
+   "title": "K1 · Sign a file, with Keep a copy (unticked), English",
+   "w": 390,
+   "h": 863,
+   "x": 4700,
+   "y": 0
+  },
+  {
+   "file": "K1Km.html",
+   "page": "origin",
+   "title": "K1 · Sign a file, with Keep a copy (unticked), Khmer",
+   "w": 390,
+   "h": 1019,
+   "x": 4700,
+   "y": 1783
+  },
+  {
+   "file": "K2.html",
+   "page": "origin",
+   "title": "K2 · Keep a copy: logged out · no balance · a kind of file not taken, English",
+   "w": 390,
+   "h": 868,
+   "x": 5170,
+   "y": 0
+  },
+  {
+   "file": "K2Km.html",
+   "page": "origin",
+   "title": "K2 · Keep a copy: logged out · no balance · a kind of file not taken, Khmer",
+   "w": 390,
+   "h": 992,
+   "x": 5170,
+   "y": 1783
+  },
+  {
+   "file": "K3.html",
+   "page": "origin",
+   "title": "K3 · Signed, and a copy is kept, English",
+   "w": 390,
+   "h": 844,
+   "x": 5640,
+   "y": 0
+  },
+  {
+   "file": "K3Km.html",
+   "page": "origin",
+   "title": "K3 · Signed, and a copy is kept, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 5640,
+   "y": 1783
+  },
+  {
+   "file": "K4.html",
+   "page": "origin",
+   "title": "K4 · Signed, but the copy wasn't kept, English",
+   "w": 390,
+   "h": 844,
+   "x": 6110,
+   "y": 0
+  },
+  {
+   "file": "K4Km.html",
+   "page": "origin",
+   "title": "K4 · Signed, but the copy wasn't kept, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 6110,
+   "y": 1783
+  },
+  {
+   "file": "K5.html",
+   "page": "origin",
+   "title": "K5 · Your kept files, English",
+   "w": 390,
+   "h": 844,
+   "x": 6580,
+   "y": 0
+  },
+  {
+   "file": "K5Km.html",
+   "page": "origin",
+   "title": "K5 · Your kept files, Khmer",
+   "w": 390,
+   "h": 881,
+   "x": 6580,
+   "y": 1783
+  },
+  {
+   "file": "K6.html",
+   "page": "origin",
+   "title": "K6 · Remove a copy, English",
+   "w": 390,
+   "h": 844,
+   "x": 7050,
+   "y": 0
+  },
+  {
+   "file": "K6Km.html",
+   "page": "origin",
+   "title": "K6 · Remove a copy, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 7050,
+   "y": 1783
+  },
+  {
+   "file": "K7.html",
+   "page": "origin",
+   "title": "K7 · Your kept files when the balance stopped covering them, English",
+   "w": 390,
+   "h": 844,
+   "x": 7520,
+   "y": 0
+  },
+  {
+   "file": "K7Km.html",
+   "page": "origin",
+   "title": "K7 · Your kept files when the balance stopped covering them, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 7520,
+   "y": 1783
+  },
+  {
+   "file": "K8.html",
+   "page": "origin",
+   "title": "K8 · Your kept files, before any is kept, English",
+   "w": 390,
+   "h": 844,
+   "x": 7990,
+   "y": 0
+  },
+  {
+   "file": "K8Km.html",
+   "page": "origin",
+   "title": "K8 · Your kept files, before any is kept, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 7990,
+   "y": 1783
+  },
+  {
    "file": "R1Dark.html",
    "page": "registry",
    "title": "R1 · dark pass, English",
@@ -1683,6 +1827,15 @@
    "title": "B1 · dark pass, English",
    "w": 390,
    "h": 1241,
+   "x": 0,
+   "y": 3657
+  },
+  {
+   "file": "K1Dark.html",
+   "page": "origin",
+   "title": "K1 · dark pass, English",
+   "w": 390,
+   "h": 863,
    "x": 0,
    "y": 3657
   },
