@@ -200,6 +200,7 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:10px;bo
 .gbig{width:200px;height:200px;margin:4px auto 16px;border-radius:16px;overflow:hidden}
 .gcover{display:flex;justify-content:center;background:var(--wash);padding:9px 0}
 .glock{display:block;margin:6px auto}
+.bqr{display:block;margin:2px auto 12px}
 .gtog{flex:none;width:46px;height:28px;border-radius:14px;background:var(--line-strong);position:relative}
 .gtog::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:var(--surface)}
 .gls{padding:14px;border-radius:var(--r);background:var(--surface-2);border:1px solid var(--line)}

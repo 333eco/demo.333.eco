@@ -11,7 +11,7 @@ Copy rules this file must keep (checked at build time by check()):
   - The thank is offered on the kept file only, never on the link or its card, and never pressed on anyone.
 The Khmer is OURS and UNREVIEWED; the shared band says so on every Khmer board.
 """
-import re
+import io, os, re
 import kept_boards as KP
 import blink_boards as BL
 
@@ -21,6 +21,10 @@ card = btns = spot = heart = person = sunflower = qr = None
 KEY = KP.KEY
 OK = KP.OK
 LINK = "B.333.eco/h4kq8tz2mxw9c3vbn6rpyd5fj7"  # an unlisted link: 26 characters, so it can't be guessed
+# ⭐ The link's code is a B-QR (founder 2026-11-17: *"make the QR code a B-QR"*), painted by the brand layer's own recipe
+#   (brand/bqr.ts, vendored) into give-bqr.svg by scripts/bqr-svg.mjs, in its owner's ink: a link into 333.eco is MA's (B-Link
+#   `ownerOf`). It is a real code for the drawn address (jsQR and ZXing both read it); regenerate it if LINK changes.
+BQR_SVG = io.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "give-bqr.svg"), encoding="utf-8").read().strip()
 
 DT = {
 "en": {
@@ -59,7 +63,7 @@ DT = {
   "g4_c": "The balance can't pay", "g4_cp": "Your balance can't pay for this. Nothing was given.", "g4_cb": "Your balance",
   # G5 the link
   "g5_h": "Your link", "g5_lede": "Send it, or print its code. Whoever keeps it first has it for good.",
-  "copy": "Copy", "share": "Share", "print": "Print the code",
+  "copy": "Copy", "share": "Share", "print": "Print or save it as a B-QR",  # b.333.eco pages.ts, word for word
   "qr_p": "The code is the link. Anyone who scans it can open the file.",
   "unlisted": "This link isn't listed anywhere. Only the people you give it to can open it.",
   "withdraw": "Until someone keeps it, you can withdraw it from Your kept files.",
@@ -131,7 +135,7 @@ DT = {
   "g4_bp": "អំណោយដែលចាក់សោទៅ @name មួយ ត្រូវការ passkey ដែលបង្ហាញនៅលើទំព័ររបស់ @name នោះ។ អ្នកអាចផ្ដល់វាដោយតំណជំនួសវិញ។",
   "g4_c": "សមតុល្យមិនអាចបង់បាន", "g4_cp": "សមតុល្យរបស់អ្នកមិនអាចបង់សម្រាប់ការនេះបានទេ។ គ្មានអ្វីត្រូវបានផ្ដល់ឱ្យទេ។", "g4_cb": "សមតុល្យរបស់អ្នក",
   "g5_h": "តំណរបស់អ្នក", "g5_lede": "ផ្ញើវា ឬបោះពុម្ពកូដរបស់វា។ អ្នកដែលរក្សាវាទុកមុនគេ មានវាជារៀងរហូត។",
-  "copy": "ចម្លង", "share": "ចែករំលែក", "print": "បោះពុម្ពកូដ",
+  "copy": "ចម្លង", "share": "ចែករំលែក", "print": "បោះពុម្ព ឬរក្សាទុកវាជា B-QR",
   "qr_p": "កូដនេះគឺជាតំណ។ អ្នកណាដែលស្កេនវា អាចបើកឯកសារបាន។",
   "unlisted": "តំណនេះមិនត្រូវបានរាយនៅកន្លែងណាទេ។ មានតែអ្នកដែលអ្នកផ្ដល់វាឱ្យប៉ុណ្ណោះ ដែលអាចបើកវាបាន។",
   "withdraw": "រហូតដល់មាននរណាម្នាក់រក្សាវាទុក អ្នកអាចដកវាវិញពី ឯកសារដែលអ្នករក្សាទុក។",
@@ -260,7 +264,7 @@ def G5(t, d):
     return ("<h1>%s</h1><p class='lede'>%s</p>" % (d["g5_h"], d["g5_lede"])
             + '<div class="glink">%s</div>' % LINK + btns(d["copy"], d["share"])
             + '<div class="card" style="text-align:center;margin-top:14px">%s<span class="pillbtn">%s</span><p class="fine" style="margin-top:8px">%s</p></div>'
-            % (qr(150), d["print"], d["qr_p"])
+            % (BQR_SVG, d["print"], d["qr_p"])
             + '<p class="fine">%s</p><p class="fine">%s</p>' % (d["unlisted"], d["withdraw"]))
 
 
@@ -356,6 +360,7 @@ CSS = """
 .gbig{width:200px;height:200px;margin:4px auto 16px;border-radius:16px;overflow:hidden}
 .gcover{display:flex;justify-content:center;background:var(--wash);padding:9px 0}
 .glock{display:block;margin:6px auto}
+.bqr{display:block;margin:2px auto 12px}
 .gtog{flex:none;width:46px;height:28px;border-radius:14px;background:var(--line-strong);position:relative}
 .gtog::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:var(--surface)}
 .gls{padding:14px;border-radius:var(--r);background:var(--surface-2);border:1px solid var(--line)}
@@ -388,5 +393,7 @@ def check(sid, body):
         assert not re.search(r"\bfrom @|\bពី @", body, re.I), "%s: an anonymous gift names no one" % sid
     if sid == "G12":
         assert "@" not in body, "G12: the thank's return names no one"
+    if sid == "G5":
+        assert 'class="bqr"' in body and 'clip-path="url(#bqrc0)"' in body and 'class="qr"' not in body, "G5: the code is a B-QR from the recipe, never a plain QR"
     if sid in ("G5", "G6", "G7", "G8", "G9"):
         assert not re.search(r"thank them|អរគុណពួកគេ", body, re.I), "%s: the thank lives on the kept file, never on the link" % sid
