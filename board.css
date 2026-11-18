@@ -187,6 +187,25 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:10px;bo
 .kdlg{position:absolute;left:20px;right:20px;top:260px;background:var(--surface);border:1px solid var(--line-strong);border-radius:var(--r);padding:20px;box-shadow:0 12px 40px rgba(0,0,0,.18)}
 .kdbtn{display:flex;gap:10px;margin-top:14px}
 .kdbtn .btn{flex:1;margin:0}
+
+.gopt{display:flex;gap:12px;align-items:flex-start;padding:10px 0}
+.gopt+.gopt{border-top:1px solid var(--line)}
+.gopt.off{opacity:.45}
+.gtx{flex:1;min-width:0}
+.grad{flex:none;width:20px;height:20px;border-radius:50%;border:2px solid var(--line-strong);margin-top:2px;box-sizing:border-box;background:var(--surface)}
+.grad.on{border:6px solid var(--accent)}
+.gfield{margin-top:8px;width:100%;box-sizing:border-box;color:var(--ink-dim)}
+.gstat{display:inline-block;font-size:12px;font-weight:600;padding:2px 10px;margin-top:5px;border-radius:var(--r-pill);background:var(--wash);color:var(--ink)}
+.glink{font-family:var(--font-mono,monospace);font-size:13px;padding:12px;margin:0 0 12px;border-radius:12px;border:1px solid var(--line-strong);background:var(--surface-2);word-break:break-all;color:var(--ink)}
+.gbig{width:200px;height:200px;margin:4px auto 16px;border-radius:16px;overflow:hidden}
+.gcover{display:flex;justify-content:center;background:var(--wash);padding:9px 0}
+.glock{display:block;margin:6px auto}
+.gtog{flex:none;width:46px;height:28px;border-radius:14px;background:var(--line-strong);position:relative}
+.gtog::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:var(--surface)}
+.gls{padding:14px;border-radius:var(--r);background:var(--surface-2);border:1px solid var(--line)}
+.gnt{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-size:14px;color:var(--ink);margin:0 0 8px}
+.gnt:last-child{margin:0}
+.gnh{font-size:12px;color:var(--ink-faint);margin:0 0 3px}
 html{--beat-duration:1.5s;--beat-delay:0s}
 /* ============================================================================
    MOTION — the heartbeat

@@ -1777,6 +1777,240 @@
    "y": 1783
   },
   {
+   "file": "G1.html",
+   "page": "origin",
+   "title": "G1 · Give · Sign a file: remove where it was taken (unticked), English",
+   "w": 390,
+   "h": 844,
+   "x": 8460,
+   "y": 0
+  },
+  {
+   "file": "G1Km.html",
+   "page": "origin",
+   "title": "G1 · Give · Sign a file: remove where it was taken (unticked), Khmer",
+   "w": 390,
+   "h": 1019,
+   "x": 8460,
+   "y": 1783
+  },
+  {
+   "file": "G2.html",
+   "page": "origin",
+   "title": "G2 · Give · Your kept files: Give, Offered, Given, Thanked, English",
+   "w": 390,
+   "h": 977,
+   "x": 8930,
+   "y": 0
+  },
+  {
+   "file": "G2Km.html",
+   "page": "origin",
+   "title": "G2 · Give · Your kept files: Give, Offered, Given, Thanked, Khmer",
+   "w": 390,
+   "h": 1117,
+   "x": 8930,
+   "y": 1783
+  },
+  {
+   "file": "G3.html",
+   "page": "origin",
+   "title": "G3 · Give · the sheet (above the free minute), English",
+   "w": 390,
+   "h": 1433,
+   "x": 9400,
+   "y": 0
+  },
+  {
+   "file": "G3Km.html",
+   "page": "origin",
+   "title": "G3 · Give · the sheet (above the free minute), Khmer",
+   "w": 390,
+   "h": 1643,
+   "x": 9400,
+   "y": 1783
+  },
+  {
+   "file": "G4.html",
+   "page": "origin",
+   "title": "G4 · Give · when a choice can't be made, English",
+   "w": 390,
+   "h": 1112,
+   "x": 9870,
+   "y": 0
+  },
+  {
+   "file": "G4Km.html",
+   "page": "origin",
+   "title": "G4 · Give · when a choice can't be made, Khmer",
+   "w": 390,
+   "h": 1262,
+   "x": 9870,
+   "y": 1783
+  },
+  {
+   "file": "G5.html",
+   "page": "origin",
+   "title": "G5 · Give · your link and its code, English",
+   "w": 390,
+   "h": 872,
+   "x": 10340,
+   "y": 0
+  },
+  {
+   "file": "G5Km.html",
+   "page": "origin",
+   "title": "G5 · Give · your link and its code, Khmer",
+   "w": 390,
+   "h": 959,
+   "x": 10340,
+   "y": 1783
+  },
+  {
+   "file": "G6.html",
+   "page": "origin",
+   "title": "G6 · Give · the link's card in a chat: private and public, English",
+   "w": 390,
+   "h": 1123,
+   "x": 10810,
+   "y": 0
+  },
+  {
+   "file": "G6Km.html",
+   "page": "origin",
+   "title": "G6 · Give · the link's card in a chat: private and public, Khmer",
+   "w": 390,
+   "h": 1254,
+   "x": 10810,
+   "y": 1783
+  },
+  {
+   "file": "G7.html",
+   "page": "origin",
+   "title": "G7 · Give · the gift page (anyone with the link), English",
+   "w": 390,
+   "h": 844,
+   "x": 11280,
+   "y": 0
+  },
+  {
+   "file": "G7Km.html",
+   "page": "origin",
+   "title": "G7 · Give · the gift page (anyone with the link), Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 11280,
+   "y": 1783
+  },
+  {
+   "file": "G8.html",
+   "page": "origin",
+   "title": "G8 · Give · the gift page, locked to an @name, English",
+   "w": 390,
+   "h": 844,
+   "x": 11750,
+   "y": 0
+  },
+  {
+   "file": "G8Km.html",
+   "page": "origin",
+   "title": "G8 · Give · the gift page, locked to an @name, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 11750,
+   "y": 1783
+  },
+  {
+   "file": "G9.html",
+   "page": "origin",
+   "title": "G9 · Give · the gift page afterward: kept (private, public) · withdrawn, English",
+   "w": 390,
+   "h": 844,
+   "x": 12220,
+   "y": 0
+  },
+  {
+   "file": "G9Km.html",
+   "page": "origin",
+   "title": "G9 · Give · the gift page afterward: kept (private, public) · withdrawn, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 12220,
+   "y": 1783
+  },
+  {
+   "file": "G10.html",
+   "page": "origin",
+   "title": "G10 · Give · kept: it's yours, English",
+   "w": 390,
+   "h": 844,
+   "x": 12690,
+   "y": 0
+  },
+  {
+   "file": "G10Km.html",
+   "page": "origin",
+   "title": "G10 · Give · kept: it's yours, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 12690,
+   "y": 1783
+  },
+  {
+   "file": "G11.html",
+   "page": "origin",
+   "title": "G11 · Give · Your kept files: given to you, Thank them, English",
+   "w": 390,
+   "h": 844,
+   "x": 13160,
+   "y": 0
+  },
+  {
+   "file": "G11Km.html",
+   "page": "origin",
+   "title": "G11 · Give · Your kept files: given to you, Thank them, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 13160,
+   "y": 1783
+  },
+  {
+   "file": "G12.html",
+   "page": "origin",
+   "title": "G12 · Give · back from the thank's press, English",
+   "w": 390,
+   "h": 844,
+   "x": 13630,
+   "y": 0
+  },
+  {
+   "file": "G12Km.html",
+   "page": "origin",
+   "title": "G12 · Give · back from the thank's press, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 13630,
+   "y": 1783
+  },
+  {
+   "file": "G13.html",
+   "page": "origin",
+   "title": "G13 · Give · alerts in Settings, English",
+   "w": 390,
+   "h": 844,
+   "x": 14100,
+   "y": 0
+  },
+  {
+   "file": "G13Km.html",
+   "page": "origin",
+   "title": "G13 · Give · alerts in Settings, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 14100,
+   "y": 1783
+  },
+  {
    "file": "R1Dark.html",
    "page": "registry",
    "title": "R1 · dark pass, English",
@@ -1837,6 +2071,15 @@
    "w": 390,
    "h": 863,
    "x": 0,
+   "y": 3657
+  },
+  {
+   "file": "G7Dark.html",
+   "page": "origin",
+   "title": "G7 · dark pass, English",
+   "w": 390,
+   "h": 844,
+   "x": 470,
    "y": 3657
   },
   {
