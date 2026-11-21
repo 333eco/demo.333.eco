@@ -73,6 +73,11 @@
      "km": "(បង្ហាញតែជាភាសាខ្មែរ)"
     },
     {
+     "key": "appears",
+     "en": "Where it appears",
+     "km": "កន្លែងដែលវាលេចឡើង"
+    },
+    {
      "key": "questions",
      "en": "Questions",
      "km": "សំណួរ"

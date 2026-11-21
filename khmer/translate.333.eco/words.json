@@ -60,6 +60,11 @@
      "km": "(បង្ហាញតែជាភាសាខ្មែរ)",
      "status": "draft"
     },
+    "appears": {
+     "en": "Where it appears",
+     "km": "កន្លែងដែលវាលេចឡើង",
+     "status": "draft"
+    },
     "questions": {
      "en": "Questions",
      "km": "សំណួរ",

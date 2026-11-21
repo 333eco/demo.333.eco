@@ -40,7 +40,7 @@ const marked = (s, lang) => {
 };
 const day = (ms) => { const d = new Date(ms); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; };
 
-let sheet, entries, rows = [], role = null, online = true, filter = "all", query = "", open = null, lastLoad = 0;
+let sheet, entries, rows = [], byKey = new Map(), role = null, online = true, filter = "all", query = "", open = null, lastLoad = 0;
 
 async function loadRows() {
   // the admin's link reads the export, which names each reviewer; everyone else reads the public rows, which name no one
@@ -51,12 +51,16 @@ async function loadRows() {
   return (await r.json()).entries;
 }
 
+// the store's rows by key, rebuilt whenever rows change: every entry's state then reads only its own rows
+function reindex() { byKey = new Map(); for (const r of rows) { const a = byKey.get(r.key); if (a) a.push(r); else byKey.set(r.key, [r]); } }
+const st = (e) => stateOf(e, byKey.get(e.key) ?? []);
+
 function header() {
   const bar = document.getElementById("status");
   bar.replaceChildren();
   const msg = !online ? "offline" : role ? "writer" : TOKEN ? "badLink" : "viewOnly";
   bar.append(el("p", { class: `banner ${!online || (TOKEN && !role) ? "warn" : role ? "ok" : ""}` }, bi(msg)));
-  const done = entries.filter((e) => stateOf(e, rows).status !== "todo").length;
+  const done = entries.filter((e) => st(e).status !== "todo").length;
   const all = entries.length, todo = all - done;
   const find = el("input", { type: "search", id: "find", placeholder: `${T.findHint[0]} · ${T.findHint[1]}`, autocomplete: "off" });
   find.value = query;
@@ -80,7 +84,7 @@ function history(s) {
 }
 
 function card(e) {
-  const s = stateOf(e, rows);
+  const s = st(e);
   const unsent = ["text", "note"].filter((k) => store.get(DRAFT_KEY(e.key, k)));
   const art = el("article", { class: `card ${s.status}${e.waiting ? " long" : ""}`, id: "e-" + e.key, "data-key": e.key });
   art.append(el("div", { class: "head" },
@@ -91,6 +95,7 @@ function card(e) {
     unsent.length ? el("span", { class: "unsent" }, bi("unsent")) : null,
     el("code", { class: "key", text: e.key })));
   art.append(el("div", { class: "en" }, e.en ? marked(e.en, "en") : bi("khmerOnly")));
+  if (e.note) art.append(el("p", { class: "appears" }, el("span", { class: "lbl" }, bi("appears")), el("span", { lang: "en", text: e.note })));
   art.append(el("div", { class: "km" }, s.khmer ? marked(s.khmer, "km") : el("span", { class: "none" }, bi("noKhmer"))));
   if (s.latest && e.km && s.khmer !== e.km) art.append(el("details", { class: "draft" }, el("summary", {}, bi("draft")), el("div", {}, marked(e.km, "km"))));
   art.append(history(s) ?? "");
@@ -106,8 +111,8 @@ function card(e) {
       const acts = el("div", { class: "acts" });
       const current = s.status === "approved" && !s.draftChanged && !s.englishChanged;
       if (e.km && !current) acts.append(el("button", { type: "button", class: "primary", onclick: (ev) => save(e, { kind: "approve", km: e.km }, ev.currentTarget) }, bi("approve")));
-      acts.append(el("button", { type: "button", onclick: () => { open = { key: e.key, kind: "text" }; render(e.key); } }, bi("correct")));
-      acts.append(el("button", { type: "button", onclick: () => { open = { key: e.key, kind: "note" }; render(e.key); } }, bi("ask")));
+      acts.append(el("button", { type: "button", onclick: () => { open = { key: e.key, kind: "text" }; redraw(e.key); } }, bi("correct")));
+      acts.append(el("button", { type: "button", onclick: () => { open = { key: e.key, kind: "note" }; redraw(e.key); } }, bi("ask")));
       art.append(acts);
     }
   }
@@ -144,7 +149,7 @@ function editor(e, s) {
     save(e, isNote ? { kind: "note", note: v } : { kind: "text", km: v }, saveBtn, msg, dk);
   } },
   el("label", { for: id }, bi(isNote ? "yourQuestion" : "yourKhmer")), box, msg,
-  el("div", { class: "acts" }, saveBtn, el("button", { type: "button", onclick: () => { clearTimeout(keep); store.del(dk); open = null; render(e.key); } }, bi("cancel"))));
+  el("div", { class: "acts" }, saveBtn, el("button", { type: "button", onclick: () => { clearTimeout(keep); store.del(dk); open = null; redraw(e.key); } }, bi("cancel"))));
   queueMicrotask(() => box.focus());
   return form;
 }
@@ -166,8 +171,9 @@ async function save(e, row, btn, msg, dk) {
       const { saved } = await r.json();
       if (dk) store.del(dk);
       rows.push({ id: saved[0].id, at: saved[0].at, key: e.key, base_en: e.en, base_km: e.km ?? null, km: null, note: null, ...row, ...(role === "admin" ? { reviewer: "admin" } : {}) });
+      reindex();
       open = null;
-      render(e.key, "saved");
+      redraw(e.key, "saved");
       return;
     }
     restore();
@@ -191,7 +197,7 @@ function renderList(focusKey, note) {
   list.replaceChildren();
   let group = null, section = null, shown = 0;
   for (const e of entries) {
-    const s = stateOf(e, rows);
+    const s = st(e);
     if (filter === "todo" && s.status !== "todo" && e.key !== focusKey) continue;
     if (!matches(e, s, query) && e.key !== focusKey) continue;
     if (e.group !== group) {
@@ -215,13 +221,24 @@ function render(focusKey, note) {
   renderList(focusKey, note);
 }
 
+/** one entry changed: replace its card (and the header's count) in place — a sheet can hold thousands of entries */
+function redraw(key, note) {
+  const old = document.getElementById("e-" + key);
+  const e = entries.find((x) => x.key === key);
+  if (!old || !e) { render(key, note); return; }
+  const fresh = card(e);
+  old.replaceWith(fresh);
+  if (note) fresh.append(el("p", { class: "msg done", role: "status" }, bi(note)));
+  header();
+}
+
 // reopened (a tab come back to, a phone unlocked): read the store again, so each reviewer sees the other's latest entry
 async function refresh() {
   if (!online || open || Date.now() - lastLoad < 20_000) return;
   try {
     const fresh = await loadRows();
     const sig = (rs) => rs.length + ":" + (rs.at(-1)?.id ?? 0);
-    if (sig(fresh) !== sig(rows)) { rows = fresh; render(); }
+    if (sig(fresh) !== sig(rows)) { rows = fresh; reindex(); render(); }
   } catch {}
 }
 
@@ -241,6 +258,7 @@ async function main() {
     role = me?.role ?? null;
   }
   try { rows = await loadRows(); } catch { online = false; }
+  reindex();
   render();
   document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") refresh(); });
   window.addEventListener("focus", refresh);

@@ -65,6 +65,7 @@ export function checkSheet(s) {
       if (e.km !== null && typeof e.km !== "string") p.push(`${e.key}: km must be a string or null`);
       if (!e.en && !e.km) p.push(`${e.key}: neither English nor Khmer`);
       if ((e.en?.length ?? 0) > 8000 || (e.km?.length ?? 0) > 8000) p.push(`${e.key}: longer than 8000 characters (the store's cap)`);
+      if (e.note !== undefined && (typeof e.note !== "string" || e.note.length > 300)) p.push(`${e.key}: note must be a short string (where it appears, ≤300)`);
     }
   }
   return p;
@@ -75,7 +76,7 @@ export function matches(entry, state, q) {
   q = String(q ?? "").trim().toLowerCase();
   if (!q) return true;
   if (/^#?\d+$/.test(q)) return String(entry.n) === q.replace("#", "");
-  const hay = [entry.key, entry.en, entry.km, state?.khmer, ...(state?.earlier ?? []).map((r) => r.km), ...(state?.notes ?? []).map((r) => r.note)];
+  const hay = [entry.key, entry.en, entry.km, entry.note, state?.khmer, ...(state?.earlier ?? []).map((r) => r.km), ...(state?.notes ?? []).map((r) => r.note)];
   return hay.some((h) => typeof h === "string" && h.toLowerCase().includes(q));
 }
 
