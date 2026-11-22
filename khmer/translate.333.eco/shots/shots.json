@@ -1,5 +1,5 @@
 {
- "made": "2026-11-22T17:30:09.271Z",
+ "made": "2026-11-22T18:10:04.494Z",
  "viewport": {
   "width": 390,
   "height": 844
@@ -7,7 +7,7 @@
  "states": {
   "reviewer": {
    "url": "/khmer/translate.333.eco/#k=self-rev-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-   "found": 30,
+   "found": 36,
    "images": 7
   },
   "editor": {
@@ -198,6 +198,13 @@
    "w": 302,
    "h": 24
   },
+  "next": {
+   "img": "reviewer-3.webp",
+   "x": 44,
+   "y": 641,
+   "w": 46,
+   "h": 38
+  },
   "all": {
    "img": "reviewer-4.webp",
    "x": 31,
@@ -228,10 +235,38 @@
   },
   "language": {
    "img": "reviewer-4.webp",
-   "x": 243,
+   "x": 16,
    "y": 20,
    "w": 131,
    "h": 45
+  },
+  "scheme": {
+   "img": "reviewer-4.webp",
+   "x": 242,
+   "y": 20,
+   "w": 132,
+   "h": 44
+  },
+  "schemeAuto": {
+   "img": "reviewer-4.webp",
+   "x": 246,
+   "y": 24,
+   "w": 40,
+   "h": 36
+  },
+  "schemeLight": {
+   "img": "reviewer-4.webp",
+   "x": 288,
+   "y": 24,
+   "w": 40,
+   "h": 36
+  },
+  "schemeDark": {
+   "img": "reviewer-4.webp",
+   "x": 330,
+   "y": 24,
+   "w": 40,
+   "h": 36
   },
   "writer": {
    "img": "reviewer-4.webp",
@@ -253,6 +288,13 @@
    "y": 502,
    "w": 327,
    "h": 182
+  },
+  "leafKhmer": {
+   "img": "reviewer-4.webp",
+   "x": 20,
+   "y": 24,
+   "w": 48,
+   "h": 37
   },
   "draftChanged": {
    "img": "reviewer-5.webp",
@@ -409,6 +451,36 @@
   "tooMany",
   "noScript",
   "fromCommit",
-  "homeNone"
+  "homeNone",
+  "homeTasks",
+  "taskAll",
+  "taskPrivate",
+  "taskNeedLink",
+  "taskNotYours",
+  "typeLede",
+  "typeWhy",
+  "typeAtthakatha",
+  "typeTika",
+  "typeKhmer2009",
+  "pageN",
+  "pdfPage",
+  "pagesDone",
+  "pageDone",
+  "pageTodo",
+  "yourTyping",
+  "zoomIn",
+  "zoomOut",
+  "prev",
+  "chooseLede",
+  "chooseDiff",
+  "volPage",
+  "leafPali",
+  "savedOn",
+  "newest",
+  "thisOne",
+  "neither",
+  "chosen",
+  "choicesDone",
+  "machineReading"
  ]
 }
