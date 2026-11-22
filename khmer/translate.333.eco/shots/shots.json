@@ -1,0 +1,406 @@
+{
+ "made": "2026-11-22T07:00:14.168Z",
+ "viewport": {
+  "width": 390,
+  "height": 844
+ },
+ "states": {
+  "reviewer": {
+   "url": "/khmer/translate.333.eco/#k=self-rev-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "found": 29,
+   "images": 8
+  },
+  "editor": {
+   "url": "/khmer/translate.333.eco/#k=self-rev-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "found": 2,
+   "images": 1
+  },
+  "question": {
+   "url": "/khmer/translate.333.eco/#k=self-rev-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "found": 1,
+   "images": 1
+  },
+  "placeholder": {
+   "url": "/khmer/translate.333.eco/#k=self-rev-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "found": 2,
+   "images": 1
+  },
+  "saved": {
+   "url": "/khmer/translate.333.eco/#k=self-rev-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "found": 1,
+   "images": 1
+  },
+  "not-saved": {
+   "url": "/khmer/translate.333.eco/#k=self-rev-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "found": 1,
+   "images": 1
+  },
+  "unsent": {
+   "url": "/khmer/translate.333.eco/#k=self-rev-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "found": 1,
+   "images": 1
+  },
+  "find-nothing": {
+   "url": "/khmer/translate.333.eco/#k=self-rev-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+   "found": 1,
+   "images": 1
+  },
+  "admin": {
+   "url": "/khmer/translate.333.eco/#k=self-admin-bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+   "found": 1,
+   "images": 1
+  },
+  "view-only": {
+   "url": "/khmer/translate.333.eco/",
+   "found": 1,
+   "images": 1
+  },
+  "canceled-link": {
+   "url": "/khmer/translate.333.eco/#k=self-gone-cccccccccccccccccccccccccccccc",
+   "found": 1,
+   "images": 1
+  },
+  "offline": {
+   "url": "http://localhost:8339/khmer/translate.333.eco/",
+   "found": 1,
+   "images": 1
+  },
+  "home": {
+   "url": "http://localhost:8793/",
+   "found": 4,
+   "images": 1
+  }
+ },
+ "entries": {
+  "approve": {
+   "img": "reviewer-0.webp",
+   "x": 60,
+   "y": 411,
+   "w": 65,
+   "h": 22
+  },
+  "correct": {
+   "img": "reviewer-0.webp",
+   "x": 168,
+   "y": 311,
+   "w": 48,
+   "h": 26
+  },
+  "ask": {
+   "img": "reviewer-0.webp",
+   "x": 254,
+   "y": 311,
+   "w": 75,
+   "h": 26
+  },
+  "approved": {
+   "img": "reviewer-0.webp",
+   "x": 60,
+   "y": 411,
+   "w": 65,
+   "h": 22
+  },
+  "draft": {
+   "img": "reviewer-0.webp",
+   "x": 49,
+   "y": 188,
+   "w": 113,
+   "h": 24
+  },
+  "earlier": {
+   "img": "reviewer-0.webp",
+   "x": 49,
+   "y": 245,
+   "w": 98,
+   "h": 24
+  },
+  "wholeScreen": {
+   "img": "reviewer-0.webp",
+   "x": 34,
+   "y": 108,
+   "w": 67,
+   "h": 24
+  },
+  "save": {
+   "img": "reviewer-1.webp",
+   "x": 34,
+   "y": 404,
+   "w": 55,
+   "h": 36
+  },
+  "todo": {
+   "img": "reviewer-1.webp",
+   "x": 57,
+   "y": 651,
+   "w": 86,
+   "h": 22
+  },
+  "englishChanged": {
+   "img": "reviewer-1.webp",
+   "x": 44,
+   "y": 455,
+   "w": 305,
+   "h": 48
+  },
+  "corrected": {
+   "img": "reviewer-2.webp",
+   "x": 60,
+   "y": 411,
+   "w": 57,
+   "h": 22
+  },
+  "appears": {
+   "img": "reviewer-2.webp",
+   "x": 34,
+   "y": 480,
+   "w": 107,
+   "h": 22
+  },
+  "picture": {
+   "img": "reviewer-2.webp",
+   "x": 34,
+   "y": 511,
+   "w": 124,
+   "h": 22
+  },
+  "how3": {
+   "img": "reviewer-2.webp",
+   "x": 33,
+   "y": 55,
+   "w": 327,
+   "h": 122
+  },
+  "noKhmer": {
+   "img": "reviewer-3.webp",
+   "x": 31,
+   "y": 409,
+   "w": 116,
+   "h": 26
+  },
+  "khmerOnly": {
+   "img": "reviewer-3.webp",
+   "x": 31,
+   "y": 117,
+   "w": 132,
+   "h": 27
+  },
+  "questions": {
+   "img": "reviewer-3.webp",
+   "x": 31,
+   "y": 694,
+   "w": 328,
+   "h": 24
+  },
+  "all": {
+   "img": "reviewer-4.webp",
+   "x": 31,
+   "y": 363,
+   "w": 76,
+   "h": 26
+  },
+  "progress": {
+   "img": "reviewer-4.webp",
+   "x": 16,
+   "y": 290,
+   "w": 176,
+   "h": 27
+  },
+  "find": {
+   "img": "reviewer-4.webp",
+   "x": 16,
+   "y": 431,
+   "w": 39,
+   "h": 24
+  },
+  "findHint": {
+   "img": "reviewer-4.webp",
+   "x": 16,
+   "y": 461,
+   "w": 358,
+   "h": 48
+  },
+  "writer": {
+   "img": "reviewer-4.webp",
+   "x": 30,
+   "y": 176,
+   "w": 330,
+   "h": 54
+  },
+  "how": {
+   "img": "reviewer-4.webp",
+   "x": 50,
+   "y": 532,
+   "w": 76,
+   "h": 27
+  },
+  "how1": {
+   "img": "reviewer-4.webp",
+   "x": 33,
+   "y": 590,
+   "w": 327,
+   "h": 182
+  },
+  "draftChanged": {
+   "img": "reviewer-5.webp",
+   "x": 44,
+   "y": 398,
+   "w": 305,
+   "h": 48
+  },
+  "how2": {
+   "img": "reviewer-6.webp",
+   "x": 33,
+   "y": 377,
+   "w": 327,
+   "h": 91
+  },
+  "made": {
+   "img": "reviewer-7.webp",
+   "x": 16,
+   "y": 513,
+   "w": 358,
+   "h": 25
+  },
+  "kept": {
+   "img": "reviewer-7.webp",
+   "x": 16,
+   "y": 575,
+   "w": 358,
+   "h": 74
+  },
+  "ownDraft": {
+   "img": "reviewer-7.webp",
+   "x": 16,
+   "y": 735,
+   "w": 358,
+   "h": 25
+  },
+  "cancel": {
+   "img": "editor-0.webp",
+   "x": 125,
+   "y": 410,
+   "w": 43,
+   "h": 26
+  },
+  "yourKhmer": {
+   "img": "editor-0.webp",
+   "x": 31,
+   "y": 200,
+   "w": 91,
+   "h": 24
+  },
+  "yourQuestion": {
+   "img": "question-0.webp",
+   "x": 31,
+   "y": 410,
+   "w": 78,
+   "h": 24
+  },
+  "keep": {
+   "img": "placeholder-0.webp",
+   "x": 31,
+   "y": 410,
+   "w": 328,
+   "h": 24
+  },
+  "again": {
+   "img": "placeholder-0.webp",
+   "x": 31,
+   "y": 483,
+   "w": 328,
+   "h": 24
+  },
+  "saved": {
+   "img": "saved-0.webp",
+   "x": 34,
+   "y": 421,
+   "w": 325,
+   "h": 24
+  },
+  "notSaved": {
+   "img": "not-saved-0.webp",
+   "x": 31,
+   "y": 398,
+   "w": 328,
+   "h": 48
+  },
+  "unsent": {
+   "img": "unsent-0.webp",
+   "x": 39,
+   "y": 402,
+   "w": 200,
+   "h": 41
+  },
+  "nothing": {
+   "img": "find-nothing-0.webp",
+   "x": 16,
+   "y": 429,
+   "w": 358,
+   "h": 27
+  },
+  "by": {
+   "img": "admin-0.webp",
+   "x": 54,
+   "y": 412,
+   "w": 60,
+   "h": 21
+  },
+  "viewOnly": {
+   "img": "view-only-0.webp",
+   "x": 30,
+   "y": 176,
+   "w": 330,
+   "h": 54
+  },
+  "badLink": {
+   "img": "canceled-link-0.webp",
+   "x": 30,
+   "y": 176,
+   "w": 330,
+   "h": 54
+  },
+  "offline": {
+   "img": "offline-0.webp",
+   "x": 30,
+   "y": 176,
+   "w": 330,
+   "h": 82
+  },
+  "title": {
+   "img": "home-0.webp",
+   "x": 16,
+   "y": 25,
+   "w": 171,
+   "h": 43
+  },
+  "homeLede": {
+   "img": "home-0.webp",
+   "x": 16,
+   "y": 78,
+   "w": 358,
+   "h": 65
+  },
+  "homeViewOnly": {
+   "img": "home-0.webp",
+   "x": 30,
+   "y": 229,
+   "w": 330,
+   "h": 97
+  },
+  "homeAbout": {
+   "img": "home-0.webp",
+   "x": 16,
+   "y": 519,
+   "w": 358,
+   "h": 53
+  }
+ },
+ "missed": [
+  "working",
+  "show",
+  "linkGone",
+  "tooMany",
+  "noScript",
+  "homeNone"
+ ]
+}
