@@ -1,5 +1,5 @@
 {
- "made": "2026-11-22T08:39:18.555Z",
+ "made": "2026-11-22T17:30:09.271Z",
  "viewport": {
   "width": 390,
   "height": 844
@@ -81,15 +81,15 @@
   },
   "correct": {
    "img": "reviewer-0.webp",
-   "x": 162,
-   "y": 333,
+   "x": 175,
+   "y": 319,
    "w": 42,
    "h": 26
   },
   "ask": {
    "img": "reviewer-0.webp",
-   "x": 242,
-   "y": 333,
+   "x": 255,
+   "y": 319,
    "w": 55,
    "h": 26
   },
@@ -102,44 +102,44 @@
   },
   "draft": {
    "img": "reviewer-0.webp",
-   "x": 49,
-   "y": 254,
+   "x": 62,
+   "y": 238,
    "w": 113,
    "h": 24
   },
   "earlier": {
    "img": "reviewer-0.webp",
-   "x": 49,
-   "y": 288,
+   "x": 62,
+   "y": 272,
    "w": 98,
    "h": 24
   },
   "wholeScreen": {
    "img": "reviewer-0.webp",
    "x": 34,
-   "y": 174,
+   "y": 141,
    "w": 67,
    "h": 24
   },
   "save": {
    "img": "reviewer-1.webp",
-   "x": 34,
-   "y": 404,
-   "w": 55,
-   "h": 36
+   "x": 47,
+   "y": 403,
+   "w": 58,
+   "h": 38
   },
   "todo": {
    "img": "reviewer-1.webp",
    "x": 57,
-   "y": 606,
+   "y": 625,
    "w": 86,
    "h": 22
   },
   "englishChanged": {
    "img": "reviewer-1.webp",
-   "x": 44,
-   "y": 455,
-   "w": 305,
+   "x": 57,
+   "y": 457,
+   "w": 279,
    "h": 48
   },
   "corrected": {
@@ -179,7 +179,7 @@
   },
   "noKhmer": {
    "img": "reviewer-3.webp",
-   "x": 31,
+   "x": 44,
    "y": 409,
    "w": 116,
    "h": 26
@@ -187,15 +187,15 @@
   "khmerOnly": {
    "img": "reviewer-3.webp",
    "x": 31,
-   "y": 163,
+   "y": 109,
    "w": 132,
    "h": 27
   },
   "questions": {
    "img": "reviewer-3.webp",
-   "x": 31,
-   "y": 652,
-   "w": 328,
+   "x": 44,
+   "y": 689,
+   "w": 302,
    "h": 24
   },
   "all": {
@@ -256,15 +256,15 @@
   },
   "draftChanged": {
    "img": "reviewer-5.webp",
-   "x": 44,
+   "x": 57,
    "y": 398,
-   "w": 305,
+   "w": 279,
    "h": 48
   },
   "made": {
    "img": "reviewer-6.webp",
    "x": 16,
-   "y": 654,
+   "y": 655,
    "w": 358,
    "h": 25
   },
@@ -284,57 +284,57 @@
   },
   "cancel": {
    "img": "editor-0.webp",
-   "x": 125,
+   "x": 138,
    "y": 409,
    "w": 43,
    "h": 26
   },
   "yourKhmer": {
    "img": "editor-0.webp",
-   "x": 31,
-   "y": 222,
+   "x": 44,
+   "y": 220,
    "w": 91,
    "h": 24
   },
   "yourQuestion": {
    "img": "question-0.webp",
-   "x": 31,
+   "x": 44,
    "y": 410,
    "w": 78,
    "h": 24
   },
   "keep": {
    "img": "placeholder-0.webp",
-   "x": 31,
+   "x": 44,
    "y": 410,
-   "w": 328,
+   "w": 302,
    "h": 24
   },
   "again": {
    "img": "placeholder-0.webp",
-   "x": 31,
-   "y": 460,
-   "w": 328,
-   "h": 24
+   "x": 44,
+   "y": 461,
+   "w": 302,
+   "h": 48
   },
   "saved": {
    "img": "saved-0.webp",
    "x": 34,
-   "y": 586,
+   "y": 587,
    "w": 325,
    "h": 24
   },
   "notSaved": {
    "img": "not-saved-0.webp",
-   "x": 31,
-   "y": 399,
-   "w": 328,
+   "x": 44,
+   "y": 398,
+   "w": 302,
    "h": 48
   },
   "unsent": {
    "img": "unsent-0.webp",
    "x": 39,
-   "y": 412,
+   "y": 411,
    "w": 235,
    "h": 20
   },
@@ -347,7 +347,7 @@
   },
   "by": {
    "img": "admin-0.webp",
-   "x": 192,
+   "x": 205,
    "y": 412,
    "w": 60,
    "h": 20
@@ -408,6 +408,7 @@
   "linkGone",
   "tooMany",
   "noScript",
+  "fromCommit",
   "homeNone"
  ]
 }

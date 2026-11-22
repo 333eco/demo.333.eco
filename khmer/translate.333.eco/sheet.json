@@ -2,13 +2,16 @@
  "version": 1,
  "surface": "translate.333.eco",
  "title": "the Khmer review pages",
+ "title_km": "ទំព័រពិនិត្យភាសាខ្មែរ",
  "about": "The review pages themselves: their buttons, messages and instructions, and the home page that lists every site.",
+ "about_km": "ទំព័រពិនិត្យខ្លួនឯង៖ ប៊ូតុង សារ និងការណែនាំរបស់វា និងទំព័រដើមដែលរាយគេហទំព័រទាំងអស់។",
  "accent": "#7c3aed",
  "made": "2026-11-22",
  "commit": null,
  "groups": [
   {
    "name": "Review page · buttons and labels",
+   "name_km": "ទំព័រពិនិត្យ · ប៊ូតុង និងស្លាក",
    "entries": [
     {
      "key": "approve",
@@ -154,6 +157,7 @@
   },
   {
    "name": "Review page · messages",
+   "name_km": "ទំព័រពិនិត្យ · សារ",
    "entries": [
     {
      "key": "writer",
@@ -219,6 +223,7 @@
   },
   {
    "name": "Review page · instructions and footer",
+   "name_km": "ទំព័រពិនិត្យ · ការណែនាំ និងបាតទំព័រ",
    "entries": [
     {
      "key": "title",
@@ -264,11 +269,17 @@
      "key": "noScript",
      "en": "This page needs JavaScript to save. It can still be printed for a review on paper.",
      "km": "ទំព័រនេះត្រូវការ JavaScript ដើម្បីរក្សាទុក។ អ្នកនៅតែអាចបោះពុម្ពវា ដើម្បីពិនិត្យលើក្រដាសបាន។"
+    },
+    {
+     "key": "fromCommit",
+     "en": "From {site} at {commit}.",
+     "km": "ពី {site} នៅ {commit}។"
     }
    ]
   },
   {
    "name": "Home page · translate.333.eco",
+   "name_km": "ទំព័រដើម · translate.333.eco",
    "entries": [
     {
      "key": "homeLede",
