@@ -4,7 +4,7 @@
  "title": "the Khmer review pages",
  "about": "The review pages themselves: their buttons, messages and instructions, and the home page that lists every site.",
  "accent": "#7c3aed",
- "made": "2026-11-21",
+ "made": "2026-11-22",
  "commit": null,
  "groups": [
   {
@@ -144,6 +144,11 @@
      "key": "picture",
      "en": "Where it is on the screen",
      "km": "ទីតាំងរបស់វានៅលើអេក្រង់"
+    },
+    {
+     "key": "language",
+     "en": "Language",
+     "km": "ភាសា"
     }
    ]
   },

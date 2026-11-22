@@ -1,5 +1,5 @@
 {
- "made": "2026-11-22T07:00:14.168Z",
+ "made": "2026-11-22T08:39:18.555Z",
  "viewport": {
   "width": 390,
   "height": 844
@@ -7,8 +7,8 @@
  "states": {
   "reviewer": {
    "url": "/khmer/translate.333.eco/#k=self-rev-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
-   "found": 29,
-   "images": 8
+   "found": 30,
+   "images": 7
   },
   "editor": {
    "url": "/khmer/translate.333.eco/#k=self-rev-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
@@ -81,16 +81,16 @@
   },
   "correct": {
    "img": "reviewer-0.webp",
-   "x": 168,
-   "y": 311,
-   "w": 48,
+   "x": 162,
+   "y": 333,
+   "w": 42,
    "h": 26
   },
   "ask": {
    "img": "reviewer-0.webp",
-   "x": 254,
-   "y": 311,
-   "w": 75,
+   "x": 242,
+   "y": 333,
+   "w": 55,
    "h": 26
   },
   "approved": {
@@ -103,21 +103,21 @@
   "draft": {
    "img": "reviewer-0.webp",
    "x": 49,
-   "y": 188,
+   "y": 254,
    "w": 113,
    "h": 24
   },
   "earlier": {
    "img": "reviewer-0.webp",
    "x": 49,
-   "y": 245,
+   "y": 288,
    "w": 98,
    "h": 24
   },
   "wholeScreen": {
    "img": "reviewer-0.webp",
    "x": 34,
-   "y": 108,
+   "y": 174,
    "w": 67,
    "h": 24
   },
@@ -131,7 +131,7 @@
   "todo": {
    "img": "reviewer-1.webp",
    "x": 57,
-   "y": 651,
+   "y": 606,
    "w": 86,
    "h": 22
   },
@@ -152,21 +152,28 @@
   "appears": {
    "img": "reviewer-2.webp",
    "x": 34,
-   "y": 480,
+   "y": 478,
    "w": 107,
    "h": 22
   },
   "picture": {
    "img": "reviewer-2.webp",
    "x": 34,
-   "y": 511,
+   "y": 510,
    "w": 124,
    "h": 22
+  },
+  "how2": {
+   "img": "reviewer-2.webp",
+   "x": 33,
+   "y": 78,
+   "w": 327,
+   "h": 91
   },
   "how3": {
    "img": "reviewer-2.webp",
    "x": 33,
-   "y": 55,
+   "y": 177,
    "w": 327,
    "h": 122
   },
@@ -180,63 +187,70 @@
   "khmerOnly": {
    "img": "reviewer-3.webp",
    "x": 31,
-   "y": 117,
+   "y": 163,
    "w": 132,
    "h": 27
   },
   "questions": {
    "img": "reviewer-3.webp",
    "x": 31,
-   "y": 694,
+   "y": 652,
    "w": 328,
    "h": 24
   },
   "all": {
    "img": "reviewer-4.webp",
    "x": 31,
-   "y": 363,
+   "y": 321,
    "w": 76,
    "h": 26
   },
   "progress": {
    "img": "reviewer-4.webp",
    "x": 16,
-   "y": 290,
+   "y": 273,
    "w": 176,
    "h": 27
   },
   "find": {
    "img": "reviewer-4.webp",
    "x": 16,
-   "y": 431,
+   "y": 367,
    "w": 39,
    "h": 24
   },
   "findHint": {
    "img": "reviewer-4.webp",
    "x": 16,
-   "y": 461,
+   "y": 395,
    "w": 358,
    "h": 48
+  },
+  "language": {
+   "img": "reviewer-4.webp",
+   "x": 243,
+   "y": 20,
+   "w": 131,
+   "h": 45
   },
   "writer": {
    "img": "reviewer-4.webp",
    "x": 30,
-   "y": 176,
+   "y": 201,
    "w": 330,
    "h": 54
   },
   "how": {
    "img": "reviewer-4.webp",
    "x": 50,
-   "y": 532,
-   "w": 76,
+   "y": 466,
+   "w": 73,
    "h": 27
   },
   "how1": {
    "img": "reviewer-4.webp",
    "x": 33,
-   "y": 590,
+   "y": 502,
    "w": 327,
    "h": 182
   },
@@ -247,45 +261,38 @@
    "w": 305,
    "h": 48
   },
-  "how2": {
-   "img": "reviewer-6.webp",
-   "x": 33,
-   "y": 377,
-   "w": 327,
-   "h": 91
-  },
   "made": {
-   "img": "reviewer-7.webp",
+   "img": "reviewer-6.webp",
    "x": 16,
-   "y": 513,
+   "y": 654,
    "w": 358,
    "h": 25
   },
   "kept": {
-   "img": "reviewer-7.webp",
+   "img": "reviewer-6.webp",
    "x": 16,
-   "y": 575,
+   "y": 685,
    "w": 358,
    "h": 74
   },
   "ownDraft": {
-   "img": "reviewer-7.webp",
+   "img": "reviewer-6.webp",
    "x": 16,
-   "y": 735,
+   "y": 765,
    "w": 358,
    "h": 25
   },
   "cancel": {
    "img": "editor-0.webp",
    "x": 125,
-   "y": 410,
+   "y": 409,
    "w": 43,
    "h": 26
   },
   "yourKhmer": {
    "img": "editor-0.webp",
    "x": 31,
-   "y": 200,
+   "y": 222,
    "w": 91,
    "h": 24
   },
@@ -306,91 +313,91 @@
   "again": {
    "img": "placeholder-0.webp",
    "x": 31,
-   "y": 483,
+   "y": 460,
    "w": 328,
    "h": 24
   },
   "saved": {
    "img": "saved-0.webp",
    "x": 34,
-   "y": 421,
+   "y": 586,
    "w": 325,
    "h": 24
   },
   "notSaved": {
    "img": "not-saved-0.webp",
    "x": 31,
-   "y": 398,
+   "y": 399,
    "w": 328,
    "h": 48
   },
   "unsent": {
    "img": "unsent-0.webp",
    "x": 39,
-   "y": 402,
-   "w": 200,
-   "h": 41
+   "y": 412,
+   "w": 235,
+   "h": 20
   },
   "nothing": {
    "img": "find-nothing-0.webp",
    "x": 16,
-   "y": 429,
+   "y": 596,
    "w": 358,
    "h": 27
   },
   "by": {
    "img": "admin-0.webp",
-   "x": 54,
+   "x": 192,
    "y": 412,
    "w": 60,
-   "h": 21
+   "h": 20
   },
   "viewOnly": {
    "img": "view-only-0.webp",
    "x": 30,
-   "y": 176,
+   "y": 201,
    "w": 330,
    "h": 54
   },
   "badLink": {
    "img": "canceled-link-0.webp",
    "x": 30,
-   "y": 176,
+   "y": 201,
    "w": 330,
    "h": 54
   },
   "offline": {
    "img": "offline-0.webp",
    "x": 30,
-   "y": 176,
+   "y": 201,
    "w": 330,
    "h": 82
   },
   "title": {
    "img": "home-0.webp",
    "x": 16,
-   "y": 25,
+   "y": 76,
    "w": 171,
    "h": 43
   },
   "homeLede": {
    "img": "home-0.webp",
    "x": 16,
-   "y": 78,
+   "y": 128,
    "w": 358,
    "h": 65
   },
   "homeViewOnly": {
    "img": "home-0.webp",
    "x": 30,
-   "y": 229,
+   "y": 215,
    "w": 330,
    "h": 97
   },
   "homeAbout": {
    "img": "home-0.webp",
    "x": 16,
-   "y": 519,
+   "y": 444,
    "w": 358,
    "h": 53
   }
