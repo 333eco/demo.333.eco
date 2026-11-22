@@ -152,6 +152,26 @@
      "key": "language",
      "en": "Language",
      "km": "ភាសា"
+    },
+    {
+     "key": "scheme",
+     "en": "Light or dark",
+     "km": "ភ្លឺ ឬងងឹត"
+    },
+    {
+     "key": "schemeAuto",
+     "en": "Same as this device",
+     "km": "ដូចឧបករណ៍នេះ"
+    },
+    {
+     "key": "schemeLight",
+     "en": "Light",
+     "km": "ភ្លឺ"
+    },
+    {
+     "key": "schemeDark",
+     "en": "Dark",
+     "km": "ងងឹត"
     }
    ]
   },
