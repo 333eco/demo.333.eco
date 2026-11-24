@@ -2015,7 +2015,7 @@
    "page": "origin",
    "title": "M1 · Sign a file, with a mark (both choices unticked), English",
    "w": 390,
-   "h": 1068,
+   "h": 1188,
    "x": 14570,
    "y": 0
   },
@@ -2024,7 +2024,7 @@
    "page": "origin",
    "title": "M1 · Sign a file, with a mark (both choices unticked), Khmer",
    "w": 390,
-   "h": 1203,
+   "h": 1337,
    "x": 14570,
    "y": 1783
   },
@@ -2033,7 +2033,7 @@
    "page": "origin",
    "title": "M2 · Where the code goes: a corner or a strip, English",
    "w": 390,
-   "h": 1163,
+   "h": 1196,
    "x": 15040,
    "y": 0
   },
@@ -2042,7 +2042,7 @@
    "page": "origin",
    "title": "M2 · Where the code goes: a corner or a strip, Khmer",
    "w": 390,
-   "h": 1249,
+   "h": 1285,
    "x": 15040,
    "y": 1783
   },
@@ -2069,7 +2069,7 @@
    "page": "origin",
    "title": "M4 · The mark's page (anyone with the code), English",
    "w": 390,
-   "h": 901,
+   "h": 941,
    "x": 15980,
    "y": 0
   },
@@ -2078,7 +2078,7 @@
    "page": "origin",
    "title": "M4 · The mark's page (anyone with the code), Khmer",
    "w": 390,
-   "h": 983,
+   "h": 1026,
    "x": 15980,
    "y": 1783
   },
@@ -2195,7 +2195,7 @@
    "page": "origin",
    "title": "M4 · dark pass, English",
    "w": 390,
-   "h": 901,
+   "h": 941,
    "x": 940,
    "y": 3657
   },

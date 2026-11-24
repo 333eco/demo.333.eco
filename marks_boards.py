@@ -28,12 +28,13 @@ DT = {
   "m_h": "Add a mark to the picture", "m_p": "A mark leads people from the picture to its page. It is yours to choose.",
   "inv": "A mark you can't see", "inv_p": "It changes the colors very slightly, and usually still works after the picture is resized, posted or captured in a screenshot.",
   "code": "A code people can scan", "code_p": "A heart in a corner, or a strip under the picture with the address in words.",
-  "pub": "The page is public: it shows this picture, the day it was signed and how it was made. A small copy leaves this device for that page.",
+  "nm": "Show my @name on its page", "nm_p": "@thon, from your name at 333.eco. It says you made this page.",
+  "pub": "The page is public: it shows this picture, the day it was signed and how it was made. The signed picture is sent to us once, to make the small copy that page shows. Only the small copy is kept.",
   "copy": "Anyone can copy a mark onto another picture, so the page shows yours to compare.",
-  "m2_h": "Where the code goes", "corner": "Corner", "strip": "Strip", "which": "Which corner", "corners": ("Top left", "Top right", "Bottom left", "Bottom right"),
-  "addr": "B.333.eco/7K2M-9QX4-B8T3", "scan": "Scan to open in B-Origin", "prev": "This is the picture you will sign, with its mark.", "back": "Back", "use": "Use this picture",
+  "m2_h": "Where the code goes", "corner": "Corner", "strip": "Strip", "which": "Which corner", "corners": ("Top left", "Top right", "Bottom left", "Bottom right"), "side": "Which side", "sides": ("Left", "Right"),
+  "addr": "B.333.eco/7K2M-9QX4-B8T3", "scan": "Scan to open in B-Origin℠", "prev": "This is the picture you will sign, with its mark.", "back": "Back", "use": "Use this picture",
   "m3_p": "Share the marked picture below. It is the exact file you signed.", "save": "Save the marked picture", "page": "Its page", "end": "End the mark", "m3_fine": "If you end it, the code stops leading here. Your record stays.",
-  "m4_h": "A signed picture", "day": "Signed", "dayv": "23 Nov 2026", "by": "Shown by", "byv": "@thon", "rec": "Public record", "recv": "No. 24",
+  "m4_h": "A signed picture", "day": "Signed", "dayv": "23 Nov 2026", "by": "Page made by", "byv": "@thon", "rec": "Public record", "recv": "No. 24",
   "saysh": "The signer says", "cmp_h": "Is yours the same?", "cmp_p": "Compare it with the picture above. If anything is different, yours isn't the one that was signed: an edited copy keeps its mark.",
   "chk": "Check my file", "never": "This page never asks for a password, a code or a payment.", "own": "Sign your own pictures at origin.333.eco",
   "m5_h": "Your file and this page", "a": "The exact file", "ap": "Every byte is the same as the file that was signed.",
@@ -52,12 +53,13 @@ DT = {
   "m_h": "បន្ថែមសញ្ញាមួយលើរូបភាព", "m_p": "សញ្ញានាំមនុស្សពីរូបភាព ទៅកាន់ទំព័ររបស់វា។ អ្នកជាអ្នកជ្រើសរើស។",
   "inv": "សញ្ញាដែលមើលមិនឃើញ", "inv_p": "វាប្តូរពណ៌បន្តិចបន្តួចប៉ុណ្ណោះ ហើយជាធម្មតានៅតែដំណើរការ ក្រោយពេលរូបភាពត្រូវបានប្តូរទំហំ បង្ហោះ ឬថតរូបអេក្រង់។",
   "code": "កូដដែលមនុស្សអាចស្កេន", "code_p": "បេះដូងមួយនៅជ្រុង ឬបន្ទះមួយនៅក្រោមរូបភាព ដែលមានអាសយដ្ឋានជាអក្សរ។",
-  "pub": "ទំព័រនេះជាសាធារណៈ៖ វាបង្ហាញរូបភាពនេះ ថ្ងៃដែលវាត្រូវបានចុះហត្ថលេខា និងរបៀបដែលវាត្រូវបានបង្កើត។ ច្បាប់ចម្លងតូចមួយចេញពីឧបករណ៍នេះ សម្រាប់ទំព័រនោះ។",
+  "nm": "បង្ហាញ @name របស់ខ្ញុំនៅលើទំព័ររបស់វា", "nm_p": "@thon ពីឈ្មោះរបស់អ្នកនៅ 333.eco។ វាប្រាប់ថាអ្នកបានបង្កើតទំព័រនេះ។",
+  "pub": "ទំព័រនេះជាសាធារណៈ៖ វាបង្ហាញរូបភាពនេះ ថ្ងៃដែលវាត្រូវបានចុះហត្ថលេខា និងរបៀបដែលវាត្រូវបានបង្កើត។ រូបភាពដែលបានចុះហត្ថលេខាត្រូវបានផ្ញើមកយើងម្តង ដើម្បីបង្កើតច្បាប់ចម្លងតូចដែលទំព័រនោះបង្ហាញ។ មានតែច្បាប់ចម្លងតូចទេដែលត្រូវបានរក្សាទុក។",
   "copy": "អ្នកណាក៏អាចចម្លងសញ្ញាទៅដាក់លើរូបភាពផ្សេងបាន ដូច្នេះទំព័រនេះបង្ហាញរូបភាពរបស់អ្នក ដើម្បីប្រៀបធៀប។",
-  "m2_h": "កន្លែងដាក់កូដ", "corner": "ជ្រុង", "strip": "បន្ទះ", "which": "ជ្រុងណា", "corners": ("លើឆ្វេង", "លើស្តាំ", "ក្រោមឆ្វេង", "ក្រោមស្តាំ"),
-  "addr": "B.333.eco/7K2M-9QX4-B8T3", "scan": "ស្កេនដើម្បីបើកក្នុង B-Origin", "prev": "នេះជារូបភាពដែលអ្នកនឹងចុះហត្ថលេខា ជាមួយសញ្ញារបស់វា។", "back": "ត្រឡប់ក្រោយ", "use": "ប្រើរូបភាពនេះ",
+  "m2_h": "កន្លែងដាក់កូដ", "corner": "ជ្រុង", "strip": "បន្ទះ", "which": "ជ្រុងណា", "corners": ("លើឆ្វេង", "លើស្តាំ", "ក្រោមឆ្វេង", "ក្រោមស្តាំ"), "side": "ខាងណា", "sides": ("ឆ្វេង", "ស្តាំ"),
+  "addr": "B.333.eco/7K2M-9QX4-B8T3", "scan": "ស្កេនដើម្បីបើកក្នុង B-Origin℠", "prev": "នេះជារូបភាពដែលអ្នកនឹងចុះហត្ថលេខា ជាមួយសញ្ញារបស់វា។", "back": "ត្រឡប់ក្រោយ", "use": "ប្រើរូបភាពនេះ",
   "m3_p": "ចែករំលែករូបភាពដែលមានសញ្ញាខាងក្រោម។ វាជាឯកសារដដែលដែលអ្នកបានចុះហត្ថលេខា។", "save": "រក្សាទុករូបភាពដែលមានសញ្ញា", "page": "ទំព័ររបស់វា", "end": "បញ្ចប់សញ្ញា", "m3_fine": "បើអ្នកបញ្ចប់វា កូដលែងនាំមកទីនេះ។ កំណត់ត្រារបស់អ្នកនៅដដែល។",
-  "m4_h": "រូបភាពដែលបានចុះហត្ថលេខា", "day": "ចុះហត្ថលេខា", "dayv": "២៣ វិច្ឆិកា ២០២៦", "by": "បង្ហាញដោយ", "byv": "@thon", "rec": "កំណត់ត្រាសាធារណៈ", "recv": "លេខ ២៤",
+  "m4_h": "រូបភាពដែលបានចុះហត្ថលេខា", "day": "ចុះហត្ថលេខា", "dayv": "២៣ វិច្ឆិកា ២០២៦", "by": "ទំព័របង្កើតដោយ", "byv": "@thon", "rec": "កំណត់ត្រាសាធារណៈ", "recv": "លេខ ២៤",
   "saysh": "អ្នកចុះហត្ថលេខានិយាយថា", "cmp_h": "របស់អ្នកដូចគ្នាទេ?", "cmp_p": "ប្រៀបធៀបវាជាមួយរូបភាពខាងលើ។ បើមានអ្វីខុសគ្នា របស់អ្នកមិនមែនជារូបភាពដែលបានចុះហត្ថលេខាទេ៖ ច្បាប់ដែលបានកែ នៅតែមានសញ្ញារបស់វា។",
   "chk": "ពិនិត្យឯកសាររបស់ខ្ញុំ", "never": "ទំព័រនេះមិនដែលសុំពាក្យសម្ងាត់ លេខកូដ ឬការបង់ប្រាក់ទេ។", "own": "ចុះហត្ថលេខាលើរូបភាពរបស់អ្នកនៅ origin.333.eco",
   "m5_h": "ឯកសាររបស់អ្នក និងទំព័រនេះ", "a": "ឯកសារដដែល", "ap": "គ្រប់បៃដូចគ្នានឹងឯកសារដែលបានចុះហត្ថលេខា។",
@@ -97,8 +99,8 @@ def _opt(h, p, on=False):
 def M1(t, d):
     return ("<h1>%s</h1><p class='lede'>%s</p>" % (d["h"], d["public"]) + '<div class="card"><div class="thumb">%s<div class="mono">%s</div></div></div>' % (_scene(96, 72), d["file"])
             + '<div class="card">%s%s</div>' % (_select(d["how"], d["howv"]), _select(d["rights"], d["rightsv"]))
-            + '<div class="card kkeep"><b>%s</b><p>%s</p>%s%s<p class="fine mfine">%s</p><p class="fine">%s</p></div>'
-            % (d["m_h"], d["m_p"], _opt(d["inv"], d["inv_p"]), _opt(d["code"], d["code_p"]), d["pub"], d["copy"])
+            + '<div class="card kkeep"><b>%s</b><p>%s</p>%s%s%s<p class="fine mfine">%s</p><p class="fine">%s</p></div>'
+            % (d["m_h"], d["m_p"], _opt(d["inv"], d["inv_p"]), _opt(d["code"], d["code_p"]), _opt(d["nm"], d["nm_p"]), d["pub"], d["copy"])
             + '<div class="grow"></div><button class="btn">%s%s</button><p class="fine">%s</p>' % (KEY, d["go"], d["go_fine"]))
 
 
@@ -107,7 +109,7 @@ def M2(t, d):
     cs = '<div class="mcorners">%s</div>' % "".join('<span class="pillbtn%s">%s</span>' % ("" if i == 3 else " ghost", c) for i, c in enumerate(d["corners"]))
     corner = '<div class="mpic">%s<span class="mbr">%s</span></div>' % (_scene(), _bqr(78))
     strip = ('<div class="mpic"><div>%s</div><div class="mstrip"><span class="mwords"><b>%s</b><i>%s</i></span>%s</div></div>' % (_scene(), d["addr"], d["scan"], _bqr(62, 1)))
-    return ("<h1>%s</h1>" % d["m2_h"] + seg + '<div class="kcap">%s</div>' % d["which"] + cs + corner + '<div class="kcap">%s</div>' % d["strip"] + strip
+    return ("<h1>%s</h1>" % d["m2_h"] + seg + '<div class="kcap">%s</div>' % d["which"] + cs + corner + '<div class="kcap">%s · %s</div><div class="mcorners">%s</div>' % (d["strip"], d["side"], "".join('<span class="pillbtn%s">%s</span>' % ("" if i == 1 else " ghost", c) for i, c in enumerate(d["sides"]))) + strip
             + '<p class="fine">%s</p>' % d["prev"] + '<div class="kdbtn"><button class="btn ghost">%s</button><button class="btn">%s</button></div>' % (d["back"], d["use"]))
 
 
@@ -119,7 +121,7 @@ def M3(t, d):
 
 
 def M4(t, d):
-    rows = "".join('<div class="kf"><div class="kl">%s</div><div>%s</div></div>' % r for r in ((d["day"], d["dayv"]), (d["saysh"], d["howv"]), (d["rec"], '<span class="link">%s</span>' % d["recv"])))
+    rows = "".join('<div class="kf"><div class="kl">%s</div><div>%s</div></div>' % r for r in ((d["day"], d["dayv"]), (d["saysh"], d["howv"]), (d["by"], '<span class="link">%s</span>' % d["byv"]), (d["rec"], '<span class="link">%s</span>' % d["recv"])))
     return ("<h1>%s</h1>" % d["m4_h"] + '<div class="mpic">%s<span class="mbr">%s</span></div>' % (_scene(350, 262), _bqr(78)) + '<div class="card">%s</div>' % rows
             + '<div class="card"><h2>%s</h2><p>%s</p><span class="pillbtn">%s</span></div>' % (d["cmp_h"], d["cmp_p"], d["chk"])
             + '<div class="grow"></div><p class="fine">%s</p><p class="fine"><span class="link">%s</span></p>' % (d["never"], d["own"]))
@@ -184,6 +186,6 @@ def check(sid, body):
     for pat, why in BARRED:
         assert not re.search(pat, re.sub(r"<svg.*?</svg>", "", body, flags=re.S), re.I), "%s: %s" % (sid, why)
     if sid == "M1":
-        assert body.count('class="kbox"') == 2 and 'class="kbox on"' not in body, "M1: both choices start UNTICKED"
+        assert body.count('class="kbox"') == 3 and 'class="kbox on"' not in body, "M1: every choice starts UNTICKED"
     if sid == "M4":
         assert re.search(r"never asks for a password|មិនដែលសុំពាក្យសម្ងាត់", body), "M4: a page a code opens says it never asks"
