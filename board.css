@@ -1,7 +1,7 @@
 
 :root{
   --bg:#fcfbfe; --surface:#f4f1fb; --surface-2:#ebe7f5; --line:rgba(20,16,30,0.12); --line-strong:rgba(20,16,30,0.28);
-  --ink:#16141c; --ink-dim:#5b5766; --ink-faint:#8b8796;
+  --ink:#16141c; --ink-dim:#5b5766; --ink-faint:#6e6a79;
   /* ── this surface's own (333.eco's identity screens): the accent 333.eco already wears, the brand layer's sapphire gem ── */
   --accent:#0f52ba; --accent-ink:#ffffff;
   --wash:color-mix(in oklab,var(--accent) 9%,transparent); --edge:color-mix(in oklab,var(--accent) 30%,transparent);
@@ -11,7 +11,7 @@
 }
 .dark{
   --bg:#0a0a0f; --surface:#17171d; --surface-2:#1f1f27; --line:rgba(255,255,255,0.08); --line-strong:rgba(255,255,255,0.18);
-  --ink:#f5f5f7; --ink-dim:#9b9ba5; --ink-faint:#6b6b76;
+  --ink:#f5f5f7; --ink-dim:#9b9ba5; --ink-faint:#888893;
   --accent:color-mix(in oklab,#0f52ba 55%,#ffffff); --accent-ink:#0a0a0f;
 }
 *{box-sizing:border-box}
@@ -228,6 +228,11 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:10px;bo
 .mpic .mscene{vertical-align:top}
 .mstrip{margin-top:-1px}
 .msave{margin-bottom:16px}
+.mhand{margin:12px 0 0;padding-left:12px;border-left:2px solid var(--line)}
+.mpad{background:#fff;border:1px dashed var(--line-strong);border-radius:12px;margin:8px 0}
+.mpad svg{display:block;width:100%;height:auto}
+.mrow{display:flex;gap:12px;align-items:center}
+.mrow .pillbtn{margin:0}
 .mpair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 html{--beat-duration:1.5s;--beat-delay:0s}
 /* ============================================================================

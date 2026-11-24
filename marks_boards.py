@@ -26,17 +26,20 @@ DT = {
   # new words
   "file": "sunflower.jpg · 3024 × 4032",
   "m_h": "Add a mark to the picture", "m_p": "A mark leads people from the picture to its page. It is yours to choose.",
-  "inv": "A mark you can't see", "inv_p": "It changes the colors very slightly, and usually still works after the picture is resized, posted or captured in a screenshot.",
+  "inv": "A mark you can't see", "inv_p": "It changes the colors very slightly, and usually still works after the picture is resized, posted or captured in a screenshot. Making it downloads about 70 MB from Adobe, once.",
   "code": "A code people can scan", "code_p": "A heart in a corner, or a strip under the picture with the address in words.",
-  "nm": "Show my @name on its page", "nm_p": "@thon, from your name at 333.eco. It says you made this page.",
+  "nm": "Show my @name on its page", "nm_p": "Your passkey finds your @name. It says you made the page. You can take it off.",
+  "hand": "Sign it by hand too", "hand_p": "Your B-Autograph℠, drawn with a finger or a mouse, inside the heart. Never use your legal or bank signature: anyone can copy what is in a picture.",
+  "undo": "Undo", "clear": "Clear", "kept": "It is kept on this device, so you needn't draw it again. Clear removes it.",
+  "fresh": "The marked picture is a new file. The notes in the original (place, camera, content credentials) stay behind.",
   "pub": "The page is public: it shows this picture, the day it was signed and how it was made. The signed picture is sent to us once, to make the small copy that page shows. Only the small copy is kept.",
   "copy": "Anyone can copy a mark onto another picture, so the page shows yours to compare.",
   "m2_h": "Where the code goes", "corner": "Corner", "strip": "Strip", "which": "Which corner", "corners": ("Top left", "Top right", "Bottom left", "Bottom right"), "side": "Which side", "sides": ("Left", "Right"),
   "addr": "B.333.eco/7K2M-9QX4-B8T3", "scan": "Scan to open in B-Origin℠", "prev": "This is the picture you will sign, with its mark.", "back": "Back", "use": "Use this picture",
-  "m3_p": "Share the marked picture below. It is the exact file you signed.", "save": "Save the marked picture", "page": "Its page", "end": "End the mark", "m3_fine": "If you end it, the code stops leading here. Your record stays.",
+  "m3_p": "Share this picture. It is the exact file you signed.", "first": "Save it now: we don't keep the full picture.", "save": "Save the marked picture", "page": "Its page", "end": "End the mark", "m3_fine": "If you end it, the code stops leading here. Your record stays.",
   "m4_h": "A signed picture", "day": "Signed", "dayv": "23 Nov 2026", "by": "Page made by", "byv": "@thon", "rec": "Public record", "recv": "No. 24",
   "saysh": "The signer says", "cmp_h": "Is yours the same?", "cmp_p": "Compare it with the picture above. If anything is different, yours isn't the one that was signed: an edited copy keeps its mark.",
-  "chk": "Check my file", "never": "This page never asks for a password, a code or a payment.", "own": "Sign your own pictures at origin.333.eco",
+  "chk": "Check my file", "never": "This page never asks for a password, a code or a payment.", "own": "Sign your own pictures",
   "m5_h": "Your file and this page", "a": "The exact file", "ap": "Every byte is the same as the file that was signed.",
   "b": "A likely match", "bp": "It looks like the picture on this page, but it isn't the exact file. It may have been resized, or changed. Compare the two.",
   "c": "A different picture", "cp": "It doesn't look like the picture on this page.", "here": "Read on this device. Your file stays here.",
@@ -51,17 +54,20 @@ DT = {
   "signed": "បានចុះហត្ថលេខា", "signedl": "ហត្ថលេខារបស់អ្នកត្រូវបានរក្សាទុក។ វានឹងចូលទៅក្នុងកំណត់ហេតុសាធារណៈក្នុងរយៈពេលមួយម៉ោង។", "records": "កំណត់ត្រារបស់អ្នក", "another": "ចុះហត្ថលេខាលើឯកសារមួយទៀត",
   "file": "sunflower.jpg · 3024 × 4032",
   "m_h": "បន្ថែមសញ្ញាមួយលើរូបភាព", "m_p": "សញ្ញានាំមនុស្សពីរូបភាព ទៅកាន់ទំព័ររបស់វា។ អ្នកជាអ្នកជ្រើសរើស។",
-  "inv": "សញ្ញាដែលមើលមិនឃើញ", "inv_p": "វាប្តូរពណ៌បន្តិចបន្តួចប៉ុណ្ណោះ ហើយជាធម្មតានៅតែដំណើរការ ក្រោយពេលរូបភាពត្រូវបានប្តូរទំហំ បង្ហោះ ឬថតរូបអេក្រង់។",
+  "inv": "សញ្ញាដែលមើលមិនឃើញ", "inv_p": "វាប្តូរពណ៌បន្តិចបន្តួចប៉ុណ្ណោះ ហើយជាធម្មតានៅតែដំណើរការ ក្រោយពេលរូបភាពត្រូវបានប្តូរទំហំ បង្ហោះ ឬថតរូបអេក្រង់។ ការបង្កើតវាទាញយកប្រហែល 70 MB ពី Adobe ម្តង។",
   "code": "កូដដែលមនុស្សអាចស្កេន", "code_p": "បេះដូងមួយនៅជ្រុង ឬបន្ទះមួយនៅក្រោមរូបភាព ដែលមានអាសយដ្ឋានជាអក្សរ។",
-  "nm": "បង្ហាញ @name របស់ខ្ញុំនៅលើទំព័ររបស់វា", "nm_p": "@thon ពីឈ្មោះរបស់អ្នកនៅ 333.eco។ វាប្រាប់ថាអ្នកបានបង្កើតទំព័រនេះ។",
+  "nm": "បង្ហាញ @name របស់ខ្ញុំនៅលើទំព័ររបស់វា", "nm_p": "passkey របស់អ្នករកឃើញ @name របស់អ្នក។ វាប្រាប់ថាអ្នកបានបង្កើតទំព័រនេះ។ អ្នកអាចដកវាចេញវិញបាន។",
+  "hand": "ចុះហត្ថលេខាដោយដៃផងដែរ", "hand_p": "B-Autograph℠ របស់អ្នក គូរដោយម្រាមដៃ ឬកណ្ដុរ នៅក្នុងបេះដូង។ កុំប្រើហត្ថលេខាផ្លូវការ ឬហត្ថលេខាធនាគាររបស់អ្នក៖ អ្នកណាក៏អាចចម្លងអ្វីដែលមានក្នុងរូបភាពបាន។",
+  "undo": "ត្រឡប់មួយជំហាន", "clear": "សម្អាត", "kept": "វាត្រូវបានរក្សាទុកនៅលើឧបករណ៍នេះ ដូច្នេះអ្នកមិនចាំបាច់គូរម្តងទៀតទេ។ សម្អាត ដកវាចេញ។",
+  "fresh": "រូបភាពដែលមានសញ្ញា គឺជាឯកសារថ្មី។ កំណត់ចំណាំក្នុងឯកសារដើម (ទីកន្លែង កាមេរ៉ា ព័ត៌មានប្រភពខ្លឹមសារ) មិនទៅជាមួយទេ។",
   "pub": "ទំព័រនេះជាសាធារណៈ៖ វាបង្ហាញរូបភាពនេះ ថ្ងៃដែលវាត្រូវបានចុះហត្ថលេខា និងរបៀបដែលវាត្រូវបានបង្កើត។ រូបភាពដែលបានចុះហត្ថលេខាត្រូវបានផ្ញើមកយើងម្តង ដើម្បីបង្កើតច្បាប់ចម្លងតូចដែលទំព័រនោះបង្ហាញ។ មានតែច្បាប់ចម្លងតូចទេដែលត្រូវបានរក្សាទុក។",
   "copy": "អ្នកណាក៏អាចចម្លងសញ្ញាទៅដាក់លើរូបភាពផ្សេងបាន ដូច្នេះទំព័រនេះបង្ហាញរូបភាពរបស់អ្នក ដើម្បីប្រៀបធៀប។",
   "m2_h": "កន្លែងដាក់កូដ", "corner": "ជ្រុង", "strip": "បន្ទះ", "which": "ជ្រុងណា", "corners": ("លើឆ្វេង", "លើស្តាំ", "ក្រោមឆ្វេង", "ក្រោមស្តាំ"), "side": "ខាងណា", "sides": ("ឆ្វេង", "ស្តាំ"),
   "addr": "B.333.eco/7K2M-9QX4-B8T3", "scan": "ស្កេនដើម្បីបើកក្នុង B-Origin℠", "prev": "នេះជារូបភាពដែលអ្នកនឹងចុះហត្ថលេខា ជាមួយសញ្ញារបស់វា។", "back": "ត្រឡប់ក្រោយ", "use": "ប្រើរូបភាពនេះ",
-  "m3_p": "ចែករំលែករូបភាពដែលមានសញ្ញាខាងក្រោម។ វាជាឯកសារដដែលដែលអ្នកបានចុះហត្ថលេខា។", "save": "រក្សាទុករូបភាពដែលមានសញ្ញា", "page": "ទំព័ររបស់វា", "end": "បញ្ចប់សញ្ញា", "m3_fine": "បើអ្នកបញ្ចប់វា កូដលែងនាំមកទីនេះ។ កំណត់ត្រារបស់អ្នកនៅដដែល។",
+  "m3_p": "ចែករំលែករូបភាពនេះ។ វាជាឯកសារដដែលដែលអ្នកបានចុះហត្ថលេខា។", "first": "រក្សាទុកវាឥឡូវនេះ៖ យើងមិនរក្សារូបភាពពេញទេ។", "save": "រក្សាទុករូបភាពដែលមានសញ្ញា", "page": "ទំព័ររបស់វា", "end": "បញ្ចប់សញ្ញា", "m3_fine": "បើអ្នកបញ្ចប់វា កូដលែងនាំមកទីនេះ។ កំណត់ត្រារបស់អ្នកនៅដដែល។",
   "m4_h": "រូបភាពដែលបានចុះហត្ថលេខា", "day": "ចុះហត្ថលេខា", "dayv": "២៣ វិច្ឆិកា ២០២៦", "by": "ទំព័របង្កើតដោយ", "byv": "@thon", "rec": "កំណត់ត្រាសាធារណៈ", "recv": "លេខ ២៤",
   "saysh": "អ្នកចុះហត្ថលេខានិយាយថា", "cmp_h": "របស់អ្នកដូចគ្នាទេ?", "cmp_p": "ប្រៀបធៀបវាជាមួយរូបភាពខាងលើ។ បើមានអ្វីខុសគ្នា របស់អ្នកមិនមែនជារូបភាពដែលបានចុះហត្ថលេខាទេ៖ ច្បាប់ដែលបានកែ នៅតែមានសញ្ញារបស់វា។",
-  "chk": "ពិនិត្យឯកសាររបស់ខ្ញុំ", "never": "ទំព័រនេះមិនដែលសុំពាក្យសម្ងាត់ លេខកូដ ឬការបង់ប្រាក់ទេ។", "own": "ចុះហត្ថលេខាលើរូបភាពរបស់អ្នកនៅ origin.333.eco",
+  "chk": "ពិនិត្យឯកសាររបស់ខ្ញុំ", "never": "ទំព័រនេះមិនដែលសុំពាក្យសម្ងាត់ លេខកូដ ឬការបង់ប្រាក់ទេ។", "own": "ចុះហត្ថលេខាលើរូបភាពរបស់អ្នក",
   "m5_h": "ឯកសាររបស់អ្នក និងទំព័រនេះ", "a": "ឯកសារដដែល", "ap": "គ្រប់បៃដូចគ្នានឹងឯកសារដែលបានចុះហត្ថលេខា។",
   "b": "ប្រហែលជាដូចគ្នា", "bp": "វាមើលទៅដូចរូបភាពនៅលើទំព័រនេះ ប៉ុន្តែមិនមែនជាឯកសារដដែលទេ។ វាអាចត្រូវបានប្តូរទំហំ ឬកែប្រែ។ សូមប្រៀបធៀបទាំងពីរ។",
   "c": "រូបភាពផ្សេង", "cp": "វាមើលទៅមិនដូចរូបភាពនៅលើទំព័រនេះទេ។", "here": "អាននៅលើឧបករណ៍នេះ។ ឯកសាររបស់អ្នកនៅទីនេះ។",
@@ -96,12 +102,30 @@ def _opt(h, p, on=False):
     return '<label class="krow mopt"><span class="kbox%s">%s</span><span><b>%s</b><span class="mop">%s</span></span></label>' % (" on" if on else "", OK if on else "", h, p)
 
 
-def M1(t, d):
+def _pad():
+    """The pad with the made-up autograph on it (nobody's real hand), drawn as the recipe draws it: strokes on 100 x 60."""
+    import json
+    st = json.load(io.open(os.path.join(HERE, "marks-autograph.json"), encoding="utf-8"))["strokes"]
+    paths = "".join('<path d="M%s" stroke="#46484f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>' % "L".join("%g %g" % tuple(p) for p in k) for k in st)
+    return '<div class="mpad"><svg viewBox="0 0 100 60" aria-hidden="true">%s</svg></div>' % paths
+
+
+def _m1(d, seen):
+    more = ("" if not seen else '<div class="mhand">%s%s<div class="mrow">%s<span class="pillbtn ghost">%s</span><span class="pillbtn ghost">%s</span></div><p class="fine">%s</p></div>'
+            % (_opt(d["hand"], d["hand_p"], True), _pad(), _bqr(96, 1), d["undo"], d["clear"], d["kept"]))
+    tail = "" if not seen else '<p class="fine mfine">%s</p><p class="fine">%s</p><p class="fine">%s</p>' % (d["fresh"], d["pub"], d["copy"])
     return ("<h1>%s</h1><p class='lede'>%s</p>" % (d["h"], d["public"]) + '<div class="card"><div class="thumb">%s<div class="mono">%s</div></div></div>' % (_scene(96, 72), d["file"])
             + '<div class="card">%s%s</div>' % (_select(d["how"], d["howv"]), _select(d["rights"], d["rightsv"]))
-            + '<div class="card kkeep"><b>%s</b><p>%s</p>%s%s%s<p class="fine mfine">%s</p><p class="fine">%s</p></div>'
-            % (d["m_h"], d["m_p"], _opt(d["inv"], d["inv_p"]), _opt(d["code"], d["code_p"]), _opt(d["nm"], d["nm_p"]), d["pub"], d["copy"])
+            + '<div class="card kkeep"><b>%s</b><p>%s</p>%s%s%s%s</div>' % (d["m_h"], d["m_p"], _opt(d["inv"], d["inv_p"], seen), _opt(d["code"], d["code_p"], seen), more, tail)
             + '<div class="grow"></div><button class="btn">%s%s</button><p class="fine">%s</p>' % (KEY, d["go"], d["go_fine"]))
+
+
+def M1(t, d):
+    return _m1(d, False)
+
+
+def M1b(t, d):
+    return _m1(d, True)
 
 
 def M2(t, d):
@@ -115,9 +139,9 @@ def M2(t, d):
 
 def M3(t, d):
     return ("<h1>%s</h1><p class='lede'>%s</p>" % (d["signed"], d["signedl"]) + '<div class="mpic">%s<span class="mbr">%s</span></div>' % (_scene(), _bqr(78))
-            + "<p>%s</p>" % d["m3_p"] + '<button class="btn msave">%s</button>' % d["save"]
-            + '<div class="card"><div class="row krowf"><div class="kmeta"><div class="t">%s</div><div class="s mono">%s</div></div><div class="kact"><span class="pillbtn ghost">%s</span></div></div><p class="fine">%s</p></div>'
-            % (d["page"], d["addr"], d["end"], d["m3_fine"]) + '<div class="grow"></div>' + btns(d["records"], d["another"]))
+            + "<p>%s</p>" % d["m3_p"] + '<button class="btn msave">%s</button><p class="fine">%s</p>' % (d["save"], d["first"])
+            + '<div class="card"><div class="row krowf"><div class="kmeta"><div class="t">%s</div><div class="s mono">%s</div></div><div class="kact"><span class="pillbtn ghost">%s</span></div></div><span class="pillbtn ghost">%s</span><p class="fine">%s</p><p class="fine">%s</p></div>'
+            % (d["page"], d["addr"], d["end"], d["nm"], d["nm_p"], d["m3_fine"]) + '<div class="grow"></div>' + btns(d["records"], d["another"]))
 
 
 def M4(t, d):
@@ -144,6 +168,7 @@ def M6(t, d):
 
 SCREENS = [
     ("M1", "origin", "Sign a file, with a mark (both choices unticked)", M1),
+    ("M1b", "origin", "Sign a file: the code chosen, and signed by hand (B-Autograph℠)", M1b),
     ("M2", "origin", "Where the code goes: a corner or a strip", M2),
     ("M3", "origin", "Signed, with the marked picture to save", M3),
     ("M4", "origin", "The mark's page (anyone with the code)", M4),
@@ -172,6 +197,11 @@ CSS = """
 .mpic .mscene{vertical-align:top}
 .mstrip{margin-top:-1px}
 .msave{margin-bottom:16px}
+.mhand{margin:12px 0 0;padding-left:12px;border-left:2px solid var(--line)}
+.mpad{background:#fff;border:1px dashed var(--line-strong);border-radius:12px;margin:8px 0}
+.mpad svg{display:block;width:100%;height:auto}
+.mrow{display:flex;gap:12px;align-items:center}
+.mrow .pillbtn{margin:0}
 .mpair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 """
 BARRED = [
@@ -186,6 +216,6 @@ def check(sid, body):
     for pat, why in BARRED:
         assert not re.search(pat, re.sub(r"<svg.*?</svg>", "", body, flags=re.S), re.I), "%s: %s" % (sid, why)
     if sid == "M1":
-        assert body.count('class="kbox"') == 3 and 'class="kbox on"' not in body, "M1: every choice starts UNTICKED"
+        assert body.count('class="kbox"') == 2 and 'class="kbox on"' not in body, "M1: every choice starts UNTICKED"
     if sid == "M4":
         assert re.search(r"never asks for a password|មិនដែលសុំពាក្យសម្ងាត់", body), "M4: a page a code opens says it never asks"
