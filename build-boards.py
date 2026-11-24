@@ -20,6 +20,7 @@ import developers_boards as DV
 import blink_boards as BL
 import kept_boards as KP
 import give_boards as GV
+import marks_boards as MK
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 W, H = 390, 844
@@ -990,13 +991,19 @@ def _gv(f):
     return lambda t: f(t, GV.DT["km" if t is T["km"] else "en"])
 SCREENS += [(i, p, n, _gv(f)) for i, p, n, f in GV.SCREENS]
 PUBLIC |= GV.PUBLIC
+# Marks that point at origin.333.eco (A701, sign.333.eco SPEC §10f): the same (t, d) shape
+MK.card, MK.btns, MK.spot, MK.heart, MK.person, MK.sunflower = card, btns, spot, heart, person, sunflower
+def _mk(f):
+    return lambda t: f(t, MK.DT["km" if t is T["km"] else "en"])
+SCREENS += [(i, p, n, _mk(f)) for i, p, n, f in MK.SCREENS]
+PUBLIC |= MK.PUBLIC
 
 
 def page(sid, render, lang, dark=False, desk=False):
     t = T[lang]
     body = render(t).replace("℠", '<span class="sm">℠</span>')
     # Each screen's footer names its OWN origin (SPEC §0): Log in → login.333.eco · Sign → sign.333.eco · portal → origin.333.eco (⛔ never "B": B.333.eco is B-Link, A601)
-    host = {"L": "login.333.eco", "O": "origin.333.eco", "K": "origin.333.eco", "G": "origin.333.eco", "E": "explorer.333.eco", "D": "developers.333.eco"}.get(sid[0], "sign.333.eco")
+    host = {"L": "login.333.eco", "O": "origin.333.eco", "K": "origin.333.eco", "G": "origin.333.eco", "M": "origin.333.eco", "E": "explorer.333.eco", "D": "developers.333.eco"}.get(sid[0], "sign.333.eco")
     foot = t["e_foot"] if sid.startswith("E") else t["foot"].replace("sign.333.eco", host, 1)
     dv = sid[0] == "D" or sid == "L11"
     if dv:
@@ -1007,6 +1014,8 @@ def page(sid, render, lang, dark=False, desk=False):
         KP.check(sid, body)
     if sid[0] == "G":
         GV.check(sid, body)
+    if sid[0] == "M":
+        MK.check(sid, body)
     bl = sid[0] == "B" or sid.startswith("ST")
     if bl:
         BL.check(sid, body)
@@ -1045,7 +1054,7 @@ def page(sid, render, lang, dark=False, desk=False):
 
 
 def main():
-    css = brand_css(CSS + R.CSS + DV.CSS + BL.CSS + KP.CSS + GV.CSS) + motion()
+    css = brand_css(CSS + R.CSS + DV.CSS + BL.CSS + KP.CSS + GV.CSS + MK.CSS) + motion()
     io.open(os.path.join(HERE, "board.css"), "w", encoding="utf-8").write(css)
     import hashlib
     cssv = hashlib.sha256(css.encode()).hexdigest()[:8]
@@ -1065,7 +1074,7 @@ def main():
                            "w": W, "h": hh(f), "x": col[pg] * (W + 80), "y": rowy[lang]})
         col[pg] += 1
     dk = {}
-    for sid, pg in (("R1", "registry"), ("L1", "login"), ("S1", "sign"), ("E1", "explorer"), ("D1", "developers"), ("B1", "blink"), ("K1", "origin"), ("G7", "origin")):  # one dark pass per surface (Default 6)
+    for sid, pg in (("R1", "registry"), ("L1", "login"), ("S1", "sign"), ("E1", "explorer"), ("D1", "developers"), ("B1", "blink"), ("K1", "origin"), ("G7", "origin"), ("M4", "origin")):  # one dark pass per surface (Default 6)
         f = "%sDark.html" % sid
         render = dict((s[0], s[3]) for s in SCREENS)[sid]
         io.open(os.path.join(HERE, f), "w", encoding="utf-8").write(page(sid, render, "en", dark=True).replace("@CSSV@", cssv))

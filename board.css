@@ -207,6 +207,28 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:10px;bo
 .gnt{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:10px 12px;font-size:14px;color:var(--ink);margin:0 0 8px}
 .gnt:last-child{margin:0}
 .gnh{font-size:12px;color:var(--ink-faint);margin:0 0 3px}
+
+.mscene{display:block;border-radius:10px;max-width:100%}
+.mopt{align-items:flex-start;margin:12px 0 0}
+.mopt b{display:block;font-size:15px}
+.mop{display:block;font-size:14px;color:var(--ink-dim);margin-top:2px}
+.mpic{position:relative;border-radius:12px;overflow:hidden;background:var(--surface-2,var(--surface));margin:10px 0}
+.mpic .mscene{width:100%;height:auto;border-radius:0}
+.mbr{position:absolute;right:10px;bottom:8px;line-height:0}
+.mstrip{display:flex;justify-content:flex-end;align-items:center;gap:12px;padding:8px 12px;background:linear-gradient(180deg,#3e642e,#33552a)}
+.mwords{display:flex;flex-direction:column;align-items:flex-end;color:#fff}
+.mwords b{font-size:13px;letter-spacing:.02em}
+.mwords i{font-style:normal;font-size:11.5px;opacity:.92}
+.mseg{display:flex;border:1px solid var(--line-strong);border-radius:var(--r-pill);overflow:hidden;margin:6px 0 4px}
+.mseg span{flex:1;text-align:center;padding:9px 0;font-size:15px;font-weight:600}
+.mseg .on{background:var(--wash)}
+.mcorners{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mfine{margin-top:14px}
+.card .pillbtn{margin-top:12px}
+.mpic .mscene{vertical-align:top}
+.mstrip{margin-top:-1px}
+.msave{margin-bottom:16px}
+.mpair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 html{--beat-duration:1.5s;--beat-delay:0s}
 /* ============================================================================
    MOTION — the heartbeat

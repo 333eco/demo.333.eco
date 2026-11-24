@@ -8,7 +8,7 @@ if (!text || !owner || !sizeArg || !qrFrom) throw new Error("usage: <text> <owne
 globalThis.Path2D = class { constructor(d) { this.d = d; } };
 const { paintBqr, BQR_ECC } = await import("../brand/bqr.ts");
 const QRCode = createRequire(new URL(qrFrom.replace(/\/?$/, "/"), "file://" + process.cwd() + "/"))("qrcode");
-const size = Number(sizeArg), q = QRCode.create(text, { errorCorrectionLevel: BQR_ECC });
+const size = Number(sizeArg), q0 = QRCode.create(text, { errorCorrectionLevel: BQR_ECC }); const turn = (m) => ({ size: m.size, data: Uint8Array.from({ length: m.size * m.size }, (_, i) => { const n = m.size, r = (i / n) | 0, c = i % n; return m.data[c * n + (n - 1 - r)] ? 1 : 0; }) }); const q = { modules: process.argv[6] === "turned" ? turn(q0.modules) : q0.modules };
 const out = [], defs = [];
 let s = { fill: "#000", stroke: "#000", lw: 1, join: "miter", k: 1, tx: 0, ty: 0, open: 0 }, stack = [];
 const r = (v) => +v.toFixed(3);
@@ -24,5 +24,5 @@ const g = {
     stroke(p) { out.push(`<path d="${p.d}" fill="none" stroke="${s.stroke}" stroke-width="${s.lw}" stroke-linejoin="${s.join}" transform="${tf()}"/>`); },
     clip(p) { const id = `bqrc${defs.length}`; defs.push(`<clipPath id="${id}"><path d="${p.d}" transform="${tf()}"/></clipPath>`); out.push(`<g clip-path="url(#${id})">`); s.open++; },
 };
-paintBqr(g, q.modules, text, { size, owner, style: "pixels", ground: "paper" });
+paintBqr(g, q.modules, text, { size, owner, style: "pixels", ground: process.argv[7] === "heart" ? "heart" : "paper" });
 process.stdout.write(`<svg class="bqr" width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" aria-hidden="true"><defs>${defs.join("")}</defs>${out.join("")}</svg>\n`);

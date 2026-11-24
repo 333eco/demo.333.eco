@@ -1601,7 +1601,7 @@
    "page": "blink",
    "title": "B6 · Inside an app: your own link, the count on request, English",
    "w": 390,
-   "h": 875,
+   "h": 887,
    "x": 2350,
    "y": 0
   },
@@ -1610,7 +1610,7 @@
    "page": "blink",
    "title": "B6 · Inside an app: your own link, the count on request, Khmer",
    "w": 390,
-   "h": 968,
+   "h": 980,
    "x": 2350,
    "y": 1783
   },
@@ -1709,7 +1709,7 @@
    "page": "origin",
    "title": "K5 · Your kept files, English",
    "w": 390,
-   "h": 844,
+   "h": 874,
    "x": 6580,
    "y": 0
   },
@@ -1718,7 +1718,7 @@
    "page": "origin",
    "title": "K5 · Your kept files, Khmer",
    "w": 390,
-   "h": 881,
+   "h": 965,
    "x": 6580,
    "y": 1783
   },
@@ -1727,7 +1727,7 @@
    "page": "origin",
    "title": "K6 · Remove a copy, English",
    "w": 390,
-   "h": 844,
+   "h": 862,
    "x": 7050,
    "y": 0
   },
@@ -1736,7 +1736,7 @@
    "page": "origin",
    "title": "K6 · Remove a copy, Khmer",
    "w": 390,
-   "h": 869,
+   "h": 953,
    "x": 7050,
    "y": 1783
   },
@@ -1754,7 +1754,7 @@
    "page": "origin",
    "title": "K7 · Your kept files when the balance stopped covering them, Khmer",
    "w": 390,
-   "h": 869,
+   "h": 916,
    "x": 7520,
    "y": 1783
   },
@@ -1799,7 +1799,7 @@
    "page": "origin",
    "title": "G2 · Give · Your kept files: Give, Offered, Given, Thanked, English",
    "w": 390,
-   "h": 977,
+   "h": 1025,
    "x": 8930,
    "y": 0
   },
@@ -1808,7 +1808,7 @@
    "page": "origin",
    "title": "G2 · Give · Your kept files: Give, Offered, Given, Thanked, Khmer",
    "w": 390,
-   "h": 1117,
+   "h": 1165,
    "x": 8930,
    "y": 1783
   },
@@ -1835,7 +1835,7 @@
    "page": "origin",
    "title": "G4 · Give · when a choice can't be made, English",
    "w": 390,
-   "h": 1112,
+   "h": 1124,
    "x": 9870,
    "y": 0
   },
@@ -1844,7 +1844,7 @@
    "page": "origin",
    "title": "G4 · Give · when a choice can't be made, Khmer",
    "w": 390,
-   "h": 1262,
+   "h": 1274,
    "x": 9870,
    "y": 1783
   },
@@ -1853,7 +1853,7 @@
    "page": "origin",
    "title": "G5 · Give · your link and its code, English",
    "w": 390,
-   "h": 902,
+   "h": 914,
    "x": 10340,
    "y": 0
   },
@@ -1862,7 +1862,7 @@
    "page": "origin",
    "title": "G5 · Give · your link and its code, Khmer",
    "w": 390,
-   "h": 989,
+   "h": 1001,
    "x": 10340,
    "y": 1783
   },
@@ -1970,7 +1970,7 @@
    "page": "origin",
    "title": "G11 · Give · Your kept files: given to you, Thank them, Khmer",
    "w": 390,
-   "h": 869,
+   "h": 907,
    "x": 13160,
    "y": 1783
   },
@@ -2008,6 +2008,114 @@
    "w": 390,
    "h": 869,
    "x": 14100,
+   "y": 1783
+  },
+  {
+   "file": "M1.html",
+   "page": "origin",
+   "title": "M1 · Sign a file, with a mark (both choices unticked), English",
+   "w": 390,
+   "h": 1068,
+   "x": 14570,
+   "y": 0
+  },
+  {
+   "file": "M1Km.html",
+   "page": "origin",
+   "title": "M1 · Sign a file, with a mark (both choices unticked), Khmer",
+   "w": 390,
+   "h": 1203,
+   "x": 14570,
+   "y": 1783
+  },
+  {
+   "file": "M2.html",
+   "page": "origin",
+   "title": "M2 · Where the code goes: a corner or a strip, English",
+   "w": 390,
+   "h": 1163,
+   "x": 15040,
+   "y": 0
+  },
+  {
+   "file": "M2Km.html",
+   "page": "origin",
+   "title": "M2 · Where the code goes: a corner or a strip, Khmer",
+   "w": 390,
+   "h": 1249,
+   "x": 15040,
+   "y": 1783
+  },
+  {
+   "file": "M3.html",
+   "page": "origin",
+   "title": "M3 · Signed, with the marked picture to save, English",
+   "w": 390,
+   "h": 971,
+   "x": 15510,
+   "y": 0
+  },
+  {
+   "file": "M3Km.html",
+   "page": "origin",
+   "title": "M3 · Signed, with the marked picture to save, Khmer",
+   "w": 390,
+   "h": 1089,
+   "x": 15510,
+   "y": 1783
+  },
+  {
+   "file": "M4.html",
+   "page": "origin",
+   "title": "M4 · The mark's page (anyone with the code), English",
+   "w": 390,
+   "h": 901,
+   "x": 15980,
+   "y": 0
+  },
+  {
+   "file": "M4Km.html",
+   "page": "origin",
+   "title": "M4 · The mark's page (anyone with the code), Khmer",
+   "w": 390,
+   "h": 983,
+   "x": 15980,
+   "y": 1783
+  },
+  {
+   "file": "M5.html",
+   "page": "origin",
+   "title": "M5 · The mark's page: your file against it, English",
+   "w": 390,
+   "h": 844,
+   "x": 16450,
+   "y": 0
+  },
+  {
+   "file": "M5Km.html",
+   "page": "origin",
+   "title": "M5 · The mark's page: your file against it, Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 16450,
+   "y": 1783
+  },
+  {
+   "file": "M6.html",
+   "page": "origin",
+   "title": "M6 · Check a file, when it carries a mark, English",
+   "w": 390,
+   "h": 844,
+   "x": 16920,
+   "y": 0
+  },
+  {
+   "file": "M6Km.html",
+   "page": "origin",
+   "title": "M6 · Check a file, when it carries a mark, Khmer",
+   "w": 390,
+   "h": 883,
+   "x": 16920,
    "y": 1783
   },
   {
@@ -2080,6 +2188,15 @@
    "w": 390,
    "h": 844,
    "x": 470,
+   "y": 3657
+  },
+  {
+   "file": "M4Dark.html",
+   "page": "origin",
+   "title": "M4 · dark pass, English",
+   "w": 390,
+   "h": 901,
+   "x": 940,
    "y": 3657
   },
   {
