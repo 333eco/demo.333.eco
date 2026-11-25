@@ -2154,7 +2154,7 @@
    "page": "legal",
    "title": "T1 · legal.333.eco: the documents, under the body that runs each service (at M1: two services), Khmer",
    "w": 390,
-   "h": 1203,
+   "h": 1228,
    "x": 0,
    "y": 2676
   },
@@ -2190,7 +2190,7 @@
    "page": "legal",
    "title": "T2 · A document: the earth.333.eco terms (current, a draft), Khmer",
    "w": 390,
-   "h": 2001,
+   "h": 2022,
    "x": 940,
    "y": 2676
   },
@@ -2208,7 +2208,7 @@
    "page": "legal",
    "title": "T3 · One version at its own address, with its fingerprint and proof, Khmer",
    "w": 390,
-   "h": 1277,
+   "h": 1298,
    "x": 1410,
    "y": 2676
   },
@@ -2246,6 +2246,78 @@
    "w": 390,
    "h": 1075,
    "x": 3760,
+   "y": 2676
+  },
+  {
+   "file": "T4.html",
+   "page": "legal",
+   "title": "T4 · Drawn ahead: a version after counsel's review (the record replaces the banner), English",
+   "w": 390,
+   "h": 1034,
+   "x": 1880,
+   "y": 0
+  },
+  {
+   "file": "T4Km.html",
+   "page": "legal",
+   "title": "T4 · Drawn ahead: a version after counsel's review (the record replaces the banner), Khmer",
+   "w": 390,
+   "h": 1138,
+   "x": 1880,
+   "y": 2676
+  },
+  {
+   "file": "T5.html",
+   "page": "legal",
+   "title": "T5 · A document shared by every service: acceptable use (words: counsel), English",
+   "w": 390,
+   "h": 844,
+   "x": 2350,
+   "y": 0
+  },
+  {
+   "file": "T5Km.html",
+   "page": "legal",
+   "title": "T5 · A document shared by every service: acceptable use (words: counsel), Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 2350,
+   "y": 2676
+  },
+  {
+   "file": "T6.html",
+   "page": "legal",
+   "title": "T6 · An earlier version, once a newer one exists, English",
+   "w": 390,
+   "h": 1144,
+   "x": 2820,
+   "y": 0
+  },
+  {
+   "file": "T6Km.html",
+   "page": "legal",
+   "title": "T6 · An earlier version, once a newer one exists, Khmer",
+   "w": 390,
+   "h": 1191,
+   "x": 2820,
+   "y": 2676
+  },
+  {
+   "file": "E10.html",
+   "page": "explorer",
+   "title": "E10 · The Legal tab: a reviewed version, with its review record, English",
+   "w": 390,
+   "h": 938,
+   "x": 4230,
+   "y": 0
+  },
+  {
+   "file": "E10Km.html",
+   "page": "explorer",
+   "title": "E10 · The Legal tab: a reviewed version, with its review record, Khmer",
+   "w": 390,
+   "h": 1003,
+   "x": 4230,
    "y": 2676
   },
   {
@@ -2516,6 +2588,24 @@
    "w": 1280,
    "h": 811,
    "x": 2800,
+   "y": 7680
+  },
+  {
+   "file": "T2D.html",
+   "page": "legal",
+   "title": "T2D · A document page, desktop, English",
+   "w": 1280,
+   "h": 1473,
+   "x": 0,
+   "y": 6580
+  },
+  {
+   "file": "T2DKm.html",
+   "page": "legal",
+   "title": "T2D · A document page, desktop, Khmer",
+   "w": 1280,
+   "h": 1583,
+   "x": 0,
    "y": 7680
   }
  ],

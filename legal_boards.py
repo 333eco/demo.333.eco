@@ -9,10 +9,11 @@ Copy rules this file must keep (checked at build time by check()):
   - The footer claims only what the built bytes prove: no analytics script, no cookies. Never "no visits are counted".
   - The founder line on this host is the founder's own wording: "Thon Ly is the Founder of this institution · Miss Aquarius℠ is
     the CEO of HeartBank®". Miss Aquarius is never named as a party to a document.
-  - The 333.eco heading is "333.eco · shared by every body", never Factory 333™.
+  - The 333.eco heading is "333.eco · shared services" (Khmer សេវារួម), never Factory 333™ and never "every institution" (ស្ថាប័ន is the
+    INSTITUTION, never a body; no Khmer word for "body" is coined here).
   - The legal text stays English on the Khmer boards (ruled 2026-11-25); only the page around it is Khmer.
   - Words copied from live pages stay word for word: the ledger's terms (ledger.333.eco legal/terms.md, Draft of 9 November 2026),
-    the draft banner (storage.333.eco src/pages.ts), the explorer's proof wording (explorer.333.eco client/app.ts).
+    earth's own draft banner (live at earth.333.eco/terms, 2026-11-25), the explorer's proof wording (explorer.333.eco client/app.ts).
 The Khmer is OURS and UNREVIEWED; the shared band says so on every Khmer board. Dates after 25 Nov 2026 are drawn, not real.
 """
 import re
@@ -27,8 +28,8 @@ DT = {
   "prod": "Legal", "foot": "legal.333.eco · no analytics script, no cookies",
   "who": "Thon Ly is the Founder of this institution · Miss Aquarius℠ is the CEO of HeartBank®",
   "nobank": "HeartBank® is a data bank of gratitude. It is not a chartered bank or financial institution; it does not provide banking services, hold deposits, or extend credit. Nothing is paid or held on this site.",
-  "t1_h": "Legal documents", "t1_lede": "The terms and privacy policy of each service, on one site. Each page says who runs the service. Every version keeps its own address, and every version is timestamped.",
-  "h3": "HeartBank®", "shared": "333.eco · shared by every body", "all": "For every service",
+  "t1_h": "Legal documents", "t1_lede": "The terms and privacy policy of each service, on one site. When a document is final, its page names who runs the service. Every version keeps its own address, and every version is timestamped.",
+  "h3": "HeartBank®", "shared": "333.eco · shared services", "all": "For every service",
   "earth": "earth.333.eco", "earth_p": "The gratitude ledger: a private record of thanks, with public proofs.",
   "dev": "developers.333.eco", "dev_p": "Every HeartBank® API, its docs and its sandbox.",
   "terms": "Terms of service", "privacy": "Privacy policy", "draft9": "Draft of 9 November 2026", "draft16": "Draft of 16 November 2026", "draft18": "Draft of 18 November 2026",
@@ -44,9 +45,9 @@ DT = {
   "refunds": "Refunds and cancellation", "copyright": "Copyright and takedown",
   "aup": "Acceptable use", "sec": "Security", "ops": "Who runs each service", "tm": "Using our marks",
   "crumb": "HeartBank® › earth.333.eco",
-  "banner": "A draft, not yet reviewed by a lawyer. It may change before the final version, which will name the organization that operates this site.",
+  "banner": "This is a draft. No lawyer has reviewed it, and it may change before it is final. Where something is not settled yet, it says so.",
   "with": "Drafted with", "withv": "Miss Aquarius℠, an AI",
-  "by": "Run by", "byv": "Named in the final version",
+  "by": "Operated by", "byv": "Named in the final version",
   "this": "This version", "thisv": "Draft of 9 November 2026",
   "addr": "Its address",
   "versions": "Versions", "cur": "current",
@@ -60,6 +61,13 @@ DT = {
   "fp": "Its fingerprint", "fp_p": "SHA-256 of the text, byte for byte.",
   "dl": "Download the text (.md)", "dlo": "Download its proof (.ots)", "curv": "The current version",
   "keep": "Keep a copy: the text and its proof are all anyone needs to check it, with no help from us.",
+  "rev": "Reviewed", "revv": "By a lawyer, 12 January 2027", "revrec": "its record",
+  "named": "[ the operator, as the final text names it ]", "ver27": "Version of 12 January 2027",
+  "t4_text": "These terms are between you and [ the operator ], which operates earth.333.eco. By opening your record here, you agree to them.",
+  "t5_h": "Acceptable use", "t5_scope": "For every service listed on this site. Each service's terms point here.", "t5_ph": "[ COUNSEL WRITES THE WORDS ]",
+  "t5_p": "What is not allowed on any service: what you may not post, send or do to other people. Drafted, then reviewed, like every document here.",
+  "older": "This is an earlier version.", "older_cur": "The current version is the Version of 12 January 2027.",
+  "side": ("Legal documents", "earth.333.eco", "developers.333.eco", "For every service"),
   # explorer.333.eco, the Legal tab (live wording from client/app.ts where it exists)
   "e_legal": "Legal",
   "e8_h": "Legal documents", "e8_lede": "Every version of each service's legal documents, read from the public repository 333eco/legal-versions. Every check runs in your browser.",
@@ -72,13 +80,14 @@ DT = {
   "e_limit": "What this shows: the text existed by 27 Nov 2026. It does not show who published it, or that it was in force.",
   "e_served": "Served from", "e_served_p": "legal.333.eco · a copy at the Internet Archive, 27 Nov 2026 · Software Heritage keeps the repository.",
   "e_page": "Open its page on legal.333.eco",
+  "e_rev": "The review record", "e_rev_p": "Entered 12 Jan 2027, when a lawyer reviewed this version, and timestamped in that day's manifest. It records that the review happened. It does not show what the lawyer advised.",
 },
 "km": {
   "prod": "ច្បាប់", "foot": "legal.333.eco · គ្មានស្គ្រីបវិភាគ គ្មានខូគី",
   "who": "Thon Ly ជាស្ថាបនិកនៃស្ថាប័ននេះ · Miss Aquarius℠ ជាប្រធានប្រតិបត្តិនៃ HeartBank®",
   "nobank": "HeartBank® គឺជាឃ្លាំងទិន្នន័យនៃការដឹងគុណ។ វាមិនមែនជាធនាគារដែលមានអាជ្ញាប័ណ្ណ ឬស្ថាប័នហិរញ្ញវត្ថុទេ វាមិនផ្តល់សេវាធនាគារ មិនទទួលប្រាក់បញ្ញើ ឬផ្តល់ឥណទានទេ។ គ្មានអ្វីត្រូវបានបង់ ឬរក្សាទុកនៅលើគេហទំព័រនេះទេ។",
-  "t1_h": "ឯកសារច្បាប់", "t1_lede": "លក្ខខណ្ឌ និងគោលការណ៍ឯកជនភាពនៃសេវានីមួយៗ នៅលើគេហទំព័រតែមួយ។ ទំព័រនីមួយៗប្រាប់ថាអ្នកណាជាអ្នកដំណើរការសេវានោះ។ កំណែនីមួយៗមានអាសយដ្ឋានផ្ទាល់ខ្លួន ហើយកំណែនីមួយៗត្រូវបានបោះត្រាពេលវេលា។",
-  "h3": "HeartBank®", "shared": "333.eco · ចែករំលែកដោយគ្រប់ស្ថាប័ន", "all": "សម្រាប់គ្រប់សេវា",
+  "t1_h": "ឯកសារច្បាប់", "t1_lede": "លក្ខខណ្ឌ និងគោលការណ៍ឯកជនភាពនៃសេវានីមួយៗ នៅលើគេហទំព័រតែមួយ។ នៅពេលឯកសារមួយជាកំណែចុងក្រោយ ទំព័ររបស់វាដាក់ឈ្មោះអ្នកដំណើរការសេវានោះ។ កំណែនីមួយៗមានអាសយដ្ឋានផ្ទាល់ខ្លួន ហើយកំណែនីមួយៗត្រូវបានបោះត្រាពេលវេលា។",
+  "h3": "HeartBank®", "shared": "333.eco · សេវារួម", "all": "សម្រាប់គ្រប់សេវា",
   "earth": "earth.333.eco", "earth_p": "បញ្ជីនៃការដឹងគុណ៖ កំណត់ត្រាឯកជននៃការអរគុណ ជាមួយភស្តុតាងសាធារណៈ។",
   "dev": "developers.333.eco", "dev_p": "គ្រប់ API របស់ HeartBank® ឯកសាររបស់វា និង sandbox របស់វា។",
   "terms": "Terms of service", "privacy": "Privacy policy", "draft9": "Draft of 9 November 2026", "draft16": "Draft of 16 November 2026", "draft18": "Draft of 18 November 2026",
@@ -94,7 +103,7 @@ DT = {
   "refunds": "Refunds and cancellation", "copyright": "Copyright and takedown",
   "aup": "Acceptable use", "sec": "Security", "ops": "Who runs each service", "tm": "Using our marks",
   "crumb": "HeartBank® › earth.333.eco",
-  "banner": "សេចក្តីព្រាង ដែលមិនទាន់ត្រូវបានពិនិត្យដោយមេធាវីនៅឡើយទេ។ អត្ថបទនេះមានតែជាភាសាអង់គ្លេសប៉ុណ្ណោះ។",
+  "banner": "នេះជាសេចក្តីព្រាង។ មិនទាន់មានមេធាវីណាពិនិត្យវានៅឡើយទេ ហើយវាអាចផ្លាស់ប្តូរ មុនពេលវាជាកំណែចុងក្រោយ។ អត្ថបទច្បាប់មានតែជាភាសាអង់គ្លេសប៉ុណ្ណោះ។",
   "with": "រៀបចំជាមួយ", "withv": "Miss Aquarius℠ ដែលជា AI",
   "by": "ដំណើរការដោយ", "byv": "នឹងដាក់ឈ្មោះនៅក្នុងកំណែចុងក្រោយ",
   "this": "កំណែនេះ", "thisv": "Draft of 9 November 2026",
@@ -110,6 +119,13 @@ DT = {
   "fp": "ស្នាមម្រាមដៃរបស់វា", "fp_p": "SHA-256 នៃអត្ថបទ គ្រប់បៃ។",
   "dl": "ទាញយកអត្ថបទ (.md)", "dlo": "ទាញយកភស្តុតាងរបស់វា (.ots)", "curv": "កំណែបច្ចុប្បន្ន",
   "keep": "រក្សាច្បាប់ចម្លងមួយ៖ អត្ថបទ និងភស្តុតាងរបស់វា គឺជាអ្វីដែលអ្នកណាក៏ត្រូវការ ដើម្បីពិនិត្យវា ដោយមិនចាំបាច់មានជំនួយពីយើង។",
+  "rev": "បានពិនិត្យ", "revv": "ដោយមេធាវី ១២ មករា ២០២៧", "revrec": "កំណត់ត្រារបស់វា",
+  "named": "[ the operator, as the final text names it ]", "ver27": "Version of 12 January 2027",
+  "t4_text": "These terms are between you and [ the operator ], which operates earth.333.eco. By opening your record here, you agree to them.",
+  "t5_h": "Acceptable use", "t5_scope": "សម្រាប់គ្រប់សេវាដែលមាននៅលើគេហទំព័រនេះ។ លក្ខខណ្ឌនៃសេវានីមួយៗចង្អុលមកទីនេះ។", "t5_ph": "[ COUNSEL WRITES THE WORDS ]",
+  "t5_p": "អ្វីដែលមិនត្រូវបានអនុញ្ញាតនៅលើសេវាណាមួយ៖ អ្វីដែលអ្នកមិនអាចបង្ហោះ ផ្ញើ ឬធ្វើចំពោះអ្នកដទៃ។ រៀបចំជាសេចក្តីព្រាង រួចពិនិត្យ ដូចឯកសារទាំងអស់នៅទីនេះ។",
+  "older": "នេះជាកំណែមុន។", "older_cur": "កំណែបច្ចុប្បន្នគឺ Version of 12 January 2027។",
+  "side": ("ឯកសារច្បាប់", "earth.333.eco", "developers.333.eco", "សម្រាប់គ្រប់សេវា"),
   "e_legal": "ច្បាប់",
   "e8_h": "ឯកសារច្បាប់", "e8_lede": "គ្រប់កំណែនៃឯកសារច្បាប់របស់សេវានីមួយៗ អានពីឃ្លាំងសាធារណៈ 333eco/legal-versions។ ការពិនិត្យទាំងអស់ដំណើរការក្នុងកម្មវិធីរុករករបស់អ្នក។",
   "tick": "សញ្ញាធីកមានន័យថាវាត្រូវបានពិនិត្យនៅលើទំព័រនេះមុននេះបន្តិច។ គ្មានសញ្ញាធីកមានន័យថាវាត្រូវបានប្រាប់ ជាមួយកន្លែងដែលត្រូវពិនិត្យ។",
@@ -121,6 +137,7 @@ DT = {
   "e_limit": "អ្វីដែលនេះបង្ហាញ៖ អត្ថបទមានរួចហើយនៅ ២៧ វិច្ឆិកា ២០២៦។ វាមិនបង្ហាញថាអ្នកណាជាអ្នកផ្សព្វផ្សាយ ឬថាវាមានសុពលភាពនោះទេ។",
   "e_served": "បង្ហាញពី", "e_served_p": "legal.333.eco · ច្បាប់ចម្លងមួយនៅ Internet Archive ២៧ វិច្ឆិកា ២០២៦ · Software Heritage រក្សាឃ្លាំងនេះ។",
   "e_page": "បើកទំព័ររបស់វានៅលើ legal.333.eco",
+  "e_rev": "កំណត់ត្រានៃការពិនិត្យ", "e_rev_p": "បានបញ្ចូលនៅ ១២ មករា ២០២៧ នៅពេលមេធាវីពិនិត្យកំណែនេះ ហើយបោះត្រាពេលវេលានៅក្នុងបញ្ជីថ្ងៃនោះ។ វាកត់ត្រាថាការពិនិត្យបានកើតឡើង។ វាមិនបង្ហាញថាមេធាវីបានផ្តល់យោបល់អ្វីនោះទេ។",
 },
 }
 
@@ -234,6 +251,55 @@ def E9(t, d):
             + '<p class="fine">%s</p><span class="pillbtn ghost">%s</span>' % (d["tick"], d["e_page"]))
 
 
+def T4(t, d):
+    """The state after counsel's sign-off (ruled 2026-11-25): a dated review record removes the banner. Drawn ahead; dates drawn."""
+    rows = ((d["rev"], '%s · <span class="link">%s</span>' % (d["revv"], d["revrec"])), (d["with"], d["withv"]), (d["by"], d["named"]),
+            (d["this"], '%s · <span class="mono">7c19d0</span>' % d["ver27"]))
+    meta = '<div class="card">%s</div>' % "".join('<div class="kf"><div class="kl">%s</div><div>%s</div></div>' % r for r in rows)
+    eng = '<p class="fine lgeng">%s</p>' % d["english"] if d["english"] else ""
+    text = ('<h2 class="lgdoch">Terms of service</h2><p class="lgdate">Version of 12 January 2027.</p><p>%s</p><p class="lgmore">…</p>' % d["t4_text"])
+    vers = ('<div class="card"><h2>%s</h2><div class="row lgrow"><div><div class="t">%s <span class="pill on">%s</span></div><div class="s mono">2027-01-12-7c19d0</div></div>%s</div>'
+            '<div class="row lgrow"><div><div class="t">%s</div><div class="s mono">2026-11-09-%s</div></div>%s</div></div>'
+            % (d["versions"], d["ver27"], d["cur"], CHEV, d["draft9"], FP[:6], CHEV))
+    return ('<div class="s lgcrumb">%s</div>' % d["crumb"] + meta + eng + '<article class="card lgdoc" lang="en">%s</article>' % text + vers
+            + '<span class="pillbtn">%s</span>' % d["chk"] + _tail(d))
+
+
+def T5(t, d):
+    """A document shared by every service (acceptable use): placeholder words until counsel writes them."""
+    return ('<div class="s lgcrumb">%s</div><h1>%s</h1><p class="lede">%s</p>' % (d["all"], d["t5_h"], d["t5_scope"])
+            + '<div class="lgbanner">%s</div>' % d["banner"]
+            + '<article class="card lgdoc"><p class="placeholder lgph">%s</p><p>%s</p></article>' % (d["t5_ph"], d["t5_p"]) + _tail(d))
+
+
+def T6(t, d):
+    """An earlier version once a newer one exists: the fact stated once, no countdown, no alarm."""
+    return ("<h1>%s</h1><p class='lede'>%s</p>" % (d["t3_h"], d["t3_sub"])
+            + '<div class="card"><p><b>%s</b> %s</p><span class="pillbtn">%s</span></div>' % (d["older"], d["older_cur"], d["curv"])
+            + '<div class="lgbanner">%s</div>' % d["banner"]
+            + '<div class="card"><div class="mono lgaddr">legal.333.eco/earth.333.eco/terms/2026-11-09-%s</div><p>%s</p></div>' % (FP[:6], d["t3_p"])
+            + '<div class="lgbtns"><span class="pillbtn ghost">%s</span><span class="pillbtn ghost">%s</span></div>' % (d["dl"], d["dlo"])
+            + _facts(d) + _tail(d))
+
+
+def T2D(t, d):
+    """The document page at 1280: the documents down the left (Default 20's left panel), the text given room (Stripe Docs)."""
+    nav = "".join('<a class="%s">%s</a>' % ("on" if i == 1 else "", x) for i, x in enumerate(d["side"]))
+    main = T2(t, d)
+    return '<div class="side lgside"><nav class="nav">%s</nav><div class="lgmain">%s</div></div>' % (nav, main)
+
+
+def E10(t, d):
+    """The Legal tab for a reviewed version: the review record is a fact with its own limit."""
+    def leg(h, p):
+        return '<div class="row" style="display:block"><div class="t"><span style="color:var(--accent)">✓</span> %s</div><div class="s">%s</div></div>' % (h, p)
+    return (_etabs(t, d) + "<h1>%s</h1><p class='lede'>%s</p>" % (d["e9_h"], d["ver27"])
+            + '<div class="card">%s%s%s%s</div>' % (leg(d["e_fp"], d["e_fp_p"]), leg(d["e_proof"], d["e_proof_p"].replace("27 Nov 2026", "12 Jan 2027")),
+                                                  leg(d["e_tsa"], d["e_tsa_p"].replace("27 Nov 2026", "12 Jan 2027")), leg(d["e_rev"], d["e_rev_p"]))
+            + '<div class="lgbanner lglimit">%s</div>' % d["e_limit"].replace("27 Nov 2026", "12 Jan 2027")
+            + '<p class="fine">%s</p>' % d["tick"])
+
+
 SCREENS = [
     ("T1", "legal", "legal.333.eco: the documents, under the body that runs each service (at M1: two services)", T1),
     ("T1b", "legal", "legal.333.eco: drawn ahead, every body and the shared documents", T1b),
@@ -241,8 +307,13 @@ SCREENS = [
     ("T3", "legal", "One version at its own address, with its fingerprint and proof", T3),
     ("E8", "explorer", "The explorer's Legal tab: every version, checked", E8),
     ("E9", "explorer", "One legal version checked in your browser", E9),
+    ("T4", "legal", "Drawn ahead: a version after counsel's review (the record replaces the banner)", T4),
+    ("T5", "legal", "A document shared by every service: acceptable use (words: counsel)", T5),
+    ("T6", "legal", "An earlier version, once a newer one exists", T6),
+    ("E10", "explorer", "The Legal tab: a reviewed version, with its review record", E10),
 ]
-PUBLIC = {"T1", "T1b", "T2", "T3", "E8", "E9"}
+DESKTOP = [("T2D", "legal", "A document page, desktop", T2D)]
+PUBLIC = {"T1", "T1b", "T2", "T3", "T4", "T5", "T6", "T2D", "E8", "E9", "E10"}
 CSS = """
 .lgsec{margin:18px 0 0}
 .lgh{font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-dim);margin:0 0 8px}
@@ -268,6 +339,9 @@ CSS = """
 .lgfacts{display:grid;gap:10px;margin-top:12px}
 .lgbtns{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
 .lgbtns .pillbtn{margin:0}
+.lgph{font-family:var(--font-mono);color:var(--ink-dim);letter-spacing:.04em}
+.lgside{gap:40px}
+.lgmain{max-width:760px}
 """
 BARRED = [
     (r"\bverif(?:y|ied|ies)\b|\bcertif(?:y|ied)\b|notar", "a timestamp shows existence, never a verification or a notary"),
@@ -276,6 +350,7 @@ BARRED = [
     (r"\bB-Origin\b|signed by (?:us|the founder|Thon)|\bwe sign", "legal versions are timestamped, never signed at B-Origin (2026-11-25)"),
     (r"visits are (?:not )?counted|counts nothing", "claim only what the built bytes prove: no analytics script, no cookies"),
     (r"Factory 333™?\s*·\s*shared|shared by every body.*Factory", "the 333.eco heading is never Factory 333"),
+    (r"គ្រប់ស្ថាប័ន|every institution", "ស្ថាប័ន is the INSTITUTION; the members are never 'every institution'"),
 ]
 
 
@@ -285,9 +360,15 @@ def check(sid, body):
         assert not re.search(pat, plain, re.I), "%s: %s" % (sid, why)
     if "Miss Aquarius" in plain and sid.startswith("T"):
         assert re.search(r"CEO of HeartBank|ប្រធានប្រតិបត្តិនៃ HeartBank", plain), "%s: on this host she is the CEO of HeartBank®, never unqualified" % sid
-    if sid in ("T2", "T3", "E9"):
+    if sid in ("T2", "T2D", "T3", "T6", "E9", "E10"):
         assert re.search(r"does not show who published it|មិនបង្ហាញថាអ្នកណាជាអ្នកផ្សព្វផ្សាយ", plain), "%s: a timestamp always carries its limit" % sid
-    if sid in ("T2", "T3"):
+    if sid in ("T2", "T2D", "T3", "T6"):
         assert plain.count('class="card"><h2>') >= 2 and "lgfacts" in plain, "%s: existed-by and served-from are two facts" % sid
+    if sid == "T4":
+        assert "lgbanner" not in plain and re.search(r"Reviewed|បានពិនិត្យ", plain), "T4: a reviewed version shows its review record and no draft banner"
+    if sid == "E10":
+        assert re.search(r"does not show what the lawyer advised|មិនបង្ហាញថាមេធាវីបានផ្តល់យោបល់", plain), "E10: the review record carries its limit"
+    if sid in ("T2", "T2D", "T3", "T5", "T6"):
+        assert "lgbanner" in plain, "%s: a draft keeps its banner until a review record exists" % sid
     if sid == "T2":
         assert 'lang="en"' in plain and "These terms are between you" in plain, "T2: the legal text is English, word for word, on every board"

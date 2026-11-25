@@ -259,6 +259,9 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:10px;bo
 .lgfacts{display:grid;gap:10px;margin-top:12px}
 .lgbtns{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
 .lgbtns .pillbtn{margin:0}
+.lgph{font-family:var(--font-mono);color:var(--ink-dim);letter-spacing:.04em}
+.lgside{gap:40px}
+.lgmain{max-width:760px}
 html{--beat-duration:1.5s;--beat-delay:0s}
 /* ============================================================================
    MOTION — the heartbeat

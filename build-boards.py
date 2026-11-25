@@ -1005,6 +1005,8 @@ def _lg(f):
 SCREENS += [(i, p, n, _lg(f)) for i, p, n, f in LG.SCREENS]
 PUBLIC |= LG.PUBLIC
 LGIDS = {s[0] for s in LG.SCREENS}
+DESKTOP += [(i, p, n, _lg(f)) for i, p, n, f in LG.DESKTOP]
+LGIDS |= {s[0] for s in LG.DESKTOP}
 
 
 def page(sid, render, lang, dark=False, desk=False):
@@ -1024,10 +1026,10 @@ def page(sid, render, lang, dark=False, desk=False):
         GV.check(sid, body)
     if sid[0] == "M":
         MK.check(sid, body)
-    if sid in LGIDS:
-        LG.check(sid, body)
     if sid[0] == "T":
         foot = LG.DT["km" if lang == "km" else "en"]["foot"]
+    if sid in LGIDS:
+        LG.check(sid, body + "<footer>" + foot + "</footer>")  # the footer is checked too: a planted footer claim once passed
     bl = sid[0] == "B" or sid.startswith("ST")
     if bl:
         BL.check(sid, body)
@@ -1094,7 +1096,7 @@ def main():
                        "x": dk.get(pg, 0) * (W + 80), "y": rowy["km"] + tall_km + 160})
         dk[pg] = dk.get(pg, 0) + 1  # a surface with two dark passes (origin: K1 and the gift page G7) sets them side by side
     ydesk = rowy["km"] + tall_km + 160 + H + 160  # below the dark-pass row
-    dcol = {"registry": 0, "explorer": 0, "origin": 0, "developers": 0}
+    dcol = {"registry": 0, "explorer": 0, "origin": 0, "developers": 0, "legal": 0}
     for sid, pg, title, render in DESKTOP:
         for lang in ("en", "km"):
             f = "%s%s.html" % (sid, "" if lang == "en" else "Km")
