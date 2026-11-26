@@ -72,6 +72,18 @@ DT = {
   "p2c_h": "This phone can be added on 2 Dec 2026",
   "p2c_lede": "Your account was opened with a text message on 25 Nov 2026. A passkey made after that adds a phone only after a waiting period, so we told every address linked to your account first.",
   "p2c_ch": "If this wasn't you", "p2c_cp": "Someone may be using your phone number. The message we sent says how to stop it.",
+  # P21–P23 a lost or stolen phone, on sign.333.eco (live words: src/app.ts ACCOUNT_TEXT — title, Remove, Added, This one)
+  "acct_h": "Your passkeys", "acct_this": "This one", "acct_added": "Added", "acct_remove": "Remove",
+  "acct_pk": "My laptop", "acct_pkd": "Added 3 Nov 2026",
+  "acct_ph": "Phones with B-PoH", "acct_phone": "A phone", "acct_phoned": "Added 25 Nov 2026 · finger key and PIN key",
+  "acct_lost": "Lost or stolen?",
+  "acct_which": "Remove a phone you still have and no longer use. If it was lost or stolen, report it instead: that also covers what its keys pressed since you last had it.",
+  "p22_h": "Report a lost or stolen phone", "p22_when": "When did you last have it?", "p22_day": "25 Nov 2026", "p22_time": "18:00",
+  "p22_ch": "What becomes public", "p22_cp": "A public record that this phone's keys were reported, and the time you give. Presses its keys made from then on are no longer backed by what its chip showed; presses before it are unchanged. If you shared presses made on this phone, anyone holding them can see they came from the same phone. It can't be undone.",
+  "p22_go": "Report it with your passkey",
+  "p23_h": "Reported", "p23_lede": "This phone's keys are ended. They can't press again.",
+  "p23_ch": "On the public record", "p23_cp": "From 25 Nov 2026, 18:00, presses by this phone's keys are no longer backed by what its chip showed. Presses before that are unchanged. The record names the keys, never you.",
+  "p23_go": "Back to your passkeys", "p23_new": "Add a new phone",
   # P3 making the two keys
   "p3_h": "Making your two keys",
   "p3_steps": ("Your passkey confirmed it's you", "Finger key: touch the sensor", "PIN key: then enter your PIN", "sign.333.eco reads this phone's proof"),
@@ -186,6 +198,17 @@ DT = {
   "p2c_h": "ទូរស័ព្ទ​នេះ​អាច​បន្ថែម​បាន​នៅ​ថ្ងៃ ២ ធ្នូ ២០២៦",
   "p2c_lede": "គណនីរបស់អ្នកត្រូវបានបើកដោយសារជាអក្សរ នៅថ្ងៃ ២៥ វិច្ឆិកា ២០២៦។ passkey ដែលបង្កើតក្រោយពេលនោះ បន្ថែមទូរស័ព្ទបានតែក្រោយរយៈពេលរង់ចាំមួយប៉ុណ្ណោះ ដូច្នេះយើងបានប្រាប់គ្រប់អាសយដ្ឋានដែលភ្ជាប់នឹងគណនីរបស់អ្នកជាមុនសិន។",
   "p2c_ch": "ប្រសិនបើនេះមិនមែនជាអ្នកទេ", "p2c_cp": "នរណាម្នាក់ប្រហែលជាកំពុងប្រើលេខទូរស័ព្ទរបស់អ្នក។ សារដែលយើងបានផ្ញើប្រាប់ពីរបៀបបញ្ឈប់វា។",
+  "acct_h": "passkey របស់អ្នក", "acct_this": "ឧបករណ៍នេះ", "acct_added": "បានបន្ថែម", "acct_remove": "លុប",
+  "acct_pk": "កុំព្យូទ័រយួរដៃរបស់ខ្ញុំ", "acct_pkd": "បានបន្ថែម ៣ វិច្ឆិកា ២០២៦",
+  "acct_ph": "ទូរស័ព្ទដែលមាន B-PoH", "acct_phone": "ទូរស័ព្ទមួយ", "acct_phoned": "បានបន្ថែម ២៥ វិច្ឆិកា ២០២៦ · សោម្រាមដៃ និងសោ PIN",
+  "acct_lost": "បាត់ ឬត្រូវគេលួច?",
+  "acct_which": "សូមលុបទូរស័ព្ទដែលអ្នកនៅមាន ហើយលែងប្រើ។ ប្រសិនបើវាបាត់ ឬត្រូវគេលួច សូមរាយការណ៍ជំនួសវិញ៖ ការនោះក៏គ្របដណ្តប់អ្វីដែលសោរបស់វាបានចុច ចាប់តាំងពីពេលចុងក្រោយដែលអ្នកមានវាផងដែរ។",
+  "p22_h": "រាយការណ៍​ទូរស័ព្ទ​ដែល​បាត់ ឬ​ត្រូវ​គេ​លួច", "p22_when": "តើអ្នកមានវាចុងក្រោយនៅពេលណា?", "p22_day": "២៥ វិច្ឆិកា ២០២៦", "p22_time": "18:00",
+  "p22_ch": "អ្វីដែលនឹងក្លាយជាសាធារណៈ", "p22_cp": "កំណត់ត្រាសាធារណៈមួយថា សោរបស់ទូរស័ព្ទនេះត្រូវបានរាយការណ៍ និងពេលវេលាដែលអ្នកផ្តល់។ ការចុចដែលសោរបស់វាបានធ្វើចាប់ពីពេលនោះទៅ លែងត្រូវបានគាំទ្រដោយអ្វីដែលបន្ទះឈីបរបស់វាបានបង្ហាញទៀតហើយ។ ការចុចមុនពេលនោះនៅដដែល។ ប្រសិនបើអ្នកបានចែករំលែកការចុចដែលធ្វើនៅលើទូរស័ព្ទនេះ អ្នកណាដែលមានវាអាចឃើញថាវាមកពីទូរស័ព្ទតែមួយ។ វាមិនអាចត្រឡប់វិញបានទេ។",
+  "p22_go": "រាយការណ៍ដោយ passkey របស់អ្នក",
+  "p23_h": "បាន​រាយការណ៍", "p23_lede": "សោរបស់ទូរស័ព្ទនេះបានបញ្ចប់ហើយ។ វាមិនអាចចុចម្តងទៀតបានទេ។",
+  "p23_ch": "នៅលើកំណត់ត្រាសាធារណៈ", "p23_cp": "ចាប់ពីថ្ងៃ ២៥ វិច្ឆិកា ២០២៦ ម៉ោង 18:00 ការចុចដោយសោរបស់ទូរស័ព្ទនេះ លែងត្រូវបានគាំទ្រដោយអ្វីដែលបន្ទះឈីបរបស់វាបានបង្ហាញទៀតហើយ។ ការចុចមុនពេលនោះនៅដដែល។ កំណត់ត្រានោះដាក់ឈ្មោះសោ មិនដែលដាក់ឈ្មោះអ្នកទេ។",
+  "p23_go": "ត្រឡប់ទៅ passkey របស់អ្នកវិញ", "p23_new": "បន្ថែមទូរស័ព្ទថ្មី",
   "p3_h": "កំពុង​បង្កើត​សោ​ពីរ​របស់​អ្នក",
   "p3_steps": ("passkey របស់អ្នកបានបញ្ជាក់ថាជាអ្នក", "សោម្រាមដៃ៖ ប៉ះឧបករណ៍ចាប់ស្នាមម្រាមដៃ", "សោ PIN៖ បន្ទាប់មកបញ្ចូលលេខកូដ PIN របស់អ្នក", "sign.333.eco អានភស្តុតាងរបស់ទូរស័ព្ទនេះ"),
   "p3_sys_h": "បង្កើត​សោ​ម្រាមដៃ​របស់​អ្នក", "p3_sys_sub": "B-PoH℠ · សម្រាប់ sign.333.eco", "touch": "ប៉ះឧបករណ៍ចាប់ស្នាមម្រាមដៃ", "cancel": "បោះបង់",
@@ -426,6 +449,37 @@ def P2c(t, d):
     return _sb(d) + _tab(d, d["host"]) + page + _gb()
 
 
+def _browser(host):
+    """An ordinary phone browser's address bar: these pages are sign.333.eco itself, opened anywhere (the phone is gone)."""
+    return '<div class="ph-ab"><span class="ph-abu">%s<span>%s</span></span></div>' % (_icon(LOCK, 13, 2), host)
+
+
+def _webpage(d, body):
+    wm = ('<span class="wordmark">Heart<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="%s"/></svg>ank<sup>®</sup></span>' % EMBLEM)
+    return _sb(d) + _browser(d["host"]) + '<div class="ph-web"><header>%s</header>%s<footer><span>%s</span></footer></div>' % (wm, body, d["p2_foot"]) + _gb()
+
+
+def P21(t, d):
+    """The live 'Your passkeys' page, with the B-PoH phones it will list: Remove (a phone you still have) and Lost or stolen? (a report)."""
+    pk = '<div class="ph-li"><span class="ph-lt"><span class="t">%s <span class="ph-tag">%s</span></span><span class="s">%s</span></span></div>' % (d["acct_pk"], d["acct_this"], d["acct_pkd"])
+    ph = ('<div class="ph-li ph-col"><span class="ph-lt"><span class="t">%s</span><span class="s">%s</span></span>'
+          '<span class="ph-acts"><span class="pillbtn ghost">%s</span><span class="pillbtn ph-warn">%s</span></span></div>' % (d["acct_phone"], d["acct_phoned"], d["acct_remove"], d["acct_lost"]))
+    body = ('<h1>%s</h1>' % d["acct_h"] + '<div class="ph-list">%s</div>' % pk + _group(d["acct_ph"], [ph]) + '<p class="fine">%s</p>' % d["acct_which"] + '<div class="grow"></div>')
+    return _webpage(d, body)
+
+
+def P22(t, d):
+    body = ('<h1>%s</h1><div class="ph-gh">%s</div><div class="ph-when"><div class="field">%s</div><div class="field">%s</div></div>' % (d["p22_h"], d["p22_when"], d["p22_day"], d["p22_time"])
+            + _card(d["p22_ch"], d["p22_cp"], "log") + '<div class="grow"></div>' + _btn(d["p22_go"], icon=KEY) + _link(d["no"]))
+    return _webpage(d, body)
+
+
+def P23(t, d):
+    body = ('<div class="ph-done">%s</div><h1>%s</h1><p class="lede">%s</p>' % (OKBIG, d["p23_h"], d["p23_lede"]) + _card(d["p23_ch"], d["p23_cp"], "log")
+            + '<div class="grow"></div>' + _btn(d["p23_go"]) + _link(d["p23_new"]))
+    return _webpage(d, body)
+
+
 def P2(t, d):
     tab = ('<div class="ph-ct">%s<span class="ph-ctu">%s<span>%s</span></span>%s</div>'
            % (_icon(CLOSE, 20), _icon(LOCK, 14, 2), d["host"], '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="19" r="1.8" fill="currentColor"/></svg>'))
@@ -612,6 +666,9 @@ SCREENS = [
     ("P16", "poh", "Remove this phone", P16),
     ("P17", "poh", "Settings (language and appearance move here once a phone is added)", P17),
     ("P20", "poh", "After a text-message recovery: this phone needs adding again", P20),
+    ("P21", "poh", "On sign.333.eco, from any device (the phone is gone): the phone on Your passkeys, with Remove and Lost or stolen?", P21),
+    ("P22", "poh", "Report a lost or stolen phone: when you last had it, and what becomes public, said once", P22),
+    ("P23", "poh", "Reported: the phone's keys are ended; the public record", P23),
     ("P18", "poh", "When a phone can't be added", P18),
 ]
 PUBLIC = set()  # an app's own screens: no share button (Default 8)
@@ -709,6 +766,14 @@ CSS = """
 .ph-near{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--edge);background:var(--wash);color:var(--ink);border-radius:999px;padding:4px 10px;font-size:13px;white-space:nowrap}
 .ph-near svg{color:var(--accent)}
 .ph-done{margin:28px 0 0}
+.ph-ab{padding:8px 14px;border-bottom:1px solid var(--line);background:var(--surface)}
+.ph-abu{display:flex;align-items:center;justify-content:center;gap:6px;background:var(--surface-2);border-radius:999px;padding:8px 12px;font-size:14px;color:var(--ink)}
+.ph-abu svg{color:var(--ink-dim)}
+.ph-tag{font-size:12px;color:var(--accent);font-weight:600;margin-left:6px}
+.ph-col{flex-direction:column;align-items:stretch}
+.ph-acts{display:flex;gap:10px;margin-top:10px}.ph-acts .pillbtn{margin:0}
+.ph-warn{background:#b3261e;color:#fff;border-color:#b3261e}
+.ph-when{display:grid;grid-template-columns:1.4fr 1fr;gap:10px;margin-bottom:14px}
 .ph-qr{display:grid;place-items:center;background:#f4f5f7;border-radius:16px;padding:16px;margin:4px 0 14px;line-height:0}
 .ph-pin{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:36px;font-family:Roboto,var(--font-text)}
 .km .ph-pin{font-family:var(--font-khmer),var(--font-text)}
@@ -758,6 +823,11 @@ def check(sid, body):
             "P12b: says what the website receives, that it doesn't name the phone, and the way out (founder 2026-11-25, item 3)"
     if sid == "P19":
         assert 'class="ph-near"' in body and re.search(r"asks you to approve|សុំឱ្យអ្នកអនុម័ត", text), "P19: an approval names who asks and needs nearness (F2)"
+    if sid == "P22":
+        assert re.search(r"can't be undone|មិនអាចត្រឡប់វិញបានទេ", text) and re.search(r"same phone|ទូរស័ព្ទតែមួយ", text), \
+            "P22: a report says once that it is public, links the shared presses of that phone, and can't be undone"
+    if sid == "P21":
+        assert re.search(r"Lost or stolen|បាត់ ឬត្រូវគេលួច", text) and re.search(r"report it instead|រាយការណ៍ជំនួសវិញ", text), "P21: both acts, and which to pick"
     if sid == "P1":
         assert re.search(r"Not who is holding|មិនមែនថាអ្នកណាកំពុងកាន់", text), "P1: says what a press shows, and what it doesn't"
     if sid == "P17":

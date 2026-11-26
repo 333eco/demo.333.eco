@@ -2779,12 +2779,66 @@
    "y": 2676
   },
   {
+   "file": "P21.html",
+   "page": "poh",
+   "title": "P21 · On sign.333.eco, from any device (the phone is gone): the phone on Your passkeys, with Remove and Lost or stolen?, English",
+   "w": 390,
+   "h": 844,
+   "x": 11750,
+   "y": 0
+  },
+  {
+   "file": "P21Km.html",
+   "page": "poh",
+   "title": "P21 · On sign.333.eco, from any device (the phone is gone): the phone on Your passkeys, with Remove and Lost or stolen?, Khmer",
+   "w": 390,
+   "h": 893,
+   "x": 11750,
+   "y": 2676
+  },
+  {
+   "file": "P22.html",
+   "page": "poh",
+   "title": "P22 · Report a lost or stolen phone: when you last had it, and what becomes public, said once, English",
+   "w": 390,
+   "h": 844,
+   "x": 12220,
+   "y": 0
+  },
+  {
+   "file": "P22Km.html",
+   "page": "poh",
+   "title": "P22 · Report a lost or stolen phone: when you last had it, and what becomes public, said once, Khmer",
+   "w": 390,
+   "h": 909,
+   "x": 12220,
+   "y": 2676
+  },
+  {
+   "file": "P23.html",
+   "page": "poh",
+   "title": "P23 · Reported: the phone's keys are ended; the public record, English",
+   "w": 390,
+   "h": 844,
+   "x": 12690,
+   "y": 0
+  },
+  {
+   "file": "P23Km.html",
+   "page": "poh",
+   "title": "P23 · Reported: the phone's keys are ended; the public record, Khmer",
+   "w": 390,
+   "h": 893,
+   "x": 12690,
+   "y": 2676
+  },
+  {
    "file": "P18.html",
    "page": "poh",
    "title": "P18 · When a phone can't be added, English",
    "w": 390,
    "h": 1004,
-   "x": 11750,
+   "x": 13160,
    "y": 0
   },
   {
@@ -2793,7 +2847,7 @@
    "title": "P18 · When a phone can't be added, Khmer",
    "w": 390,
    "h": 1150,
-   "x": 11750,
+   "x": 13160,
    "y": 2676
   },
   {
