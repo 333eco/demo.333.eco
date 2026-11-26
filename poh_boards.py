@@ -61,6 +61,17 @@ DT = {
   "p12b_c1h": "What the proof also shows", "p12b_c1p": "This phone's Android version and last security update, and on some phones the batch it was made in. It doesn't name this phone. If you'd rather the website didn't see this, go back and choose your usual passkey manager.",
   "p12b_c2h": "It stays on this phone", "p12b_c2p": "This passkey can't be copied to another device. If you lose this phone, it is gone too, so keep another way into forum.example.org.",
   "p12b_go": "Make it with your finger",
+  "p4b_h": "This phone is added, with a PIN key",
+  "p4b_lede": "This phone has no fingerprint or face sensor strong enough for a finger key, so it presses with your PIN.",
+  "p4b_ch": "Every press says which key pressed", "p4b_cp": "Some websites may ask for a finger press, and this phone can't give one. Everything else works the same.",
+  "p20_h": "This phone needs adding again",
+  "p20_lede": "Your account was opened with a text message, so this phone's keys have ended. A text message can never add a phone.",
+  "p20_ch": "Add it again with a passkey",
+  "p20_cp": "A passkey you still have can add it now. A passkey made after the text message can add it after a waiting period, told first to every address linked to your account, so it can be stopped if it wasn't you.",
+  "p20_go": "Add this phone again", "p20_fine": "If this wasn't you, someone may be using your phone number. Your records are unchanged.",
+  "p2c_h": "This phone can be added on 2 Dec 2026",
+  "p2c_lede": "Your account was opened with a text message on 25 Nov 2026. A passkey made after that adds a phone only after a waiting period, so we told every address linked to your account first.",
+  "p2c_ch": "If this wasn't you", "p2c_cp": "Someone may be using your phone number. The message we sent says how to stop it.",
   # P3 making the two keys
   "p3_h": "Making your two keys",
   "p3_steps": ("Your passkey confirmed it's you", "Finger key: touch the sensor", "PIN key: then enter your PIN", "sign.333.eco reads this phone's proof"),
@@ -164,6 +175,17 @@ DT = {
   "p12b_c1h": "អ្វីដែលភស្តុតាងក៏បង្ហាញផងដែរ", "p12b_c1p": "កំណែ Android និងបច្ចុប្បន្នភាពសុវត្ថិភាពចុងក្រោយរបស់ទូរស័ព្ទនេះ ហើយនៅលើទូរស័ព្ទខ្លះ ក៏បង្ហាញក្រុមទូរស័ព្ទដែលវាត្រូវបានផលិតជាមួយដែរ។ វាមិនដាក់ឈ្មោះទូរស័ព្ទនេះទេ។ ប្រសិនបើអ្នកមិនចង់ឱ្យគេហទំព័រឃើញរឿងនេះ សូមត្រឡប់ក្រោយ ហើយជ្រើសរើសកម្មវិធីគ្រប់គ្រង passkey ធម្មតារបស់អ្នក។",
   "p12b_c2h": "វានៅលើទូរស័ព្ទនេះ", "p12b_c2p": "passkey នេះមិនអាចចម្លងទៅឧបករណ៍ផ្សេងបានទេ។ ប្រសិនបើអ្នកបាត់ទូរស័ព្ទនេះ វាក៏បាត់ដែរ ដូច្នេះសូមរក្សាផ្លូវចូលមួយទៀតទៅ forum.example.org។",
   "p12b_go": "បង្កើតវាដោយម្រាមដៃរបស់អ្នក",
+  "p4b_h": "ទូរស័ព្ទ​នេះ​ត្រូវ​បាន​បន្ថែម​ហើយ ជាមួយ​សោ PIN",
+  "p4b_lede": "ទូរស័ព្ទនេះគ្មានឧបករណ៍ចាប់ស្នាមម្រាមដៃ ឬមុខ ដែលខ្លាំងគ្រប់គ្រាន់សម្រាប់សោម្រាមដៃទេ ដូច្នេះវាចុចដោយលេខកូដ PIN របស់អ្នក។",
+  "p4b_ch": "ការចុចនីមួយៗប្រាប់ថាសោមួយណាបានចុច", "p4b_cp": "គេហទំព័រខ្លះអាចស្នើសុំការចុចដោយម្រាមដៃ ហើយទូរស័ព្ទនេះមិនអាចផ្តល់វាបានទេ។ អ្វីៗផ្សេងទៀតដំណើរការដូចគ្នា។",
+  "p20_h": "ទូរស័ព្ទ​នេះ​ត្រូវ​ការ​បន្ថែម​ម្តង​ទៀត",
+  "p20_lede": "គណនីរបស់អ្នកត្រូវបានបើកដោយសារជាអក្សរ ដូច្នេះសោរបស់ទូរស័ព្ទនេះបានបញ្ចប់ហើយ។ សារជាអក្សរមិនអាចបន្ថែមទូរស័ព្ទបានទេ។",
+  "p20_ch": "បន្ថែមវាម្តងទៀតដោយ passkey",
+  "p20_cp": "passkey ដែលអ្នកនៅមាន អាចបន្ថែមវាបានឥឡូវនេះ។ passkey ដែលបង្កើតក្រោយសារជាអក្សរនោះ អាចបន្ថែមវាបានក្រោយរយៈពេលរង់ចាំមួយ ដែលត្រូវបានប្រាប់ជាមុនទៅគ្រប់អាសយដ្ឋានដែលភ្ជាប់នឹងគណនីរបស់អ្នក ដើម្បីឱ្យគេអាចបញ្ឈប់វាបាន ប្រសិនបើវាមិនមែនជាអ្នក។",
+  "p20_go": "បន្ថែមទូរស័ព្ទនេះម្តងទៀត", "p20_fine": "ប្រសិនបើនេះមិនមែនជាអ្នកទេ នរណាម្នាក់ប្រហែលជាកំពុងប្រើលេខទូរស័ព្ទរបស់អ្នក។ កំណត់ត្រារបស់អ្នកមិនផ្លាស់ប្តូរទេ។",
+  "p2c_h": "ទូរស័ព្ទ​នេះ​អាច​បន្ថែម​បាន​នៅ​ថ្ងៃ ២ ធ្នូ ២០២៦",
+  "p2c_lede": "គណនីរបស់អ្នកត្រូវបានបើកដោយសារជាអក្សរ នៅថ្ងៃ ២៥ វិច្ឆិកា ២០២៦។ passkey ដែលបង្កើតក្រោយពេលនោះ បន្ថែមទូរស័ព្ទបានតែក្រោយរយៈពេលរង់ចាំមួយប៉ុណ្ណោះ ដូច្នេះយើងបានប្រាប់គ្រប់អាសយដ្ឋានដែលភ្ជាប់នឹងគណនីរបស់អ្នកជាមុនសិន។",
+  "p2c_ch": "ប្រសិនបើនេះមិនមែនជាអ្នកទេ", "p2c_cp": "នរណាម្នាក់ប្រហែលជាកំពុងប្រើលេខទូរស័ព្ទរបស់អ្នក។ សារដែលយើងបានផ្ញើប្រាប់ពីរបៀបបញ្ឈប់វា។",
   "p3_h": "កំពុង​បង្កើត​សោ​ពីរ​របស់​អ្នក",
   "p3_steps": ("passkey របស់អ្នកបានបញ្ជាក់ថាជាអ្នក", "សោម្រាមដៃ៖ ប៉ះឧបករណ៍ចាប់ស្នាមម្រាមដៃ", "សោ PIN៖ បន្ទាប់មកបញ្ចូលលេខកូដ PIN របស់អ្នក", "sign.333.eco អានភស្តុតាងរបស់ទូរស័ព្ទនេះ"),
   "p3_sys_h": "បង្កើត​សោ​ម្រាមដៃ​របស់​អ្នក", "p3_sys_sub": "B-PoH℠ · សម្រាប់ sign.333.eco", "touch": "ប៉ះឧបករណ៍ចាប់ស្នាមម្រាមដៃ", "cancel": "បោះបង់",
@@ -382,6 +404,28 @@ def P12b(t, d):
     return _scr(d, _bar('<span aria-label="%s">%s</span>' % (d["close"], _icon(CLOSE)), "", _brand(d)), inner)
 
 
+def P4b(t, d):
+    """A phone with a PIN but no strong biometric: the PIN key alone (founder 2026-11-25, 'PIN key alone')."""
+    inner = ('<h1>%s</h1><p class="lede">%s</p>' % (d["p4b_h"], d["p4b_lede"]) + _card(d["p4b_ch"], d["p4b_cp"], "key")
+             + '<div class="grow"></div>' + _btn(d["done"]))
+    return _scr(d, _bar(_brand(d)), inner)
+
+
+def P20(t, d):
+    """After a text-message recovery the app layer drops (SPEC §5.2.4); a NEW passkey re-adds only after a waiting period told first (founder 2026-11-25)."""
+    inner = ('<h1>%s</h1><p class="lede">%s</p>' % (d["p20_h"], d["p20_lede"]) + _card(d["p20_ch"], d["p20_cp"], "key")
+             + '<div class="grow"></div>' + _btn(d["p20_go"]) + _link(d["no"]) + '<p class="fine">%s</p>' % d["p20_fine"])
+    return _scr(d, _bar(_brand(d)), inner)
+
+
+def P2c(t, d):
+    """sign.333.eco during the waiting period: the date stated ONCE, never counted down (Sig-8). ⚠️ The length (drawn as 7 days) is not ruled."""
+    wm = ('<span class="wordmark">Heart<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="%s"/></svg>ank<sup>®</sup></span>' % EMBLEM)
+    page = ('<div class="ph-web"><header>%s</header><h1>%s</h1><p class="lede">%s</p>' % (wm, d["p2c_h"], d["p2c_lede"])
+            + _card(d["p2c_ch"], d["p2c_cp"], "lock") + '<div class="grow"></div>' + _link(d["no"]) + '<footer><span>%s</span></footer></div>' % d["p2_foot"])
+    return _sb(d) + _tab(d, d["host"]) + page + _gb()
+
+
 def P2(t, d):
     tab = ('<div class="ph-ct">%s<span class="ph-ctu">%s<span>%s</span></span>%s</div>'
            % (_icon(CLOSE, 20), _icon(LOCK, 14, 2), d["host"], '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="19" r="1.8" fill="currentColor"/></svg>'))
@@ -547,8 +591,10 @@ SCREENS = [
     ("P2", "poh", "Add this phone: sign.333.eco in a Custom Tab, an existing press first", P2),
     ("P2b", "poh", "Add this phone from another phone already added: the code to scan, in the Custom Tab", P2b),
     ("P19", "poh", "On the phone already added: approve the phone you just scanned (nearness required)", P19),
+    ("P2c", "poh", "Adding a phone with a passkey made after a text-message recovery: the waiting period (its length, drawn as 7 days, is not ruled)", P2c),
     ("P3", "poh", "Making the two keys, under the phone's own fingerprint prompt (drawn; its title is ours)", P3),
     ("P4", "poh", "This phone is added: what sign.333.eco read from its proof", P4),
+    ("P4b", "poh", "A phone with a PIN but no strong fingerprint or face: added with the PIN key alone", P4b),
     ("P5", "poh", "Home", P5),
     ("P6", "poh", "A press asked on this phone: the exact words", P6),
     ("P6b", "poh", "The same, after the person cancels the prompt (a toast)", P6b),
@@ -565,6 +611,7 @@ SCREENS = [
     ("P15", "poh", "When the finger key has ended (a new finger or face was added)", P15),
     ("P16", "poh", "Remove this phone", P16),
     ("P17", "poh", "Settings (language and appearance move here once a phone is added)", P17),
+    ("P20", "poh", "After a text-message recovery: this phone needs adding again", P20),
     ("P18", "poh", "When a phone can't be added", P18),
 ]
 PUBLIC = set()  # an app's own screens: no share button (Default 8)
