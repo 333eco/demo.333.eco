@@ -372,6 +372,10 @@ def check(sid, html):
         # Never pre-selected: never the page's primary button, never marked on.
         assert c.split()[0] == "link" or "ghost" in c.split(), "%s: the thank is never the primary button (%s)" % (sid, c)
         assert not re.search(r"\b(on|selected|checked|primary)\b", c), "%s: the thank is never pre-selected (%s)" % (sid, c)
+    if HOST[sid] in ("explorer", "sign"):
+        # A thank drawn in words alone (a plain line, a second button) would dodge every rule above, which reads the links.
+        said = len(re.findall(r"(?:\bThank|អរគុណ) @", text, re.I))
+        assert said == len(thanks), "%s: every thank offered is a checked thank link (%d said, %d links)" % (sid, said, len(thanks))
     if HOST[sid] == "explorer":
         for c, h in thanks:
             x = h.split("/", 3)[3].split("?")[0]
