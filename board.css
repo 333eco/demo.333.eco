@@ -355,6 +355,15 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:10px;bo
 .ph-near{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--edge);background:var(--wash);color:var(--ink);border-radius:999px;padding:4px 10px;font-size:13px;white-space:nowrap}
 .ph-near svg{color:var(--accent)}
 .ph-done{margin:28px 0 0}
+.ph-pin{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:36px;font-family:Roboto,var(--font-text)}
+.km .ph-pin{font-family:var(--font-khmer),var(--font-text)}
+.ph-pin h3{font-size:22px;font-weight:500;margin:0 0 4px}.ph-pin .sub{font-size:14px;color:var(--ink-dim)}
+.ph-pin .ph-desc{text-align:center;margin:14px 8px 0}
+.ph-pinlbl{margin:34px 0 12px;font-size:15px;color:var(--ink-dim)}
+.ph-dots{display:flex;gap:16px;margin-bottom:30px}.ph-dots i{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink-dim)}.ph-dots i.on{background:var(--ink);border-color:var(--ink)}
+.ph-pad{display:grid;grid-template-columns:repeat(3,72px);gap:14px 34px}.ph-pad span{height:56px;display:grid;place-items:center;font-size:26px;border-radius:50%}
+.ph-pad span:not(:empty){background:var(--surface-2)}
+.ph-pin .ph-neg{align-self:flex-start;margin-top:auto;padding:0 10px 6px}
 .ph-disc{margin-top:22px}
 .ph-cap{font-size:13px;color:var(--ink-dim);margin:16px 0 6px}
 html{--beat-duration:1.5s;--beat-delay:0s}

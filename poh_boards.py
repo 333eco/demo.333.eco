@@ -15,7 +15,8 @@ Copy rules this file must keep (checked at build time by check()):
   - A provider press (P13) says the WEBSITE showed the words and this app can't see them (SPEC §10 F1+F4: shown "site").
   - Live sign.333.eco words are copied word for word where they exist (src/sign-text.ts and app.ts, 2026-11-25): "Confirm with
     your passkey", "Not now", "New here? Make a passkey", "Nothing was signed.", "Signed", "{app} asks you to sign:", the field
-    labels. ⚠️ Its live footer says "only a passkey can sign", which stops being true when app keys sign; P2 draws it without
+    labels. (Khmer: *Confirm with your passkey* follows the sign page's own word, passkey, not CONFIRM_TEXT's សោសម្ងាត់; the live
+    pages differ, a question for the native readers.) ⚠️ Its live footer says "only a passkey can sign", which stops being true when app keys sign; P2 draws it without
     that clause, and the live footer is owed a change at the app's release.
 The Khmer is OURS and UNREVIEWED; the shared band says so on every Khmer board. The not-a-chartered-bank paragraph stays in
 English on the Khmer boards (Default 3: no disclosure in unreviewed Khmer).
@@ -57,7 +58,7 @@ DT = {
   "p4_read": "What sign.333.eco read from this phone's proof",
   "p4_reads": ("The keys were made inside this phone's secure chip, and can't leave it.", "The phone is running its maker's own software.", "This is the app HeartBank® publishes."),
   "p4_not": "It says nothing about who is holding the phone.",
-  "p4_kh": "A statement about these keys", "p4_kp": "sign.333.eco signed what it read, and this phone keeps it. It is shown only when you share a press. Nothing about this phone is made public.",
+  "p4_kh": "A statement about these keys", "p4_kp": "sign.333.eco signed what it read, and this phone keeps it. It is shown only when you share a press. The statement itself is not published.",
   "done": "Done",
   # P5 home
   "p5_ready": "This phone can press for you.", "p5_scan": "Scan a code", "p5_scan_s": "When another screen asks you to press",
@@ -72,6 +73,7 @@ DT = {
   "nothing": "Nothing was signed.",
   # P7 the phone's own prompt (title, subtitle, words and the second button are ours)
   "p7_sys_h": "Sign these exact words", "p7_sys_sub": "Asked by origin.333.eco",
+  "pin_enter": "Enter your PIN", "p8_pin": "Pressed with your PIN key",
   # P8 signed (live: SIGN_TEXT done / doneLede)
   "p8_h": "Signed", "p8_lede": "Your signature is saved. It joins the public log within the hour.",
   "p8_ch": "Pressed with your finger key", "p8_cp": "The record says a key in this phone's chip pressed, unlocked by a finger. It never says who you are.",
@@ -145,7 +147,7 @@ DT = {
   "p4_read": "អ្វីដែល sign.333.eco បានអានពីភស្តុតាងរបស់ទូរស័ព្ទនេះ",
   "p4_reads": ("សោត្រូវបានបង្កើតនៅក្នុងបន្ទះឈីបសុវត្ថិភាពរបស់ទូរស័ព្ទនេះ ហើយមិនអាចចាកចេញពីវាបានទេ។", "ទូរស័ព្ទកំពុងដំណើរការកម្មវិធីប្រព័ន្ធផ្ទាល់របស់អ្នកផលិតវា។", "នេះជាកម្មវិធីដែល HeartBank® បោះផ្សាយ។"),
   "p4_not": "វាមិននិយាយអ្វីទាំងអស់អំពីអ្នកណាកំពុងកាន់ទូរស័ព្ទនោះទេ។",
-  "p4_kh": "សេចក្តីថ្លែងការណ៍អំពីសោទាំងនេះ", "p4_kp": "sign.333.eco បានចុះហត្ថលេខាលើអ្វីដែលវាបានអាន ហើយទូរស័ព្ទនេះរក្សាទុកវា។ វាត្រូវបានបង្ហាញតែនៅពេលអ្នកចែករំលែកការចុចមួយប៉ុណ្ណោះ។ គ្មានអ្វីអំពីទូរស័ព្ទនេះត្រូវបានធ្វើឱ្យជាសាធារណៈទេ។",
+  "p4_kh": "សេចក្តីថ្លែងការណ៍អំពីសោទាំងនេះ", "p4_kp": "sign.333.eco បានចុះហត្ថលេខាលើអ្វីដែលវាបានអាន ហើយទូរស័ព្ទនេះរក្សាទុកវា។ វាត្រូវបានបង្ហាញតែនៅពេលអ្នកចែករំលែកការចុចមួយប៉ុណ្ណោះ។ សេចក្តីថ្លែងការណ៍នោះមិនត្រូវបានផ្សព្វផ្សាយជាសាធារណៈទេ។",
   "done": "រួចរាល់",
   "p5_ready": "ទូរស័ព្ទ​នេះ​អាច​ចុច​សម្រាប់​អ្នក​បាន។", "p5_scan": "ស្កេនកូដ", "p5_scan_s": "នៅពេលអេក្រង់មួយទៀតសុំឱ្យអ្នកចុច",
   "p5_ph": "ការចុចរបស់អ្នក ដែលរក្សាទុកនៅលើទូរស័ព្ទនេះ", "p5_list": (("ចុះហត្ថលេខាលើឯកសារនេះ", "origin.333.eco · ២៥ វិច្ឆិកា"), ("បញ្ជាក់ថាជាអ្នក", "origin.333.eco · ២៤ វិច្ឆិកា")),
@@ -156,6 +158,7 @@ DT = {
   "p6_pub": "ការនេះបន្ថែមកំណត់ត្រាសាធារណៈមួយ៖ ពេលដែលវាត្រូវបានចុះហត្ថលេខា និងរបៀបដែលវាត្រូវបានបង្កើត។ វាបង្ហាញថាសោមួយនៅក្នុងបន្ទះឈីបរបស់ទូរស័ព្ទបានចុះហត្ថលេខា មិនមែនថាអ្នកណាជាអ្នកគិតវាទេ។",
   "go_finger": "ចុចដោយម្រាមដៃរបស់អ្នក", "go_pin": "ប្រើលេខកូដ PIN របស់អ្នកជំនួសវិញ",
   "nothing": "មិនបានចុះហត្ថលេខាទេ។",
+  "pin_enter": "បញ្ចូលលេខកូដ PIN របស់អ្នក", "p8_pin": "បានចុចដោយសោ PIN របស់អ្នក",
   "p7_sys_h": "ចុះហត្ថលេខា​លើ​ពាក្យ​ពិតប្រាកដ​ទាំងនេះ", "p7_sys_sub": "ស្នើដោយ origin.333.eco",
   "p8_h": "បានចុះហត្ថលេខា", "p8_lede": "ហត្ថលេខារបស់អ្នកត្រូវបានរក្សាទុក។ វានឹងចូលទៅក្នុងកំណត់ហេតុសាធារណៈក្នុងរយៈពេលមួយម៉ោង។",
   "p8_ch": "បានចុចដោយសោម្រាមដៃរបស់អ្នក", "p8_cp": "កំណត់ត្រានិយាយថា សោមួយនៅក្នុងបន្ទះឈីបរបស់ទូរស័ព្ទនេះបានចុច ដោយដោះសោដោយម្រាមដៃ។ វាមិនដែលនិយាយថាអ្នកជានរណាទេ។",
@@ -383,6 +386,17 @@ def P7(t, d):
     return _p6(d, sheet)
 
 
+def P7p(t, d):
+    """The PIN key's press: the phone's own PIN screen (drawn); the title, subtitle and words in it are ours."""
+    w = d["w1"]
+    keys = "".join('<span>%s</span>' % k for k in ("1", "2", "3", "4", "5", "6", "7", "8", "9", "", "0", ""))
+    inner = ('<div class="ph-pin"><h3>%s</h3><div class="sub">%s</div><div class="ph-desc">%s</div>'
+             '<div class="ph-pinlbl">%s</div><div class="ph-dots"><i class="on"></i><i class="on"></i><i></i><i></i></div>'
+             '<div class="ph-pad">%s</div><div class="ph-neg"><span>%s</span></div></div>'
+             % (d["p7_sys_h"], d["p7_sys_sub"], " · ".join((w[0], w[1], w[3], w[4])), d["pin_enter"], keys, d["cancel"]))
+    return _sb(d) + '<div class="ph-in">%s</div>' % inner + _gb()
+
+
 def P8(t, d):
     inner = ('<div class="ph-done">%s</div><h1>%s</h1><p class="lede">%s</p>' % (OKBIG, d["p8_h"], d["p8_lede"])
              + _card(d["p8_ch"], d["p8_cp"], "chip") + '<div class="grow"></div>' + _btn(d["p8_go"]))
@@ -481,7 +495,8 @@ SCREENS = [
     ("P6", "poh", "A press asked on this phone: the exact words", P6),
     ("P6b", "poh", "The same, after the person cancels the prompt (a toast)", P6b),
     ("P7", "poh", "The phone's own fingerprint prompt over the words (drawn; its words are ours)", P7),
-    ("P8", "poh", "Signed: which key pressed", P8),
+    ("P7p", "poh", "The press with the PIN key: the phone's own PIN screen (drawn; its words are ours)", P7p),
+    ("P8", "poh", "Signed: which key pressed (the PIN key's reads Pressed with your PIN key)", P8),
     ("P9", "poh", "Another screen asks: scan its code (with Bluetooth nearness)", P9),
     ("P10", "poh", "The other screen's words, opened on this phone", P10),
     ("P11", "poh", "When this phone isn't near the screen that asked", P11),
@@ -588,6 +603,15 @@ CSS = """
 .ph-near{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--edge);background:var(--wash);color:var(--ink);border-radius:999px;padding:4px 10px;font-size:13px;white-space:nowrap}
 .ph-near svg{color:var(--accent)}
 .ph-done{margin:28px 0 0}
+.ph-pin{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:36px;font-family:Roboto,var(--font-text)}
+.km .ph-pin{font-family:var(--font-khmer),var(--font-text)}
+.ph-pin h3{font-size:22px;font-weight:500;margin:0 0 4px}.ph-pin .sub{font-size:14px;color:var(--ink-dim)}
+.ph-pin .ph-desc{text-align:center;margin:14px 8px 0}
+.ph-pinlbl{margin:34px 0 12px;font-size:15px;color:var(--ink-dim)}
+.ph-dots{display:flex;gap:16px;margin-bottom:30px}.ph-dots i{width:12px;height:12px;border-radius:50%;border:2px solid var(--ink-dim)}.ph-dots i.on{background:var(--ink);border-color:var(--ink)}
+.ph-pad{display:grid;grid-template-columns:repeat(3,72px);gap:14px 34px}.ph-pad span{height:56px;display:grid;place-items:center;font-size:26px;border-radius:50%}
+.ph-pad span:not(:empty){background:var(--surface-2)}
+.ph-pin .ph-neg{align-self:flex-start;margin-top:auto;padding:0 10px 6px}
 .ph-disc{margin-top:22px}
 .ph-cap{font-size:13px;color:var(--ink-dim);margin:16px 0 6px}
 """
