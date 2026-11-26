@@ -2365,12 +2365,48 @@
    "y": 2676
   },
   {
+   "file": "P2b.html",
+   "page": "poh",
+   "title": "P2b · Add this phone from another phone already added: the code to scan, in the Custom Tab, English",
+   "w": 390,
+   "h": 853,
+   "x": 940,
+   "y": 0
+  },
+  {
+   "file": "P2bKm.html",
+   "page": "poh",
+   "title": "P2b · Add this phone from another phone already added: the code to scan, in the Custom Tab, Khmer",
+   "w": 390,
+   "h": 919,
+   "x": 940,
+   "y": 2676
+  },
+  {
+   "file": "P19.html",
+   "page": "poh",
+   "title": "P19 · On the phone already added: approve the phone you just scanned (nearness required), English",
+   "w": 390,
+   "h": 844,
+   "x": 1410,
+   "y": 0
+  },
+  {
+   "file": "P19Km.html",
+   "page": "poh",
+   "title": "P19 · On the phone already added: approve the phone you just scanned (nearness required), Khmer",
+   "w": 390,
+   "h": 893,
+   "x": 1410,
+   "y": 2676
+  },
+  {
    "file": "P3.html",
    "page": "poh",
    "title": "P3 · Making the two keys, under the phone's own fingerprint prompt (drawn; its title is ours), English",
    "w": 390,
    "h": 844,
-   "x": 940,
+   "x": 1880,
    "y": 0
   },
   {
@@ -2379,7 +2415,7 @@
    "title": "P3 · Making the two keys, under the phone's own fingerprint prompt (drawn; its title is ours), Khmer",
    "w": 390,
    "h": 893,
-   "x": 940,
+   "x": 1880,
    "y": 2676
   },
   {
@@ -2388,7 +2424,7 @@
    "title": "P4 · This phone is added: what sign.333.eco read from its proof, English",
    "w": 390,
    "h": 844,
-   "x": 1410,
+   "x": 2350,
    "y": 0
   },
   {
@@ -2397,7 +2433,7 @@
    "title": "P4 · This phone is added: what sign.333.eco read from its proof, Khmer",
    "w": 390,
    "h": 904,
-   "x": 1410,
+   "x": 2350,
    "y": 2676
   },
   {
@@ -2406,7 +2442,7 @@
    "title": "P5 · Home, English",
    "w": 390,
    "h": 844,
-   "x": 1880,
+   "x": 2820,
    "y": 0
   },
   {
@@ -2415,7 +2451,7 @@
    "title": "P5 · Home, Khmer",
    "w": 390,
    "h": 893,
-   "x": 1880,
+   "x": 2820,
    "y": 2676
   },
   {
@@ -2424,7 +2460,7 @@
    "title": "P6 · A press asked on this phone: the exact words, English",
    "w": 390,
    "h": 844,
-   "x": 2350,
+   "x": 3290,
    "y": 0
   },
   {
@@ -2433,7 +2469,7 @@
    "title": "P6 · A press asked on this phone: the exact words, Khmer",
    "w": 390,
    "h": 893,
-   "x": 2350,
+   "x": 3290,
    "y": 2676
   },
   {
@@ -2442,7 +2478,7 @@
    "title": "P6b · The same, after the person cancels the prompt (a toast), English",
    "w": 390,
    "h": 844,
-   "x": 2820,
+   "x": 3760,
    "y": 0
   },
   {
@@ -2451,7 +2487,7 @@
    "title": "P6b · The same, after the person cancels the prompt (a toast), Khmer",
    "w": 390,
    "h": 893,
-   "x": 2820,
+   "x": 3760,
    "y": 2676
   },
   {
@@ -2460,7 +2496,7 @@
    "title": "P7 · The phone's own fingerprint prompt over the words (drawn; its words are ours), English",
    "w": 390,
    "h": 844,
-   "x": 3290,
+   "x": 4230,
    "y": 0
   },
   {
@@ -2469,7 +2505,7 @@
    "title": "P7 · The phone's own fingerprint prompt over the words (drawn; its words are ours), Khmer",
    "w": 390,
    "h": 893,
-   "x": 3290,
+   "x": 4230,
    "y": 2676
   },
   {
@@ -2478,7 +2514,7 @@
    "title": "P7p · The press with the PIN key: the phone's own PIN screen (drawn; its words are ours), English",
    "w": 390,
    "h": 844,
-   "x": 3760,
+   "x": 4700,
    "y": 0
   },
   {
@@ -2487,7 +2523,7 @@
    "title": "P7p · The press with the PIN key: the phone's own PIN screen (drawn; its words are ours), Khmer",
    "w": 390,
    "h": 893,
-   "x": 3760,
+   "x": 4700,
    "y": 2676
   },
   {
@@ -2496,7 +2532,7 @@
    "title": "P8 · Signed: which key pressed (the PIN key's reads Pressed with your PIN key), English",
    "w": 390,
    "h": 844,
-   "x": 4230,
+   "x": 5170,
    "y": 0
   },
   {
@@ -2505,7 +2541,7 @@
    "title": "P8 · Signed: which key pressed (the PIN key's reads Pressed with your PIN key), Khmer",
    "w": 390,
    "h": 893,
-   "x": 4230,
+   "x": 5170,
    "y": 2676
   },
   {
@@ -2514,7 +2550,7 @@
    "title": "P9 · Another screen asks: scan its code (with Bluetooth nearness), English",
    "w": 390,
    "h": 844,
-   "x": 4700,
+   "x": 5640,
    "y": 0
   },
   {
@@ -2523,7 +2559,7 @@
    "title": "P9 · Another screen asks: scan its code (with Bluetooth nearness), Khmer",
    "w": 390,
    "h": 893,
-   "x": 4700,
+   "x": 5640,
    "y": 2676
   },
   {
@@ -2532,7 +2568,7 @@
    "title": "P10 · The other screen's words, opened on this phone, English",
    "w": 390,
    "h": 844,
-   "x": 5170,
+   "x": 6110,
    "y": 0
   },
   {
@@ -2541,7 +2577,7 @@
    "title": "P10 · The other screen's words, opened on this phone, Khmer",
    "w": 390,
    "h": 893,
-   "x": 5170,
+   "x": 6110,
    "y": 2676
   },
   {
@@ -2550,7 +2586,7 @@
    "title": "P11 · When this phone isn't near the screen that asked, English",
    "w": 390,
    "h": 844,
-   "x": 5640,
+   "x": 6580,
    "y": 0
   },
   {
@@ -2559,7 +2595,7 @@
    "title": "P11 · When this phone isn't near the screen that asked, Khmer",
    "w": 390,
    "h": 893,
-   "x": 5640,
+   "x": 6580,
    "y": 2676
   },
   {
@@ -2568,7 +2604,7 @@
    "title": "P12 · A website asks for a passkey from a phone's chip: the phone's own passkey sheet (Android 14+, drawn), English",
    "w": 390,
    "h": 844,
-   "x": 6110,
+   "x": 7050,
    "y": 0
   },
   {
@@ -2577,7 +2613,25 @@
    "title": "P12 · A website asks for a passkey from a phone's chip: the phone's own passkey sheet (Android 14+, drawn), Khmer",
    "w": 390,
    "h": 893,
-   "x": 6110,
+   "x": 7050,
+   "y": 2676
+  },
+  {
+   "file": "P12b.html",
+   "page": "poh",
+   "title": "P12b · When a website asks the app to MAKE a passkey: what the website receives, said first, English",
+   "w": 390,
+   "h": 919,
+   "x": 7520,
+   "y": 0
+  },
+  {
+   "file": "P12bKm.html",
+   "page": "poh",
+   "title": "P12b · When a website asks the app to MAKE a passkey: what the website receives, said first, Khmer",
+   "w": 390,
+   "h": 1077,
+   "x": 7520,
    "y": 2676
   },
   {
@@ -2586,7 +2640,7 @@
    "title": "P13 · Through the sheet: the website showed the words, this app can't see them, English",
    "w": 390,
    "h": 844,
-   "x": 6580,
+   "x": 7990,
    "y": 0
   },
   {
@@ -2595,7 +2649,7 @@
    "title": "P13 · Through the sheet: the website showed the words, this app can't see them, Khmer",
    "w": 390,
    "h": 893,
-   "x": 6580,
+   "x": 7990,
    "y": 2676
   },
   {
@@ -2604,7 +2658,7 @@
    "title": "P14 · Your keys, English",
    "w": 390,
    "h": 844,
-   "x": 7050,
+   "x": 8460,
    "y": 0
   },
   {
@@ -2613,7 +2667,7 @@
    "title": "P14 · Your keys, Khmer",
    "w": 390,
    "h": 893,
-   "x": 7050,
+   "x": 8460,
    "y": 2676
   },
   {
@@ -2622,7 +2676,7 @@
    "title": "P15 · When the finger key has ended (a new finger or face was added), English",
    "w": 390,
    "h": 844,
-   "x": 7520,
+   "x": 8930,
    "y": 0
   },
   {
@@ -2631,7 +2685,7 @@
    "title": "P15 · When the finger key has ended (a new finger or face was added), Khmer",
    "w": 390,
    "h": 893,
-   "x": 7520,
+   "x": 8930,
    "y": 2676
   },
   {
@@ -2640,7 +2694,7 @@
    "title": "P16 · Remove this phone, English",
    "w": 390,
    "h": 844,
-   "x": 7990,
+   "x": 9400,
    "y": 0
   },
   {
@@ -2649,7 +2703,7 @@
    "title": "P16 · Remove this phone, Khmer",
    "w": 390,
    "h": 893,
-   "x": 7990,
+   "x": 9400,
    "y": 2676
   },
   {
@@ -2658,7 +2712,7 @@
    "title": "P17 · Settings (language and appearance move here once a phone is added), English",
    "w": 390,
    "h": 844,
-   "x": 8460,
+   "x": 9870,
    "y": 0
   },
   {
@@ -2667,7 +2721,7 @@
    "title": "P17 · Settings (language and appearance move here once a phone is added), Khmer",
    "w": 390,
    "h": 893,
-   "x": 8460,
+   "x": 9870,
    "y": 2676
   },
   {
@@ -2676,7 +2730,7 @@
    "title": "P18 · When a phone can't be added, English",
    "w": 390,
    "h": 1004,
-   "x": 8930,
+   "x": 10340,
    "y": 0
   },
   {
@@ -2685,7 +2739,7 @@
    "title": "P18 · When a phone can't be added, Khmer",
    "w": 390,
    "h": 1150,
-   "x": 8930,
+   "x": 10340,
    "y": 2676
   },
   {

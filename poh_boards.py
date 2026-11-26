@@ -49,6 +49,18 @@ DT = {
   "p2_ch": "Only a press can add a phone", "p2_cp": "Your passkey, or another phone that already has B-PoH, can add this one. Logging in alone never can.",
   "p2_go": "Confirm with your passkey", "p2_other": "Approve from another phone of yours", "p2_new": "New here? Make a passkey", "no": "Not now",
   "p2_foot": "sign.333.eco · no passwords",
+  "p2b_h": "Approve from another phone",
+  "p2b_lede": "On a phone you've already added, open B-PoH, tap Scan a code, and scan this code. Keep the two phones together.",
+  "p2b_ch": "Why the phones must be together", "p2b_cp": "The other phone checks by Bluetooth that it is next to this one, so a code sent from somewhere else can't add a stranger's phone.",
+  "p2b_alt": "Use your passkey instead",
+  "p19_ask": "sign.333.eco asks you to approve:", "p19_f": ("What", "It will"),
+  "p19_v": ("Add the phone you just scanned to your account", "Make its own finger key and PIN key, and press for you"),
+  "p19_fine": "Approve only a phone you are holding. It never gets this phone's keys.",
+  "p12b_h": "forum.example.org asks for a passkey made in this phone's chip",
+  "p12b_lede": "The website receives this phone's proof that the key was made in its chip.",
+  "p12b_c1h": "What the proof also shows", "p12b_c1p": "This phone's Android version and last security update, and on some phones the batch it was made in. It doesn't name this phone. If you'd rather the website didn't see this, go back and choose your usual passkey manager.",
+  "p12b_c2h": "It stays on this phone", "p12b_c2p": "This passkey can't be copied to another device. If you lose this phone, it is gone too, so keep another way into forum.example.org.",
+  "p12b_go": "Make it with your finger",
   # P3 making the two keys
   "p3_h": "Making your two keys",
   "p3_steps": ("Your passkey confirmed it's you", "Finger key: touch the sensor", "PIN key: then enter your PIN", "sign.333.eco reads this phone's proof"),
@@ -140,6 +152,18 @@ DT = {
   "p2_ch": "មានតែការចុចទេដែលអាចបន្ថែមទូរស័ព្ទបាន", "p2_cp": "passkey របស់អ្នក ឬទូរស័ព្ទមួយទៀតដែលមាន B-PoH រួចហើយ អាចបន្ថែមទូរស័ព្ទនេះបាន។ ការចូលតែម្យ៉ាង មិនអាចទេ។",
   "p2_go": "បញ្ជាក់ដោយ passkey របស់អ្នក", "p2_other": "អនុម័តពីទូរស័ព្ទមួយទៀតរបស់អ្នក", "p2_new": "ថ្មីនៅទីនេះ? បង្កើត passkey", "no": "មិនមែនពេលនេះ",
   "p2_foot": "sign.333.eco · គ្មានពាក្យសម្ងាត់",
+  "p2b_h": "អនុម័តពីទូរស័ព្ទមួយទៀត",
+  "p2b_lede": "នៅលើទូរស័ព្ទដែលអ្នកបានបន្ថែមរួចហើយ សូមបើក B-PoH ចុច ស្កេនកូដ ហើយស្កេនកូដនេះ។ ទុកទូរស័ព្ទទាំងពីរនៅជាមួយគ្នា។",
+  "p2b_ch": "ហេតុអ្វីទូរស័ព្ទទាំងពីរត្រូវនៅជាមួយគ្នា", "p2b_cp": "ទូរស័ព្ទមួយទៀតពិនិត្យតាមប៊្លូធូសថាវានៅក្បែរទូរស័ព្ទនេះ ដូច្នេះកូដដែលផ្ញើមកពីកន្លែងផ្សេង មិនអាចបន្ថែមទូរស័ព្ទរបស់មនុស្សចម្លែកបានទេ។",
+  "p2b_alt": "ប្រើ passkey របស់អ្នកជំនួសវិញ",
+  "p19_ask": "sign.333.eco សុំឱ្យអ្នកអនុម័ត៖", "p19_f": ("អ្វី", "វានឹង"),
+  "p19_v": ("បន្ថែមទូរស័ព្ទដែលអ្នកទើបតែស្កេន ទៅក្នុងគណនីរបស់អ្នក", "បង្កើតសោម្រាមដៃ និងសោ PIN ផ្ទាល់ខ្លួនរបស់វា ហើយចុចសម្រាប់អ្នក"),
+  "p19_fine": "សូមអនុម័តតែទូរស័ព្ទដែលអ្នកកំពុងកាន់ប៉ុណ្ណោះ។ វាមិនដែលទទួលបានសោរបស់ទូរស័ព្ទនេះទេ។",
+  "p12b_h": "forum.example.org សុំ​passkey​ដែល​បង្កើត​ក្នុង​បន្ទះឈីប​របស់​ទូរស័ព្ទ​នេះ",
+  "p12b_lede": "គេហទំព័រនឹងទទួលបានភស្តុតាងរបស់ទូរស័ព្ទនេះ ថាសោត្រូវបានបង្កើតនៅក្នុងបន្ទះឈីបរបស់វា។",
+  "p12b_c1h": "អ្វីដែលភស្តុតាងក៏បង្ហាញផងដែរ", "p12b_c1p": "កំណែ Android និងបច្ចុប្បន្នភាពសុវត្ថិភាពចុងក្រោយរបស់ទូរស័ព្ទនេះ ហើយនៅលើទូរស័ព្ទខ្លះ ក៏បង្ហាញក្រុមទូរស័ព្ទដែលវាត្រូវបានផលិតជាមួយដែរ។ វាមិនដាក់ឈ្មោះទូរស័ព្ទនេះទេ។ ប្រសិនបើអ្នកមិនចង់ឱ្យគេហទំព័រឃើញរឿងនេះ សូមត្រឡប់ក្រោយ ហើយជ្រើសរើសកម្មវិធីគ្រប់គ្រង passkey ធម្មតារបស់អ្នក។",
+  "p12b_c2h": "វានៅលើទូរស័ព្ទនេះ", "p12b_c2p": "passkey នេះមិនអាចចម្លងទៅឧបករណ៍ផ្សេងបានទេ។ ប្រសិនបើអ្នកបាត់ទូរស័ព្ទនេះ វាក៏បាត់ដែរ ដូច្នេះសូមរក្សាផ្លូវចូលមួយទៀតទៅ forum.example.org។",
+  "p12b_go": "បង្កើតវាដោយម្រាមដៃរបស់អ្នក",
   "p3_h": "កំពុង​បង្កើត​សោ​ពីរ​របស់​អ្នក",
   "p3_steps": ("passkey របស់អ្នកបានបញ្ជាក់ថាជាអ្នក", "សោម្រាមដៃ៖ ប៉ះឧបករណ៍ចាប់ស្នាមម្រាមដៃ", "សោ PIN៖ បន្ទាប់មកបញ្ចូលលេខកូដ PIN របស់អ្នក", "sign.333.eco អានភស្តុតាងរបស់ទូរស័ព្ទនេះ"),
   "p3_sys_h": "បង្កើត​សោ​ម្រាមដៃ​របស់​អ្នក", "p3_sys_sub": "B-PoH℠ · សម្រាប់ sign.333.eco", "touch": "ប៉ះឧបករណ៍ចាប់ស្នាមម្រាមដៃ", "cancel": "បោះបង់",
@@ -326,6 +350,38 @@ def P1(t, d):
     return _scr(d, _bar(_brand(d), "", _seg(d["lang"], 1 if t["band"] else 0)), inner)
 
 
+def _tab(d, host):
+    return ('<div class="ph-ct">%s<span class="ph-ctu">%s<span>%s</span></span>%s</div>'
+            % (_icon(CLOSE, 20), _icon(LOCK, 14, 2), host, '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="19" r="1.8" fill="currentColor"/></svg>'))
+
+
+def P2b(t, d):
+    """The new phone, in sign.333.eco's Custom Tab: approve from a phone already added (SPEC §5.2.1 + F2: scan, sealed words, nearness)."""
+    wm = ('<span class="wordmark">Heart<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="%s"/></svg>ank<sup>®</sup></span>' % EMBLEM)
+    qr = re.sub(r'width="200" height="200"', 'width="176" height="176"', BQR, count=1)
+    page = ('<div class="ph-web"><header>%s</header><h1>%s</h1><p class="lede">%s</p>' % (wm, d["p2b_h"], d["p2b_lede"])
+            + '<div class="ph-qr">%s</div>' % qr + _card(d["p2b_ch"], d["p2b_cp"], "near")
+            + '<div class="grow"></div>' + _link(d["p2b_alt"]) + _link(d["no"]) + '<footer><span>%s</span></footer></div>' % d["p2_foot"])
+    return _sb(d) + _tab(d, d["host"]) + page + _gb()
+
+
+def P19(t, d):
+    """The phone already added, after scanning P2b's code: the words of an approval, with nearness (F2)."""
+    near = '<span class="ph-near">%s%s</span>' % (_icon("M5 12.5l4.5 4.5L19 7.5", 14, 2.6), d["near"])
+    rows = "".join('<div class="ph-w"><span>%s</span><b>%s</b></div>' % (l, v) for l, v in zip(d["p19_f"], d["p19_v"]))
+    inner = ('<div class="ph-from"><span>%s</span>%s</div>' % ("", near) + '<p class="ph-ask">%s</p>' % d["p19_ask"]
+             + '<div class="ph-words">%s</div>' % rows + '<p class="fine ph-pub">%s</p>' % d["p19_fine"] + '<div class="grow"></div>' + _press_btns(d))
+    return _scr(d, _bar('<span aria-label="%s">%s</span>' % (d["close"], _icon(CLOSE)), "", _brand(d)), inner)
+
+
+def P12b(t, d):
+    """The app's own screen when a website asks it to MAKE a passkey (founder 2026-11-25, item 3 'decide for me'): say what the website receives."""
+    inner = ('<div class="from"><span class="site"><i>f</i><span>%s</span></span></div><h1>%s</h1><p class="lede">%s</p>' % (d["site"], d["p12b_h"], d["p12b_lede"])
+             + _card(d["p12b_c1h"], d["p12b_c1p"], "chip") + _card(d["p12b_c2h"], d["p12b_c2p"], "lock")
+             + '<div class="grow"></div>' + _btn(d["p12b_go"]) + _btn(d["go_pin"], ghost=True) + _link(d["no"]))
+    return _scr(d, _bar('<span aria-label="%s">%s</span>' % (d["close"], _icon(CLOSE)), "", _brand(d)), inner)
+
+
 def P2(t, d):
     tab = ('<div class="ph-ct">%s<span class="ph-ctu">%s<span>%s</span></span>%s</div>'
            % (_icon(CLOSE, 20), _icon(LOCK, 14, 2), d["host"], '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="19" r="1.8" fill="currentColor"/></svg>'))
@@ -489,6 +545,8 @@ OKBIG = '<svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><cir
 SCREENS = [
     ("P1", "poh", "First open: what a press is (the language choice shows until a phone is added)", P1),
     ("P2", "poh", "Add this phone: sign.333.eco in a Custom Tab, an existing press first", P2),
+    ("P2b", "poh", "Add this phone from another phone already added: the code to scan, in the Custom Tab", P2b),
+    ("P19", "poh", "On the phone already added: approve the phone you just scanned (nearness required)", P19),
     ("P3", "poh", "Making the two keys, under the phone's own fingerprint prompt (drawn; its title is ours)", P3),
     ("P4", "poh", "This phone is added: what sign.333.eco read from its proof", P4),
     ("P5", "poh", "Home", P5),
@@ -501,6 +559,7 @@ SCREENS = [
     ("P10", "poh", "The other screen's words, opened on this phone", P10),
     ("P11", "poh", "When this phone isn't near the screen that asked", P11),
     ("P12", "poh", "A website asks for a passkey from a phone's chip: the phone's own passkey sheet (Android 14+, drawn)", P12),
+    ("P12b", "poh", "When a website asks the app to MAKE a passkey: what the website receives, said first", P12b),
     ("P13", "poh", "Through the sheet: the website showed the words, this app can't see them", P13),
     ("P14", "poh", "Your keys", P14),
     ("P15", "poh", "When the finger key has ended (a new finger or face was added)", P15),
@@ -603,6 +662,7 @@ CSS = """
 .ph-near{display:inline-flex;align-items:center;gap:5px;border:1px solid var(--edge);background:var(--wash);color:var(--ink);border-radius:999px;padding:4px 10px;font-size:13px;white-space:nowrap}
 .ph-near svg{color:var(--accent)}
 .ph-done{margin:28px 0 0}
+.ph-qr{display:grid;place-items:center;background:#f4f5f7;border-radius:16px;padding:16px;margin:4px 0 14px;line-height:0}
 .ph-pin{flex:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:36px;font-family:Roboto,var(--font-text)}
 .km .ph-pin{font-family:var(--font-khmer),var(--font-text)}
 .ph-pin h3{font-size:22px;font-weight:500;margin:0 0 4px}.ph-pin .sub{font-size:14px;color:var(--ink-dim)}
@@ -646,6 +706,11 @@ def check(sid, body):
         assert body.count('class="ph-w"') == 5, "%s: the words are shown whole (five fields)" % sid
     if sid == "P13":
         assert re.search(r"can't see those words|មិនអាចមើលឃើញពាក្យ", text), "P13: a provider press says this app can't see the words (F1+F4)"
+    if sid == "P12b":
+        assert re.search(r"doesn't name this phone|មិនដាក់ឈ្មោះទូរស័ព្ទនេះ", text) and re.search(r"usual passkey manager|passkey ធម្មតា", text), \
+            "P12b: says what the website receives, that it doesn't name the phone, and the way out (founder 2026-11-25, item 3)"
+    if sid == "P19":
+        assert 'class="ph-near"' in body and re.search(r"asks you to approve|សុំឱ្យអ្នកអនុម័ត", text), "P19: an approval names who asks and needs nearness (F2)"
     if sid == "P1":
         assert re.search(r"Not who is holding|មិនមែនថាអ្នកណាកំពុងកាន់", text), "P1: says what a press shows, and what it doesn't"
     if sid == "P17":
