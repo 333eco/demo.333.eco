@@ -23,6 +23,7 @@ import give_boards as GV
 import marks_boards as MK
 import legal_boards as LG
 import poh_boards as PH
+import bmail_thanks_boards as BT
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 W, H = 390, 844
@@ -1014,6 +1015,13 @@ def _ph(f):
 SCREENS += [(i, p, n, _ph(f)) for i, p, n, f in PH.SCREENS]
 PUBLIC |= PH.PUBLIC
 PHIDS = {s[0] for s in PH.SCREENS}  # the B-PoH app: a NATIVE frame of its own (poh_boards.page), never the web header and footer
+# B-Mail thanks (A607 phase 3): the same (t, d) shape; each board takes the header and footer of the live host it extends (BT.HOST)
+BT.card, BT.btns, BT.spot, BT.heart, BT.person = card, btns, spot, heart, person
+def _bt(f):
+    return lambda t: f(t, BT.DT["km" if t is T["km"] else "en"])
+SCREENS += [(i, p, n, _bt(f)) for i, p, n, f in BT.SCREENS]
+PUBLIC |= BT.PUBLIC
+BTIDS = {s[0] for s in BT.SCREENS}
 
 
 def page(sid, render, lang, dark=False, desk=False):
@@ -1043,6 +1051,9 @@ def page(sid, render, lang, dark=False, desk=False):
     if bl:
         BL.check(sid, body)
         foot = BL.DT["km" if lang == "km" else "en"]["sfoot" if sid.startswith("ST") else "foot"]
+    if sid in BTIDS:
+        foot = BT.foot(sid, "km" if lang == "km" else "en", R.FOOT[1 if lang == "km" else 0])
+        BT.check(sid, body + "<footer>" + foot + "</footer>")  # the footer is checked too
     assert not re.search(r"\bsign[\s-]?in\b", body, re.I), "%s: 'sign in' is barred (Default 10)" % sid
     assert "notar" not in body.lower(), "%s: 'notary' is barred in public copy" % sid
     registry = sid[0] == "R"
@@ -1072,12 +1083,12 @@ def page(sid, render, lang, dark=False, desk=False):
 </body>
 </html>
 """ % ("km" if lang == "km" else "en", "km" if lang == "km" else "en", " dark" if dark else "", " desk" if desk else "", 1280 if desk else W, sid,
-       '<div class="band">%s</div>' % t["band"] if t["band"] else "", R.brandmark(EMBLEM) if registry else mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid[0] in ("O", "K", "G") else (' <span class="prod">%s</span>' % t["e_prod"] if sid.startswith("E") else (' <span class="prod">%s</span>' % DV.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "D" else (' <span class="prod">%s</span>' % BL.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "B" else (' <span class="prod">%s</span>' % LG.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "T" else ""))))),
+       '<div class="band">%s</div>' % t["band"] if t["band"] else "", BT.mark(sid, "km" if lang == "km" else "en", R.brandmark(EMBLEM), mark()) if sid in BTIDS else R.brandmark(EMBLEM) if registry else mark() + (' <span class="prod">%s</span>' % t["o_prod"] if sid[0] in ("O", "K", "G") else (' <span class="prod">%s</span>' % t["e_prod"] if sid.startswith("E") else (' <span class="prod">%s</span>' % DV.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "D" else (' <span class="prod">%s</span>' % BL.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "B" else (' <span class="prod">%s</span>' % LG.DT["km" if lang == "km" else "en"]["prod"] if sid[0] == "T" else ""))))),
        langs, ('<span class="sharebtn" aria-label="%s">%s</span>' % (t["o_share"], SHARE)) if sid in PUBLIC else "", body, foot, themes))
 
 
 def main():
-    css = brand_css(CSS + R.CSS + DV.CSS + BL.CSS + KP.CSS + GV.CSS + MK.CSS + LG.CSS + PH.CSS) + motion()
+    css = brand_css(CSS + R.CSS + DV.CSS + BL.CSS + KP.CSS + GV.CSS + MK.CSS + LG.CSS + PH.CSS + BT.CSS) + motion()
     io.open(os.path.join(HERE, "board.css"), "w", encoding="utf-8").write(css)
     import hashlib
     cssv = hashlib.sha256(css.encode()).hexdigest()[:8]
@@ -1086,8 +1097,8 @@ def main():
     def hh(f): return max(H, int(hts.get(f, H)))
     tall_en = max([H] + [int(v) for k, v in hts.items() if not k.endswith("Km.html")])
     tall_km = max([H] + [int(v) for k, v in hts.items() if k.endswith("Km.html")])
-    boards, col = [], {"registry": 0, "login": 0, "sign": 0, "origin": 0, "explorer": 0, "developers": 0, "blink": 0, "legal": 0, "poh": 0}
-    pages = [{"id": "registry", "name": "B-Registry℠"}, {"id": "login", "name": "Log in with HeartBank®"}, {"id": "sign", "name": "Sign with HeartBank®"}, {"id": "origin", "name": "origin.333.eco"}, {"id": "explorer", "name": "explorer.333.eco"}, {"id": "developers", "name": "developers.333.eco"}, {"id": "blink", "name": "B-Link · B.333.eco"}, {"id": "legal", "name": "legal.333.eco"}, {"id": "poh", "name": "B-PoH℠ app (Android)"}]
+    boards, col = [], {"registry": 0, "login": 0, "sign": 0, "origin": 0, "explorer": 0, "developers": 0, "blink": 0, "legal": 0, "poh": 0, "bmail": 0}
+    pages = [{"id": "registry", "name": "B-Registry℠"}, {"id": "login", "name": "Log in with HeartBank®"}, {"id": "sign", "name": "Sign with HeartBank®"}, {"id": "origin", "name": "origin.333.eco"}, {"id": "explorer", "name": "explorer.333.eco"}, {"id": "developers", "name": "developers.333.eco"}, {"id": "blink", "name": "B-Link · B.333.eco"}, {"id": "legal", "name": "legal.333.eco"}, {"id": "poh", "name": "B-PoH℠ app (Android)"}, {"id": "bmail", "name": "B-Mail thanks"}]
     rowy = {"en": 0, "km": tall_en + 160}
     for sid, pg, title, render in SCREENS:
         for lang in ("en", "km"):
@@ -1097,7 +1108,7 @@ def main():
                            "w": W, "h": hh(f), "x": col[pg] * (W + 80), "y": rowy[lang]})
         col[pg] += 1
     dk = {}
-    for sid, pg in (("R1", "registry"), ("L1", "login"), ("S1", "sign"), ("E1", "explorer"), ("D1", "developers"), ("B1", "blink"), ("K1", "origin"), ("G7", "origin"), ("M4", "origin"), ("T2", "legal"), ("P6", "poh")):  # one dark pass per surface (Default 6)
+    for sid, pg in (("R1", "registry"), ("L1", "login"), ("S1", "sign"), ("E1", "explorer"), ("D1", "developers"), ("B1", "blink"), ("K1", "origin"), ("G7", "origin"), ("M4", "origin"), ("T2", "legal"), ("P6", "poh"), ("CS2", "bmail")):  # one dark pass per surface (Default 6)
         f = "%sDark.html" % sid
         render = dict((s[0], s[3]) for s in SCREENS)[sid]
         io.open(os.path.join(HERE, f), "w", encoding="utf-8").write(page(sid, render, "en", dark=True).replace("@CSSV@", cssv))

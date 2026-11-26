@@ -35,6 +35,10 @@
   {
    "id": "poh",
    "name": "B-PoH℠ app (Android)"
+  },
+  {
+   "id": "bmail",
+   "name": "B-Mail thanks"
   }
  ],
  "artboards": [
@@ -2685,6 +2689,96 @@
    "y": 2676
   },
   {
+   "file": "CS1.html",
+   "page": "bmail",
+   "title": "CS1 · Sign a mail: Their @name (optional) [S1], English",
+   "w": 390,
+   "h": 2062,
+   "x": 0,
+   "y": 0
+  },
+  {
+   "file": "CS1Km.html",
+   "page": "bmail",
+   "title": "CS1 · Sign a mail: Their @name (optional) [S1], Khmer",
+   "w": 390,
+   "h": 2274,
+   "x": 0,
+   "y": 2676
+  },
+  {
+   "file": "CS2.html",
+   "page": "bmail",
+   "title": "CS2 · Signed, with a file: Thank @them and Keep or give at B-Origin [S2], English",
+   "w": 390,
+   "h": 1304,
+   "x": 470,
+   "y": 0
+  },
+  {
+   "file": "CS2Km.html",
+   "page": "bmail",
+   "title": "CS2 · Signed, with a file: Thank @them and Keep or give at B-Origin [S2], Khmer",
+   "w": 390,
+   "h": 1497,
+   "x": 470,
+   "y": 2676
+  },
+  {
+   "file": "C1.html",
+   "page": "bmail",
+   "title": "C1 · The check page, signer confirmed: Thank @x for this mail [C1], English",
+   "w": 390,
+   "h": 1649,
+   "x": 940,
+   "y": 0
+  },
+  {
+   "file": "C1Km.html",
+   "page": "bmail",
+   "title": "C1 · The check page, signer confirmed: Thank @x for this mail [C1], Khmer",
+   "w": 390,
+   "h": 1875,
+   "x": 940,
+   "y": 2676
+  },
+  {
+   "file": "C1b.html",
+   "page": "bmail",
+   "title": "C1b · The check page, name not confirmed: no thank line (the rule C1 keeps), English",
+   "w": 390,
+   "h": 1528,
+   "x": 1410,
+   "y": 0
+  },
+  {
+   "file": "C1bKm.html",
+   "page": "bmail",
+   "title": "C1b · The check page, name not confirmed: no thank line (the rule C1 keeps), Khmer",
+   "w": 390,
+   "h": 1720,
+   "x": 1410,
+   "y": 2676
+  },
+  {
+   "file": "CT1.html",
+   "page": "bmail",
+   "title": "CT1 · 333.eco's Thank opened from a B-Mail: no Without my name [T1], English",
+   "w": 390,
+   "h": 844,
+   "x": 1880,
+   "y": 0
+  },
+  {
+   "file": "CT1Km.html",
+   "page": "bmail",
+   "title": "CT1 · 333.eco's Thank opened from a B-Mail: no Without my name [T1], Khmer",
+   "w": 390,
+   "h": 869,
+   "x": 1880,
+   "y": 2676
+  },
+  {
    "file": "R1Dark.html",
    "page": "registry",
    "title": "R1 · dark pass, English",
@@ -2780,6 +2874,15 @@
    "title": "P6 · dark pass, English",
    "w": 390,
    "h": 844,
+   "x": 0,
+   "y": 5576
+  },
+  {
+   "file": "CS2Dark.html",
+   "page": "bmail",
+   "title": "CS2 · dark pass, English",
+   "w": 390,
+   "h": 1304,
    "x": 0,
    "y": 5576
   },

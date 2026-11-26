@@ -366,6 +366,46 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:10px;bo
 .ph-pin .ph-neg{align-self:flex-start;margin-top:auto;padding:0 10px 6px}
 .ph-disc{margin-top:22px}
 .ph-cap{font-size:13px;color:var(--ink-dim);margin:16px 0 6px}
+
+.bmt-f{margin:0 0 12px}
+.bmt-l{font-size:13px;color:var(--ink-dim);margin:0 0 4px}
+.bmt-f .field{margin-top:0}
+.bmt-hint{font-size:12.5px;color:var(--ink-dim);margin:5px 0 0}
+.bmt-body{min-height:0;color:var(--ink);font-size:15px}
+.bmt-new{border-left:3px solid var(--accent);padding-left:10px;margin:0 0 12px -13px}
+.bmt-new .bmt-f{margin:0}
+.bmt-drop{display:flex;align-items:center;gap:12px;padding:10px 12px;margin:0 0 8px;border-style:dashed}
+.bmt-drop .btn{width:auto;margin:0;padding:9px 14px;font-size:14px}
+.bmt-drop .fine{margin:0}
+.bmt-list{padding:6px 12px;margin:0}
+.bmt-file{display:flex;align-items:center;gap:12px;padding:6px 0}
+.bmt-file svg{flex:none}
+.bmt-fm{flex:1;min-width:0}.bmt-fm .t{font-size:14px;font-family:var(--font-mono)}.bmt-fm .s{font-size:12.5px;color:var(--ink-dim)}
+.bmt-exact{margin:4px 0 6px}
+.bmt-pre{font:12px/1.5 var(--font-mono);white-space:pre-wrap;overflow-wrap:anywhere;background:var(--surface-2);border:1px solid var(--line);
+  border-radius:12px;padding:10px 12px;margin:0 0 4px;color:var(--ink)}
+.bmt-sel{display:flex;justify-content:space-between}
+.bmt-caret{color:var(--ink-dim)}
+.bmt-facts{margin:12px 0 0}
+.bmt-p{margin:0 0 12px;font-size:14px}
+.bmt-note p{margin:0 0 8px;color:var(--ink);font-size:14px}
+.bmt-note .bmt-list{border:1px solid var(--line);border-radius:12px;margin:0 0 8px;background:var(--bg)}
+.bmt-note .bmt-keep{margin:10px 0 0;padding-top:10px;border-top:1px solid var(--line)}
+.bmt-out{font:13px/1.5 var(--font-mono);border:1px solid var(--line-strong);border-radius:12px;background:var(--bg);padding:10px 12px;
+  overflow-wrap:anywhere;color:var(--ink);margin:4px 0 4px}
+.bmt-sep{height:1px;background:var(--line);margin:16px 0 8px}
+span.btn{box-sizing:border-box}
+.bmt-leg{padding:11px 0;border-top:1px solid var(--line)}.bmt-leg:first-of-type{border-top:0}
+.bmt-leg b{display:block;font-weight:650;font-size:15px}.bmt-leg p{margin:3px 0 0;overflow-wrap:anywhere;font-size:14px;color:var(--ink-dim)}
+.bmt-ok::before{content:"✓ ";color:var(--accent)}
+.bmt-kv{display:grid;grid-template-columns:1fr;gap:2px;margin:0;font-size:14px}.bmt-kv dt{color:var(--ink-dim)}
+.bmt-kv dd{margin:0 0 8px;overflow-wrap:anywhere}
+.bmt-mail{margin:6px 0 0;padding-top:10px;border-top:1px solid var(--line);font-size:15px;line-height:1.55}
+.bmt-pick{margin:10px 0 4px}
+.bmt-line p{color:var(--ink);font-size:14px}
+.field.area.bmt-ph{color:var(--ink-faint)}
+.bmt-tabs .sm{padding:0}
+.bmt-off{opacity:.45}
 html{--beat-duration:1.5s;--beat-delay:0s}
 /* ============================================================================
    MOTION — the heartbeat
