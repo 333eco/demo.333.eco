@@ -140,7 +140,7 @@ DT = {
   "p14_note": "Your passkey stays your way in, on every device. These keys add to it.", "remove": "Remove this phone",
   # P15 the finger key ended
   "p15_h": "Your finger key has ended",
-  "p15_lede": "A new finger or face was added to this phone, so this key can't press again. That is how it keeps out a finger that isn't yours.",
+  "p15_lede": "This key can't press again: a new finger or face was added to this phone, or its screen lock was removed. That is how it keeps out a finger that isn't yours.",  # founder 2026-11-27 "3: yes" (removing the lock ends it too, measured L1)
   "p15_ch": "Your PIN key still works", "p15_cp": "You can press with your PIN now. To make a new finger key, confirm with your passkey, or from another phone of yours.",
   "p15_go": "Make a new finger key", "p15_fine": "Your passkey and your records are unchanged.",
   # P16 remove
@@ -253,7 +253,7 @@ DT = {
   "p14_g2": "passkey ដែលកម្មវិធីនេះបានបង្កើតសម្រាប់គេហទំព័រ", "p14_site": ("forum.example.org", "បង្កើត ២៥ វិច្ឆិកា ២០២៦"),
   "p14_note": "passkey របស់អ្នកនៅតែជាផ្លូវចូលរបស់អ្នក នៅលើគ្រប់ឧបករណ៍។ សោទាំងនេះបន្ថែមលើវា។", "remove": "ដកទូរស័ព្ទនេះចេញ",
   "p15_h": "សោ​ម្រាមដៃ​របស់​អ្នក​បាន​បញ្ចប់​ហើយ",
-  "p15_lede": "ម្រាមដៃ ឬមុខថ្មីត្រូវបានបន្ថែមទៅទូរស័ព្ទនេះ ដូច្នេះសោនេះមិនអាចចុចម្តងទៀតបានទេ។ នេះជារបៀបដែលវារារាំងម្រាមដៃដែលមិនមែនជារបស់អ្នក។",
+  "p15_lede": "សោនេះមិនអាចចុចម្តងទៀតបានទេ៖ ម្រាមដៃ ឬមុខថ្មីត្រូវបានបន្ថែមទៅទូរស័ព្ទនេះ ឬការចាក់សោអេក្រង់របស់វាត្រូវបានដកចេញ។ នេះជារបៀបដែលវារារាំងម្រាមដៃដែលមិនមែនជារបស់អ្នក។",
   "p15_ch": "សោ PIN របស់អ្នកនៅតែដំណើរការ", "p15_cp": "អ្នកអាចចុចដោយលេខកូដ PIN របស់អ្នកឥឡូវនេះ។ ដើម្បីបង្កើតសោម្រាមដៃថ្មី សូមបញ្ជាក់ដោយ passkey របស់អ្នក ឬពីទូរស័ព្ទមួយទៀតរបស់អ្នក។",
   "p15_go": "បង្កើតសោម្រាមដៃថ្មី", "p15_fine": "passkey និងកំណត់ត្រារបស់អ្នកមិនផ្លាស់ប្តូរទេ។",
   "p16_h": "ដក​ទូរស័ព្ទ​នេះ​ចេញ​ឬ?",
