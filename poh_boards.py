@@ -45,7 +45,7 @@ DT = {
   "p1_go": "Add this phone", "p1_fine": "Your passkey stays your way in. B-PoH adds to it.", "by": "Published by HeartBank®",
   # P2 sign.333.eco/enroll, in a Custom Tab
   "host": "sign.333.eco", "p2_h": "Add this phone", "p2_from": "Asked by the B-PoH℠ app on this phone",
-  "p2_lede": "Your passkey confirms it's you. Then the app makes two keys in this phone's own chip, to sign with.",
+  "p2_lede": "Your passkey confirms it's you. Then the app makes its keys in this phone's own chip, to sign with.",  # 2026-11-28: a PIN-only phone makes one key (P4b), so never "two"
   "p2_ch": "Only a press can add a phone", "p2_cp": "Your passkey, or another phone that already has B-PoH, can add this one. Logging in alone never can.",
   "p2_go": "Confirm with your passkey", "p2_other": "Approve from another phone of yours", "p2_new": "New here? Make a passkey", "no": "Not now",
   "p2_foot": "sign.333.eco · no passwords",
@@ -172,7 +172,7 @@ DT = {
   "p1_c3h": "អ្វីដែលការចុចបង្ហាញ", "p1_c3p": "ថាសោមួយនៅក្នុងបន្ទះឈីបរបស់ទូរស័ព្ទបានចុច ដោយដោះសោដោយម្រាមដៃ ឬលេខកូដ PIN។ មិនមែនថាអ្នកណាកំពុងកាន់ទូរស័ព្ទនោះទេ។",
   "p1_go": "បន្ថែមទូរស័ព្ទនេះ", "p1_fine": "passkey របស់អ្នកនៅតែជាផ្លូវចូលរបស់អ្នក។ B-PoH បន្ថែមលើវា។", "by": "បោះផ្សាយដោយ HeartBank®",
   "host": "sign.333.eco", "p2_h": "បន្ថែមទូរស័ព្ទនេះ", "p2_from": "ស្នើដោយកម្មវិធី B-PoH℠ នៅលើទូរស័ព្ទនេះ",
-  "p2_lede": "passkey របស់អ្នកបញ្ជាក់ថាជាអ្នក។ បន្ទាប់មក កម្មវិធីបង្កើតសោពីរនៅក្នុងបន្ទះឈីបរបស់ទូរស័ព្ទនេះផ្ទាល់ សម្រាប់ចុះហត្ថលេខា។",
+  "p2_lede": "passkey របស់អ្នកបញ្ជាក់ថាជាអ្នក។ បន្ទាប់មក កម្មវិធីបង្កើតសោរបស់វានៅក្នុងបន្ទះឈីបរបស់ទូរស័ព្ទនេះផ្ទាល់ សម្រាប់ចុះហត្ថលេខា។",
   "p2_ch": "មានតែការចុចទេដែលអាចបន្ថែមទូរស័ព្ទបាន", "p2_cp": "passkey របស់អ្នក ឬទូរស័ព្ទមួយទៀតដែលមាន B-PoH រួចហើយ អាចបន្ថែមទូរស័ព្ទនេះបាន។ ការចូលតែម្យ៉ាង មិនអាចទេ។",
   "p2_go": "បញ្ជាក់ដោយ passkey របស់អ្នក", "p2_other": "អនុម័តពីទូរស័ព្ទមួយទៀតរបស់អ្នក", "p2_new": "ថ្មីនៅទីនេះ? បង្កើត passkey", "no": "មិនមែនពេលនេះ",
   "p2_foot": "sign.333.eco · គ្មានពាក្យសម្ងាត់",
