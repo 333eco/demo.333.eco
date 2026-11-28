@@ -1115,14 +1115,18 @@ def main():
         boards.append({"file": f, "page": pg, "title": "%s · dark pass, English" % sid, "w": W, "h": hh(f),
                        "x": dk.get(pg, 0) * (W + 80), "y": rowy["km"] + tall_km + 160})
         dk[pg] = dk.get(pg, 0) + 1  # a surface with two dark passes (origin: K1 and the gift page G7) sets them side by side
-    ydesk = rowy["km"] + tall_km + 160 + H + 160  # below the dark-pass row
+    # below the dark-pass row, by its TALLEST measured board (a dark board taller than H once ran under the desktop row)
+    tall_dark = max([H] + [b["h"] for b in boards if b["file"].endswith("Dark.html")])
+    ydesk = rowy["km"] + tall_km + 160 + tall_dark + 160
+    # the Khmer desktop row sits below the TALLEST English desktop board, never a fixed 1100
+    tall_desk_en = max([800] + [int(hts.get("%s.html" % d[0], 800)) for d in DESKTOP])
     dcol = {"registry": 0, "explorer": 0, "origin": 0, "developers": 0, "legal": 0}
     for sid, pg, title, render in DESKTOP:
         for lang in ("en", "km"):
             f = "%s%s.html" % (sid, "" if lang == "en" else "Km")
             io.open(os.path.join(HERE, f), "w", encoding="utf-8").write(page(sid, render, lang, desk=True).replace("@CSSV@", cssv))
             boards.append({"file": f, "page": pg, "title": "%s · %s, %s" % (sid, title, "English" if lang == "en" else "Khmer"),
-                           "w": 1280, "h": max(800, int(hts.get(f, 800))), "x": dcol[pg] * (1280 + 120), "y": ydesk + (0 if lang == "en" else 1100)})
+                           "w": 1280, "h": max(800, int(hts.get(f, 800))), "x": dcol[pg] * (1280 + 120), "y": ydesk + (0 if lang == "en" else tall_desk_en + 160)})
         dcol[pg] += 1
     canvas = {"pages": pages, "artboards": boards, "annotations": [], "launch": {"page": "registry", "view": "canvas"}}
     io.open(os.path.join(HERE, "canvas.json"), "w", encoding="utf-8").write(json.dumps(canvas, ensure_ascii=False, indent=1))
