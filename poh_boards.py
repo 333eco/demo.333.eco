@@ -397,6 +397,16 @@ def P1(t, d):
     return _scr(d, _bar(_brand(d), "", _seg(d["lang"], 1 if t["band"] else 0)), inner)
 
 
+def P1w(t, d):
+    """A phone never added that holds passkeys it made for websites (the provider works on its own; founder 2026-11-27, 'do per your
+    recommendation': standalone): its keys and Settings are reachable from the first screen. The language choice moves to Settings."""
+    inner = ('<h1>%s</h1><p class="lede">%s</p>' % (d["p1_h"], d["p1_lede"])
+             + _card(d["p1_c1h"], d["p1_c1p"], "words") + _card(d["p1_c2h"], d["p1_c2p"], "chip") + _card(d["p1_c3h"], d["p1_c3p"], "log")
+             + '<div class="grow"></div>' + _btn(d["p1_go"]) + '<p class="fine">%s</p>' % d["p1_fine"]
+             + _group("", [_li(d["keys"])]) + '<p class="fine ph-by">%s</p>' % d["by"])
+    return _scr(d, _bar(_brand(d), "", '<span aria-label="%s">%s</span>' % (d["settings"], _icon(GEAR, 22, 1.8))), inner)
+
+
 def _tab(d, host):
     return ('<div class="ph-ct">%s<span class="ph-ctu">%s<span>%s</span></span>%s</div>'
             % (_icon(CLOSE, 20), _icon(LOCK, 14, 2), host, '<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="1.8" fill="currentColor"/><circle cx="12" cy="12" r="1.8" fill="currentColor"/><circle cx="12" cy="19" r="1.8" fill="currentColor"/></svg>'))
@@ -644,6 +654,7 @@ OKBIG = '<svg width="56" height="56" viewBox="0 0 56 56" aria-hidden="true"><cir
 
 SCREENS = [
     ("P1", "poh", "First open: what a press is (the language choice shows until a phone is added)", P1),
+    ("P1w", "poh", "First open on a phone never added that holds website passkeys: Your keys and Settings reachable (the provider stands alone)", P1w),
     ("P2", "poh", "Add this phone: sign.333.eco in a Custom Tab, an existing press first", P2),
     ("P2b", "poh", "Add this phone from another phone already added: the code to scan, in the Custom Tab", P2b),
     ("P19", "poh", "On the phone already added: approve the phone you just scanned (nearness required)", P19),
