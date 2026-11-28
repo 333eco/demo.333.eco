@@ -60,7 +60,8 @@ DT = {
   "p12b_lede": "The website receives this phone's proof that the key was made in its chip.",
   "p12b_c1h": "What the proof also shows", "p12b_c1p": "This phone's Android version and last security update, and on some phones the batch it was made in. It doesn't name this phone. If you'd rather the website didn't see this, go back and choose your usual passkey manager.",
   "p12b_c2h": "It stays on this phone", "p12b_c2p": "This passkey can't be copied to another device. If you lose this phone, it is gone too, so keep another way into forum.example.org.",
-  "p12b_go": "Make it with your finger",
+  "p12b_go": "Make it with your finger", "p12b_go_pin": "Make it with your PIN",  # the PIN key alone's button (founder 2026-11-27: a PIN-only phone makes it with the PIN)
+  "p12b_fine": "Made with your finger, it ends if a new finger or face is added to this phone. Made with your PIN, it stays.",  # SPEC §4: made like the press keys
   "p4b_h": "This phone is added, with a PIN key",
   "p4b_lede": "This phone has no fingerprint or face sensor strong enough for a finger key, so it presses with your PIN.",
   "p4b_ch": "Every press says which key pressed", "p4b_cp": "Some websites may ask for a finger press, and this phone can't give one. Everything else works the same.",
@@ -186,7 +187,8 @@ DT = {
   "p12b_lede": "គេហទំព័រនឹងទទួលបានភស្តុតាងរបស់ទូរស័ព្ទនេះ ថាសោត្រូវបានបង្កើតនៅក្នុងបន្ទះឈីបរបស់វា។",
   "p12b_c1h": "អ្វីដែលភស្តុតាងក៏បង្ហាញផងដែរ", "p12b_c1p": "កំណែ Android និងបច្ចុប្បន្នភាពសុវត្ថិភាពចុងក្រោយរបស់ទូរស័ព្ទនេះ ហើយនៅលើទូរស័ព្ទខ្លះ ក៏បង្ហាញក្រុមទូរស័ព្ទដែលវាត្រូវបានផលិតជាមួយដែរ។ វាមិនដាក់ឈ្មោះទូរស័ព្ទនេះទេ។ ប្រសិនបើអ្នកមិនចង់ឱ្យគេហទំព័រឃើញរឿងនេះ សូមត្រឡប់ក្រោយ ហើយជ្រើសរើសកម្មវិធីគ្រប់គ្រង passkey ធម្មតារបស់អ្នក។",
   "p12b_c2h": "វានៅលើទូរស័ព្ទនេះ", "p12b_c2p": "passkey នេះមិនអាចចម្លងទៅឧបករណ៍ផ្សេងបានទេ។ ប្រសិនបើអ្នកបាត់ទូរស័ព្ទនេះ វាក៏បាត់ដែរ ដូច្នេះសូមរក្សាផ្លូវចូលមួយទៀតទៅ forum.example.org។",
-  "p12b_go": "បង្កើតវាដោយម្រាមដៃរបស់អ្នក",
+  "p12b_go": "បង្កើតវាដោយម្រាមដៃរបស់អ្នក", "p12b_go_pin": "បង្កើតវាដោយលេខកូដ PIN របស់អ្នក",
+  "p12b_fine": "បើបង្កើតដោយម្រាមដៃ វានឹងបញ្ចប់ ប្រសិនបើមានម្រាមដៃ ឬមុខថ្មីត្រូវបានបន្ថែមទៅទូរស័ព្ទនេះ។ បើបង្កើតដោយលេខកូដ PIN វានៅដដែល។",
   "p4b_h": "ទូរស័ព្ទ​នេះ​ត្រូវ​បាន​បន្ថែម​ហើយ ជាមួយ​សោ PIN",
   "p4b_lede": "ទូរស័ព្ទនេះគ្មានឧបករណ៍ចាប់ស្នាមម្រាមដៃ ឬមុខ ដែលខ្លាំងគ្រប់គ្រាន់សម្រាប់សោម្រាមដៃទេ ដូច្នេះវាចុចដោយលេខកូដ PIN របស់អ្នក។",
   "p4b_ch": "ការចុចនីមួយៗប្រាប់ថាសោមួយណាបានចុច", "p4b_cp": "គេហទំព័រខ្លះអាចស្នើសុំការចុចដោយម្រាមដៃ ហើយទូរស័ព្ទនេះមិនអាចផ្តល់វាបានទេ។ អ្វីៗផ្សេងទៀតដំណើរការដូចគ្នា។",
@@ -423,7 +425,7 @@ def P12b(t, d):
     """The app's own screen when a website asks it to MAKE a passkey (founder 2026-11-25, item 3 'decide for me'): say what the website receives."""
     inner = ('<div class="from"><span class="site"><i>f</i><span>%s</span></span></div><h1>%s</h1><p class="lede">%s</p>' % (d["site"], d["p12b_h"], d["p12b_lede"])
              + _card(d["p12b_c1h"], d["p12b_c1p"], "chip") + _card(d["p12b_c2h"], d["p12b_c2p"], "lock")
-             + '<div class="grow"></div>' + _btn(d["p12b_go"]) + _btn(d["go_pin"], ghost=True) + _link(d["no"]))
+             + '<div class="grow"></div>' + _btn(d["p12b_go"]) + _btn(d["go_pin"], ghost=True) + '<p class="fine">%s</p>' % d["p12b_fine"] + _link(d["no"]))
     return _scr(d, _bar('<span aria-label="%s">%s</span>' % (d["close"], _icon(CLOSE)), "", _brand(d)), inner)
 
 
@@ -821,6 +823,7 @@ def check(sid, body):
     if sid == "P12b":
         assert re.search(r"doesn't name this phone|មិនដាក់ឈ្មោះទូរស័ព្ទនេះ", text) and re.search(r"usual passkey manager|passkey ធម្មតា", text), \
             "P12b: says what the website receives, that it doesn't name the phone, and the way out (founder 2026-11-25, item 3)"
+        assert re.search(r"ends if a new finger or face|ម្រាមដៃ ឬមុខថ្មី", text), "P12b: says before the press that a finger-made passkey ends on a new finger or face (SPEC §4)"
     if sid == "P19":
         assert 'class="ph-near"' in body and re.search(r"asks you to approve|សុំឱ្យអ្នកអនុម័ត", text), "P19: an approval names who asks and needs nearness (F2)"
     if sid == "P22":
